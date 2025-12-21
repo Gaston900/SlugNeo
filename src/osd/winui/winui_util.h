@@ -32,6 +32,7 @@ bool DriverIsVertical(int driver_index);
 bool DriverIsMechanical(int driver_index);
 bool DriverIsImperfect(int driver_index);
 bool DriverIsConsole(int driver_index);
+bool DriverIsMvs(int driver_index);
 wchar_t *win_wstring_from_utf8(const char *utf8string);
 char *win_utf8_from_wstring(const wchar_t *wstring);
 void winui_output_debug_string_utf8(const char *string);

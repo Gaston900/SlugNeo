@@ -86,8 +86,6 @@
  *
  *************************************/
 
-
-
 // The display counter is automatically reloaded with the load register contents on scanline 224,
 // 1146 mclks from the rising edge of /HSYNC.
 #define NEOGEO_VBLANK_RELOAD_HTIM (attotime::from_ticks(1146, NEOGEO_MASTER_CLOCK))
@@ -251,6 +249,11 @@ u16 neogeo_state::in0_r()
 u16 neogeo_state::in1_r()
 {
 	return ((m_edge->in1_r() & m_ctrl2->read_ctrl()) << 8) | 0xff;
+}
+
+CUSTOM_INPUT_MEMBER(neogeo_state::kizuna4p_start_r)
+{
+	return (m_edge->read_start_sel() & 0x05) | ~0x05;
 }
 
 void neogeo_state::io_control_w(offs_t offset, u8 data)
@@ -688,8 +691,6 @@ void neogeo_state::machine_start()
 	machine().save().register_postload(save_prepost_delegate(FUNC(neogeo_state::neogeo_postload), this));
 
 	m_sprgen->set_screen(m_screen);
-//	m_sprgen->set_sprite_region(m_region_sprites->base(), m_region_sprites->bytes());
-//	m_sprgen->set_fixed_regions(m_region_fixed->base(), m_region_fixed->bytes(), m_region_fixedbios);
 }
 
 
@@ -1040,6 +1041,95 @@ void neogeo_state::neogeo_noslot(machine_config &config)
 	FATFURY2_PROT(config, "fatfury2_prot");
 	KOF98_PROT(config, "kof98_prot");
 	SBP_PROT(config, "sbp_prot");
+}
+
+void neogeo_state::neogeo_kog(machine_config &config)
+{
+	neogeo_arcade(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::main_map_noslot);
+
+	//joystick controller
+	NEOGEO_CTRL_EDGE_CONNECTOR(config, m_edge, neogeo_arc_edge, "joy", true);
+
+	//no mahjong controller
+	NEOGEO_CONTROL_PORT(config, "ctrl1", neogeo_arc_pin15, nullptr, true);
+	NEOGEO_CONTROL_PORT(config, "ctrl2", neogeo_arc_pin15, nullptr, true);
+
+	NGBOOTLEG_PROT(config, "bootleg_prot");
+	KOG_PROT(config, "kog_prot");
+}
+
+// these basically correspond to the cabinets which were available in arcades:
+// with mahjong panel, with dial for Pop'n Bounce and with 4 controls for Kizuna...
+void neogeo_state::neogeo_mahjong(machine_config &config)
+{
+	neogeo_noslot(config);
+
+	//no joystick panel
+	NEOGEO_CTRL_EDGE_CONNECTOR(config.replace(), m_edge, neogeo_arc_edge_fixed, nullptr, true);
+
+	//P1 mahjong controller
+	config.device_remove("ctrl1");
+	config.device_remove("ctrl2");
+	NEOGEO_CONTROL_PORT(config, "ctrl1", neogeo_arc_pin15, "mahjong", false);
+	NEOGEO_CONTROL_PORT(config, "ctrl2", neogeo_arc_pin15, nullptr, true);
+}
+
+void neogeo_state::neogeo_dial(machine_config &config)
+{
+	neogeo_noslot(config);
+	NEOGEO_CTRL_EDGE_CONNECTOR(config.replace(), m_edge, neogeo_arc_edge_fixed, "dial", true);
+}
+
+void neogeo_state::neogeo_imaze(machine_config &config)
+{
+	neogeo_noslot(config);
+	NEOGEO_CTRL_EDGE_CONNECTOR(config.replace(), m_edge, neogeo_arc_edge_fixed, "irrmaze", true);
+}
+
+void neogeo_state::neogeo_kiz4p(machine_config &config)
+{
+	neogeo_noslot(config);
+	NEOGEO_CTRL_EDGE_CONNECTOR(config.replace(), m_edge, neogeo_arc_edge_fixed, "kiz4p", true);
+}
+
+// this is used by V-Liner, which handles differently inputs...
+void neogeo_state::neogeo_noctrl(machine_config &config)
+{
+	neogeo_noslot(config);
+	config.device_remove("edge");
+	config.device_remove("ctrl1");
+	config.device_remove("ctrl2");
+}
+
+void neogeo_state::no_watchdog(machine_config &config)
+{
+	neogeo_noslot(config);
+	subdevice<watchdog_timer_device>("watchdog")->set_time(attotime::from_seconds(0.0));
+}
+
+void neogeo_state::gsc2007_map(address_map &map)
+{
+	main_map_noslot(map);
+	map(0x900000,0x9fffff).rom().region("gsc", 0);  // extra rom
+}
+
+void neogeo_state::gsc2007(machine_config &config)
+{
+	neogeo_noslot(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::gsc2007_map);
+}
+
+void neogeo_state::gsc_map(address_map &map)
+{
+	main_map_noslot(map);
+	map(0x900000,0x91ffff).rom().region("gsc", 0);  // extra rom
+}
+
+void neogeo_state::gsc(machine_config &config)
+{
+	neogeo_noslot(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::gsc_map);
 }
 
 void neogeo_state::neogeo_68kram_map(address_map &map)
@@ -1409,12 +1499,446 @@ void neogeo_state::neoclock_noslot(machine_config &config)
  *
  *************************************/
 
+//HBMAME
+void neogeo_kf2k2ps2::machine_start()
+{
+	neogeo_state::machine_start();
+
+	m2_ym->reset();
+	m3_ym->reset();
+	m4_ym->reset();
+
+	/* set the initial audio CPU ROM banks */
+	u8 *rgn = memregion("audiocpu_m2")->base();
+
+	/* audio bios/cartridge selection */
+	m2_bank_audio_main->configure_entry(1, memregion("audiocpu_m2")->base());
+	if (memregion("audiobios"))
+		m2_bank_audio_main->configure_entry(0, memregion("audiobios")->base());
+	else /* on hardware with no SM1 ROM, the cart ROM is always enabled */
+		m2_bank_audio_main->configure_entry(0, memregion("audiocpu_m2")->base());
+
+	m2_bank_audio_main->set_entry(m_use_cart_audio);
+
+	/* audio banking */
+	m2_bank_audio_cart[0] = membank("audio2_f000");
+	m2_bank_audio_cart[1] = membank("audio2_e000");
+	m2_bank_audio_cart[2] = membank("audio2_c000");
+	m2_bank_audio_cart[3] = membank("audio2_8000");
+
+	u32 address_mask = (memregion("audiocpu_m2")->bytes() - 0x10000 - 1) & 0x3ffff;
+
+
+	for (u8 region = 0; region < 4; region++)
+	{
+		for (int bank = 0xff; bank >= 0; bank--)
+		{
+			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			m2_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
+		}
+	}
+
+	m2_bank_audio_cart[0]->set_entry(0x1e);
+	m2_bank_audio_cart[1]->set_entry(0x0e);
+	m2_bank_audio_cart[2]->set_entry(0x06);
+	m2_bank_audio_cart[3]->set_entry(0x02);
+
+	/* set the initial audio CPU ROM banks */
+	rgn = memregion("audiocpu_m3")->base();
+
+	/* audio bios/cartridge selection */
+	m3_bank_audio_main->configure_entry(1, memregion("audiocpu_m3")->base());
+	if (memregion("audiobios"))
+		m3_bank_audio_main->configure_entry(0, memregion("audiobios")->base());
+	else /* on hardware with no SM1 ROM, the cart ROM is always enabled */
+		m3_bank_audio_main->configure_entry(0, memregion("audiocpu_m3")->base());
+
+	m3_bank_audio_main->set_entry(m_use_cart_audio);
+
+	/* audio banking */
+	m3_bank_audio_cart[0] = membank("audio3_f000");
+	m3_bank_audio_cart[1] = membank("audio3_e000");
+	m3_bank_audio_cart[2] = membank("audio3_c000");
+	m3_bank_audio_cart[3] = membank("audio3_8000");
+
+	address_mask = (memregion("audiocpu_m3")->bytes() - 0x10000 - 1) & 0x3ffff;
+
+
+	for (u8 region = 0; region < 4; region++)
+	{
+		for (int bank = 0xff; bank >= 0; bank--)
+		{
+			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			m3_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
+		}
+	}
+
+	m3_bank_audio_cart[0]->set_entry(0x1e);
+	m3_bank_audio_cart[1]->set_entry(0x0e);
+	m3_bank_audio_cart[2]->set_entry(0x06);
+	m3_bank_audio_cart[3]->set_entry(0x02);
+
+	/* set the initial audio CPU ROM banks */
+	rgn = memregion("audiocpu_m4")->base();
+
+	/* audio bios/cartridge selection */
+	m4_bank_audio_main->configure_entry(1, memregion("audiocpu_m4")->base());
+	if (memregion("audiobios"))
+		m4_bank_audio_main->configure_entry(0, memregion("audiobios")->base());
+	else /* on hardware with no SM1 ROM, the cart ROM is always enabled */
+		m4_bank_audio_main->configure_entry(0, memregion("audiocpu_m4")->base());
+
+	m4_bank_audio_main->set_entry(m_use_cart_audio);
+
+	/* audio banking */
+	m4_bank_audio_cart[0] = membank("audio4_f000");
+	m4_bank_audio_cart[1] = membank("audio4_e000");
+	m4_bank_audio_cart[2] = membank("audio4_c000");
+	m4_bank_audio_cart[3] = membank("audio4_8000");
+
+	address_mask = (memregion("audiocpu_m4")->bytes() - 0x10000 - 1) & 0x3ffff;
+
+
+	for (u8 region = 0; region < 4; region++)
+	{
+		for (int bank = 0xff; bank >= 0; bank--)
+		{
+			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			m4_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
+		}
+	}
+
+	m4_bank_audio_cart[0]->set_entry(0x1e);
+	m4_bank_audio_cart[1]->set_entry(0x0e);
+	m4_bank_audio_cart[2]->set_entry(0x06);
+	m4_bank_audio_cart[3]->set_entry(0x02);
+}
+
+void neogeo_kf2k2ps2::audio2_check_nmi()
+{
+	m2_audiocpu->set_input_line(INPUT_LINE_NMI, (m2_nmi_enabled && m2_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
+}
+
+void neogeo_kf2k2ps2::audio2_enable_nmi_w(offs_t offset, u8 data)
+{
+	// out ($08) enables the nmi, out ($18) disables it
+	m2_nmi_enabled = BIT(offset, 4) ^ 1;
+	audio2_check_nmi();
+}
+
+u16 neogeo_kf2k2ps2::audio2_result_r()
+{
+	return m2_soundlatch2->read() << 8;
+}
+
+void neogeo_kf2k2ps2::audio2_command_w(u8 data)
+{
+	m2_soundlatch->write(data);
+	m2_nmi_pending = true;
+	audio2_check_nmi();
+	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+}
+
+u8 neogeo_kf2k2ps2::audio2_command_r()
+{
+	u8 ret = m2_soundlatch->read();
+	m2_nmi_pending = false;
+	audio2_check_nmi();
+	return ret;
+}
+
+u8 neogeo_kf2k2ps2::audio2_bank_select_r(offs_t offset)
+{
+	m2_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
+	return 0;
+}
+
+void neogeo_kf2k2ps2::audio3_check_nmi()
+{
+	m3_audiocpu->set_input_line(INPUT_LINE_NMI, (m3_nmi_enabled && m3_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
+}
+
+void neogeo_kf2k2ps2::audio3_enable_nmi_w(offs_t offset, u8 data)
+{
+	// out ($08) enables the nmi, out ($18) disables it
+	m3_nmi_enabled = BIT(offset, 4) ^ 1;
+	audio3_check_nmi();
+}
+
+u16 neogeo_kf2k2ps2::audio3_result_r()
+{
+	return m3_soundlatch2->read() << 8;
+}
+
+void neogeo_kf2k2ps2::audio3_command_w(u8 data)
+{
+	m3_soundlatch->write(data);
+	m3_nmi_pending = true;
+	audio3_check_nmi();
+	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+}
+
+u8 neogeo_kf2k2ps2::audio3_command_r()
+{
+	u8 ret = m3_soundlatch->read();
+	m3_nmi_pending = false;
+	audio3_check_nmi();
+	return ret;
+}
+
+u8 neogeo_kf2k2ps2::audio3_bank_select_r(offs_t offset)
+{
+	m3_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
+	return 0;
+}
+
+void neogeo_kf2k2ps2::audio4_check_nmi()
+{
+	m4_audiocpu->set_input_line(INPUT_LINE_NMI, (m4_nmi_enabled && m4_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
+}
+
+void neogeo_kf2k2ps2::audio4_enable_nmi_w(offs_t offset, u8 data)
+{
+	// out ($08) enables the nmi, out ($18) disables it
+	m4_nmi_enabled = BIT(offset, 4) ^ 1;
+	audio4_check_nmi();
+}
+
+void neogeo_kf2k2ps2::audio4_command_w(u8 data)
+{
+	m4_soundlatch->write(data);
+	m4_nmi_pending = true;
+	audio4_check_nmi();
+	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+}
+
+u16 neogeo_kf2k2ps2::audio4_result_r()
+{
+	return m4_soundlatch2->read() << 8;
+}
+
+u8 neogeo_kf2k2ps2::audio4_command_r()
+{
+	u8 ret = m4_soundlatch->read();
+	m4_nmi_pending = false;
+	audio4_check_nmi();
+	return ret;
+}
+
+u8 neogeo_kf2k2ps2::audio4_bank_select_r(offs_t offset)
+{
+	m4_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
+	return 0;
+}
+
+void neogeo_kf2k2ps2::ps2_map(address_map &map)
+{
+	gsc_map(map);
+	//map(0x300000, 0x300001).mirror(0x01ff7e).portr("IN0");
+	//map(0x340000, 0x340001).mirror(0x01fffe).portr("IN1");
+	//map(0x3a0000, 0x3a001f).mirror(0x01ffe0).w(FUNC(neogeo_kf2k2ps2::system_control_w_m4));
+	map(0xba0000, 0xba0001).rw(FUNC(neogeo_kf2k2ps2::audio4_result_r),FUNC(neogeo_kf2k2ps2::audio4_command_w));
+	map(0xbc0000, 0xbc0001).rw(FUNC(neogeo_kf2k2ps2::audio3_result_r),FUNC(neogeo_kf2k2ps2::audio3_command_w));
+	map(0xbe0000, 0xbe0001).rw(FUNC(neogeo_kf2k2ps2::audio2_result_r),FUNC(neogeo_kf2k2ps2::audio2_command_w));
+	//map(0xba0000,0xba0001).w(FUNC(neogeo_kf2k2ps2::audio4_command_w)).umask16(0xff00);
+	//map(0xbc0000,0xbc0001).w(FUNC(neogeo_kf2k2ps2::audio3_command_w)).umask16(0xff00);
+	//map(0xbe0000,0xbe0001).w(FUNC(neogeo_kf2k2ps2::audio2_command_w)).umask16(0xff00);
+}
+
+void neogeo_kf2k2ps2::audio2_map(address_map &map)
+{
+	map(0x0000,0x7fff).bankr("audio2_main");
+	map(0x8000,0xbfff).bankr("audio2_8000");
+	map(0xc000,0xdfff).bankr("audio2_c000");
+	map(0xe000,0xefff).bankr("audio2_e000");
+	map(0xf000,0xf7ff).bankr("audio2_f000");
+	map(0xf800,0xffff).ram();
+}
+
+void neogeo_kf2k2ps2::audio2_io(address_map &map)
+{
+	map(0x00,0x00).mirror(0xff00).r(FUNC(neogeo_kf2k2ps2::audio2_command_r)).w("soundlatch_m2",FUNC(generic_latch_8_device::clear_w));
+	map(0x04,0x07).mirror(0xff00).rw("ymsnd_m2",FUNC(ym2610_device::read),FUNC(ym2610_device::write));
+	map(0x08,0x08).mirror(0xff00).select(0x0010).w(FUNC(neogeo_kf2k2ps2::audio2_enable_nmi_w));
+	map(0x08,0x0b).mirror(0x00f0).select(0xff00).r(FUNC(neogeo_kf2k2ps2::audio2_bank_select_r));
+	map(0x0c,0x0c).mirror(0xff00).w("soundlatch2_m2",FUNC(generic_latch_8_device::write));
+}
+
+void neogeo_kf2k2ps2::audio3_map(address_map &map)
+{
+	map(0x0000,0x7fff).bankr("audio3_main");
+	map(0x8000,0xbfff).bankr("audio3_8000");
+	map(0xc000,0xdfff).bankr("audio3_c000");
+	map(0xe000,0xefff).bankr("audio3_e000");
+	map(0xf000,0xf7ff).bankr("audio3_f000");
+	map(0xf800,0xffff).ram();
+}
+
+void neogeo_kf2k2ps2::audio3_io(address_map &map)
+{
+	map(0x00,0x00).mirror(0xff00).r(FUNC(neogeo_kf2k2ps2::audio3_command_r)).w("soundlatch_m3",FUNC(generic_latch_8_device::clear_w));
+	map(0x04,0x07).mirror(0xff00).rw("ymsnd_m3",FUNC(ym2610_device::read),FUNC(ym2610_device::write));
+	map(0x08,0x08).mirror(0xff00).select(0x0010).w(FUNC(neogeo_kf2k2ps2::audio3_enable_nmi_w));
+	map(0x08,0x0b).mirror(0x00f0).select(0xff00).r(FUNC(neogeo_kf2k2ps2::audio3_bank_select_r));
+	map(0x0c,0x0c).mirror(0xff00).w("soundlatch2_m3",FUNC(generic_latch_8_device::write));
+}
+
+void neogeo_kf2k2ps2::audio4_map(address_map &map)
+{
+	map(0x0000,0x7fff).bankr("audio4_main");
+	map(0x8000,0xbfff).bankr("audio4_8000");
+	map(0xc000,0xdfff).bankr("audio4_c000");
+	map(0xe000,0xefff).bankr("audio4_e000");
+	map(0xf000,0xf7ff).bankr("audio4_f000");
+	map(0xf800,0xffff).ram();
+}
+
+void neogeo_kf2k2ps2::audio4_io(address_map &map)
+{
+	map(0x00,0x00).mirror(0xff00).r(FUNC(neogeo_kf2k2ps2::audio4_command_r)).w("soundlatch_m4",FUNC(generic_latch_8_device::clear_w));
+	map(0x04,0x07).mirror(0xff00).rw("ymsnd_m4",FUNC(ym2610_device::read),FUNC(ym2610_device::write));
+	map(0x08,0x08).mirror(0xff00).select(0x0010).w(FUNC(neogeo_kf2k2ps2::audio4_enable_nmi_w));
+	map(0x08,0x0b).mirror(0x00f0).select(0xff00).r(FUNC(neogeo_kf2k2ps2::audio4_bank_select_r));
+	map(0x0c,0x0c).mirror(0xff00).w("soundlatch2_m4",FUNC(generic_latch_8_device::write));
+}
+
+void neogeo_kf2k2ps2::ps2(machine_config &config)
+{
+	gsc(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_kf2k2ps2::ps2_map);
+
+	GENERIC_LATCH_8(config, m2_soundlatch);
+	GENERIC_LATCH_8(config, m2_soundlatch2);
+	GENERIC_LATCH_8(config, m3_soundlatch);
+	GENERIC_LATCH_8(config, m3_soundlatch2);
+	GENERIC_LATCH_8(config, m4_soundlatch);
+	GENERIC_LATCH_8(config, m4_soundlatch2);
+
+	Z80(config, m2_audiocpu, NEOGEO_AUDIO_CPU_CLOCK);
+	m2_audiocpu->set_addrmap(AS_PROGRAM, &neogeo_kf2k2ps2::audio2_map);
+	m2_audiocpu->set_addrmap(AS_IO, &neogeo_kf2k2ps2::audio2_io);
+	Z80(config, m3_audiocpu, NEOGEO_AUDIO_CPU_CLOCK);
+	m3_audiocpu->set_addrmap(AS_PROGRAM, &neogeo_kf2k2ps2::audio3_map);
+	m3_audiocpu->set_addrmap(AS_IO, &neogeo_kf2k2ps2::audio3_io);
+	Z80(config, m4_audiocpu, NEOGEO_AUDIO_CPU_CLOCK);
+	m4_audiocpu->set_addrmap(AS_PROGRAM, &neogeo_kf2k2ps2::audio4_map);
+	m4_audiocpu->set_addrmap(AS_IO, &neogeo_kf2k2ps2::audio4_io);
+
+	YM2610(config, m2_ym, NEOGEO_YM2610_CLOCK);
+	m2_ym->irq_handler().set_inputline(m2_audiocpu, 0);
+	m2_ym->add_route(0, "lspeaker", 0.84);
+	m2_ym->add_route(0, "rspeaker", 0.84);
+	m2_ym->add_route(1, "lspeaker", 0.98);
+	m2_ym->add_route(2, "rspeaker", 0.98);
+	YM2610(config, m3_ym, NEOGEO_YM2610_CLOCK);
+	m3_ym->irq_handler().set_inputline(m3_audiocpu, 0);
+	m3_ym->add_route(0, "lspeaker", 0.84);
+	m3_ym->add_route(0, "rspeaker", 0.84);
+	m3_ym->add_route(1, "lspeaker", 0.98);
+	m3_ym->add_route(2, "rspeaker", 0.98);
+	YM2610(config, m4_ym, NEOGEO_YM2610_CLOCK);
+	m4_ym->irq_handler().set_inputline(m4_audiocpu, 0);
+	m4_ym->add_route(0, "lspeaker", 0.84);
+	m4_ym->add_route(0, "rspeaker", 0.84);
+	m4_ym->add_route(1, "lspeaker", 0.98);
+	m4_ym->add_route(2, "rspeaker", 0.98);
+}
+
 /*********************************************** SMA + CMC42 */
 
-void neogeo_state::init_darksoft()
+void neogeo_state::init_kof99()
 {
 	init_neogeo();
-	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_sprgen->m_fixed_layer_bank_type = 1; // only meaningful if s1 > 128k
+
+	// decrypt p roms if needed
+	u8 *ram = cpuregion;
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_sma_prot->kof99_decrypt_68k(cpuregion);
+		m_sma_prot->kof99_install_protection(m_maincpu, m_banked_cart);
+	}
+
+	// decrypt c roms if needed
+	ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF99_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = fix_region;
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_garou()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
+		m_sma_prot->garou_decrypt_68k(cpuregion);
+		m_sma_prot->garou_install_protection(m_maincpu,m_banked_cart);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, GAROU_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_garouh()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
+		m_sma_prot->garouh_decrypt_68k(cpuregion);
+		m_sma_prot->garouh_install_protection(m_maincpu,m_banked_cart);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, GAROU_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
 }
 
 void neogeo_state::init_mslug3a()
@@ -1458,6 +1982,7 @@ void neogeo_state::init_mslug3()
 	}
 }
 
+
 void neogeo_state::init_mslug3cqt()
 {
 	init_neogeo();
@@ -1489,23 +2014,6 @@ void neogeo_state::init_mslug3cqt()
 	}
 }
 
-void neogeo_state::init_mslug3dd()
-{
-	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 1;
-	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
-	m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG3_GFX_KEY);
-	m_sma_prot->mslug3_install_protection(m_maincpu,m_banked_cart);
-}
-
-void neogeo_state::init_mslug3ndd()
-{
-	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 1;
-	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
-	m_sma_prot->mslug3_install_protection(m_maincpu,m_banked_cart);
-}
-
 void neogeo_state::init_mslug3e()
 {
 	init_mslug3();
@@ -1516,6 +2024,43 @@ void neogeo_state::init_mslug3b6()
 {
 	init_mslug3();
 	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
+}
+
+/*********************************************** SMA + CMC50 */
+
+void neogeo_state::init_kof2000()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2; // only meaningful if s1 > 128k
+
+	// decrypt p roms if needed
+	u8 *ram = cpuregion;
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_sma_prot->kof2000_decrypt_68k(cpuregion);
+		m_sma_prot->kof2000_install_protection(m_maincpu, m_banked_cart);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt c roms if needed
+	ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2000_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = fix_region;
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
 }
 
 /*********************************************** CMC42 */
@@ -1554,23 +2099,6 @@ void neogeo_state::init_mslug4()
 	}
 }
 
-void neogeo_state::init_mslug4dd()
-{
-	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 1;
-    m_pcm2_prot->neo_pcm2_snk_1999(ym_region, ym_region_size, 8);
-	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
-    m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG4_GFX_KEY);
-    m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
-}
-
-void neogeo_state::init_mslug4ndd()
-{
-	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 1;
-	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
-}
-
 void neogeo_state::init_mslug4lw()
 {
 	init_neogeo();
@@ -1586,15 +2114,861 @@ void neogeo_state::init_mslug4e()
 	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG4_GFX_KEY);
 }
 
+void neogeo_state::init_ganryu()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt c roms if needed
+	u8 *ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, GANRYU_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
 void neogeo_state::init_s1945p()
 {
 	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
 	m_sprgen->m_fixed_layer_bank_type = 1;
-	m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, S1945P_GFX_KEY);
+
+	// decrypt c roms if needed
+	u8 *ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, S1945P_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_preisle2()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt c roms if needed
+	u8 *ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, PREISLE2_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_bangbead()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, BANGBEAD_GFX_KEY);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_nitd()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt c roms if needed
+	u8 *ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, NITD_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_sengoku3()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt c roms if needed
+	u8 *ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, SENGOKU3_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_zupapa()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, ZUPAPA_GFX_KEY);
 	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
 }
 
 /*********************************************** CMC50 */
+
+
+void neogeo_state::init_kof2001()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1; // only meaningful if s1 > 128k
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt c roms if needed
+	u8 *ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2001_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = fix_region;
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+/*********************************************** CMC50 + PCM2 */
+
+void neogeo_state::init_rotd()
+{
+	init_neogeo();
+	m_pcm2_prot->neo_pcm2_snk_1999(ym_region, ym_region_size, 16);
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, ROTD_GFX_KEY);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_rotdnd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_pnyaa()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1; // for those sets with 512k of s1
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+
+	// decrypt v roms if needed
+	u8 *ram = memregion("ymsnd")->base();
+	if (ram[0x20] != 0x99)
+	{
+		//printf("ym=%X\n",ram[0x60]);
+		m_pcm2_prot->neo_pcm2_snk_1999(ym_region, ym_region_size, 4);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, PNYAA_GFX_KEY );
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+/*********************************************** CMC50 + PCM2 + prg scramble */
+
+
+void neogeo_state::init_kof2002()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1; // only meaningful if s1 > 128k
+
+	// decrypt p roms if needed
+	u8 *ram = cpuregion;
+	if (ram[0x100002] != 0xFF)
+	{
+		//printf("Maincpu=%X\n",ram[0x100002]);fflush(stdout);
+		m_kof2002_prot->kof2002_decrypt_68k(cpuregion, cpuregion_size);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = ym_region;
+	if (ram[1] != 0x99)
+	{
+		//printf("ym=%X\n",ram[1]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 0);
+	}
+
+	// decrypt c roms if needed
+	ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2002_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = fix_region;
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_matrim()
+{
+	init_neogeo();
+	m_kof2002_prot->matrim_decrypt_68k(cpuregion, cpuregion_size);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 1);
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MATRIM_GFX_KEY);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_samsho5()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100007] != 0xC2)
+	{
+		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
+		m_kof2002_prot->samsho5_decrypt_68k(cpuregion, cpuregion_size);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = memregion("ymsnd")->base();
+	if (ram[0] != 8)
+	{
+		//printf("ym=%X\n",ram[0]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 4);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, SAMSHO5_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_samsh5sp()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100007] == 0)
+	{
+		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
+		m_kof2002_prot->samsh5sp_decrypt_68k(cpuregion, cpuregion_size);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = memregion("ymsnd")->base();
+	if (ram[0] != 8)
+	{
+		// fix sound crackling on encrypted
+		if (ym_region[0] == 0xE0) ym_region[0] = 0x43; // [6bc0] becomes 08
+		if (ym_region[1] == 0x25) ym_region[1] = 0xC9; // [16bc0] becomes 82
+		if (ym_region[0x18180] == 0xAC) ym_region[0x18180] = 0x2D; // [ed41] becomes 89
+		if (ym_region[0x18181] == 0x7E) ym_region[0x18181] = 0x2B; // [1ed41] becomes 8f
+		//printf("ym=%X\n",ram[0]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 6);
+	}
+	else
+	{
+		// fix sound crackling on decrypted
+		if (ym_region[0x6bc0] == 0xAB) ym_region[0x6bc0] = 0x08;
+		if (ym_region[0xed41] == 0x08) ym_region[0xed41] = 0x89;
+		if (ym_region[0x16bc0] == 0x6E) ym_region[0x16bc0] = 0x82;
+		if (ym_region[0x1ed41] == 0xDA) ym_region[0x1ed41] = 0x8F;
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, SAMSHO5SP_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_mslug5b()
+{
+	init_neogeo();
+	m_bootleg_prot->mslug5b_vx_decrypt(ym_region, ym_region_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 2);
+	m_bootleg_prot->mslug5b_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_mslug5()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_pvc_prot->mslug5_decrypt_68k(cpuregion, cpuregion_size);
+		m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = memregion("ymsnd")->base();
+	if (ram[0x60] != 0x82)
+	{
+		//printf("ym=%X\n",ram[0x60]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 2);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG5_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_mslug5e()
+{
+	init_mslug5();
+	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
+}
+
+void neogeo_state::init_mslug5nd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_pvc_prot->mslug5nd_decrypt_68k(cpuregion, cpuregion_size);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = memregion("ymsnd")->base();
+	if (ram[0x60] != 0x82)
+	{
+		//printf("ym=%X\n",ram[0x60]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 2);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG5_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_svc()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 2;
+
+	// decrypt p roms if needed
+	u8 *ram = memregion("maincpu")->base();
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_pvc_prot->svc_px_decrypt(cpuregion, cpuregion_size);
+		m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = memregion("ymsnd")->base();
+	if (ram[0x91] != 0x33)
+	{
+		//printf("ym=%X\n",ram[0x91]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 3);
+	}
+
+	// decrypt c roms if needed
+	ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, SVC_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+
+	// decrypt s1 if needed
+	if (ram[0x100] != 0xBB)
+	{
+		//printf("Fixed2=%X\n",ram[0]);
+		m_sma_prot->svcpcb_s1data_decrypt(fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_kof2003()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
+
+	// decrypt p roms if needed
+	u8 *ram = cpuregion;
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_pvc_prot->kof2003_decrypt_68k(cpuregion, cpuregion_size);
+		m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	ram = ym_region;
+	if (ram[0x91] != 0x33)
+	{
+		//printf("ym=%X\n",ram[0x91]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	}
+
+	// decrypt c roms if needed
+	ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2003_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = fix_region;
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+void neogeo_state::init_kof2003b() // hacks of kf2k3bl
+{
+	init_neogeo();
+	m_bootleg_prot->kf2k3bl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// decrypt v roms if needed
+	u8 *ram = ym_region;
+	if (ram[0x91] != 0x33)
+	{
+		//printf("ym=%X\n",ram[0x91]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	}
+
+	// decrypt c roms if needed
+	ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2003_GFX_KEY);
+	}
+
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 1);
+}
+
+void neogeo_state::init_kof2003h()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
+
+	// decrypt p roms if needed
+	u8 *ram = cpuregion;
+	if (ram[0x100] != 0x45)
+	{
+		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
+		m_pvc_prot->kof2003h_decrypt_68k(cpuregion, cpuregion_size);
+		m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+	}
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+
+	// decrypt v roms if needed
+	ram = ym_region;
+	if (ram[0x91] != 0x33)
+	{
+		//printf("ym=%X\n",ram[0x91]);
+		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	}
+
+	// decrypt c roms if needed
+	ram = spr_region;
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2003_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = fix_region;
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+}
+
+/*********************************************** misc carts */
+
+void neogeo_state::init_mslugx()
+{
+	init_neogeo();
+	m_mslugx_prot->mslugx_install_protection(m_maincpu);
+}
+
+void neogeo_state::init_fatfury2()
+{
+	init_neogeo();
+	m_fatfury2_prot->fatfury2_install_protection(m_maincpu,m_banked_cart);
+}
+
+void neogeo_state::init_kof98()
+{
+	init_neogeo();
+	m_kof98_prot->kof98_decrypt_68k(cpuregion, cpuregion_size);
+	m_kof98_prot->install_kof98_protection(m_maincpu);
+}
+
+void neogeo_state::init_sbp()
+{
+	init_neogeo();
+	m_sbp_prot->sbp_install_protection(m_maincpu, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_jockeygp()
+{
+	init_neogeo();
+	// This is needed if s1 size > 0x20000, ignored otherwise
+	m_sprgen->m_fixed_layer_bank_type = 1;
+
+	/* install some extra RAM */
+	m_extra_ram = std::make_unique<uint16_t[]>(0x1000);
+	m_maincpu->space(AS_PROGRAM).install_ram(0x200000, 0x201fff, m_extra_ram.get());
+	save_pointer(NAME(m_extra_ram), 0x1000);
+
+	// decrypt m1 if needed
+	if (memregion("audiocrypt"))
+		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+
+	// decrypt c roms if needed
+	u8 *ram = memregion("sprites")->base();
+	if (ram[0] != 0)
+	{
+		//printf("Sprites=%X\n",ram[0]);
+		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, JOCKEYGP_GFX_KEY);
+	}
+
+	// if no s rom, copy info from end of c roms
+	ram = memregion("fixed")->base();
+	if (ram[0x100] == 0)
+	{
+		//printf("Fixed1=%X\n",ram[0x100]);
+		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	}
+
+}
+
+void neogeo_state::init_vliner()
+{
+	m_banked_cart->install_banks(machine(), m_maincpu, m_region_maincpu->base(), m_region_maincpu->bytes());
+
+	m_sprgen->m_fixed_layer_bank_type = 0;
+
+	m_sprgen->set_sprite_region(m_region_sprites->base(), m_region_sprites->bytes());
+	m_sprgen->set_fixed_regions(m_region_fixed->base(), m_region_fixed->bytes(), m_region_fixedbios);
+
+	m_extra_ram = std::make_unique<uint16_t[]>(0x1000);
+	m_maincpu->space(AS_PROGRAM).install_ram(0x200000, 0x201fff, m_extra_ram.get());
+	save_pointer(NAME(m_extra_ram), 0x1000);
+
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x300000, 0x300001, 0x01ff7e, "DSW");
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x280000, 0x280001, "IN5");
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x2c0000, 0x2c0001, "IN6");
+}
+
+void neogeo_state::init_garoubl()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
+	m_bootleg_prot->neogeo_bootleg_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_cthd2003()
+{
+	init_neogeo();
+	m_bootleg_prot->decrypt_cthd2003(spr_region, spr_region_size, audiocpu_region,audio_region_size, fix_region, fix_region_size);
+	m_bootleg_prot->patch_cthd2003(m_maincpu,m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_ct2k3sp()
+{
+	init_neogeo();
+	m_bootleg_prot->decrypt_ct2k3sp(spr_region, spr_region_size, audiocpu_region,audio_region_size, fix_region, fix_region_size);
+	m_bootleg_prot->patch_cthd2003(m_maincpu,m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_ct2k3sa()
+{
+	init_neogeo();
+	m_bootleg_prot->decrypt_ct2k3sa(spr_region, spr_region_size, audiocpu_region,audio_region_size);
+	m_bootleg_prot->patch_ct2k3sa(cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_kf10thep()
+{
+	init_neogeo();
+	m_bootleg_prot->kf10thep_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+}
+
+void neogeo_state::init_kf2k5uni()
+{
+	init_neogeo();
+	m_bootleg_prot->decrypt_kf2k5uni(cpuregion, cpuregion_size, audiocpu_region,audio_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_kof2k4se()
+{
+	init_neogeo();
+	m_bootleg_prot->decrypt_kof2k4se_68k(cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_svcplus()
+{
+	init_neogeo();
+	m_bootleg_prot->svcplus_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->svcboot_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 1);
+	m_bootleg_prot->svcplus_px_hack(cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_svcplusa()
+{
+	init_neogeo();
+	m_bootleg_prot->svcplusa_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->svcboot_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->svcplus_px_hack(cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_samsho5b()
+{
+	init_neogeo();
+	m_bootleg_prot->samsho5b_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->samsho5b_vx_decrypt(ym_region, ym_region_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_bootleg_prot->neogeo_bootleg_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_kof97oro()
+{
+	init_neogeo();
+	m_bootleg_prot->kof97oro_px_decode(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_bootleg_prot->neogeo_bootleg_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_lans2004()
+{
+	init_neogeo();
+	m_bootleg_prot->lans2004_decrypt_68k(cpuregion, cpuregion_size);
+	m_bootleg_prot->lans2004_vx_decrypt(ym_region, ym_region_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_bootleg_prot->neogeo_bootleg_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_kof10th()
+{
+	init_neogeo();
+	m_bootleg_prot->decrypt_kof10th(cpuregion, cpuregion_size);
+	m_bootleg_prot->install_kof10th_protection(m_maincpu,m_banked_cart, cpuregion, cpuregion_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_kog()
+{
+	init_neogeo();
+
+	m_kog_prot->kog_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_bootleg_prot->neogeo_bootleg_cx_decrypt(spr_region, spr_region_size);
+	m_kog_prot->kog_install_protection(m_maincpu);
+}
+
+void neogeo_state::init_kof2002b()
+{
+	init_neogeo();
+	m_kof2002_prot->kof2002_decrypt_68k(cpuregion, cpuregion_size);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 0);
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+	m_bootleg_prot->kof2002b_gfx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->kof2002b_gfx_decrypt(fix_region, fix_region_size);
+}
+
+void neogeo_state::init_kf2k2mp()
+{
+	init_neogeo();
+	m_bootleg_prot->kf2k2mp_decrypt(cpuregion, cpuregion_size);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 0);
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2002_GFX_KEY);
+}
+
+void neogeo_state::init_kf2k2mp2()
+{
+	init_neogeo();
+	m_bootleg_prot->kf2k2mp2_px_decrypt(cpuregion, cpuregion_size);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 0);
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2002_GFX_KEY);
+}
+
+void neogeo_state::init_matrimbl()
+{
+	init_neogeo();
+	m_kof2002_prot->matrim_decrypt_68k(cpuregion, cpuregion_size);
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_bootleg_prot->matrimbl_decrypt(spr_region, spr_region_size, audiocpu_region,audio_region_size);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
 
 void neogeo_state::init_ms5plus()
 {
@@ -1639,16 +3013,44 @@ void neogeo_state::init_ms5plus()
 	}
 }
 
-void neogeo_state::init_ms5plusdd()
+void neogeo_state::init_svcboot()
 {
 	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 1;
-	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 2);
-	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
-	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
-    m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG5_GFX_KEY);
-    m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
-	m_bootleg_prot->install_ms5plus_protection(m_maincpu,m_banked_cart);
+	m_bootleg_prot->svcboot_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->svcboot_cx_decrypt(spr_region, spr_region_size);
+	m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+}
+
+
+void neogeo_state::init_svcsplus()
+{
+	init_neogeo();
+	m_bootleg_prot->svcsplus_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
+	m_bootleg_prot->svcboot_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->svcsplus_px_hack(cpuregion, cpuregion_size);
+	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
+}
+
+
+void neogeo_state::init_kf2k3pl()
+{
+	init_neogeo();
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2003_GFX_KEY);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	m_bootleg_prot->kf2k3pl_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_bootleg_prot->kf2k3pl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_kf2k3upl()
+{
+	init_neogeo();
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2003_GFX_KEY);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	m_bootleg_prot->kf2k3upl_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
+	m_bootleg_prot->kf2k3bl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
 }
 
 void neogeo_state::init_ms5pcb()
@@ -1703,6 +3105,406 @@ void neogeo_state::init_ms5pcb()
 	}
 }
 
+void neogeo_state::init_svcpcb()
+{
+	init_neogeo();
+
+	m_pvc_prot->svc_px_decrypt(cpuregion, cpuregion_size);
+	m_sma_prot->svcpcb_gfx_decrypt(spr_region, spr_region_size);
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, SVC_GFX_KEY);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	m_sma_prot->svcpcb_s1data_decrypt(fix_region, fix_region_size);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 3);
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+	install_banked_bios();
+}
+
+void neogeo_state::init_kf2k3pcb()
+{
+	init_neogeo();
+	m_pvc_prot->kf2k3pcb_decrypt_68k(cpuregion, cpuregion_size);
+	m_sma_prot->kf2k3pcb_gfx_decrypt(spr_region, spr_region_size);
+	m_sma_prot->kf2k3pcb_sp1_decrypt((u16 *)memregion("mainbios")->base());
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
+
+	/* extra little swap on the m1 - this must be performed AFTER the m1 decrypt
+	   or the m1 checksum (used to generate the key) for decrypting the m1 is
+	   incorrect */
+	{
+		u8* rom = memregion("audiocpu")->base();
+		for (int i = 0; i < 0x90000; i++)
+			rom[i] = bitswap<8>(rom[i], 5, 6, 1, 4, 3, 0, 7, 2);
+	}
+
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, KOF2003_GFX_KEY);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+	m_sma_prot->kf2k3pcb_decrypt_s1data(spr_region, spr_region_size, fix_region, fix_region_size);
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+	m_maincpu->space(AS_PROGRAM).install_rom(0xc00000, 0xc7ffff, 0x080000, memregion("mainbios")->base());  // 512k bios
+}
+
+void neogeo_state::init_kof2k4pls()
+{
+	init_neogeo();
+
+	u8 *src = cpuregion;
+	std::vector<u8> dst( 0x200000 );
+
+	memcpy(&dst[0],src,0x100000);
+	memcpy(&dst[0x100000],src+0x500000,0x100000);
+	memcpy(src+0x000000,&dst[0x1A0000],0x020000);
+	memcpy(src+0x020000,&dst[0x080000],0x020000);
+	memcpy(src+0x040000,&dst[0x140000],0x020000);
+	memcpy(src+0x060000,&dst[0x000000],0x020000);
+	memcpy(src+0x080000,&dst[0x180000],0x020000);
+	memcpy(src+0x0A0000,&dst[0x0A0000],0x020000);
+	memcpy(src+0x0C0000,&dst[0x100000],0x020000);
+	memcpy(src+0x0E0000,&dst[0x040000],0x020000);
+
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 1);
+}
+
+void neogeo_state::init_cthd2k3a()
+{
+	init_neogeo();
+
+	u8 nBank[] = {
+		0x06, 0x02, 0x04, 0x05, 0x01, 0x03, 0x00, 0x07,
+		0x27, 0x0E, 0x1C, 0x15, 0x1B, 0x17, 0x0A, 0x0F,
+		0x16, 0x14, 0x23, 0x0B, 0x22, 0x26, 0x08, 0x24,
+		0x21, 0x13, 0x1A, 0x0C, 0x19, 0x1D, 0x25, 0x10,
+		0x09, 0x20, 0x18, 0x1F, 0x1E, 0x12, 0x0D, 0x11
+	};
+
+	u8 *src = cpuregion;
+	std::vector<u8> dst( cpuregion_size );
+
+	for (int i = 0; i < 0x500000 / 0x20000; i++)
+		memcpy (&dst[i * 0x20000], src + nBank[i] * 0x20000, 0x20000);
+
+	memcpy (src, &dst[0], 0x500000);
+
+	m_bootleg_prot->decrypt_cthd2003(spr_region, spr_region_size, audiocpu_region, audio_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_kogd()
+{
+	init_neogeo();
+	m_kog_prot->kog_install_protection(m_maincpu);
+}
+
+void neogeo_state::init_kof10thu()
+{
+	uint32_t tsize = cpuregion_size;
+	uint8_t *rom = cpuregion;
+	uint32_t i, ofst;
+	std::vector<uint8_t> trom( tsize );
+	memcpy( &trom[ 0 ], &rom[ 0 ], tsize );
+	// We unscramble the lower 6 address lines of the program rom.
+	for( i = 0; i < tsize / 2; i++ )
+	{
+		ofst = bitswap<8>( (i & 0x0000ff), 7, 6, 2, 3, 4, 5, 0, 1 ) | (i & 0xffff00);
+		memcpy( &rom[ ofst * 2 ], &trom[ i * 2 ], 2 );
+	}
+
+	init_neogeo();
+}
+
+void neogeo_state::init_kof96ep()
+{
+	init_neogeo();
+	int i,j;
+	uint8_t *rom = cpuregion;
+	for ( i=0; i < 0x080000; i++ )
+	{
+		j=i+0x300000;
+		if (rom[j] - rom[i] == 8) rom[j]=rom[i];
+	}
+	memcpy(rom, rom+0x300000, 0x080000);
+}
+
+void neogeo_state::init_kf2k1pa()
+{
+	u32 sx_size = memregion("fixed")->bytes();
+	u8 *rom = memregion("fixed")->base();
+
+	/* S-rom has its own unique encryption */
+	for( u32 i = 0; i < sx_size; i++ )
+		rom[ i ] = bitswap<8>( rom[ i ], 3, 2, 4, 5, 1, 6, 0, 7 );
+
+	init_kof2001();
+}
+
+void neogeo_state::init_kf2k2pla()
+{
+	init_kof2002();
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 1);
+}
+
+void neogeo_state::init_kf2k2plb()
+{
+	init_kof2002();
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 0);
+}
+
+void neogeo_state::init_kf2k2plc()
+{
+	init_kof2002();
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 2);
+}
+
+void neogeo_state::init_kof2k3pcd() // decrypted C & decrypted Bios
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->kf2k3pcb_decrypt_68k(cpuregion, cpuregion_size);
+	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+
+	// Extra m1 decryption
+	uint8_t* rom = memregion("audiocpu")->base();
+	for (int i = 0; i < 0x90000; i++)
+		rom[i] = bitswap<8>(rom[i], 5, 6, 1, 4, 3, 0, 7, 2);
+
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
+	m_sma_prot->kf2k3pcb_decrypt_s1data(spr_region, spr_region_size, fix_region, fix_region_size);
+	m_maincpu->space(AS_PROGRAM).install_rom(0xc00000, 0xc7ffff, 0x080000, memregion("mainbios")->base());  // 512k bios
+}
+
+void neogeo_state::init_matrima()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MATRIM_GFX_KEY);
+}
+
+void neogeo_state::init_matrimd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_kof2002_prot->matrim_decrypt_68k(cpuregion, cpuregion_size);
+	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_shockt2w()
+{
+	init_neogeo();
+	uint16_t *mem16= (uint16_t *)memregion("mainbios")->base();
+	mem16[0x0200] = 1;  /* Force home mode */
+	/* Above causes checksum failure, so patch it out */
+	mem16[0x11c62/2] = 0x4e71;
+	mem16[0x11c64/2] = 0x4e71;
+}
+
+void neogeo_state::init_cd()
+{
+	u8 a,b,c,d;
+	init_neogeo();
+	// decrypt sprites extracted from CD to MVS format
+	for (u32 i = 0; i < spr_region_size; i+=4)
+	{
+		a = spr_region[i];
+		b = spr_region[i+1];
+		c = spr_region[i+2];
+		d = spr_region[i+3];
+		spr_region[i] = b;
+		spr_region[i+1] = d;
+		spr_region[i+2] = a;
+		spr_region[i+3] = c;
+	}
+}
+
+void neogeo_state::init_fr2cd()
+{
+//// Fix rebooting at start
+
+	uint16_t *mem16 = (uint16_t*)cpuregion;
+
+	// change jsr to C004DA
+	mem16[0x01AF8 /2] = 0x04DA; // C00552 (Not used?)
+	mem16[0x01BF6 /2] = 0x04DA; // C0056A (fixes crash)
+	mem16[0x01ED8 /2] = 0x04DA; // C00570 (Not used?)
+	mem16[0x1C384 /2] = 0x04DA; // C00552 (fixes crash)
+
+	// 0x001C06 - this routine can cause a loop/freeze
+	mem16[0x01C06 /2] = 0x4E75;
+
+//// Fix text on bottom line
+
+	uint8_t *dst = fix_region;
+
+	// Move text for credit + coin info (Thanks to Kanyero), overwrites "MA" in neogeo logo
+	memcpy(dst, dst + 0x600, 0x140);
+
+	// Patch out neogeo intro (because of above line)
+//  mem16[0x114 /2]=0x200;
+
+
+//// Optional stuff
+
+
+	// Hack in the proper identification (see setup menu [F2])
+	mem16[0x3a6 / 2] = 0x4649;
+	mem16[0x3a8 / 2] = 0x4e41;
+	mem16[0x3aa / 2] = 0x4c20;
+	mem16[0x3ac / 2] = 0x524f;
+	mem16[0x3ae / 2] = 0x4d41;
+	mem16[0x3b0 / 2] = 0x4e43;
+	mem16[0x3b2 / 2] = 0x4520;
+	mem16[0x3b4 / 2] = 0x3220;
+	uint8_t  *mem8 = cpuregion;
+	memcpy(mem8+0x61e, mem8+0x3a6, 16);
+	memcpy(mem8+0x896, mem8+0x3a6, 16);
+
+	// Album Fix
+	mem16[0x1C382 /2] = 0x0008; // C00552
+	mem16[0x1C384 /2] = 0x0000;
+	mem16[0x80000 /2] = 0x33FC;
+	mem16[0x80002 /2] = 0x0001;
+	mem16[0x80004 /2] = 0x0020;
+	mem16[0x80006 /2] = 0x0002;
+	mem16[0x80008 /2] = 0x4E75;
+
+	init_neogeo();
+
+	/* old fr2cd code:
+	uint16_t *mem16 = (uint16_t*)memory_region(machine, "maincpu");
+	mem16[0x1BF2/2] = 0x4E71;
+	mem16[0x1BF4/2] = 0x4E71;
+	mem16[0x1BF6/2] = 0x4E71;
+	init_neogeo();  */
+}
+
+/*********************************************** DARKSOFT */
+
+void neogeo_state::init_darksoft()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_ct2k3sadd()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->decrypt_ct2k3sa(spr_region, spr_region_size, audiocpu_region,audio_region_size);
+	m_bootleg_prot->patch_ct2k3sa(cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_ct2k3spdd()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->patch_cthd2003(m_maincpu,m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_cthd2003dd()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->patch_cthd2003(m_maincpu,m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_fatfury2dd()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_fatfury2_prot->fatfury2_install_protection(m_maincpu,m_banked_cart);
+}
+
+void neogeo_state::init_garoudd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+    m_sma_prot->garou_install_protection(m_maincpu,m_banked_cart);
+}
+
+void neogeo_state::init_garouhdd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+    m_sma_prot->garouh_install_protection(m_maincpu,m_banked_cart);
+}
+
+void neogeo_state::init_jockeygpdd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+    m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, JOCKEYGP_GFX_KEY);
+	/* install some extra RAM */
+	m_extra_ram = std::make_unique<uint16_t[]>(0x1000);
+	m_maincpu->space(AS_PROGRAM).install_ram(0x200000, 0x201fff, m_extra_ram.get());
+	save_pointer(NAME(m_extra_ram), 0x1000);
+}
+
+void neogeo_state::init_kf2k3pldd()
+{
+	init_neogeo();
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->kf2k3pl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_kf2k3upldd()
+{
+	init_neogeo();
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_bootleg_prot->kf2k3bl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_kof98dd()
+{
+	init_neogeo();
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_kof98_prot->kof98_decrypt_68k(cpuregion, cpuregion_size);
+	m_kof98_prot->install_kof98_protection(m_maincpu);
+}
+
+void neogeo_state::init_kof99dd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+    m_sma_prot->kof99_install_protection(m_maincpu, m_banked_cart);
+}
+
+void neogeo_state::init_kof2000dd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_sma_prot->kof2000_install_protection(m_maincpu, m_banked_cart);
+}
+
+void neogeo_state::init_kof2002dd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+    m_kof2002_prot->kof2002_decrypt_68k(cpuregion, cpuregion_size);
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_kof2003dd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_matrimdd()
+{
+	init_neogeo();
+    m_sprgen->m_fixed_layer_bank_type = 2;
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+}
+
 void neogeo_state::init_ms5pcbdd()
 {
 	init_neogeo();
@@ -1713,55 +3515,51 @@ void neogeo_state::init_ms5pcbdd()
 	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
 }
 
-void neogeo_state::init_mslug5()
+void neogeo_state::init_ms5plusdd()
 {
 	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
-
-	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
-	if (ram[0x100] != 0x45)
-	{
-		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
-		m_pvc_prot->mslug5_decrypt_68k(cpuregion, cpuregion_size);
-		m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
-	}
-
-	// decrypt m1 if needed
-	if (memregion("audiocrypt"))
-		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
-
-	// decrypt v roms if needed
-	ram = memregion("ymsnd")->base();
-	if (ram[0x60] != 0x82)
-	{
-		//printf("ym=%X\n",ram[0x60]);
-		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 2);
-	}
-
-	// decrypt c roms if needed
-	ram = memregion("sprites")->base();
-	if (ram[0] != 0)
-	{
-		//printf("Sprites=%X\n",ram[0]);
-		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG5_GFX_KEY);
-	}
-
-	// if no s rom, copy info from end of c roms
-	ram = memregion("fixed")->base();
-	if (ram[0x100] == 0)
-	{
-		//printf("Fixed1=%X\n",ram[0x100]);
-		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
-	}
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 2);
+	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+    m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG5_GFX_KEY);
+    m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+	m_bootleg_prot->install_ms5plus_protection(m_maincpu,m_banked_cart);
 }
 
-void neogeo_state::init_mslug5b()
+void neogeo_state::init_mslug3dd()
 {
 	init_neogeo();
-	m_bootleg_prot->mslug5b_vx_decrypt(ym_region, ym_region_size);
-	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size, 2);
-	m_bootleg_prot->mslug5b_cx_decrypt(spr_region, spr_region_size);
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_cmc_prot->cmc42_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG3_GFX_KEY);
+	m_sma_prot->mslug3_install_protection(m_maincpu,m_banked_cart);
+}
+
+void neogeo_state::init_mslug3ndd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_sma_prot->mslug3_install_protection(m_maincpu,m_banked_cart);
+}
+
+
+void neogeo_state::init_mslug4dd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+    m_pcm2_prot->neo_pcm2_snk_1999(ym_region, ym_region_size, 8);
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+    m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG4_GFX_KEY);
+    m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
+}
+
+void neogeo_state::init_mslug4ndd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
 }
 
 void neogeo_state::init_mslug5dd()
@@ -1775,67 +3573,40 @@ void neogeo_state::init_mslug5dd()
 	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
 }
 
-void neogeo_state::init_mslug5e()
-{
-	init_mslug5();
-	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
-}
-
-void neogeo_state::init_mslug5nd()
-{
-	init_neogeo();
-	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
-
-	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
-	if (ram[0x100] != 0x45)
-	{
-		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
-		m_pvc_prot->mslug5nd_decrypt_68k(cpuregion, cpuregion_size);
-	}
-
-	// decrypt m1 if needed
-	if (memregion("audiocrypt"))
-		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
-
-	// decrypt v roms if needed
-	ram = memregion("ymsnd")->base();
-	if (ram[0x60] != 0x82)
-	{
-		//printf("ym=%X\n",ram[0x60]);
-		m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 2);
-	}
-
-	// decrypt c roms if needed
-	ram = memregion("sprites")->base();
-	if (ram[0] != 0)
-	{
-		//printf("Sprites=%X\n",ram[0]);
-		m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG5_GFX_KEY);
-	}
-
-	// if no s rom, copy info from end of c roms
-	ram = memregion("fixed")->base();
-	if (ram[0x100] == 0)
-	{
-		//printf("Fixed1=%X\n",ram[0x100]);
-		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
-	}
-}
-
-/*********************************************** misc carts */
-
-void neogeo_state::init_mslugx()
-{
-	init_neogeo();
-	m_mslugx_prot->mslugx_install_protection(m_maincpu);
-}
-
 void neogeo_state::init_mslugxdd()
 {
 	init_neogeo();
 	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
 	m_mslugx_prot->mslugx_install_protection(m_maincpu);
+}
+
+void neogeo_state::init_svcdd()
+{
+	init_neogeo();
+
+    m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+}
+
+void neogeo_state::init_vlinerdd()
+{
+	m_banked_cart->install_banks(machine(), m_maincpu, m_region_maincpu->base(), m_region_maincpu->bytes());
+
+	m_sprgen->m_fixed_layer_bank_type = 0;
+
+	m_sprgen->set_sprite_region(m_region_sprites->base(), m_region_sprites->bytes());
+	m_sprgen->set_fixed_regions(m_region_fixed->base(), m_region_fixed->bytes(), m_region_fixedbios);
+    
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	
+	m_extra_ram = std::make_unique<uint16_t[]>(0x1000);
+	m_maincpu->space(AS_PROGRAM).install_ram(0x200000, 0x201fff, m_extra_ram.get());
+	save_pointer(NAME(m_extra_ram), 0x1000);
+
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x300000, 0x300001, 0x01ff7e, "DSW");
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x280000, 0x280001, "IN5");
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x2c0000, 0x2c0001, "IN6");
 }
 
 /********************************************************* */

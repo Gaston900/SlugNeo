@@ -187,8 +187,9 @@
 #define IDI_FOLDER_COLLECTION		    307
 #define IDI_FOLDER_UPDATE				308
 #define IDI_FOLDER_CONSOLE              309
-#define IDI_HEADER_UP                   310
-#define IDI_HEADER_DOWN                 311
+#define IDI_FOLDER_MVS			        310
+#define IDI_HEADER_UP                   311
+#define IDI_HEADER_DOWN                 312
 
 #define IDC_LIST                        1000
 #define IDC_JOYSTICK                    1003

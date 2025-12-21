@@ -17,7 +17,7 @@ ROM_START( 2020bbdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cf466ec) SHA1(6a003b53c7a4af9d7529e2c10f27ffc4e58dcda5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5b021231) SHA1(3a751461f02f9b865686c6a403b38c7c82eda992) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -33,7 +33,7 @@ ROM_START( 2020bbadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cf466ec) SHA1(6a003b53c7a4af9d7529e2c10f27ffc4e58dcda5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5b021231) SHA1(3a751461f02f9b865686c6a403b38c7c82eda992) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -49,7 +49,7 @@ ROM_START( 2020bbhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cf466ec) SHA1(6a003b53c7a4af9d7529e2c10f27ffc4e58dcda5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5b021231) SHA1(3a751461f02f9b865686c6a403b38c7c82eda992) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -65,7 +65,7 @@ ROM_START( 3countbdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7eab59cb) SHA1(5ae4107457e091f73960bfba39b589ae36d51ca3) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(26f79226) SHA1(1cfd98233be1129a3610b2670587b584e982ddb0) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -81,7 +81,7 @@ ROM_START( alpham2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(28dfe2cd) SHA1(1a1a99fb917c6c8db591e3be695ce03f843ee1df) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(e609b3ad) SHA1(fcc46f5bb0891e6b71a0d59ce8f781bbb16d8288) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -97,7 +97,7 @@ ROM_START( alpham2pdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(5976b464) SHA1(ec824567ecc3579f6d86c9d9385710cbaeef16a3) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x380000, CRC(9f08b300) SHA1(9156945c2a07d538c4212043b01ac5a09df451ea) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -113,7 +113,7 @@ ROM_START( androdundd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(edd2acf4) SHA1(c4ee6ba834d54b9fc5a854dbc41a05877e090371) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(ce43cb89) SHA1(47f82e077abb6efc6b1b0490412ae147d5d2acef) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -129,7 +129,7 @@ ROM_START( aodkdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5a52a9d1) SHA1(ef913a9a55d29d5dd3beab1ce6039d64ce9b1a5b) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(e8ab7c8a) SHA1(ec44609d05c3a90f16316ce1f3ef06a87decca9d) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -145,7 +145,7 @@ ROM_START( aofdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0987e4bb) SHA1(8fae4b7fac09d46d4727928e609ed9d3711dbded) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(8bff8c7b) SHA1(b9f393953928615b1b3f28822eb4e458a8e54aba) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -161,7 +161,7 @@ ROM_START( aof2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f27e9d52) SHA1(dddae733d87ce7c88ad2580a8f64cb6ff9572e67) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(d28ad285) SHA1(ad1e38b3426022bf5a58ced71410d3c2e4da1a7a) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -177,7 +177,7 @@ ROM_START( aof2add )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f27e9d52) SHA1(dddae733d87ce7c88ad2580a8f64cb6ff9572e67) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(d28ad285) SHA1(ad1e38b3426022bf5a58ced71410d3c2e4da1a7a) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -193,7 +193,7 @@ ROM_START( aof3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb07b659) SHA1(940b379957c2987d7ab0443cb80c3ff58f6ba559) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(c8e41f27) SHA1(d8225928ac3bb10121f12b9b3b016f35c24d3b7c) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -209,7 +209,7 @@ ROM_START( aof3kdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb07b659) SHA1(940b379957c2987d7ab0443cb80c3ff58f6ba559) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(c8e41f27) SHA1(d8225928ac3bb10121f12b9b3b016f35c24d3b7c) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -225,7 +225,7 @@ ROM_START( b2bdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6da739ad) SHA1(cbf5f55c54b4ee00943e2a411eeee4e465ce9c34) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(50feffb0) SHA1(00127dae0130889995bfa7560bc4b0662f74fba5) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -241,7 +241,7 @@ ROM_START( bakatonodd )
 
     NEO_JAPAN_BIOS_AUDIO(0x20000, "036.m1", CRC(f1385b96) SHA1(e7e3d1484188a115e262511116aaf466b8b1f428) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5c3b339b) SHA1(79e1c46c83ea5976525f157b6b7b797e5d3f7327) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -257,7 +257,7 @@ ROM_START( bangbeadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(85668ee9) SHA1(7d3f51710cf90c097cd3faaeeef10ceb85cbb3e8) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(0091e1f2) SHA1(c970a5312954af2452ab086dbf409362869e02a4) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -273,7 +273,7 @@ ROM_START( bjourneydd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e1d4ab6) SHA1(deabc11ab81e7e68a3e041c03a127ae28d0d7264) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(52e5d5a7) SHA1(d50f5bdc2b83232298e96059c380b41879506bdf) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -289,7 +289,7 @@ ROM_START( bjourneyhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e1d4ab6) SHA1(deabc11ab81e7e68a3e041c03a127ae28d0d7264) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(52e5d5a7) SHA1(d50f5bdc2b83232298e96059c380b41879506bdf) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -305,7 +305,7 @@ ROM_START( blazstardd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d31a3aea) SHA1(e23abfeb23052f0358edcf2c83401025fe632511) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(79544c10) SHA1(c2820b1c7b324deea5e2fdddec9e47daae88c9be) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -321,7 +321,7 @@ ROM_START( breakersdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3951a1c1) SHA1(1e6442a7ea82ada9503d71045dd93e12bd05254f) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(c1cd8b16) SHA1(f407f0c59f90d7c86cd2aca9807c14dfcc814eff) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -337,7 +337,7 @@ ROM_START( breakrevdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(00f31c66) SHA1(8488598415c9b74bce00e05b31d96e3d1625c20d) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(41d0e3c4) SHA1(d82c03e9ced3e4fd7a68020e2788f5720e65fede) )
 
 	ROM_REGION( 0x1800000, "sprites", 0 )
@@ -353,7 +353,7 @@ ROM_START( bstarsdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4ecaa4ee) SHA1(50abfb8eed6cb4887393089f9ccc76f306ef69b5) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(8126a249) SHA1(1991a0f634d2882c5969686227c930de14dbef87) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -369,7 +369,7 @@ ROM_START( bstarshdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4ecaa4ee) SHA1(50abfb8eed6cb4887393089f9ccc76f306ef69b5) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(8126a249) SHA1(1991a0f634d2882c5969686227c930de14dbef87) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -385,7 +385,7 @@ ROM_START( bstars2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(15c177a6) SHA1(3f4abed635102f9bc8b44809750828c82e79b44f) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(5e70d959) SHA1(cd6c271d2862903177db69222cbdc99f6b09df78) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -401,7 +401,7 @@ ROM_START( burningfdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c939ee2) SHA1(57d580d3279e66b9fe66bbcc68529d3384a926ff) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(f6c7741e) SHA1(b53e47f10e12f8c67b2c1fa54b0feb3019ff9e21) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -417,7 +417,7 @@ ROM_START( burningfhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c939ee2) SHA1(57d580d3279e66b9fe66bbcc68529d3384a926ff) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(f6c7741e) SHA1(b53e47f10e12f8c67b2c1fa54b0feb3019ff9e21) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -433,7 +433,7 @@ ROM_START( burningfpdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(470dd5d4) SHA1(4291811b4aefe45261a1ae3631b6999fcd74fb3f) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x180000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x180000, CRC(c2af2322) SHA1(d0959a1e7e7777ac22bb4529fab362bb0c01c66c) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -449,7 +449,7 @@ ROM_START( burningfpadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rompa", CRC(2b0c0415) SHA1(a5a0d5e3ea2ef77b6f5cd14f2907ab2f1aed76b7) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0pa", 0x000000, 0x200000, CRC(1018b733) SHA1(26ef911a0afff0eb3b7bc528d9bb4aa77dfeb5a4) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -465,7 +465,7 @@ ROM_START( crswd2bldd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(63e28343) SHA1(f46dbc2f1d6033b11047cca31a9a7d715dc69cb2) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(22d4b93b) SHA1(0515f2ee5d9a8ce424c80721e06f746ac6a543a8) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -481,7 +481,7 @@ ROM_START( crsworddd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9504b2c6) SHA1(9ce8e681b9df6eacd0d23a36bad836bd5074233d) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(61fedf65) SHA1(98f31d1e23bf7c1f7844e67f14707a704134042e) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -497,7 +497,7 @@ ROM_START( ct2k3sadd )
 
 	NEO_BIOS_AUDIO_128K( "m1roms", CRC(7dfce5c0) SHA1(56084223e23ad5ca60f7d819bdcd2c61c0a7d523) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -513,7 +513,7 @@ ROM_START( ct2k3spdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romsp", CRC(526cccab) SHA1(f7931f42e6f27c3da1902a552a983ca588e2418b) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -529,7 +529,7 @@ ROM_START( cthd2003dd )
 
 	NEO_BIOS_AUDIO_128K( "m1romsp", CRC(526cccab) SHA1(f7931f42e6f27c3da1902a552a983ca588e2418b) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -545,7 +545,7 @@ ROM_START( ctomadaydd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(80328a47) SHA1(34b6b1a81eab1cf38834b2eea55454ce1b6100e2) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(2267cf15) SHA1(2e927a73752b5faff8a05a2ec7be248178bf0111) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -561,7 +561,7 @@ ROM_START( cyberlipdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8be3a078) SHA1(054ec6a061fcc88df1ecbb0a01611a31f37a7709) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(e16a8638) SHA1(f70b8b7e039998ac6c71b2a2540649cbdea47154) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -577,7 +577,7 @@ ROM_START( diggermadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(e777a234) SHA1(9f3974ac07859337bc0203f903c40ae3f60dc1fb) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(ee15bda4) SHA1(fe2206728e6efd02d6302869a98b196eb19a17df) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -593,7 +593,7 @@ ROM_START( doubledrdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(10b144de) SHA1(cf1ed0a447da68240c62bcfd76b1569803f6bf76) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(ba08bcf5) SHA1(08e32f0ce4d3829b6d888511b1137a779dba7b68) )
 
 	ROM_REGION( 0xe00000, "sprites", 0 )
@@ -609,7 +609,7 @@ ROM_START( dragonshdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(154803cc) SHA1(7e6591cd465cbb35d6d3446c5a83b46d30fafe95) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(9a4109e5) SHA1(ba59caac5f5a80fc52c507d8a47f322a380aa9a1) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -625,7 +625,7 @@ ROM_START( eightmandd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9927034c) SHA1(205665361c5b2ab4f01ec480dd3c9b69db858d09) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(aaa8ff0c) SHA1(6d76b944d6cc738cc0d9d3287dabf5baf7527816) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -641,7 +641,7 @@ ROM_START( fatfurspdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(ccc5186e) SHA1(cf9091c523c182aebfb928c91640b2d72fd70123) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(dfeebb9e) SHA1(2b52dbfc0826fe8142f3de264f8403f6a595f056) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -657,7 +657,7 @@ ROM_START( fatfurspadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(ccc5186e) SHA1(cf9091c523c182aebfb928c91640b2d72fd70123) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(dfeebb9e) SHA1(2b52dbfc0826fe8142f3de264f8403f6a595f056) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -673,7 +673,7 @@ ROM_START( fatfury1dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5be10ffd) SHA1(90a5e6cbbc58a7883cd2a3a597180d631a466882) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(ad86f0cd) SHA1(ea7fe03a8e93cc4fba7b18ddbda74f1e562ba85b) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -689,7 +689,7 @@ ROM_START( fatfury2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(820b0ba7) SHA1(5708248d89446e49184eaadb52f7c61b2b6c13c5) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d559fe79) SHA1(d7d426cd89003aa83e74c84a6e3e7170869f8e54) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -705,7 +705,7 @@ ROM_START( fatfury3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fce72926) SHA1(a40c74f793900b8542f0b8383ce4bf46fca112d4) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(195f9afb) SHA1(167b2fdb8942ad204a442aa5d9fc6fe466bc659f) )
 
 	ROM_REGION( 0x1400000, "sprites", 0 )
@@ -721,7 +721,7 @@ ROM_START( fbfrenzydd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f41b16b8) SHA1(f3e1cfc4cd2c5baece176f169906aa796367d303) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(14e641eb) SHA1(5041e00a0bc5af07d100ce4cc2686e81c92b0054) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -737,7 +737,7 @@ ROM_START( fightfevdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0b7c4e65) SHA1(999a1e784de18db3f1332b30bc425836ea6970be) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(e46a0876) SHA1(acd71797ca742626b4292123cdb1820af2d1358c) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -753,7 +753,7 @@ ROM_START( fightfevadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0b7c4e65) SHA1(999a1e784de18db3f1332b30bc425836ea6970be) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(e46a0876) SHA1(acd71797ca742626b4292123cdb1820af2d1358c) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -769,7 +769,7 @@ ROM_START( flipshotdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a9fe0144) SHA1(4cc076ecce9216a373f3dcd7ba28a03d6050e522) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(42ec743d) SHA1(f45b5167ebcbd59300f4e5b05448cd421654102a) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -785,7 +785,7 @@ ROM_START( froman2bdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(da4878cf) SHA1(ce13d18a4c5d01974df8542c67c4df00dbc6e7c1) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(6f8ccddc) SHA1(696df2d0f416c2374b0eb7c858486054688c5bca) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -801,7 +801,7 @@ ROM_START( fswordsdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e6440eb) SHA1(e3f72150af4e326543b29df71cda27d73ec087c1) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(aab5a60a) SHA1(bc0a5687cd6b0f65693f0350ecfe1284c7c39f74) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -817,7 +817,7 @@ ROM_START( galaxyfgdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e9e3b10) SHA1(7c44d1dbd4f8d337c99e90361d1dab837df85e31) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(f64c4d83) SHA1(888cac2e639e683c7528221144ef54f2b73340d8) )
 
 	ROM_REGION( 0xe00000, "sprites", 0 )
@@ -833,7 +833,7 @@ ROM_START( ganryudd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(30cc4099) SHA1(46453b7aac41855a92724a785372f8daf931d8d4) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(e5946733) SHA1(d5904a50465af03d6ff33399a98f3259721ca0b2) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -849,7 +849,7 @@ ROM_START( garoudd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(36a806be) SHA1(90fb44dc0c3fb57946a0f35716056abb84a0f191) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(123d8987) SHA1(cecf4d70ba84f3d8b1180ac2707e168f5b219a0f) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -865,7 +865,7 @@ ROM_START( garoubldd )
 
 	NEO_BIOS_AUDIO_512K( "m1romb", CRC(7c51d002) SHA1(01ffba6cbc8da07804f7b21d8c71c39d64a1a4e2) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0b", 0x000000, 0x1000000, CRC(3ae16bd4) SHA1(51feed35155ffafd25b75be3c4d58a381c8c27ea) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -881,7 +881,7 @@ ROM_START( garouhdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(36a806be) SHA1(90fb44dc0c3fb57946a0f35716056abb84a0f191) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(123d8987) SHA1(cecf4d70ba84f3d8b1180ac2707e168f5b219a0f) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -897,7 +897,7 @@ ROM_START( garouhadd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(36a806be) SHA1(90fb44dc0c3fb57946a0f35716056abb84a0f191) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(123d8987) SHA1(cecf4d70ba84f3d8b1180ac2707e168f5b219a0f) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -913,7 +913,7 @@ ROM_START( garoupdd )
 
 	NEO_BIOS_AUDIO_256K( "m1romp", CRC(bbe464f7) SHA1(f5f8f3e48f5d453f45107085d6f4023bcd24c053) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(5cf3e13c) SHA1(9a5c718a6f4310a97d0a28dfa957fcaf6397e9f7) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -929,7 +929,7 @@ ROM_START( ghostlopdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fd833b33) SHA1(ab6c218c42cba821654cbdae154efecb69f844f6) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(c603fce6) SHA1(5a866471d35895b2ae13cbd5d1cb41bf2e72e1b8) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -945,7 +945,7 @@ ROM_START( goalx3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cd758325) SHA1(b51eac634fc646c07210dff993018ad9ebabd3f9) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(ef214212) SHA1(3e05ccaa2d06decb18b379b96f900c0e6b39ce70) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -961,7 +961,7 @@ ROM_START( gowcaizrdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(78c851cb) SHA1(a9923c002e4e2171a564af45cff0958c5d57b275) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(8608b27d) SHA1(a06c07801cd6449a3730b6162b5edaf6cf999e6c) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -977,7 +977,7 @@ ROM_START( gpilotsdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(48409377) SHA1(0e212d2c76856a90b2c2fdff675239525972ac43) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(85f0a01b) SHA1(d40099a653d391575bcbacb7a76f9a3edbc2e1d6) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -993,7 +993,7 @@ ROM_START( gpilotshdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(48409377) SHA1(0e212d2c76856a90b2c2fdff675239525972ac43) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(85f0a01b) SHA1(d40099a653d391575bcbacb7a76f9a3edbc2e1d6) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -1009,7 +1009,7 @@ ROM_START( gururindd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9e3c6328) SHA1(17e8479c258f28a01d2283be9e692ff7685898cc) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(cf23afd0) SHA1(10f87014ee10613f92b04f482f449721a6379db7) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -1025,7 +1025,7 @@ ROM_START( ironcladd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3a08bb63) SHA1(d8fbbf42a006ccafc3cd99808d28c82dbaac4590) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(8f30a215) SHA1(0ee866a468c4c3608d55df2b5cb9243c8016d77c) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -1041,7 +1041,7 @@ ROM_START( ironcladod )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3a08bb63) SHA1(d8fbbf42a006ccafc3cd99808d28c82dbaac4590) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(8f30a215) SHA1(0ee866a468c4c3608d55df2b5cb9243c8016d77c) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -1066,7 +1066,7 @@ ROM_START( irrmazedd )
 	ROM_LOAD( "m1rom", 0x00000, 0x20000, CRC(880a1abd) SHA1(905afa157aba700e798243b842792e50729b19a0) )
 	ROM_RELOAD( 0x10000, 0x20000 )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(faaadfba) SHA1(2dc75d39ce9e2a54bfba4ca960f7fc069d059995) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -1082,7 +1082,7 @@ ROM_START( janshindd )
 
 	NEO_JAPAN_BIOS_AUDIO(0x20000, "048.m1", CRC(310467c7) SHA1(c529961195c9bdf5d1ce70a38ad129002d1f3b5f) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(f1947d2b) SHA1(955ff91ab24eb2a7ec51ff46c9f9f2ec060456b2) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -1099,7 +1099,7 @@ ROM_START( jockeygpdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(1cab4de2) SHA1(112ff90806d8757db0685b88b762c45ed02548de) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(443eadba) SHA1(3def3c22f0e276bc4c2fc7ff70ce473c08b0d2df) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -1115,7 +1115,7 @@ ROM_START( jockeygpadd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(1cab4de2) SHA1(112ff90806d8757db0685b88b762c45ed02548de) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(443eadba) SHA1(3def3c22f0e276bc4c2fc7ff70ce473c08b0d2df) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -1133,7 +1133,7 @@ ROM_START( joyjoydd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(5a4be5e8) SHA1(552f025ce0d51c25f42e1a81cf0d08376ca5475d) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(e189246a) SHA1(926e3d58258f25ec1085f120f524b2012b7fc9c5) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -1149,7 +1149,7 @@ ROM_START( kabukikldd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(91957ef6) SHA1(7b6907532a0e02ceb643623cbd689cf228776ed1) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(5566aeed) SHA1(d892c4f944e69735473d2724775d8e839418c134) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -1165,7 +1165,7 @@ ROM_START( karnovrdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(030beae4) SHA1(ceb6ee6c09514504efacdbca7b280901e4c97084) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(0b7ea37a) SHA1(34e7d4f6db053674a7e8c8b2e3e398777d5b02e6) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -1181,7 +1181,7 @@ ROM_START( kf2k2mpdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1197,7 +1197,7 @@ ROM_START( kf2k2mp2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1213,7 +1213,7 @@ ROM_START( kf2k2pladd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1229,7 +1229,7 @@ ROM_START( kf2k2plsdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1245,7 +1245,7 @@ ROM_START( kf2k3bldd )
 
     NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1261,7 +1261,7 @@ ROM_START( kf2k3bladd )
 
     NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1277,7 +1277,7 @@ ROM_START( kf2k3upldd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1293,7 +1293,7 @@ ROM_START( kf2k3pldd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1309,7 +1309,7 @@ ROM_START( kizunadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1b096820) SHA1(72852e78c620038f8dafde5e54e02e418c31be9c) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(c6263572) SHA1(cc9d2d77a3ef22426a2806fa55949377c2aa43b2) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -1325,7 +1325,7 @@ ROM_START( kof2000dd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(d404db70) SHA1(8cd1f3e140a9a367de23544e76371b0491287909) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(fe16ee57) SHA1(405cca65759258193e982b252c359d998a3f4919) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1341,7 +1341,7 @@ ROM_START( kof2000ndd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(d404db70) SHA1(8cd1f3e140a9a367de23544e76371b0491287909) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(fe16ee57) SHA1(405cca65759258193e982b252c359d998a3f4919) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1357,7 +1357,7 @@ ROM_START( kof2001dd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4bcc537b) SHA1(9fcf1342bcd53d5eec12c46ee41a51bf543256c2) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1373,7 +1373,7 @@ ROM_START( kof2001hdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4bcc537b) SHA1(9fcf1342bcd53d5eec12c46ee41a51bf543256c2) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1389,7 +1389,7 @@ ROM_START( kof2002dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1405,7 +1405,7 @@ ROM_START( kof2002bdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1421,7 +1421,7 @@ ROM_START( kof2003dd )
 
     NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1437,7 +1437,7 @@ ROM_START( kof2003hdd )
 
     NEO_BIOS_AUDIO_512K( "m1romh", CRC(5edcbaee) SHA1(014e98b2dc2fdc817ea847cdb0ec787dad10e60a) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1453,7 +1453,7 @@ ROM_START( kof10thdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romt", CRC(f6fab859) SHA1(0184aa1394b9f9946d610278b53b846020dd88dc) )
 	
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1469,7 +1469,7 @@ ROM_START( kf10thepdd )
 
     NEO_BIOS_AUDIO_128K( "m1romtp", CRC(5a47d9ad) SHA1(0197737934653acc6c97221660d789e9914f3578) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1485,7 +1485,7 @@ ROM_START( kf2k5unidd )
 
     NEO_BIOS_AUDIO_128K( "m1romt", CRC(f6fab859) SHA1(0184aa1394b9f9946d610278b53b846020dd88dc) )
 	
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1501,7 +1501,7 @@ ROM_START( kof2k4sedd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5a47d9ad) SHA1(0197737934653acc6c97221660d789e9914f3578) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(9e5f37b3) SHA1(ba53d702fe0af99561aaca953e8491b04840af9b) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1517,7 +1517,7 @@ ROM_START( kof94dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f6e77cf5) SHA1(292a3e3a4918ffe72bd1c41acb927b91844e035e) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(cc4d2f17) SHA1(85e58329f94e503dc3b1498759d2f48af0119a11) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -1533,7 +1533,7 @@ ROM_START( kof95dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6f2d7429) SHA1(6f8462e4f07af82a5ca3197895d5dcbb67bdaa61) )
 
-	ROM_REGION( 0x900000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x900000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x900000, CRC(41442b1e) SHA1(7460f5815c374bdeac8b60045ae5d7f3e3e4d92d) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -1549,7 +1549,7 @@ ROM_START( kof95hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6f2d7429) SHA1(6f8462e4f07af82a5ca3197895d5dcbb67bdaa61) )
 
-	ROM_REGION( 0x900000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x900000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x900000, CRC(41442b1e) SHA1(7460f5815c374bdeac8b60045ae5d7f3e3e4d92d) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -1565,7 +1565,7 @@ ROM_START( kof96dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(dabc427c) SHA1(b76722ed142ee7addceb4757424870dbd003e8b3) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(4f14a72b) SHA1(fb1105aa271ea14016f777017cf6079ff61e176f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -1581,7 +1581,7 @@ ROM_START( kof96hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(dabc427c) SHA1(b76722ed142ee7addceb4757424870dbd003e8b3) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(4f14a72b) SHA1(fb1105aa271ea14016f777017cf6079ff61e176f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -1597,7 +1597,7 @@ ROM_START( kof97dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1613,7 +1613,7 @@ ROM_START( kof97hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1629,7 +1629,7 @@ ROM_START( kof97kdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romk", CRC(bbea9070) SHA1(c26c2e29fe90966dd574838be63f0037ea799aca) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1645,7 +1645,7 @@ ROM_START( kof97plsdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1661,7 +1661,7 @@ ROM_START( kof97orodd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1677,7 +1677,7 @@ ROM_START( kof98dd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4ef7016b) SHA1(4182235e963bd70d398a79abeb54ab4d62887c48) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1693,7 +1693,7 @@ ROM_START( kof98hdd )
 
 	NEO_BIOS_AUDIO_256K( "m1romh", CRC(4e7a6b1b) SHA1(b54d08f88713ed0271aa06f9f7c9c572ef555b1a) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1709,7 +1709,7 @@ ROM_START( kof98kdd )
 
 	NEO_BIOS_AUDIO_256K( "m1romk", CRC(ce12da0c) SHA1(e7c01dae2852d543d1a58d55735239f6a5aa05a5) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1725,7 +1725,7 @@ ROM_START( kof98kadd )
 
 	NEO_BIOS_AUDIO_256K( "m1romka", CRC(ce9fb07c) SHA1(631d995f1291dd803fb069f3b25e7b9ed30d8649) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1741,7 +1741,7 @@ ROM_START( kof99dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1757,7 +1757,7 @@ ROM_START( kof99edd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1773,7 +1773,7 @@ ROM_START( kof99hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1789,7 +1789,7 @@ ROM_START( kof99kdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1805,7 +1805,7 @@ ROM_START( kof99kadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1821,7 +1821,7 @@ ROM_START( kof99pdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -1837,7 +1837,7 @@ ROM_START( kogdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1853,7 +1853,7 @@ ROM_START( kotmdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9da9ca10) SHA1(88b915827d529f39c365d3e41197d5461e07a085) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(11ee40e1) SHA1(ab0e4032e4f6cec72b83f8bb341c89533ed61472) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -1869,7 +1869,7 @@ ROM_START( kotmhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9da9ca10) SHA1(88b915827d529f39c365d3e41197d5461e07a085) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(11ee40e1) SHA1(ab0e4032e4f6cec72b83f8bb341c89533ed61472) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -1885,7 +1885,7 @@ ROM_START( kotm2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c5b2ad5) SHA1(15eb5ea10fecdbdbcfd06225ae6d88bb239592e7) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(ef60c93e) SHA1(906022b4b5cc6b2fcd360b6b9e00d0a5cc713a9c) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -1901,7 +1901,7 @@ ROM_START( kotm2add )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c5b2ad5) SHA1(15eb5ea10fecdbdbcfd06225ae6d88bb239592e7) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(ef60c93e) SHA1(906022b4b5cc6b2fcd360b6b9e00d0a5cc713a9c) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -1917,7 +1917,7 @@ ROM_START( kotm2pdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c5b2ad5) SHA1(15eb5ea10fecdbdbcfd06225ae6d88bb239592e7) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(ef60c93e) SHA1(906022b4b5cc6b2fcd360b6b9e00d0a5cc713a9c) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -1933,7 +1933,7 @@ ROM_START( lans2004dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d0604ad1) SHA1(fae3cd52a177eadd5f5775ace957cc0f8301e65d) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(0c8b240d) SHA1(e9a74e30bdd5fefa62aaa40190554907717fb9b0) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -1949,7 +1949,7 @@ ROM_START( lastbladdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(087628ea) SHA1(48dcf739bb16699af4ab8ed632b7dcb25e470e06) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(436e8345) SHA1(1008bead25169fe0011349aa570a2cf660d0661a) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1965,7 +1965,7 @@ ROM_START( lastbladhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(087628ea) SHA1(48dcf739bb16699af4ab8ed632b7dcb25e470e06) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(436e8345) SHA1(1008bead25169fe0011349aa570a2cf660d0661a) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1981,7 +1981,7 @@ ROM_START( lastsoldd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(087628ea) SHA1(48dcf739bb16699af4ab8ed632b7dcb25e470e06) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(436e8345) SHA1(1008bead25169fe0011349aa570a2cf660d0661a) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -1997,7 +1997,7 @@ ROM_START( lasthopedd )
 
 	NEO_BIOS_AUDIO_128K( "m1rompe", CRC(113c870f) SHA1(854425eb4be0d7fa088a6c3bf6078fdd011707f5) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0pe", 0x000000, 0x600000, CRC(15b988fe) SHA1(7322559c81e1a06986261787d2bd1b0dff9aab19) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -2013,7 +2013,7 @@ ROM_START( lastbld2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(acf12d10) SHA1(6e6b98cc1fa44f24a5168877559b0055e6957b60) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(292764d2) SHA1(de6adf7d6d95ca4b7924aadde09d8720d2acea76) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -2029,7 +2029,7 @@ ROM_START( lbowlingdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d568c17d) SHA1(a2e318ed6ad1809c79f3f0853d75e0dd1a2f275c) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(1be11c1b) SHA1(a497ef21b894dc22f84ec1b4b44ba223cf57c077) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -2045,7 +2045,7 @@ ROM_START( legendosdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6f2843f0) SHA1(975fb1598b87a2798fff05e951fca2e2e0329e79) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(85065452) SHA1(7154b7c59b16c32753ac6b5790fb50b51ce30a20) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2061,7 +2061,7 @@ ROM_START( lresortdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cec19742) SHA1(ab6c6ba7737e68d2420a0617719c6d4c89039c45) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(30415bde) SHA1(47a9a38ab578496ee67e5f4a265b2cd410118b1f) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2077,7 +2077,7 @@ ROM_START( lresortpdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(22122875) SHA1(540c21559163381467679f836cb068adaf526659) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(30415bde) SHA1(47a9a38ab578496ee67e5f4a265b2cd410118b1f) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2093,7 +2093,7 @@ ROM_START( magdrop2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bddae628) SHA1(02c77e6aaaed43e39778bf83a3184e7c21db63d4) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(7e5e53e4) SHA1(72b063b2d4acaaf72a20d14ad5bfc90cb64d3fed) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -2109,7 +2109,7 @@ ROM_START( magdrop3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5beaf34e) SHA1(2905d26945932cddc2dd3a1dc5abba8aa3baee14) )
 
-	ROM_REGION( 0x480000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x480000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x480000, CRC(830a92d0) SHA1(b5745575772cee4e96978dbf3d182072b1b4ea80) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -2125,7 +2125,7 @@ ROM_START( maglorddd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(b4feaf72) SHA1(a09785576f449c6b30176eb8e931ce01afa37c8f) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2141,7 +2141,7 @@ ROM_START( maglordhdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0h", 0x000000, 0x300000, CRC(5554e011) SHA1(73326df2971ef4e8ce7a5b50b74a179114cbfe91) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2157,7 +2157,7 @@ ROM_START( mahretsudd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c71fbb3b) SHA1(59c58665b53da61352359d191a0569de5dd1f4b3) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(c40117d6) SHA1(603dc76a9805febf9bf3cb40710fb72235eaea30) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2173,7 +2173,7 @@ ROM_START( marukodqdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0e22902e) SHA1(fb8466c342d4abd8bb4cad01c6ceab03f96cdad8) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(bf7c6eee) SHA1(d507499c615541e4331107774e318031d85f1dcf) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -2189,7 +2189,7 @@ ROM_START( matrimdd )
 
     NEO_BIOS_AUDIO_128K( "m1rom", CRC(d2f3742d) SHA1(dd42f8a301f07e079fbc2bfd23e788baa03ca72d) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(40d12c68) SHA1(e445a42ab722ae44cabe0d7403b3380caccaa868) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -2205,7 +2205,7 @@ ROM_START( miexchngdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(de41301b) SHA1(59ce3836ac8f064d56a446c9374f05bcb40fcfd8) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(113fb898) SHA1(9168ba90c4aa969f69eb11ba3f4d76592d81e05a) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -2221,7 +2221,7 @@ ROM_START( minasandd )
 
     NEO_JAPAN_BIOS_AUDIO(0x20000, "027.m1", CRC(add5a226) SHA1(99995bef2584abbba16777bac52f55523f7aa97d) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(9a3bf33b) SHA1(a73283e09606672f44e766f246ace54274b82d1d) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2237,7 +2237,7 @@ ROM_START( moshougidd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a602c2c2) SHA1(19fd5d0379244c528b58343f6cbf78b4766fb23d) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(baa2b9a5) SHA1(914782b6c81d9a76ce02251575592b0648434ba3) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2253,7 +2253,7 @@ ROM_START( mutnatdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b6683092) SHA1(623ec7ec2915fb077bf65b4a16c815e071c25259) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(fb573f10) SHA1(17c4f50e9a9f9d845f9c199a65f655e65d7b0f51) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2269,7 +2269,7 @@ ROM_START( nam1975dd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ba874463) SHA1(a83514f4b20301f84a98699900e2593f1c1b8846) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(6c3e3c4e) SHA1(99013865513620ddec81d19e3cff1c0d765a9843) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2285,7 +2285,7 @@ ROM_START( ncombatdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b5819863) SHA1(6f2309d51531052dbf7d712993c9e35649db0d84) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(00e898fe) SHA1(2ae6e8bdc663d9493e271762455f03a88aa7a4f9) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2301,7 +2301,7 @@ ROM_START( ncombathdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b5819863) SHA1(6f2309d51531052dbf7d712993c9e35649db0d84) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(00e898fe) SHA1(2ae6e8bdc663d9493e271762455f03a88aa7a4f9) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2317,7 +2317,7 @@ ROM_START( ncommanddd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6fcf07d3) SHA1(e9ecff4bfec1f5964bf06645f75d80d611b6231c) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x180000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x180000, CRC(21871447) SHA1(ed314846ad9944aa6b523ddd40c5e412db18c092) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2333,7 +2333,7 @@ ROM_START( neobombedd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(e81e780b) SHA1(c56c53984e0f92e180e850c60a75f550ee84917c) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(71030f5c) SHA1(6a6c9c87d480ba6d3614110de980a9f8cc141c5d) )
 
 	ROM_REGION( 0x900000, "sprites", 0 )
@@ -2349,7 +2349,7 @@ ROM_START( neocup98dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a701b276) SHA1(055550ebc650835bcf8ea4457b2c91bd73e21281) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(0a9054af) SHA1(e2555f2ca62cc72bec15996286216d8382227993) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -2365,7 +2365,7 @@ ROM_START( neodriftdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(200045f1) SHA1(7a6cd1c8d4447ea260d7ff4520c676b8d685f2e4) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(1e2cb661) SHA1(0e6d3ed212d6d7f0bcedd70047d129e4659006c0) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -2381,7 +2381,7 @@ ROM_START( neomrdodd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b5b74a95) SHA1(7b01f3b87c247cc7472591f8cdcf0ae8065e31c6) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(4143c052) SHA1(561b19bc8811b80f2f42ffc0b5df27132696470a) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2397,7 +2397,7 @@ ROM_START( ninjamasdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d00fb2af) SHA1(6bcaa52e1641cc24288e1f22f4dc98e8d8921b90) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(b66a9556) SHA1(18dfd8eaa5d81b41f7e7cd16a154f3d3a6c164e9) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -2413,7 +2413,7 @@ ROM_START( nitddd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(6407c5e5) SHA1(d273e154cc905b63205a17a1a6d419cac3485a92) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(24b0480c) SHA1(d769e621be52a5cd2e2568891b5f95a48268e1e0) )
     ROM_FILL(0x50820,1,0x08)  // fix crackle when jumping
 
@@ -2430,7 +2430,7 @@ ROM_START( nitdbldd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(6407c5e5) SHA1(d273e154cc905b63205a17a1a6d419cac3485a92) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(24b0480c) SHA1(d769e621be52a5cd2e2568891b5f95a48268e1e0) )
     ROM_FILL(0x50820,1,0x08)  // fix crackle when jumping
 
@@ -2447,7 +2447,7 @@ ROM_START( overtopdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fcab6191) SHA1(488b8310b0957f0012fe50f73641b606f6ac4a57) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(013d4ef9) SHA1(438a697c44525bdf78b54432c4f7217ab5667047) )
 
 	ROM_REGION( 0x1400000, "sprites", 0 )
@@ -2463,7 +2463,7 @@ ROM_START( panicbomdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3cdf5d88) SHA1(6d8365a946fbd0b7c7b896536322638d80f6a764) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(58cf9f43) SHA1(ec09dc75a84da9479554dc83ab7002414e8809a3) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2479,7 +2479,7 @@ ROM_START( pbobbl2ndd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(883097a9) SHA1(677bf9684c0c7977a9a3f0c1288e430040a53b49) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(f64a1c80) SHA1(329089bbbb005e79f0ed1d1100588b6537bfc1a1) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -2495,7 +2495,7 @@ ROM_START( pbobblendd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f424368a) SHA1(5e5bbcaeb82bed2ee17df08f005ca20ad1030723) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(f864513f) SHA1(7dbf5306c97ab26b8520284a836fee47111a9b67) )
 
 	ROM_REGION( 0x500000, "sprites", 0 )
@@ -2511,7 +2511,7 @@ ROM_START( pbobblenbdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f424368a) SHA1(5e5bbcaeb82bed2ee17df08f005ca20ad1030723) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0b", 0x000000, 0x380000, CRC(84a65b55) SHA1(b90540dcc1574106c027054b75193031c044cebd) )
 
 	ROM_REGION( 0x500000, "sprites", 0 )
@@ -2527,7 +2527,7 @@ ROM_START( pgoaldd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(958efdc8) SHA1(aacc6056b1ff48cde8f241a11a27473cfb4b4aa3) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d0ae33d9) SHA1(cb21a91184d9d84ff25ca86c00dcadfc210272a8) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -2543,7 +2543,7 @@ ROM_START( pnyaadd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(d58eaa8e) SHA1(4c4faf1da671a41b4d854790eb623a40cb35f256) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(1ac7db71) SHA1(98ef758181da1632f9ba4aed70e8bd1f338976d7) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -2559,7 +2559,7 @@ ROM_START( pnyaaadd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(d58eaa8e) SHA1(4c4faf1da671a41b4d854790eb623a40cb35f256) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(1ac7db71) SHA1(98ef758181da1632f9ba4aed70e8bd1f338976d7) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -2575,7 +2575,7 @@ ROM_START( popbouncdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d4c946dd) SHA1(6ca09040b5db8d89511d627954c783154d58ab01) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(edcb1beb) SHA1(62f086b9968b366b59276ee4ae3c32c4d76fc6ce) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -2591,7 +2591,7 @@ ROM_START( preisle2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8efd4014) SHA1(5b73809b6e4e49264d281ef3e5004ac8a9de296d) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(2eebf135) SHA1(aed689fb1f7045d1752cfd0c301df5c3747b3791) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -2607,7 +2607,7 @@ ROM_START( pspikes2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b1c7911e) SHA1(27b298e7d50981331e17aa642e2e363ffac4333a) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(4888fd2d) SHA1(cf65d7216cc3759603fba59c8c265a6f9e4a99ea) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -2623,7 +2623,7 @@ ROM_START( pulstardd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(ff3df7c7) SHA1(59d2ef64f734f6026073b365300221909057a512) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(d2321023) SHA1(db60c6b4a26a32e9668fa0d4bc67f6075e832110) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -2639,7 +2639,7 @@ ROM_START( puzzldprdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9c0291ea) SHA1(3fa67c62acba79be6b3a98cc1601e45569fa11ae) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(debeb8fb) SHA1(49a3d3578c087f1a0050168571ef8d1b08c5dc05) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2655,7 +2655,7 @@ ROM_START( puzzledpdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9c0291ea) SHA1(3fa67c62acba79be6b3a98cc1601e45569fa11ae) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(debeb8fb) SHA1(49a3d3578c087f1a0050168571ef8d1b08c5dc05) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2671,7 +2671,7 @@ ROM_START( quizdai2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bb19995d) SHA1(ed458fad5a23c6bd0d099927d98c31e1e6562d1b) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(587ba62a) SHA1(7c755ddeaaa28b5f3375906a37731df67f34a425) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2687,7 +2687,7 @@ ROM_START( quizdaisdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(2a2105e0) SHA1(26fc13556fda2dbeb7b5b035abd994e302dc7662) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(a53e5bd3) SHA1(cf115c6478ce155d889e6a5acb962339e08e024b) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2703,7 +2703,7 @@ ROM_START( quizdaiskdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romk", CRC(d67f53f9) SHA1(73a1bd175ae29dd957a907a046884f8715bd0a34) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0k", 0x000000, 0x200000, CRC(986f4af9) SHA1(9e15d2142ec5e5d076582dc1cecfd724b0924f54) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2719,7 +2719,7 @@ ROM_START( quizkofdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f5f44172) SHA1(eaaba1781622901b91bce9257be4e05f84df053b) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(1cb0cc24) SHA1(74f3367e77b3c64575c7ecea98b1e6ef377e3c78) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -2735,7 +2735,7 @@ ROM_START( quizkofkdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romk", CRC(4f157e9a) SHA1(8397bfdd5738914670ada7cd8c611c20ed1f74da) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0k", 0x000000, 0x600000, CRC(55b781a3) SHA1(443d3f88cd15e52fd322c78a6e5056529ed0468b) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -2751,7 +2751,7 @@ ROM_START( ragnagrdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(17028bcf) SHA1(7a4e8f33ce9b41beac2152b8f6003f247699e2e1) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(b82a1235) SHA1(d35f9a5e2b345d3d4d0c4c92efca8dc660c0bac7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -2767,7 +2767,7 @@ ROM_START( rbff1dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(653492a7) SHA1(39e511fb9ed5d2135dc8428a31d0baafb2ab36e0) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(2c1aafd8) SHA1(2a2be69232dbeb49d33d938321c7a271c6d5b6cc) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -2783,7 +2783,7 @@ ROM_START( rbff1add )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(653492a7) SHA1(39e511fb9ed5d2135dc8428a31d0baafb2ab36e0) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(2c1aafd8) SHA1(2a2be69232dbeb49d33d938321c7a271c6d5b6cc) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -2799,7 +2799,7 @@ ROM_START( rbff1kdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(653492a7) SHA1(39e511fb9ed5d2135dc8428a31d0baafb2ab36e0) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(2c1aafd8) SHA1(2a2be69232dbeb49d33d938321c7a271c6d5b6cc) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -2815,7 +2815,7 @@ ROM_START( rbff2dd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ed482791) SHA1(1f54a45967cb7842c33aa24be322c9f33ff75ac3) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(b61bb6c5) SHA1(aee5865ae77a0b9be0bb8ce0f19cc8ffebe7120f) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -2831,7 +2831,7 @@ ROM_START( rbff2hdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ed482791) SHA1(1f54a45967cb7842c33aa24be322c9f33ff75ac3) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(b61bb6c5) SHA1(aee5865ae77a0b9be0bb8ce0f19cc8ffebe7120f) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -2847,7 +2847,7 @@ ROM_START( rbff2kdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ed482791) SHA1(1f54a45967cb7842c33aa24be322c9f33ff75ac3) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(b61bb6c5) SHA1(aee5865ae77a0b9be0bb8ce0f19cc8ffebe7120f) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -2863,7 +2863,7 @@ ROM_START( rbffspecdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3fee46bf) SHA1(e750f85233953853618fcdff980a4721af1710a3) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(a91dec92) SHA1(3822784150b84167a6efb9e3757f8d6cf02d8eb7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -2879,7 +2879,7 @@ ROM_START( rbffspeckdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3fee46bf) SHA1(e750f85233953853618fcdff980a4721af1710a3) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(a91dec92) SHA1(3822784150b84167a6efb9e3757f8d6cf02d8eb7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -2898,7 +2898,7 @@ ROM_START( ridherodd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(92e7b4fe) SHA1(d240056cd632f92bdfaa5e0492c09aa9bd7b0471) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(542a1821) SHA1(5f4db6e415ae5e0599b28d49305d16ab5145b003) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2917,7 +2917,7 @@ ROM_START( ridherohdd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(92e7b4fe) SHA1(d240056cd632f92bdfaa5e0492c09aa9bd7b0471) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(542a1821) SHA1(5f4db6e415ae5e0599b28d49305d16ab5145b003) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -2933,7 +2933,7 @@ ROM_START( roboarmydd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(35ec952d) SHA1(8aed30e26d7e2c70dbce5de752df416091066f7b) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(41648ed1) SHA1(b7ca7a4e851a9b49cd4a98a1ad48563e32700a52) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2949,7 +2949,7 @@ ROM_START( roboarmyadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(35ec952d) SHA1(8aed30e26d7e2c70dbce5de752df416091066f7b) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(41648ed1) SHA1(b7ca7a4e851a9b49cd4a98a1ad48563e32700a52) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -2965,7 +2965,7 @@ ROM_START( rotddd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c5d36af9) SHA1(320739d0cfa6cc84455ae1f7b1f9cdab3c018933) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f8d1) SHA1(1ddf77a928448560de417e7e277a090b9ee91023) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -2981,7 +2981,7 @@ ROM_START( rotdhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c5d36af9) SHA1(320739d0cfa6cc84455ae1f7b1f9cdab3c018933) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f8d1) SHA1(1ddf77a928448560de417e7e277a090b9ee91023) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -2997,7 +2997,7 @@ ROM_START( s1945pdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(994b4487) SHA1(a4e645a3ababa48a8325980ff022e04a8b51b017) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(7ea05e1c) SHA1(b70587b30135b25bae2e6681014e6c64ec202ec1) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3013,7 +3013,7 @@ ROM_START( samsh5spdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(203d744e) SHA1(24fc73943009effa14eed0f7a29955f349ca8e8f) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(ae5a592d) SHA1(e3f9b44c9b94007172ea07dac11789a62a3811e3) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3029,7 +3029,7 @@ ROM_START( samsh5sphdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(203d744e) SHA1(24fc73943009effa14eed0f7a29955f349ca8e8f) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(ae5a592d) SHA1(e3f9b44c9b94007172ea07dac11789a62a3811e3) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3045,7 +3045,7 @@ ROM_START( samsh5sphodd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(203d744e) SHA1(24fc73943009effa14eed0f7a29955f349ca8e8f) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(ae5a592d) SHA1(e3f9b44c9b94007172ea07dac11789a62a3811e3) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3061,7 +3061,7 @@ ROM_START( samshodd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(95170640) SHA1(125c502db0693e8d11cef619b090081c14a9a300) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(73379dae) SHA1(33ad195156741e2173a7085f1f15519be0a6aca6) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -3077,7 +3077,7 @@ ROM_START( samshohdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(95170640) SHA1(125c502db0693e8d11cef619b090081c14a9a300) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(73379dae) SHA1(33ad195156741e2173a7085f1f15519be0a6aca6) )
 
 	ROM_REGION( 0x900000, "sprites", 0 )
@@ -3093,7 +3093,7 @@ ROM_START( samsho2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(56675098) SHA1(90429fc40d056d480d0e2bbefbc691d9fa260fc4) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(7cfa47d1) SHA1(c8d0f278498117fbe2bb26983dfa6a83616e0a01) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -3109,7 +3109,7 @@ ROM_START( samsho2kdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(56675098) SHA1(90429fc40d056d480d0e2bbefbc691d9fa260fc4) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(7cfa47d1) SHA1(c8d0f278498117fbe2bb26983dfa6a83616e0a01) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -3125,7 +3125,7 @@ ROM_START( samsho2kadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(56675098) SHA1(90429fc40d056d480d0e2bbefbc691d9fa260fc4) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(7cfa47d1) SHA1(c8d0f278498117fbe2bb26983dfa6a83616e0a01) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -3141,7 +3141,7 @@ ROM_START( samsho3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e6440eb) SHA1(e3f72150af4e326543b29df71cda27d73ec087c1) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(aab5a60a) SHA1(bc0a5687cd6b0f65693f0350ecfe1284c7c39f74) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -3157,7 +3157,7 @@ ROM_START( samsho3hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e6440eb) SHA1(e3f72150af4e326543b29df71cda27d73ec087c1) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(aab5a60a) SHA1(bc0a5687cd6b0f65693f0350ecfe1284c7c39f74) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -3173,7 +3173,7 @@ ROM_START( samsho4dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7615bc1b) SHA1(b936f7b341f6fe0921b4c41049734684583e3596) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(35632afa) SHA1(36f29de056583dd9acca35f39281a4c1ef0adb32) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -3189,7 +3189,7 @@ ROM_START( samsho4kdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7615bc1b) SHA1(b936f7b341f6fe0921b4c41049734684583e3596) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(35632afa) SHA1(36f29de056583dd9acca35f39281a4c1ef0adb32) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -3205,7 +3205,7 @@ ROM_START( samsho5dd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(5218a10a) SHA1(da4968e55d4a56249d85d6742a6acffcff4ad65d) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(e32a49d0) SHA1(b659f9e014d2a208839d17e8527d88e7cf094c39) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3221,7 +3221,7 @@ ROM_START( samsho5hdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(5218a10a) SHA1(da4968e55d4a56249d85d6742a6acffcff4ad65d) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(e32a49d0) SHA1(b659f9e014d2a208839d17e8527d88e7cf094c39) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3237,7 +3237,7 @@ ROM_START( samsho5bdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romb", CRC(18114fb1) SHA1(016dc2f328340f3637a9bff373a20973df29f6b8) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0b", 0x000000, 0x1000000, CRC(fbfb6ea1) SHA1(201e39885d00abf3efaeca8fd0a53a7cf9c6dc06) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3253,7 +3253,7 @@ ROM_START( savageredd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(29992eba) SHA1(187be624abe8670503edb235ff21ae8fdc3866e0) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(97c9ca3b) SHA1(e1c533906b923ccf2661172eed97ae64f83ef05a) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -3269,7 +3269,7 @@ ROM_START( sbpdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b1f86f7) SHA1(15b6af7f9fbd0f1f6a1ecd912200ca8d0af2da2a) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(7ae9fbdb) SHA1(53d25c4f0a33392490fc74c2fa5329a31b246fde) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -3285,7 +3285,7 @@ ROM_START( sdodgebdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0a5f3325) SHA1(04e0236df478a5452654c823dcb42fea65b6a718) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(e7899a24) SHA1(3e75b449898fee73fbacf58d70e3a460b9e0c573) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -3301,7 +3301,7 @@ ROM_START( sengokudd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9b4f34c6) SHA1(7f3a51f47fcbaa598f5c76bc66e2c53c8dfd852d) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(4eeefbc4) SHA1(9928fde6191ed5e3bf484df23ea16ff2845e3666) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -3317,7 +3317,7 @@ ROM_START( sengokuhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9b4f34c6) SHA1(7f3a51f47fcbaa598f5c76bc66e2c53c8dfd852d) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(4eeefbc4) SHA1(9928fde6191ed5e3bf484df23ea16ff2845e3666) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -3333,7 +3333,7 @@ ROM_START( sengoku2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d4de4bca) SHA1(ecf604d06f01d40b04e285facef66a6ae2d35661) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(7a2696b5) SHA1(492c41449f6bc5c5a5dc5e86d162f52b12525037) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -3349,7 +3349,7 @@ ROM_START( sengoku3dd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7d501c39) SHA1(8e6bcc428f5ac7532d9c9be7e07ad0821461a080) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(7f45a0b5) SHA1(429985321f932921560de3737d370bb2ae51de5f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -3365,7 +3365,7 @@ ROM_START( sengoku3add )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7d501c39) SHA1(8e6bcc428f5ac7532d9c9be7e07ad0821461a080) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(7f45a0b5) SHA1(429985321f932921560de3737d370bb2ae51de5f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -3381,7 +3381,7 @@ ROM_START( shocktr2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d0604ad1) SHA1(fae3cd52a177eadd5f5775ace957cc0f8301e65d) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(0c8b240d) SHA1(e9a74e30bdd5fefa62aaa40190554907717fb9b0) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -3397,7 +3397,7 @@ ROM_START( shocktrodd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(075b9518) SHA1(ac21b88a860b9572bf24432b4cadcc96d108055d) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(7d670654) SHA1(f51d49921e73937bf72254d44078542d4b0b40d6) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -3413,7 +3413,7 @@ ROM_START( shocktroadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(075b9518) SHA1(ac21b88a860b9572bf24432b4cadcc96d108055d) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(7d670654) SHA1(f51d49921e73937bf72254d44078542d4b0b40d6) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -3429,7 +3429,7 @@ ROM_START( socbrawldd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb37427c) SHA1(99efe9600ebeda48331f396e3203c7588bdb7d24) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5e6c9152) SHA1(1dfd10d939f71e2576e01b3f0088cdfe116bc8d6) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -3445,7 +3445,7 @@ ROM_START( socbrawlhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb37427c) SHA1(99efe9600ebeda48331f396e3203c7588bdb7d24) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5e6c9152) SHA1(1dfd10d939f71e2576e01b3f0088cdfe116bc8d6) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -3461,7 +3461,7 @@ ROM_START( sonicwi2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bb828df1) SHA1(eab8e2868173bdaac7c7ed97305a9aa1033fd303) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(310843e1) SHA1(eba432b3658e3c6f5198459bfba8d675ca4dd0f6) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3477,7 +3477,7 @@ ROM_START( sonicwi3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b20e4291) SHA1(0e891ab53f9fded510295dfc7818bc59b4a9dd97) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(69dbfc77) SHA1(b3bbd257efb2836afd0d519db63fa66878831020) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -3493,7 +3493,7 @@ ROM_START( spinmastdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(76108b2f) SHA1(08c89a8b746dbb10ff885b41cde344173c2e3699) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(cc281aef) SHA1(68be154b3e25f837afb4a477600dbe0ee69bec44) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3509,7 +3509,7 @@ ROM_START( ssidekidd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(49f17d2d) SHA1(70971fcf71ae3a6b2e26e7ade8063941fb178ae5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(22c097a5) SHA1(328c4e6db0a026f54a633cff1443a3f964a8daea) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -3525,7 +3525,7 @@ ROM_START( ssideki2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(156f6951) SHA1(49686f615f109a02b4f23931f1c84fee13872ffd) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(48397b3e) SHA1(01bcb3f51e801d1028c51b3279277b9c6dce3c6e) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3541,7 +3541,7 @@ ROM_START( ssideki3dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(82fcd863) SHA1(b219a5685450f9c24cc195f1c914bc3b292d72c0) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(9ab3ef93) SHA1(8d306ba20f14d835d6f1d31ce145fc8122f4c513) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -3557,7 +3557,7 @@ ROM_START( ssideki4dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a932081d) SHA1(376a45e19edb780ac8798c41ae2260c8a8a4bba8) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(41fd0806) SHA1(66a750205ce460b886a68a64e985b4a5f126f8ad) )
 
 	ROM_REGION( 0x1400000, "sprites", 0 )
@@ -3573,7 +3573,7 @@ ROM_START( stakwindd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(2fe1f499) SHA1(5b747eeef65be04423d2db05e086df9132758a47) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(b7785023) SHA1(d11df1e623434669cd3f97f0feda747b24dac05d) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3589,7 +3589,7 @@ ROM_START( stakwin2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c8e5e0f9) SHA1(09bb05ae6f09b59b9e4871fae1fc7c3bafd07394) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(97114ed8) SHA1(50ffa7e4761a0fa4f79010919c209a4e2175eb01) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -3605,7 +3605,7 @@ ROM_START( strhoopdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bee3455a) SHA1(fd5345d9847982085a9b364fff542580889bf02f) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(71287d2c) SHA1(717b4cfabbedb6e73d5d542611f6841e3691d95e) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3621,7 +3621,7 @@ ROM_START( superspydd )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ca661f1b) SHA1(4e3cb57db716ec48487c1b070c3a55a5faf40856) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(18402ab8) SHA1(71d701cfffdfc3a31670138df83d7be2149b181b) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -3637,7 +3637,7 @@ ROM_START( svcdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b7bf462) SHA1(7466a6962de5242f71b9c52d7bd21a9832115e11) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(1bdd8c7c) SHA1(bc8c2546e07a31561f833cb424c007c7e0e947dd) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3653,7 +3653,7 @@ ROM_START( svcbootdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3669,7 +3669,7 @@ ROM_START( svcplusdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3685,7 +3685,7 @@ ROM_START( svcplusadd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3701,7 +3701,7 @@ ROM_START( svcsplusdd )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3717,7 +3717,7 @@ ROM_START( svcpcbdd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b7bf462) SHA1(7466a6962de5242f71b9c52d7bd21a9832115e11) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(1bdd8c7c) SHA1(bc8c2546e07a31561f833cb424c007c7e0e947dd) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3733,7 +3733,7 @@ ROM_START( svcpcbadd )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b7bf462) SHA1(7466a6962de5242f71b9c52d7bd21a9832115e11) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(1bdd8c7c) SHA1(bc8c2546e07a31561f833cb424c007c7e0e947dd) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -3749,7 +3749,7 @@ ROM_START( tophuntrdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3f84bb9f) SHA1(07446040871d11da3c2217ee9d1faf8c3cae7420) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(74914823) SHA1(ffcd8ee0307c2965604d915a52c6919ce9c2b318) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3765,7 +3765,7 @@ ROM_START( tophuntrhdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3f84bb9f) SHA1(07446040871d11da3c2217ee9d1faf8c3cae7420) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(74914823) SHA1(ffcd8ee0307c2965604d915a52c6919ce9c2b318) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3781,7 +3781,7 @@ ROM_START( tpgolfdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cc545e6) SHA1(8e014b8cab3e5b3995756a4ea52ce49c36866377) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(203e6125) SHA1(c85b1ea09a1a04c0f31a5762ad85d4044285fdb3) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -3797,7 +3797,7 @@ ROM_START( trallydd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0908707e) SHA1(df7489ea6abf84d7f137ba7a8f52a4fd1b088fd7) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x180000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x180000, CRC(5d80c0c1) SHA1(34452d67f1a8b5be1a695214277f1b2bd7795b6e) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -3813,7 +3813,7 @@ ROM_START( turfmastdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9994ac00) SHA1(7bded797f3b80fd00bcbe451ac0abe6646b19a14) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(04916fe6) SHA1(83c275971ab05268c90724418a6b150a4effb443) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -3829,7 +3829,7 @@ ROM_START( twinspridd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(364d6f96) SHA1(779b95a6476089b71f48c8368d9043ee1dba9032) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(2e5da6dd) SHA1(182215db7b07820cb7e17d3079c2cbfbc4a4d283) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -3845,7 +3845,7 @@ ROM_START( twsoc96dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb82bc5d) SHA1(8e3ecabec25d89adb6e0eed0ef5f94d34a4d5fc0) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(9e3f326f) SHA1(4aeac5a835517a3cf27baf339408f0f1aeb14733) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -3861,7 +3861,7 @@ ROM_START( viewpoindd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e69f29a) SHA1(7a25f4997996434ea1b7d0d1ca9e7aaf966cbd03) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(77f9135d) SHA1(08f9cfc958f70822217e4d2a85fdbfb46598e3af) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -3876,7 +3876,7 @@ ROM_START( vlinerdd )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -3890,7 +3890,7 @@ ROM_START( vliner7edd )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -3904,7 +3904,7 @@ ROM_START( vliner6edd )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -3918,7 +3918,7 @@ ROM_START( vliner54dd )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -3932,7 +3932,7 @@ ROM_START( vliner53dd )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -3947,7 +3947,7 @@ ROM_START( wakuwak7dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0634bba6) SHA1(153aaf016440500df7a4454f3f2f2911219cb7d8) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(d6d82bce) SHA1(9e5895d77c5c14db6db5dc24d1616f197725c66f) )
 
 	ROM_REGION( 0x1800000, "sprites", 0 )
@@ -3963,7 +3963,7 @@ ROM_START( wh1dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1bd9d04b) SHA1(65cd7b002123ed1a3111e3d942608d0082799ff3) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(0bc3e723) SHA1(b653c55744d8ec0aa5365b66901fc76e8a95f05f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -3979,7 +3979,7 @@ ROM_START( wh1hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1bd9d04b) SHA1(65cd7b002123ed1a3111e3d942608d0082799ff3) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(0bc3e723) SHA1(b653c55744d8ec0aa5365b66901fc76e8a95f05f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -3995,7 +3995,7 @@ ROM_START( wh1hadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1bd9d04b) SHA1(65cd7b002123ed1a3111e3d942608d0082799ff3) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(0bc3e723) SHA1(b653c55744d8ec0aa5365b66901fc76e8a95f05f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -4011,7 +4011,7 @@ ROM_START( wh2dd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8fa3bc77) SHA1(982f92978671e4ee66630948e6bb7565b37b5dc0) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d84c37c5) SHA1(f7b68d6528e83259fa59a0385e28e215b040b01c) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -4027,7 +4027,7 @@ ROM_START( wh2hdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8fa3bc77) SHA1(982f92978671e4ee66630948e6bb7565b37b5dc0) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d84c37c5) SHA1(f7b68d6528e83259fa59a0385e28e215b040b01c) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -4043,7 +4043,7 @@ ROM_START( wh2jdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d2eec9d3) SHA1(09478787045f1448d19d064dd3d540d1741fd619) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(c55c63dd) SHA1(8e7ad43b8ed9de488ca7011b3c69167ab0763523) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4059,7 +4059,7 @@ ROM_START( whpdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(28065668) SHA1(0c60d4afa1dccad0135e733104f056be73b54e4e) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(b90482e8) SHA1(b17d09f22eb3e4bce7930fe0cae400ca9848a469) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -4075,7 +4075,7 @@ ROM_START( wjammersdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(52c23cfc) SHA1(809a7e072ad9acbffc25e9bd27cdb97638d09d07) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(7793c3f7) SHA1(c9e1e790a337db6b0d831452bd69d98ce6dd57ed) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4091,7 +4091,7 @@ ROM_START( zedbladedd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7b5f3d0a) SHA1(4a301781a57ff236f49492b576ff4858b0ffbdf8) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(3ddf9bb8) SHA1(f519c7701cfb100fcc6634114f18dddf1f35226d) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4107,7 +4107,7 @@ ROM_START( zintrckbdd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fd9627ca) SHA1(b640c1f1ff466f734bb1cb5d7b589cb7e8a55346) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(c09f74f1) SHA1(d0b56a780a6eba85ff092240b1f1cc6718f17c21) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4123,7 +4123,7 @@ ROM_START( zupapadd )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5a3b3191) SHA1(fa9a9930e18c64e598841fb344c4471d3d2c1964) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(d3a7e1ff) SHA1(4a4a227e10f4af58168f6c26011ea1d414253f92) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4145,7 +4145,7 @@ ROM_START( 2020bbnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cf466ec) SHA1(6a003b53c7a4af9d7529e2c10f27ffc4e58dcda5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5b021231) SHA1(3a751461f02f9b865686c6a403b38c7c82eda992) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4163,7 +4163,7 @@ ROM_START( 2020bbands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cf466ec) SHA1(6a003b53c7a4af9d7529e2c10f27ffc4e58dcda5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5b021231) SHA1(3a751461f02f9b865686c6a403b38c7c82eda992) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4181,7 +4181,7 @@ ROM_START( 2020bbhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cf466ec) SHA1(6a003b53c7a4af9d7529e2c10f27ffc4e58dcda5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5b021231) SHA1(3a751461f02f9b865686c6a403b38c7c82eda992) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4199,7 +4199,7 @@ ROM_START( 3countbnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7eab59cb) SHA1(5ae4107457e091f73960bfba39b589ae36d51ca3) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(26f79226) SHA1(1cfd98233be1129a3610b2670587b584e982ddb0) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4217,7 +4217,7 @@ ROM_START( alpham2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(28dfe2cd) SHA1(1a1a99fb917c6c8db591e3be695ce03f843ee1df) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(e609b3ad) SHA1(fcc46f5bb0891e6b71a0d59ce8f781bbb16d8288) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4235,7 +4235,7 @@ ROM_START( alpham2pnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(5976b464) SHA1(ec824567ecc3579f6d86c9d9385710cbaeef16a3) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x380000, CRC(9f08b300) SHA1(9156945c2a07d538c4212043b01ac5a09df451ea) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4253,7 +4253,7 @@ ROM_START( androdunnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(edd2acf4) SHA1(c4ee6ba834d54b9fc5a854dbc41a05877e090371) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(ce43cb89) SHA1(47f82e077abb6efc6b1b0490412ae147d5d2acef) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -4271,7 +4271,7 @@ ROM_START( aodknds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5a52a9d1) SHA1(ef913a9a55d29d5dd3beab1ce6039d64ce9b1a5b) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(e8ab7c8a) SHA1(ec44609d05c3a90f16316ce1f3ef06a87decca9d) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4289,7 +4289,7 @@ ROM_START( aofnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0987e4bb) SHA1(8fae4b7fac09d46d4727928e609ed9d3711dbded) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(8bff8c7b) SHA1(b9f393953928615b1b3f28822eb4e458a8e54aba) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4307,7 +4307,7 @@ ROM_START( aof2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f27e9d52) SHA1(dddae733d87ce7c88ad2580a8f64cb6ff9572e67) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(d28ad285) SHA1(ad1e38b3426022bf5a58ced71410d3c2e4da1a7a) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4325,7 +4325,7 @@ ROM_START( aof2ands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f27e9d52) SHA1(dddae733d87ce7c88ad2580a8f64cb6ff9572e67) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(d28ad285) SHA1(ad1e38b3426022bf5a58ced71410d3c2e4da1a7a) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4343,7 +4343,7 @@ ROM_START( aof3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb07b659) SHA1(940b379957c2987d7ab0443cb80c3ff58f6ba559) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(c8e41f27) SHA1(d8225928ac3bb10121f12b9b3b016f35c24d3b7c) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -4361,7 +4361,7 @@ ROM_START( aof3knds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb07b659) SHA1(940b379957c2987d7ab0443cb80c3ff58f6ba559) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(c8e41f27) SHA1(d8225928ac3bb10121f12b9b3b016f35c24d3b7c) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -4379,7 +4379,7 @@ ROM_START( b2bnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6da739ad) SHA1(cbf5f55c54b4ee00943e2a411eeee4e465ce9c34) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(50feffb0) SHA1(00127dae0130889995bfa7560bc4b0662f74fba5) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4397,7 +4397,7 @@ ROM_START( bakatononds )
     
 	NEO_JAPAN_BIOS_AUDIO(0x20000, "036.m1", CRC(f1385b96) SHA1(e7e3d1484188a115e262511116aaf466b8b1f428) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5c3b339b) SHA1(79e1c46c83ea5976525f157b6b7b797e5d3f7327) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4415,7 +4415,7 @@ ROM_START( bangbeadnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(85668ee9) SHA1(7d3f51710cf90c097cd3faaeeef10ceb85cbb3e8) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(0091e1f2) SHA1(c970a5312954af2452ab086dbf409362869e02a4) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4433,7 +4433,7 @@ ROM_START( bjourneynds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e1d4ab6) SHA1(deabc11ab81e7e68a3e041c03a127ae28d0d7264) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(52e5d5a7) SHA1(d50f5bdc2b83232298e96059c380b41879506bdf) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4451,7 +4451,7 @@ ROM_START( bjourneyhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e1d4ab6) SHA1(deabc11ab81e7e68a3e041c03a127ae28d0d7264) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(52e5d5a7) SHA1(d50f5bdc2b83232298e96059c380b41879506bdf) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4469,7 +4469,7 @@ ROM_START( blazstarnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d31a3aea) SHA1(e23abfeb23052f0358edcf2c83401025fe632511) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(79544c10) SHA1(c2820b1c7b324deea5e2fdddec9e47daae88c9be) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -4487,7 +4487,7 @@ ROM_START( breakersnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3951a1c1) SHA1(1e6442a7ea82ada9503d71045dd93e12bd05254f) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(c1cd8b16) SHA1(f407f0c59f90d7c86cd2aca9807c14dfcc814eff) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -4505,7 +4505,7 @@ ROM_START( breakrevnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(00f31c66) SHA1(8488598415c9b74bce00e05b31d96e3d1625c20d) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(41d0e3c4) SHA1(d82c03e9ced3e4fd7a68020e2788f5720e65fede) )
 
 	ROM_REGION( 0x1800000, "sprites", 0 )
@@ -4523,7 +4523,7 @@ ROM_START( bstarsnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4ecaa4ee) SHA1(50abfb8eed6cb4887393089f9ccc76f306ef69b5) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(8126a249) SHA1(1991a0f634d2882c5969686227c930de14dbef87) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4541,7 +4541,7 @@ ROM_START( bstarshnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4ecaa4ee) SHA1(50abfb8eed6cb4887393089f9ccc76f306ef69b5) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(8126a249) SHA1(1991a0f634d2882c5969686227c930de14dbef87) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4559,7 +4559,7 @@ ROM_START( bstars2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(15c177a6) SHA1(3f4abed635102f9bc8b44809750828c82e79b44f) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(5e70d959) SHA1(cd6c271d2862903177db69222cbdc99f6b09df78) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4577,7 +4577,7 @@ ROM_START( burningfnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c939ee2) SHA1(57d580d3279e66b9fe66bbcc68529d3384a926ff) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(f6c7741e) SHA1(b53e47f10e12f8c67b2c1fa54b0feb3019ff9e21) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4595,7 +4595,7 @@ ROM_START( burningfhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c939ee2) SHA1(57d580d3279e66b9fe66bbcc68529d3384a926ff) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(f6c7741e) SHA1(b53e47f10e12f8c67b2c1fa54b0feb3019ff9e21) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4613,7 +4613,7 @@ ROM_START( burningfpnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(470dd5d4) SHA1(4291811b4aefe45261a1ae3631b6999fcd74fb3f) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x180000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x180000, CRC(c2af2322) SHA1(d0959a1e7e7777ac22bb4529fab362bb0c01c66c) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4631,7 +4631,7 @@ ROM_START( burningfpands )
 
 	NEO_BIOS_AUDIO_128K( "m1rompa", CRC(2b0c0415) SHA1(a5a0d5e3ea2ef77b6f5cd14f2907ab2f1aed76b7) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0pa", 0x000000, 0x200000, CRC(1018b733) SHA1(26ef911a0afff0eb3b7bc528d9bb4aa77dfeb5a4) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4649,7 +4649,7 @@ ROM_START( crswd2blnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(63e28343) SHA1(f46dbc2f1d6033b11047cca31a9a7d715dc69cb2) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(22d4b93b) SHA1(0515f2ee5d9a8ce424c80721e06f746ac6a543a8) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4667,7 +4667,7 @@ ROM_START( crswordnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9504b2c6) SHA1(9ce8e681b9df6eacd0d23a36bad836bd5074233d) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(61fedf65) SHA1(98f31d1e23bf7c1f7844e67f14707a704134042e) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4685,7 +4685,7 @@ ROM_START( ct2k3sands )
 
 	NEO_BIOS_AUDIO_128K( "m1romsa", CRC(1a8c274b) SHA1(5f6f9c533f4a296a18c741ce59a69cf6f5c836b9) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -4703,7 +4703,7 @@ ROM_START( ct2k3spnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romsp", CRC(526cccab) SHA1(f7931f42e6f27c3da1902a552a983ca588e2418b) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -4721,7 +4721,7 @@ ROM_START( cthd2003nds )
 
 	NEO_BIOS_AUDIO_128K( "m1romsp", CRC(526cccab) SHA1(f7931f42e6f27c3da1902a552a983ca588e2418b) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -4739,7 +4739,7 @@ ROM_START( ctomadaynds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(80328a47) SHA1(34b6b1a81eab1cf38834b2eea55454ce1b6100e2) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(2267cf15) SHA1(2e927a73752b5faff8a05a2ec7be248178bf0111) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4757,7 +4757,7 @@ ROM_START( cyberlipnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8be3a078) SHA1(054ec6a061fcc88df1ecbb0a01611a31f37a7709) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(e16a8638) SHA1(f70b8b7e039998ac6c71b2a2540649cbdea47154) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4775,7 +4775,7 @@ ROM_START( diggermands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(e777a234) SHA1(9f3974ac07859337bc0203f903c40ae3f60dc1fb) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(ee15bda4) SHA1(fe2206728e6efd02d6302869a98b196eb19a17df) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -4793,7 +4793,7 @@ ROM_START( doubledrnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(10b144de) SHA1(cf1ed0a447da68240c62bcfd76b1569803f6bf76) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(ba08bcf5) SHA1(08e32f0ce4d3829b6d888511b1137a779dba7b68) )
 
 	ROM_REGION( 0xe00000, "sprites", 0 )
@@ -4811,7 +4811,7 @@ ROM_START( dragonshnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(154803cc) SHA1(7e6591cd465cbb35d6d3446c5a83b46d30fafe95) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(9a4109e5) SHA1(ba59caac5f5a80fc52c507d8a47f322a380aa9a1) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -4829,7 +4829,7 @@ ROM_START( eightmannds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9927034c) SHA1(205665361c5b2ab4f01ec480dd3c9b69db858d09) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(aaa8ff0c) SHA1(6d76b944d6cc738cc0d9d3287dabf5baf7527816) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4847,7 +4847,7 @@ ROM_START( fatfurspnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(ccc5186e) SHA1(cf9091c523c182aebfb928c91640b2d72fd70123) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(dfeebb9e) SHA1(2b52dbfc0826fe8142f3de264f8403f6a595f056) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -4865,7 +4865,7 @@ ROM_START( fatfurspands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(ccc5186e) SHA1(cf9091c523c182aebfb928c91640b2d72fd70123) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(dfeebb9e) SHA1(2b52dbfc0826fe8142f3de264f8403f6a595f056) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -4883,7 +4883,7 @@ ROM_START( fatfury1nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5be10ffd) SHA1(90a5e6cbbc58a7883cd2a3a597180d631a466882) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(ad86f0cd) SHA1(ea7fe03a8e93cc4fba7b18ddbda74f1e562ba85b) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -4901,7 +4901,7 @@ ROM_START( fatfury2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(820b0ba7) SHA1(5708248d89446e49184eaadb52f7c61b2b6c13c5) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d559fe79) SHA1(d7d426cd89003aa83e74c84a6e3e7170869f8e54) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4919,7 +4919,7 @@ ROM_START( fatfury3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fce72926) SHA1(a40c74f793900b8542f0b8383ce4bf46fca112d4) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(195f9afb) SHA1(167b2fdb8942ad204a442aa5d9fc6fe466bc659f) )
 
 	ROM_REGION( 0x1400000, "sprites", 0 )
@@ -4937,7 +4937,7 @@ ROM_START( fbfrenzynds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f41b16b8) SHA1(f3e1cfc4cd2c5baece176f169906aa796367d303) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(14e641eb) SHA1(5041e00a0bc5af07d100ce4cc2686e81c92b0054) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -4955,7 +4955,7 @@ ROM_START( fightfevnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0b7c4e65) SHA1(999a1e784de18db3f1332b30bc425836ea6970be) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(e46a0876) SHA1(acd71797ca742626b4292123cdb1820af2d1358c) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4973,7 +4973,7 @@ ROM_START( fightfevands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0b7c4e65) SHA1(999a1e784de18db3f1332b30bc425836ea6970be) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(e46a0876) SHA1(acd71797ca742626b4292123cdb1820af2d1358c) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -4991,7 +4991,7 @@ ROM_START( flipshotnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a9fe0144) SHA1(4cc076ecce9216a373f3dcd7ba28a03d6050e522) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(42ec743d) SHA1(f45b5167ebcbd59300f4e5b05448cd421654102a) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -5009,7 +5009,7 @@ ROM_START( froman2bnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(da4878cf) SHA1(ce13d18a4c5d01974df8542c67c4df00dbc6e7c1) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(6f8ccddc) SHA1(696df2d0f416c2374b0eb7c858486054688c5bca) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -5027,7 +5027,7 @@ ROM_START( fswordsnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e6440eb) SHA1(e3f72150af4e326543b29df71cda27d73ec087c1) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(aab5a60a) SHA1(bc0a5687cd6b0f65693f0350ecfe1284c7c39f74) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -5045,7 +5045,7 @@ ROM_START( galaxyfgnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e9e3b10) SHA1(7c44d1dbd4f8d337c99e90361d1dab837df85e31) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(f64c4d83) SHA1(888cac2e639e683c7528221144ef54f2b73340d8) )
 
 	ROM_REGION( 0xe00000, "sprites", 0 )
@@ -5063,7 +5063,7 @@ ROM_START( ganryunds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(30cc4099) SHA1(46453b7aac41855a92724a785372f8daf931d8d4) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(e5946733) SHA1(d5904a50465af03d6ff33399a98f3259721ca0b2) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5081,7 +5081,7 @@ ROM_START( garounds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(36a806be) SHA1(90fb44dc0c3fb57946a0f35716056abb84a0f191) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(123d8987) SHA1(cecf4d70ba84f3d8b1180ac2707e168f5b219a0f) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5099,7 +5099,7 @@ ROM_START( garoublnds )
 
 	NEO_BIOS_AUDIO_512K( "m1romb", CRC(7c51d002) SHA1(01ffba6cbc8da07804f7b21d8c71c39d64a1a4e2) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0b", 0x000000, 0x1000000, CRC(3ae16bd4) SHA1(51feed35155ffafd25b75be3c4d58a381c8c27ea) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5117,7 +5117,7 @@ ROM_START( garouhnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(36a806be) SHA1(90fb44dc0c3fb57946a0f35716056abb84a0f191) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(123d8987) SHA1(cecf4d70ba84f3d8b1180ac2707e168f5b219a0f) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5135,7 +5135,7 @@ ROM_START( garouhands )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(36a806be) SHA1(90fb44dc0c3fb57946a0f35716056abb84a0f191) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(123d8987) SHA1(cecf4d70ba84f3d8b1180ac2707e168f5b219a0f) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5153,7 +5153,7 @@ ROM_START( garoupnds )
 
 	NEO_BIOS_AUDIO_256K( "m1romp", CRC(bbe464f7) SHA1(f5f8f3e48f5d453f45107085d6f4023bcd24c053) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(5cf3e13c) SHA1(9a5c718a6f4310a97d0a28dfa957fcaf6397e9f7) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5171,7 +5171,7 @@ ROM_START( ghostlopnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fd833b33) SHA1(ab6c218c42cba821654cbdae154efecb69f844f6) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(c603fce6) SHA1(5a866471d35895b2ae13cbd5d1cb41bf2e72e1b8) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -5189,7 +5189,7 @@ ROM_START( goalx3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cd758325) SHA1(b51eac634fc646c07210dff993018ad9ebabd3f9) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(ef214212) SHA1(3e05ccaa2d06decb18b379b96f900c0e6b39ce70) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -5207,7 +5207,7 @@ ROM_START( gowcaizrnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(78c851cb) SHA1(a9923c002e4e2171a564af45cff0958c5d57b275) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(8608b27d) SHA1(a06c07801cd6449a3730b6162b5edaf6cf999e6c) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5225,7 +5225,7 @@ ROM_START( gpilotsnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(48409377) SHA1(0e212d2c76856a90b2c2fdff675239525972ac43) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(85f0a01b) SHA1(d40099a653d391575bcbacb7a76f9a3edbc2e1d6) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -5243,7 +5243,7 @@ ROM_START( gpilotshnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(48409377) SHA1(0e212d2c76856a90b2c2fdff675239525972ac43) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(85f0a01b) SHA1(d40099a653d391575bcbacb7a76f9a3edbc2e1d6) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -5261,7 +5261,7 @@ ROM_START( gururinnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9e3c6328) SHA1(17e8479c258f28a01d2283be9e692ff7685898cc) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(cf23afd0) SHA1(10f87014ee10613f92b04f482f449721a6379db7) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -5279,7 +5279,7 @@ ROM_START( ironcladnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3a08bb63) SHA1(d8fbbf42a006ccafc3cd99808d28c82dbaac4590) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(8f30a215) SHA1(0ee866a468c4c3608d55df2b5cb9243c8016d77c) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5297,7 +5297,7 @@ ROM_START( ironcladonds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3a08bb63) SHA1(d8fbbf42a006ccafc3cd99808d28c82dbaac4590) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(8f30a215) SHA1(0ee866a468c4c3608d55df2b5cb9243c8016d77c) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5324,7 +5324,7 @@ ROM_START( irrmazends )
 	ROM_LOAD( "m1rom", 0x00000, 0x20000, CRC(880a1abd) SHA1(905afa157aba700e798243b842792e50729b19a0) )
 	ROM_RELOAD( 0x10000, 0x20000 )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(faaadfba) SHA1(2dc75d39ce9e2a54bfba4ca960f7fc069d059995) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -5342,7 +5342,7 @@ ROM_START( janshinnds )
 
 	NEO_JAPAN_BIOS_AUDIO(0x20000, "048.m1", CRC(310467c7) SHA1(c529961195c9bdf5d1ce70a38ad129002d1f3b5f) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(f1947d2b) SHA1(955ff91ab24eb2a7ec51ff46c9f9f2ec060456b2) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -5360,7 +5360,7 @@ ROM_START( jockeygpnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(1cab4de2) SHA1(112ff90806d8757db0685b88b762c45ed02548de) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(443eadba) SHA1(3def3c22f0e276bc4c2fc7ff70ce473c08b0d2df) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5378,7 +5378,7 @@ ROM_START( jockeygpands )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(1cab4de2) SHA1(112ff90806d8757db0685b88b762c45ed02548de) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(443eadba) SHA1(3def3c22f0e276bc4c2fc7ff70ce473c08b0d2df) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5398,7 +5398,7 @@ ROM_START( joyjoynds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(5a4be5e8) SHA1(552f025ce0d51c25f42e1a81cf0d08376ca5475d) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(e189246a) SHA1(926e3d58258f25ec1085f120f524b2012b7fc9c5) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -5416,7 +5416,7 @@ ROM_START( kabukiklnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(91957ef6) SHA1(7b6907532a0e02ceb643623cbd689cf228776ed1) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(5566aeed) SHA1(d892c4f944e69735473d2724775d8e839418c134) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5434,7 +5434,7 @@ ROM_START( karnovrnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(030beae4) SHA1(ceb6ee6c09514504efacdbca7b280901e4c97084) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(0b7ea37a) SHA1(34e7d4f6db053674a7e8c8b2e3e398777d5b02e6) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -5452,7 +5452,7 @@ ROM_START( kf2k2mpnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5470,7 +5470,7 @@ ROM_START( kf2k2mp2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5488,7 +5488,7 @@ ROM_START( kf2k2plands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5506,7 +5506,7 @@ ROM_START( kf2k2plsnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5524,7 +5524,7 @@ ROM_START( kf2k3blnds )
 
     NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5542,7 +5542,7 @@ ROM_START( kf2k3blands )
 
     NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5560,7 +5560,7 @@ ROM_START( kf2k3uplnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5578,7 +5578,7 @@ ROM_START( kf2k3plnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5596,7 +5596,7 @@ ROM_START( kizunands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1b096820) SHA1(72852e78c620038f8dafde5e54e02e418c31be9c) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(c6263572) SHA1(cc9d2d77a3ef22426a2806fa55949377c2aa43b2) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -5614,7 +5614,7 @@ ROM_START( kof2000nds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(d404db70) SHA1(8cd1f3e140a9a367de23544e76371b0491287909) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(fe16ee57) SHA1(405cca65759258193e982b252c359d998a3f4919) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5632,7 +5632,7 @@ ROM_START( kof2000nnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(d404db70) SHA1(8cd1f3e140a9a367de23544e76371b0491287909) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(fe16ee57) SHA1(405cca65759258193e982b252c359d998a3f4919) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5650,7 +5650,7 @@ ROM_START( kof2001nds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4bcc537b) SHA1(9fcf1342bcd53d5eec12c46ee41a51bf543256c2) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5668,7 +5668,7 @@ ROM_START( kof2001hnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4bcc537b) SHA1(9fcf1342bcd53d5eec12c46ee41a51bf543256c2) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(f5314040) SHA1(8443085f2d8e28d8191dc12e343bfe70f378d97a) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5686,7 +5686,7 @@ ROM_START( kof2002nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5704,7 +5704,7 @@ ROM_START( kof2002bnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5722,7 +5722,7 @@ ROM_START( kof2003nds )
 
     NEO_BIOS_AUDIO_512K( "m1rom", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5740,7 +5740,7 @@ ROM_START( kof2003hnds )
 
     NEO_BIOS_AUDIO_512K( "m1romh", CRC(5edcbaee) SHA1(014e98b2dc2fdc817ea847cdb0ec787dad10e60a) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5758,7 +5758,7 @@ ROM_START( kof10thnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romt", CRC(f6fab859) SHA1(0184aa1394b9f9946d610278b53b846020dd88dc) )
 	
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5776,7 +5776,7 @@ ROM_START( kf10thepnds )
 
     NEO_BIOS_AUDIO_128K( "m1romtp", CRC(5a47d9ad) SHA1(0197737934653acc6c97221660d789e9914f3578) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5794,7 +5794,7 @@ ROM_START( kf2k5uninds )
 
     NEO_BIOS_AUDIO_128K( "m1romt", CRC(f6fab859) SHA1(0184aa1394b9f9946d610278b53b846020dd88dc) )
 	
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(29d3cbc9) SHA1(ac0fc9e86f9f3510f300e464c3e2589888aceee5) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5812,7 +5812,7 @@ ROM_START( kof2k4sends )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5a47d9ad) SHA1(0197737934653acc6c97221660d789e9914f3578) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(9e5f37b3) SHA1(ba53d702fe0af99561aaca953e8491b04840af9b) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -5830,7 +5830,7 @@ ROM_START( kof94nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f6e77cf5) SHA1(292a3e3a4918ffe72bd1c41acb927b91844e035e) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(cc4d2f17) SHA1(85e58329f94e503dc3b1498759d2f48af0119a11) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -5848,7 +5848,7 @@ ROM_START( kof95nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6f2d7429) SHA1(6f8462e4f07af82a5ca3197895d5dcbb67bdaa61) )
 
-	ROM_REGION( 0x900000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x900000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x900000, CRC(41442b1e) SHA1(7460f5815c374bdeac8b60045ae5d7f3e3e4d92d) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -5866,7 +5866,7 @@ ROM_START( kof95hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6f2d7429) SHA1(6f8462e4f07af82a5ca3197895d5dcbb67bdaa61) )
 
-	ROM_REGION( 0x900000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x900000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x900000, CRC(41442b1e) SHA1(7460f5815c374bdeac8b60045ae5d7f3e3e4d92d) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -5884,7 +5884,7 @@ ROM_START( kof96nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(dabc427c) SHA1(b76722ed142ee7addceb4757424870dbd003e8b3) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(4f14a72b) SHA1(fb1105aa271ea14016f777017cf6079ff61e176f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -5902,7 +5902,7 @@ ROM_START( kof96hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(dabc427c) SHA1(b76722ed142ee7addceb4757424870dbd003e8b3) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(4f14a72b) SHA1(fb1105aa271ea14016f777017cf6079ff61e176f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -5920,7 +5920,7 @@ ROM_START( kof97nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -5938,7 +5938,7 @@ ROM_START( kof97hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -5956,7 +5956,7 @@ ROM_START( kof97knds )
 
 	NEO_BIOS_AUDIO_128K( "m1romk", CRC(bbea9070) SHA1(c26c2e29fe90966dd574838be63f0037ea799aca) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -5974,7 +5974,7 @@ ROM_START( kof97plsnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -5992,7 +5992,7 @@ ROM_START( kof97oronds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -6010,7 +6010,7 @@ ROM_START( kof98nds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(4ef7016b) SHA1(4182235e963bd70d398a79abeb54ab4d62887c48) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6028,7 +6028,7 @@ ROM_START( kof98hnds )
 
 	NEO_BIOS_AUDIO_256K( "m1romh", CRC(4e7a6b1b) SHA1(b54d08f88713ed0271aa06f9f7c9c572ef555b1a) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6046,7 +6046,7 @@ ROM_START( kof98knds )
 
 	NEO_BIOS_AUDIO_256K( "m1romk", CRC(ce12da0c) SHA1(e7c01dae2852d543d1a58d55735239f6a5aa05a5) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6064,7 +6064,7 @@ ROM_START( kof98kands )
 
 	NEO_BIOS_AUDIO_256K( "m1romka", CRC(ce9fb07c) SHA1(631d995f1291dd803fb069f3b25e7b9ed30d8649) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(abeef163) SHA1(fa3442a508dc5bc38a97ea82f87b4940013cd52e) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6082,7 +6082,7 @@ ROM_START( kof99nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6100,7 +6100,7 @@ ROM_START( kof99ends )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6118,7 +6118,7 @@ ROM_START( kof99hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6136,7 +6136,7 @@ ROM_START( kof99knds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6154,7 +6154,7 @@ ROM_START( kof99kands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6172,7 +6172,7 @@ ROM_START( kof99pnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5e74539c) SHA1(6f49a9343cbd026b2c6720ff3fa2e5b1f85e80da) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(1fc7c930) SHA1(2d043636eeee0530f552fababa0d7d61336d647d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6190,7 +6190,7 @@ ROM_START( kognds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(45348747) SHA1(ed77cbae2b208d1177a9f5f6e8cd57070e90b65b) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(35656a78) SHA1(587c497cde12d069664320a2c09f187666c0dcfe) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -6208,7 +6208,7 @@ ROM_START( kotmnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9da9ca10) SHA1(88b915827d529f39c365d3e41197d5461e07a085) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(11ee40e1) SHA1(ab0e4032e4f6cec72b83f8bb341c89533ed61472) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6226,7 +6226,7 @@ ROM_START( kotmhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9da9ca10) SHA1(88b915827d529f39c365d3e41197d5461e07a085) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(11ee40e1) SHA1(ab0e4032e4f6cec72b83f8bb341c89533ed61472) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6244,7 +6244,7 @@ ROM_START( kotm2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c5b2ad5) SHA1(15eb5ea10fecdbdbcfd06225ae6d88bb239592e7) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(ef60c93e) SHA1(906022b4b5cc6b2fcd360b6b9e00d0a5cc713a9c) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -6262,7 +6262,7 @@ ROM_START( kotm2ands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c5b2ad5) SHA1(15eb5ea10fecdbdbcfd06225ae6d88bb239592e7) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(ef60c93e) SHA1(906022b4b5cc6b2fcd360b6b9e00d0a5cc713a9c) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -6280,7 +6280,7 @@ ROM_START( kotm2pnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0c5b2ad5) SHA1(15eb5ea10fecdbdbcfd06225ae6d88bb239592e7) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(ef60c93e) SHA1(906022b4b5cc6b2fcd360b6b9e00d0a5cc713a9c) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -6298,7 +6298,7 @@ ROM_START( lans2004nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d0604ad1) SHA1(fae3cd52a177eadd5f5775ace957cc0f8301e65d) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(0c8b240d) SHA1(e9a74e30bdd5fefa62aaa40190554907717fb9b0) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -6316,7 +6316,7 @@ ROM_START( lastbladnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(087628ea) SHA1(48dcf739bb16699af4ab8ed632b7dcb25e470e06) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(436e8345) SHA1(1008bead25169fe0011349aa570a2cf660d0661a) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -6334,7 +6334,7 @@ ROM_START( lastbladhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(087628ea) SHA1(48dcf739bb16699af4ab8ed632b7dcb25e470e06) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(436e8345) SHA1(1008bead25169fe0011349aa570a2cf660d0661a) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -6352,7 +6352,7 @@ ROM_START( lastsolnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(087628ea) SHA1(48dcf739bb16699af4ab8ed632b7dcb25e470e06) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(436e8345) SHA1(1008bead25169fe0011349aa570a2cf660d0661a) )
 
 	ROM_REGION( 0x2800000, "sprites", 0 )
@@ -6370,7 +6370,7 @@ ROM_START( lasthopends )
 
 	NEO_BIOS_AUDIO_128K( "m1rompe", CRC(113c870f) SHA1(854425eb4be0d7fa088a6c3bf6078fdd011707f5) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0pe", 0x000000, 0x600000, CRC(15b988fe) SHA1(7322559c81e1a06986261787d2bd1b0dff9aab19) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -6388,7 +6388,7 @@ ROM_START( lastbld2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(acf12d10) SHA1(6e6b98cc1fa44f24a5168877559b0055e6957b60) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(292764d2) SHA1(de6adf7d6d95ca4b7924aadde09d8720d2acea76) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -6406,7 +6406,7 @@ ROM_START( lbowlingnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d568c17d) SHA1(a2e318ed6ad1809c79f3f0853d75e0dd1a2f275c) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(1be11c1b) SHA1(a497ef21b894dc22f84ec1b4b44ba223cf57c077) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -6424,7 +6424,7 @@ ROM_START( legendosnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6f2843f0) SHA1(975fb1598b87a2798fff05e951fca2e2e0329e79) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(85065452) SHA1(7154b7c59b16c32753ac6b5790fb50b51ce30a20) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6442,7 +6442,7 @@ ROM_START( lresortnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cec19742) SHA1(ab6c6ba7737e68d2420a0617719c6d4c89039c45) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(30415bde) SHA1(47a9a38ab578496ee67e5f4a265b2cd410118b1f) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -6460,7 +6460,7 @@ ROM_START( lresortpnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(22122875) SHA1(540c21559163381467679f836cb068adaf526659) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(30415bde) SHA1(47a9a38ab578496ee67e5f4a265b2cd410118b1f) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6478,7 +6478,7 @@ ROM_START( magdrop2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bddae628) SHA1(02c77e6aaaed43e39778bf83a3184e7c21db63d4) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(7e5e53e4) SHA1(72b063b2d4acaaf72a20d14ad5bfc90cb64d3fed) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -6496,7 +6496,7 @@ ROM_START( magdrop3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5beaf34e) SHA1(2905d26945932cddc2dd3a1dc5abba8aa3baee14) )
 
-	ROM_REGION( 0x480000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x480000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x480000, CRC(830a92d0) SHA1(b5745575772cee4e96978dbf3d182072b1b4ea80) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -6514,7 +6514,7 @@ ROM_START( maglordnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(b4feaf72) SHA1(a09785576f449c6b30176eb8e931ce01afa37c8f) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -6532,7 +6532,7 @@ ROM_START( maglordhnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0h", 0x000000, 0x300000, CRC(5554e011) SHA1(73326df2971ef4e8ce7a5b50b74a179114cbfe91) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -6550,7 +6550,7 @@ ROM_START( mahretsunds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c71fbb3b) SHA1(59c58665b53da61352359d191a0569de5dd1f4b3) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(c40117d6) SHA1(603dc76a9805febf9bf3cb40710fb72235eaea30) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -6568,7 +6568,7 @@ ROM_START( marukodqnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0e22902e) SHA1(fb8466c342d4abd8bb4cad01c6ceab03f96cdad8) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(bf7c6eee) SHA1(d507499c615541e4331107774e318031d85f1dcf) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -6586,7 +6586,7 @@ ROM_START( matrimnds )
 
     NEO_BIOS_AUDIO_128K( "m1rom", CRC(d2f3742d) SHA1(dd42f8a301f07e079fbc2bfd23e788baa03ca72d) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(40d12c68) SHA1(e445a42ab722ae44cabe0d7403b3380caccaa868) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -6604,7 +6604,7 @@ ROM_START( miexchngnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(de41301b) SHA1(59ce3836ac8f064d56a446c9374f05bcb40fcfd8) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(113fb898) SHA1(9168ba90c4aa969f69eb11ba3f4d76592d81e05a) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -6622,7 +6622,7 @@ ROM_START( minasannds )
 
     NEO_JAPAN_BIOS_AUDIO(0x20000, "027.m1", CRC(add5a226) SHA1(99995bef2584abbba16777bac52f55523f7aa97d) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(9a3bf33b) SHA1(a73283e09606672f44e766f246ace54274b82d1d) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6640,7 +6640,7 @@ ROM_START( moshouginds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a602c2c2) SHA1(19fd5d0379244c528b58343f6cbf78b4766fb23d) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(baa2b9a5) SHA1(914782b6c81d9a76ce02251575592b0648434ba3) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6658,7 +6658,7 @@ ROM_START( mutnatnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b6683092) SHA1(623ec7ec2915fb077bf65b4a16c815e071c25259) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(fb573f10) SHA1(17c4f50e9a9f9d845f9c199a65f655e65d7b0f51) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6676,7 +6676,7 @@ ROM_START( nam1975nds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ba874463) SHA1(a83514f4b20301f84a98699900e2593f1c1b8846) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(6c3e3c4e) SHA1(99013865513620ddec81d19e3cff1c0d765a9843) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -6694,7 +6694,7 @@ ROM_START( ncombatnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b5819863) SHA1(6f2309d51531052dbf7d712993c9e35649db0d84) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(00e898fe) SHA1(2ae6e8bdc663d9493e271762455f03a88aa7a4f9) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -6712,7 +6712,7 @@ ROM_START( ncombathnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b5819863) SHA1(6f2309d51531052dbf7d712993c9e35649db0d84) )
 
-	ROM_REGION( 0x280000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x280000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x280000, CRC(00e898fe) SHA1(2ae6e8bdc663d9493e271762455f03a88aa7a4f9) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -6730,7 +6730,7 @@ ROM_START( ncommandnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(6fcf07d3) SHA1(e9ecff4bfec1f5964bf06645f75d80d611b6231c) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x180000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x180000, CRC(21871447) SHA1(ed314846ad9944aa6b523ddd40c5e412db18c092) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6748,7 +6748,7 @@ ROM_START( neobombends )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(e81e780b) SHA1(c56c53984e0f92e180e850c60a75f550ee84917c) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(71030f5c) SHA1(6a6c9c87d480ba6d3614110de980a9f8cc141c5d) )
 
 	ROM_REGION( 0x900000, "sprites", 0 )
@@ -6766,7 +6766,7 @@ ROM_START( neocup98nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a701b276) SHA1(055550ebc650835bcf8ea4457b2c91bd73e21281) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(0a9054af) SHA1(e2555f2ca62cc72bec15996286216d8382227993) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -6784,7 +6784,7 @@ ROM_START( neodriftnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(200045f1) SHA1(7a6cd1c8d4447ea260d7ff4520c676b8d685f2e4) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(1e2cb661) SHA1(0e6d3ed212d6d7f0bcedd70047d129e4659006c0) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -6802,7 +6802,7 @@ ROM_START( neomrdonds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b5b74a95) SHA1(7b01f3b87c247cc7472591f8cdcf0ae8065e31c6) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(4143c052) SHA1(561b19bc8811b80f2f42ffc0b5df27132696470a) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -6820,7 +6820,7 @@ ROM_START( ninjamasnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d00fb2af) SHA1(6bcaa52e1641cc24288e1f22f4dc98e8d8921b90) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(b66a9556) SHA1(18dfd8eaa5d81b41f7e7cd16a154f3d3a6c164e9) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -6838,7 +6838,7 @@ ROM_START( nitdnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(6407c5e5) SHA1(d273e154cc905b63205a17a1a6d419cac3485a92) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(24b0480c) SHA1(d769e621be52a5cd2e2568891b5f95a48268e1e0) )
     ROM_FILL(0x50820,1,0x08)  // fix crackle when jumping
 
@@ -6857,7 +6857,7 @@ ROM_START( nitdblnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(6407c5e5) SHA1(d273e154cc905b63205a17a1a6d419cac3485a92) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(24b0480c) SHA1(d769e621be52a5cd2e2568891b5f95a48268e1e0) )
     ROM_FILL(0x50820,1,0x08)  // fix crackle when jumping
 
@@ -6876,7 +6876,7 @@ ROM_START( overtopnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fcab6191) SHA1(488b8310b0957f0012fe50f73641b606f6ac4a57) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(013d4ef9) SHA1(438a697c44525bdf78b54432c4f7217ab5667047) )
 
 	ROM_REGION( 0x1400000, "sprites", 0 )
@@ -6894,7 +6894,7 @@ ROM_START( panicbomnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3cdf5d88) SHA1(6d8365a946fbd0b7c7b896536322638d80f6a764) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(58cf9f43) SHA1(ec09dc75a84da9479554dc83ab7002414e8809a3) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -6912,7 +6912,7 @@ ROM_START( pbobbl2nnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(883097a9) SHA1(677bf9684c0c7977a9a3f0c1288e430040a53b49) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(f64a1c80) SHA1(329089bbbb005e79f0ed1d1100588b6537bfc1a1) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -6930,7 +6930,7 @@ ROM_START( pbobblennds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f424368a) SHA1(5e5bbcaeb82bed2ee17df08f005ca20ad1030723) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x380000, CRC(f864513f) SHA1(7dbf5306c97ab26b8520284a836fee47111a9b67) )
 
 	ROM_REGION( 0x500000, "sprites", 0 )
@@ -6948,7 +6948,7 @@ ROM_START( pbobblenbnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f424368a) SHA1(5e5bbcaeb82bed2ee17df08f005ca20ad1030723) )
 
-	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x380000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0b", 0x000000, 0x380000, CRC(84a65b55) SHA1(b90540dcc1574106c027054b75193031c044cebd) )
 
 	ROM_REGION( 0x500000, "sprites", 0 )
@@ -6966,7 +6966,7 @@ ROM_START( pgoalnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(958efdc8) SHA1(aacc6056b1ff48cde8f241a11a27473cfb4b4aa3) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d0ae33d9) SHA1(cb21a91184d9d84ff25ca86c00dcadfc210272a8) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -6984,7 +6984,7 @@ ROM_START( pnyaands )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(d58eaa8e) SHA1(4c4faf1da671a41b4d854790eb623a40cb35f256) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(1ac7db71) SHA1(98ef758181da1632f9ba4aed70e8bd1f338976d7) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -7002,7 +7002,7 @@ ROM_START( pnyaaands )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(d58eaa8e) SHA1(4c4faf1da671a41b4d854790eb623a40cb35f256) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(1ac7db71) SHA1(98ef758181da1632f9ba4aed70e8bd1f338976d7) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -7020,7 +7020,7 @@ ROM_START( popbouncnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d4c946dd) SHA1(6ca09040b5db8d89511d627954c783154d58ab01) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(edcb1beb) SHA1(62f086b9968b366b59276ee4ae3c32c4d76fc6ce) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -7038,7 +7038,7 @@ ROM_START( preisle2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8efd4014) SHA1(5b73809b6e4e49264d281ef3e5004ac8a9de296d) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(2eebf135) SHA1(aed689fb1f7045d1752cfd0c301df5c3747b3791) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -7056,7 +7056,7 @@ ROM_START( pspikes2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b1c7911e) SHA1(27b298e7d50981331e17aa642e2e363ffac4333a) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(4888fd2d) SHA1(cf65d7216cc3759603fba59c8c265a6f9e4a99ea) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -7074,7 +7074,7 @@ ROM_START( pulstarnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(ff3df7c7) SHA1(59d2ef64f734f6026073b365300221909057a512) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(d2321023) SHA1(db60c6b4a26a32e9668fa0d4bc67f6075e832110) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -7092,7 +7092,7 @@ ROM_START( puzzldprnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9c0291ea) SHA1(3fa67c62acba79be6b3a98cc1601e45569fa11ae) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(debeb8fb) SHA1(49a3d3578c087f1a0050168571ef8d1b08c5dc05) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -7110,7 +7110,7 @@ ROM_START( puzzledpnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9c0291ea) SHA1(3fa67c62acba79be6b3a98cc1601e45569fa11ae) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x080000, CRC(debeb8fb) SHA1(49a3d3578c087f1a0050168571ef8d1b08c5dc05) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -7128,7 +7128,7 @@ ROM_START( quizdai2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bb19995d) SHA1(ed458fad5a23c6bd0d099927d98c31e1e6562d1b) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(587ba62a) SHA1(7c755ddeaaa28b5f3375906a37731df67f34a425) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -7146,7 +7146,7 @@ ROM_START( quizdaisnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(2a2105e0) SHA1(26fc13556fda2dbeb7b5b035abd994e302dc7662) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(a53e5bd3) SHA1(cf115c6478ce155d889e6a5acb962339e08e024b) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -7164,7 +7164,7 @@ ROM_START( quizdaisknds )
 
 	NEO_BIOS_AUDIO_128K( "m1romk", CRC(d67f53f9) SHA1(73a1bd175ae29dd957a907a046884f8715bd0a34) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0k", 0x000000, 0x200000, CRC(986f4af9) SHA1(9e15d2142ec5e5d076582dc1cecfd724b0924f54) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -7182,7 +7182,7 @@ ROM_START( quizkofnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(f5f44172) SHA1(eaaba1781622901b91bce9257be4e05f84df053b) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(1cb0cc24) SHA1(74f3367e77b3c64575c7ecea98b1e6ef377e3c78) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -7200,7 +7200,7 @@ ROM_START( quizkofknds )
 
 	NEO_BIOS_AUDIO_128K( "m1romk", CRC(4f157e9a) SHA1(8397bfdd5738914670ada7cd8c611c20ed1f74da) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0k", 0x000000, 0x600000, CRC(55b781a3) SHA1(443d3f88cd15e52fd322c78a6e5056529ed0468b) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -7218,7 +7218,7 @@ ROM_START( ragnagrnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(17028bcf) SHA1(7a4e8f33ce9b41beac2152b8f6003f247699e2e1) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(b82a1235) SHA1(d35f9a5e2b345d3d4d0c4c92efca8dc660c0bac7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7236,7 +7236,7 @@ ROM_START( rbff1nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(653492a7) SHA1(39e511fb9ed5d2135dc8428a31d0baafb2ab36e0) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(2c1aafd8) SHA1(2a2be69232dbeb49d33d938321c7a271c6d5b6cc) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -7254,7 +7254,7 @@ ROM_START( rbff1ands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(653492a7) SHA1(39e511fb9ed5d2135dc8428a31d0baafb2ab36e0) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(2c1aafd8) SHA1(2a2be69232dbeb49d33d938321c7a271c6d5b6cc) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -7272,7 +7272,7 @@ ROM_START( rbff1knds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(653492a7) SHA1(39e511fb9ed5d2135dc8428a31d0baafb2ab36e0) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(2c1aafd8) SHA1(2a2be69232dbeb49d33d938321c7a271c6d5b6cc) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -7290,7 +7290,7 @@ ROM_START( rbff2nds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ed482791) SHA1(1f54a45967cb7842c33aa24be322c9f33ff75ac3) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(b61bb6c5) SHA1(aee5865ae77a0b9be0bb8ce0f19cc8ffebe7120f) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -7308,7 +7308,7 @@ ROM_START( rbff2hnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ed482791) SHA1(1f54a45967cb7842c33aa24be322c9f33ff75ac3) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(b61bb6c5) SHA1(aee5865ae77a0b9be0bb8ce0f19cc8ffebe7120f) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -7326,7 +7326,7 @@ ROM_START( rbff2knds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ed482791) SHA1(1f54a45967cb7842c33aa24be322c9f33ff75ac3) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(b61bb6c5) SHA1(aee5865ae77a0b9be0bb8ce0f19cc8ffebe7120f) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -7344,7 +7344,7 @@ ROM_START( rbffspecnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3fee46bf) SHA1(e750f85233953853618fcdff980a4721af1710a3) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(a91dec92) SHA1(3822784150b84167a6efb9e3757f8d6cf02d8eb7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7362,7 +7362,7 @@ ROM_START( rbffspecknds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3fee46bf) SHA1(e750f85233953853618fcdff980a4721af1710a3) )
 
-	ROM_REGION( 0xc00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xc00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xc00000, CRC(a91dec92) SHA1(3822784150b84167a6efb9e3757f8d6cf02d8eb7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7383,7 +7383,7 @@ ROM_START( ridheronds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(92e7b4fe) SHA1(d240056cd632f92bdfaa5e0492c09aa9bd7b0471) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(542a1821) SHA1(5f4db6e415ae5e0599b28d49305d16ab5145b003) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -7404,7 +7404,7 @@ ROM_START( ridherohnds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(92e7b4fe) SHA1(d240056cd632f92bdfaa5e0492c09aa9bd7b0471) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(542a1821) SHA1(5f4db6e415ae5e0599b28d49305d16ab5145b003) )
 
 	ROM_REGION( 0x200000, "sprites", 0 )
@@ -7422,7 +7422,7 @@ ROM_START( roboarmynds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(35ec952d) SHA1(8aed30e26d7e2c70dbce5de752df416091066f7b) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(41648ed1) SHA1(b7ca7a4e851a9b49cd4a98a1ad48563e32700a52) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -7440,7 +7440,7 @@ ROM_START( roboarmyands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(35ec952d) SHA1(8aed30e26d7e2c70dbce5de752df416091066f7b) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(41648ed1) SHA1(b7ca7a4e851a9b49cd4a98a1ad48563e32700a52) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -7458,7 +7458,7 @@ ROM_START( rotdnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c5d36af9) SHA1(320739d0cfa6cc84455ae1f7b1f9cdab3c018933) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f8d1) SHA1(1ddf77a928448560de417e7e277a090b9ee91023) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7476,7 +7476,7 @@ ROM_START( rotdhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c5d36af9) SHA1(320739d0cfa6cc84455ae1f7b1f9cdab3c018933) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(2964f8d1) SHA1(1ddf77a928448560de417e7e277a090b9ee91023) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7494,7 +7494,7 @@ ROM_START( s1945pnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(994b4487) SHA1(a4e645a3ababa48a8325980ff022e04a8b51b017) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(7ea05e1c) SHA1(b70587b30135b25bae2e6681014e6c64ec202ec1) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7512,7 +7512,7 @@ ROM_START( samsh5spnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(203d744e) SHA1(24fc73943009effa14eed0f7a29955f349ca8e8f) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(ae5a592d) SHA1(e3f9b44c9b94007172ea07dac11789a62a3811e3) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7530,7 +7530,7 @@ ROM_START( samsh5sphnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(203d744e) SHA1(24fc73943009effa14eed0f7a29955f349ca8e8f) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(ae5a592d) SHA1(e3f9b44c9b94007172ea07dac11789a62a3811e3) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7548,7 +7548,7 @@ ROM_START( samsh5sphonds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(203d744e) SHA1(24fc73943009effa14eed0f7a29955f349ca8e8f) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(ae5a592d) SHA1(e3f9b44c9b94007172ea07dac11789a62a3811e3) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7566,7 +7566,7 @@ ROM_START( samshonds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(95170640) SHA1(125c502db0693e8d11cef619b090081c14a9a300) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(73379dae) SHA1(33ad195156741e2173a7085f1f15519be0a6aca6) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -7584,7 +7584,7 @@ ROM_START( samshohnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(95170640) SHA1(125c502db0693e8d11cef619b090081c14a9a300) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(73379dae) SHA1(33ad195156741e2173a7085f1f15519be0a6aca6) )
 
 	ROM_REGION( 0x900000, "sprites", 0 )
@@ -7602,7 +7602,7 @@ ROM_START( samsho2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(56675098) SHA1(90429fc40d056d480d0e2bbefbc691d9fa260fc4) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(7cfa47d1) SHA1(c8d0f278498117fbe2bb26983dfa6a83616e0a01) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -7620,7 +7620,7 @@ ROM_START( samsho2knds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(56675098) SHA1(90429fc40d056d480d0e2bbefbc691d9fa260fc4) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(7cfa47d1) SHA1(c8d0f278498117fbe2bb26983dfa6a83616e0a01) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -7638,7 +7638,7 @@ ROM_START( samsho2kands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(56675098) SHA1(90429fc40d056d480d0e2bbefbc691d9fa260fc4) )
 
-	ROM_REGION( 0x700000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x700000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x700000, CRC(7cfa47d1) SHA1(c8d0f278498117fbe2bb26983dfa6a83616e0a01) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -7656,7 +7656,7 @@ ROM_START( samsho3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e6440eb) SHA1(e3f72150af4e326543b29df71cda27d73ec087c1) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(aab5a60a) SHA1(bc0a5687cd6b0f65693f0350ecfe1284c7c39f74) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -7674,7 +7674,7 @@ ROM_START( samsho3hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e6440eb) SHA1(e3f72150af4e326543b29df71cda27d73ec087c1) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(aab5a60a) SHA1(bc0a5687cd6b0f65693f0350ecfe1284c7c39f74) )
 
 	ROM_REGION( 0x1a00000, "sprites", 0 )
@@ -7692,7 +7692,7 @@ ROM_START( samsho4nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7615bc1b) SHA1(b936f7b341f6fe0921b4c41049734684583e3596) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(35632afa) SHA1(36f29de056583dd9acca35f39281a4c1ef0adb32) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7710,7 +7710,7 @@ ROM_START( samsho4knds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7615bc1b) SHA1(b936f7b341f6fe0921b4c41049734684583e3596) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(35632afa) SHA1(36f29de056583dd9acca35f39281a4c1ef0adb32) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7728,7 +7728,7 @@ ROM_START( samsho5nds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(5218a10a) SHA1(da4968e55d4a56249d85d6742a6acffcff4ad65d) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(e32a49d0) SHA1(b659f9e014d2a208839d17e8527d88e7cf094c39) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7746,7 +7746,7 @@ ROM_START( samsho5hnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(5218a10a) SHA1(da4968e55d4a56249d85d6742a6acffcff4ad65d) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(e32a49d0) SHA1(b659f9e014d2a208839d17e8527d88e7cf094c39) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7764,7 +7764,7 @@ ROM_START( samsho5bnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romb", CRC(18114fb1) SHA1(016dc2f328340f3637a9bff373a20973df29f6b8) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0b", 0x000000, 0x1000000, CRC(fbfb6ea1) SHA1(201e39885d00abf3efaeca8fd0a53a7cf9c6dc06) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -7782,7 +7782,7 @@ ROM_START( savagerends )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(29992eba) SHA1(187be624abe8670503edb235ff21ae8fdc3866e0) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(97c9ca3b) SHA1(e1c533906b923ccf2661172eed97ae64f83ef05a) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -7800,7 +7800,7 @@ ROM_START( sbpnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b1f86f7) SHA1(15b6af7f9fbd0f1f6a1ecd912200ca8d0af2da2a) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(7ae9fbdb) SHA1(53d25c4f0a33392490fc74c2fa5329a31b246fde) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -7818,7 +7818,7 @@ ROM_START( sdodgebnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0a5f3325) SHA1(04e0236df478a5452654c823dcb42fea65b6a718) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(e7899a24) SHA1(3e75b449898fee73fbacf58d70e3a460b9e0c573) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -7836,7 +7836,7 @@ ROM_START( sengokunds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9b4f34c6) SHA1(7f3a51f47fcbaa598f5c76bc66e2c53c8dfd852d) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(4eeefbc4) SHA1(9928fde6191ed5e3bf484df23ea16ff2845e3666) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -7854,7 +7854,7 @@ ROM_START( sengokuhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9b4f34c6) SHA1(7f3a51f47fcbaa598f5c76bc66e2c53c8dfd852d) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(4eeefbc4) SHA1(9928fde6191ed5e3bf484df23ea16ff2845e3666) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -7872,7 +7872,7 @@ ROM_START( sengoku2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d4de4bca) SHA1(ecf604d06f01d40b04e285facef66a6ae2d35661) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(7a2696b5) SHA1(492c41449f6bc5c5a5dc5e86d162f52b12525037) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -7890,7 +7890,7 @@ ROM_START( sengoku3nds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7d501c39) SHA1(8e6bcc428f5ac7532d9c9be7e07ad0821461a080) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(7f45a0b5) SHA1(429985321f932921560de3737d370bb2ae51de5f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7908,7 +7908,7 @@ ROM_START( sengoku3ands )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7d501c39) SHA1(8e6bcc428f5ac7532d9c9be7e07ad0821461a080) )
 
-	ROM_REGION( 0xe00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xe00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xe00000, CRC(7f45a0b5) SHA1(429985321f932921560de3737d370bb2ae51de5f) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7926,7 +7926,7 @@ ROM_START( shocktr2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d0604ad1) SHA1(fae3cd52a177eadd5f5775ace957cc0f8301e65d) )
 
-	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0xa00000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0xa00000, CRC(0c8b240d) SHA1(e9a74e30bdd5fefa62aaa40190554907717fb9b0) )
 
 	ROM_REGION( 0x3000000, "sprites", 0 )
@@ -7944,7 +7944,7 @@ ROM_START( shocktronds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(075b9518) SHA1(ac21b88a860b9572bf24432b4cadcc96d108055d) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(7d670654) SHA1(f51d49921e73937bf72254d44078542d4b0b40d6) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7962,7 +7962,7 @@ ROM_START( shocktroands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(075b9518) SHA1(ac21b88a860b9572bf24432b4cadcc96d108055d) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(7d670654) SHA1(f51d49921e73937bf72254d44078542d4b0b40d6) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
@@ -7980,7 +7980,7 @@ ROM_START( socbrawlnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb37427c) SHA1(99efe9600ebeda48331f396e3203c7588bdb7d24) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5e6c9152) SHA1(1dfd10d939f71e2576e01b3f0088cdfe116bc8d6) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -7998,7 +7998,7 @@ ROM_START( socbrawlhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb37427c) SHA1(99efe9600ebeda48331f396e3203c7588bdb7d24) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(5e6c9152) SHA1(1dfd10d939f71e2576e01b3f0088cdfe116bc8d6) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -8016,7 +8016,7 @@ ROM_START( sonicwi2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bb828df1) SHA1(eab8e2868173bdaac7c7ed97305a9aa1033fd303) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(310843e1) SHA1(eba432b3658e3c6f5198459bfba8d675ca4dd0f6) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8034,7 +8034,7 @@ ROM_START( sonicwi3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(b20e4291) SHA1(0e891ab53f9fded510295dfc7818bc59b4a9dd97) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(69dbfc77) SHA1(b3bbd257efb2836afd0d519db63fa66878831020) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -8052,7 +8052,7 @@ ROM_START( spinmastnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(76108b2f) SHA1(08c89a8b746dbb10ff885b41cde344173c2e3699) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x100000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x100000, CRC(cc281aef) SHA1(68be154b3e25f837afb4a477600dbe0ee69bec44) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8070,7 +8070,7 @@ ROM_START( ssidekinds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(49f17d2d) SHA1(70971fcf71ae3a6b2e26e7ade8063941fb178ae5) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(22c097a5) SHA1(328c4e6db0a026f54a633cff1443a3f964a8daea) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -8088,7 +8088,7 @@ ROM_START( ssideki2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(156f6951) SHA1(49686f615f109a02b4f23931f1c84fee13872ffd) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(48397b3e) SHA1(01bcb3f51e801d1028c51b3279277b9c6dce3c6e) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8106,7 +8106,7 @@ ROM_START( ssideki3nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(82fcd863) SHA1(b219a5685450f9c24cc195f1c914bc3b292d72c0) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(9ab3ef93) SHA1(8d306ba20f14d835d6f1d31ce145fc8122f4c513) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -8124,7 +8124,7 @@ ROM_START( ssideki4nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(a932081d) SHA1(376a45e19edb780ac8798c41ae2260c8a8a4bba8) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(41fd0806) SHA1(66a750205ce460b886a68a64e985b4a5f126f8ad) )
 
 	ROM_REGION( 0x1400000, "sprites", 0 )
@@ -8142,7 +8142,7 @@ ROM_START( stakwinnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(2fe1f499) SHA1(5b747eeef65be04423d2db05e086df9132758a47) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(b7785023) SHA1(d11df1e623434669cd3f97f0feda747b24dac05d) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8160,7 +8160,7 @@ ROM_START( stakwin2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c8e5e0f9) SHA1(09bb05ae6f09b59b9e4871fae1fc7c3bafd07394) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(97114ed8) SHA1(50ffa7e4761a0fa4f79010919c209a4e2175eb01) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -8178,7 +8178,7 @@ ROM_START( strhoopnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(bee3455a) SHA1(fd5345d9847982085a9b364fff542580889bf02f) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(71287d2c) SHA1(717b4cfabbedb6e73d5d542611f6841e3691d95e) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8196,7 +8196,7 @@ ROM_START( superspynds )
 
 	NEO_BIOS_AUDIO_256K( "m1rom", CRC(ca661f1b) SHA1(4e3cb57db716ec48487c1b070c3a55a5faf40856) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(18402ab8) SHA1(71d701cfffdfc3a31670138df83d7be2149b181b) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -8214,7 +8214,7 @@ ROM_START( svcnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b7bf462) SHA1(7466a6962de5242f71b9c52d7bd21a9832115e11) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(1bdd8c7c) SHA1(bc8c2546e07a31561f833cb424c007c7e0e947dd) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8232,7 +8232,7 @@ ROM_START( svcbootnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8250,7 +8250,7 @@ ROM_START( svcplusnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8268,7 +8268,7 @@ ROM_START( svcplusands )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8286,7 +8286,7 @@ ROM_START( svcsplusnds )
 
 	NEO_BIOS_AUDIO_128K( "m1romp", CRC(fd4f0ff9) SHA1(e97e864aaa4789d854363512986e80c0606da996) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0p", 0x000000, 0x1000000, CRC(b2245d94) SHA1(8f1025b8860c14988e17a752f6340273caba3319) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8304,7 +8304,7 @@ ROM_START( svcpcbnds )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b7bf462) SHA1(7466a6962de5242f71b9c52d7bd21a9832115e11) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(1bdd8c7c) SHA1(bc8c2546e07a31561f833cb424c007c7e0e947dd) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8322,7 +8322,7 @@ ROM_START( svcpcbands )
 
 	NEO_BIOS_AUDIO_512K( "m1rom", CRC(7b7bf462) SHA1(7466a6962de5242f71b9c52d7bd21a9832115e11) )
 
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x1000000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x1000000, CRC(1bdd8c7c) SHA1(bc8c2546e07a31561f833cb424c007c7e0e947dd) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
@@ -8340,7 +8340,7 @@ ROM_START( tophuntrnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3f84bb9f) SHA1(07446040871d11da3c2217ee9d1faf8c3cae7420) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(74914823) SHA1(ffcd8ee0307c2965604d915a52c6919ce9c2b318) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8358,7 +8358,7 @@ ROM_START( tophuntrhnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(3f84bb9f) SHA1(07446040871d11da3c2217ee9d1faf8c3cae7420) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(74914823) SHA1(ffcd8ee0307c2965604d915a52c6919ce9c2b318) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8376,7 +8376,7 @@ ROM_START( tpgolfnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(4cc545e6) SHA1(8e014b8cab3e5b3995756a4ea52ce49c36866377) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(203e6125) SHA1(c85b1ea09a1a04c0f31a5762ad85d4044285fdb3) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -8394,7 +8394,7 @@ ROM_START( trallynds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0908707e) SHA1(df7489ea6abf84d7f137ba7a8f52a4fd1b088fd7) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x180000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x180000, CRC(5d80c0c1) SHA1(34452d67f1a8b5be1a695214277f1b2bd7795b6e) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -8412,7 +8412,7 @@ ROM_START( turfmastnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(9994ac00) SHA1(7bded797f3b80fd00bcbe451ac0abe6646b19a14) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(04916fe6) SHA1(83c275971ab05268c90724418a6b150a4effb443) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8430,7 +8430,7 @@ ROM_START( twinsprinds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(364d6f96) SHA1(779b95a6476089b71f48c8368d9043ee1dba9032) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(2e5da6dd) SHA1(182215db7b07820cb7e17d3079c2cbfbc4a4d283) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -8448,7 +8448,7 @@ ROM_START( twsoc96nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(cb82bc5d) SHA1(8e3ecabec25d89adb6e0eed0ef5f94d34a4d5fc0) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(9e3f326f) SHA1(4aeac5a835517a3cf27baf339408f0f1aeb14733) )
 
 	ROM_REGION( 0xa00000, "sprites", 0 )
@@ -8466,7 +8466,7 @@ ROM_START( viewpoinnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8e69f29a) SHA1(7a25f4997996434ea1b7d0d1ca9e7aaf966cbd03) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(77f9135d) SHA1(08f9cfc958f70822217e4d2a85fdbfb46598e3af) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -8483,7 +8483,7 @@ ROM_START( vlinernds )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -8499,7 +8499,7 @@ ROM_START( vliner7ends )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -8515,7 +8515,7 @@ ROM_START( vliner6ends )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -8531,7 +8531,7 @@ ROM_START( vliner54nds )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -8547,7 +8547,7 @@ ROM_START( vliner53nds )
 
 	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+	ROM_REGION( 0x200000, "ymsnd", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
@@ -8564,7 +8564,7 @@ ROM_START( wakuwak7nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(0634bba6) SHA1(153aaf016440500df7a4454f3f2f2911219cb7d8) )
 
-	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x800000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x800000, CRC(d6d82bce) SHA1(9e5895d77c5c14db6db5dc24d1616f197725c66f) )
 
 	ROM_REGION( 0x1800000, "sprites", 0 )
@@ -8582,7 +8582,7 @@ ROM_START( wh1nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1bd9d04b) SHA1(65cd7b002123ed1a3111e3d942608d0082799ff3) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(0bc3e723) SHA1(b653c55744d8ec0aa5365b66901fc76e8a95f05f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -8600,7 +8600,7 @@ ROM_START( wh1hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1bd9d04b) SHA1(65cd7b002123ed1a3111e3d942608d0082799ff3) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(0bc3e723) SHA1(b653c55744d8ec0aa5365b66901fc76e8a95f05f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -8618,7 +8618,7 @@ ROM_START( wh1hands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(1bd9d04b) SHA1(65cd7b002123ed1a3111e3d942608d0082799ff3) )
 
-	ROM_REGION( 0x300000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x300000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x300000, CRC(0bc3e723) SHA1(b653c55744d8ec0aa5365b66901fc76e8a95f05f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
@@ -8636,7 +8636,7 @@ ROM_START( wh2nds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8fa3bc77) SHA1(982f92978671e4ee66630948e6bb7565b37b5dc0) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d84c37c5) SHA1(f7b68d6528e83259fa59a0385e28e215b040b01c) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -8654,7 +8654,7 @@ ROM_START( wh2hnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(8fa3bc77) SHA1(982f92978671e4ee66630948e6bb7565b37b5dc0) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(d84c37c5) SHA1(f7b68d6528e83259fa59a0385e28e215b040b01c) )
 
 	ROM_REGION( 0xc00000, "sprites", 0 )
@@ -8672,7 +8672,7 @@ ROM_START( wh2jnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(d2eec9d3) SHA1(09478787045f1448d19d064dd3d540d1741fd619) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(c55c63dd) SHA1(8e7ad43b8ed9de488ca7011b3c69167ab0763523) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )
@@ -8690,7 +8690,7 @@ ROM_START( whpnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(28065668) SHA1(0c60d4afa1dccad0135e733104f056be73b54e4e) )
 
-	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x600000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x600000, CRC(b90482e8) SHA1(b17d09f22eb3e4bce7930fe0cae400ca9848a469) )
 
 	ROM_REGION( 0x1c00000, "sprites", 0 )
@@ -8708,7 +8708,7 @@ ROM_START( wjammersnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(52c23cfc) SHA1(809a7e072ad9acbffc25e9bd27cdb97638d09d07) )
 
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x400000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x400000, CRC(7793c3f7) SHA1(c9e1e790a337db6b0d831452bd69d98ce6dd57ed) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -8726,7 +8726,7 @@ ROM_START( zedbladends )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(7b5f3d0a) SHA1(4a301781a57ff236f49492b576ff4858b0ffbdf8) )
 
-	ROM_REGION( 0x500000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x500000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x500000, CRC(3ddf9bb8) SHA1(f519c7701cfb100fcc6634114f18dddf1f35226d) )
 
 	ROM_REGION( 0x800000, "sprites", 0 )
@@ -8744,7 +8744,7 @@ ROM_START( zintrckbnds )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(fd9627ca) SHA1(b640c1f1ff466f734bb1cb5d7b589cb7e8a55346) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(c09f74f1) SHA1(d0b56a780a6eba85ff092240b1f1cc6718f17c21) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -8762,7 +8762,7 @@ ROM_START( zupapands )
 
 	NEO_BIOS_AUDIO_128K( "m1rom", CRC(5a3b3191) SHA1(fa9a9930e18c64e598841fb344c4471d3d2c1964) )
 
-	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
+	ROM_REGION( 0x200000, "ymsnd", 0 )
 	ROM_LOAD( "vroma0", 0x000000, 0x200000, CRC(d3a7e1ff) SHA1(4a4a227e10f4af58168f6c26011ea1d414253f92) )
 
 	ROM_REGION( 0x1000000, "sprites", 0 )

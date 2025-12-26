@@ -462,7 +462,7 @@ ROM_START( cyberliphc01 )
 	ROM_LOAD( "010.v3", 0x100000, 0x080000, CRC(ae38bc84) SHA1(c0937b4f89b8b26c8a0e747b234f44ad6a3bf2ba) )
 	ROM_LOAD( "010.v4", 0x180000, 0x080000, CRC(70899bd2) SHA1(8cf01144f0bcf59f09777175ae6b71846b09f3a1) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcmb", 0 )
+	ROM_REGION( 0x080000, "ymsnd.deltat", 0 )
 	ROM_LOAD( "010.v5", 0x000000, 0x080000, CRC(586f4cb2) SHA1(588460031d84c308e3353ecf714db9986425c21c) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -1192,7 +1192,7 @@ ROM_START( gpilotshc01 )
 	ROM_LOAD( "020.v1", 0x000000, 0x100000, CRC(1b526c8b) SHA1(2801868d2badcf8aaf5d490e010e4049d81d7bc1) )
 	ROM_LOAD( "020.v2", 0x100000, 0x080000, CRC(4a9e6f03) SHA1(d3ac11f333b03d8a318921bdaefb14598e289a14) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcmb", 0 )
+	ROM_REGION( 0x080000, "ymsnd.deltat", 0 )
 	ROM_LOAD( "020.v3", 0x000000, 0x080000, CRC(7abf113d) SHA1(5b2a0e70f2eaf4638b44702dacd4cb17838fb1d5) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
@@ -14736,7 +14736,7 @@ ROM_START( maglordhc01 )
 	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "005.v1", 0x000000, 0x080000, CRC(cc0455fd) SHA1(a8ff4270e7705e263d25ff0b301f503bccea7e59) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcmb", 0 )
+	ROM_REGION( 0x100000, "ymsnd.deltat", 0 )
 	ROM_LOAD( "005.v2", 0x000000, 0x080000, CRC(f94ab5b7) SHA1(2c16985102e3585e08622d8c54ac5c60425b9ff8) )
 	ROM_LOAD( "005.v3", 0x080000, 0x080000, CRC(232cfd04) SHA1(61b66a9decbbd1f500a8c186615e7fd077c6861e) )
 
@@ -14760,7 +14760,31 @@ ROM_START( maglordhc02 )
 	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "005.v11", 0x000000, 0x080000, CRC(cc0455fd) SHA1(a8ff4270e7705e263d25ff0b301f503bccea7e59) )
 
-	ROM_REGION( 0x100000, "ymsnd:adpcmb", 0 )
+	ROM_REGION( 0x100000, "ymsnd.deltat", 0 )
+	ROM_LOAD( "005.v21", 0x000000, 0x080000, CRC(f94ab5b7) SHA1(2c16985102e3585e08622d8c54ac5c60425b9ff8) )
+	ROM_LOAD( "005.v22", 0x080000, 0x080000, CRC(232cfd04) SHA1(61b66a9decbbd1f500a8c186615e7fd077c6861e) )
+
+	ROM_REGION( 0x300000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "005.c1", 0x000000, 0x80000, CRC(806aee34) SHA1(3c32a0edbbddb694495b510c13979c44b83de8bc) )
+	ROM_LOAD16_BYTE( "005.c2", 0x000001, 0x80000, CRC(34aa9a86) SHA1(cec97e1ff7f91158040c629ba75742db82c4ae5e) )
+	ROM_LOAD16_BYTE( "005.c3", 0x100000, 0x80000, CRC(c4c2b926) SHA1(478bfafca21f5a1338808251a06ab405e6a9e65f) )
+	ROM_LOAD16_BYTE( "005.c4", 0x100001, 0x80000, CRC(9c46dcf4) SHA1(4c05f3dc25777a87578ce09a6cefb3a4cebf3266) )
+	ROM_LOAD16_BYTE( "005.c5", 0x200000, 0x80000, CRC(69086dec) SHA1(7fa47f4a765948813ebf366168275dcc3c42e951) )
+	ROM_LOAD16_BYTE( "005.c6", 0x200001, 0x80000, CRC(ab7ac142) SHA1(e6ad2843947d35d8e913d2666f87946c1ba7944f) )
+ROM_END
+
+ROM_START( maglordhc03 ) // French and English, use Shift to choose
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "005_hc03.p1", 0x000000, 0x080000, CRC(f201c65a) SHA1(61173b0922bb0c1386d6312a819b492d402b4b7f) )
+
+	NEO_SFIX_128K( "005_hc03.s1", CRC(0e1839b2) SHA1(2c833521b70635c90af4e3301b564e7901ab60a7) )
+
+	NEO_BIOS_AUDIO_256K( "005.m1", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
+
+	ROM_REGION( 0x080000, "ymsnd", 0 )
+	ROM_LOAD( "005.v11", 0x000000, 0x080000, CRC(cc0455fd) SHA1(a8ff4270e7705e263d25ff0b301f503bccea7e59) )
+
+	ROM_REGION( 0x100000, "ymsnd.deltat", 0 )
 	ROM_LOAD( "005.v21", 0x000000, 0x080000, CRC(f94ab5b7) SHA1(2c16985102e3585e08622d8c54ac5c60425b9ff8) )
 	ROM_LOAD( "005.v22", 0x080000, 0x080000, CRC(232cfd04) SHA1(61b66a9decbbd1f500a8c186615e7fd077c6861e) )
 
@@ -14901,7 +14925,7 @@ ROM_START( nam1975hc01 )
 	ROM_REGION( 0x080000, "ymsnd", 0 )
 	ROM_LOAD( "001.v1", 0x000000, 0x080000, CRC(a7c3d5e5) SHA1(e3efc86940f91c53b7724c4566cfc21ea1a7a465) )
 
-	ROM_REGION( 0x180000, "ymsnd:adpcmb", 0 )
+	ROM_REGION( 0x180000, "ymsnd.deltat", 0 )
 	ROM_LOAD( "001.v2", 0x000000, 0x080000, CRC(55e670b3) SHA1(a047049646a90b6db2d1882264df9256aa5a85e5) )
 	ROM_LOAD( "001.v3", 0x080000, 0x080000, CRC(ab0d8368) SHA1(404114db9f3295929080b87a5d0106b40da6223a) )
 	ROM_LOAD( "001.v4", 0x100000, 0x080000, CRC(df468e28) SHA1(4e5d4a709a4737a87bba4083aeb788f657862f1a) )
@@ -14948,7 +14972,7 @@ ROM_START( ncombathc01 )
 	ROM_LOAD( "009.v2", 0x080000, 0x080000, CRC(7b3588b7) SHA1(a4e6d9d4113ff4ce48b371f65e9187d551821d3b) )
 	ROM_LOAD( "009.v3", 0x100000, 0x080000, CRC(505a01b5) SHA1(9426a4f5b31e16f74e72e61951c189a878f211c5) )
 
-	ROM_REGION( 0x080000, "ymsnd:adpcmb", 0 )
+	ROM_REGION( 0x080000, "ymsnd.deltat", 0 )
 	ROM_LOAD( "009.v4", 0x000000, 0x080000, CRC(365f9011) SHA1(aebd292214ab280b05ee9e759b7e9a681a099c4a) )
 
 	ROM_REGION( 0x300000, "sprites", 0 )
@@ -18443,7 +18467,7 @@ GAME( 2014, gpilotshc01,      gpilots,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1995, kabukiklhc01,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enable Hidden Characters)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kabukiklhc02,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enhanced 2023-03-22)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, karnovrhc01,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Enable Hidden Characters)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2024, karnovrhc02,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Hack, v0.2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2024, karnovrhc02,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Revolution v0.2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2014, kizunahc01,       kizuna,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle (Arrange Ver. 1.7 2014-07-16)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kizunahc02,       kizuna,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle (Simplify Edition 2018-06-04)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2011, kof2k4sehc01,     kof2k4se, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters Special Edition 2004 Magic Plus (Crazy Edition 2018-10-26) (The King of Fighters 2002 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -18943,6 +18967,7 @@ GAME( 2018, magdrop3hc02,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2004, magdrop3hc03,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Translation French)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1990, maglordhc01,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magician Lord (Ex Super Version)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2025, maglordhc02,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Magician Lord (Again Changes From Hell v1.0.0)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2025, maglordhc03,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Magician Lord (Again Changes From Hell v1.0.0, Translation French)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, matrimhc01,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrimd,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Simplification Edition 2018-06-04)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2015, matrimhc02,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrima,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Great Blood Temple Simplification 2015-12-05)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, matrimhc03,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrimd,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Enable Hidden Characters)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )

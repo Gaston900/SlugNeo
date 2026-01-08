@@ -2897,6 +2897,12 @@ void neogeo_state::init_samsho5b()
 	m_bootleg_prot->neogeo_bootleg_cx_decrypt(spr_region, spr_region_size);
 }
 
+void neogeo_state::init_kof97pla()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
+}
+
 void neogeo_state::init_kof97oro()
 {
 	init_neogeo();

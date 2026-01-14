@@ -12171,7 +12171,7 @@ INPUT_PORTS_END
 
 #define MSLUG3CQT_NEOSD \
 	ROM_REGION(0x59A1000, "asis", 0) \
-	ROM_LOAD("mslug3cqt.neo", 0x000000, 0x001000, CRC(4e077dfc) SHA1(b299f6c0736a073a5963639cdab5d8b73eb78987) )\
+	ROM_LOAD("mslug3cqt.neo", 0x000000, 0x001000, CRC(016bf543) SHA1(d8967464d84b83337cfcfd22feee2f6879cd47c8) )\
 	ROM_CONTINUE(0x000000, 0x59A0000)\
 	ROM_REGION( 0x1000000, "ymsnd", 0 )\
 	ROM_COPY("asis", 0x9A0000, 0x00000, 0x1000000)\
@@ -12448,7 +12448,7 @@ ROM_END
 
 ROM_START( mslug3cqtdd )
 	ROM_REGION( 0x900000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "promcqt", 0x000000, 0x900000, CRC(e45257bf) SHA1(3f746c90bc3c88983f13ce8cb1ee0f22c99260f5) )
+	ROM_LOAD16_WORD_SWAP( "promcqt", 0x000000, 0x900000, CRC(94de23f2) SHA1(c33516d124a5a68ee73f069a41a55c7ba2d95b5f) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 	MSLUG3HD_SFIX_128K
 	MSLUG3_AUDIO_BIOS_512K
@@ -12610,7 +12610,7 @@ ROM_END
 
 ROM_START( mslug3cqtnds )
 	ROM_REGION( 0xa00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "mslug3cqt.neo", 0x000000, 0x001000, CRC(4e077dfc) SHA1(b299f6c0736a073a5963639cdab5d8b73eb78987) )
+	ROM_LOAD16_WORD_SWAP( "mslug3cqt.neo", 0x000000, 0x001000, CRC(016bf543) SHA1(d8967464d84b83337cfcfd22feee2f6879cd47c8) )
     ROM_CONTINUE( 0x000000, 0x901000 )
 	ROM_IGNORE( 0x509F000 )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
@@ -15465,7 +15465,7 @@ GAME( 2000, mslug3ndd,        mslug3,   neogeo_noslot,   mslug3,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 Hack (DARKSOFT)
-GAME( 2025, mslug3cqtdd,      mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-09-23) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3cqtdd,      mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-10-20) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3chuanqidd,  mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-09-23) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3cqdd,       mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary 4.5 2025-07-14) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3cqtfbdd,    mslug3,   neogeo_68kram,   mslug3sc,   neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary Tower Defense 5.0 2025-06-10) (Darksoft)", MACHINE_SUPPORTS_SAVE )
@@ -15489,7 +15489,7 @@ GAME( 2000, mslug3ndnsd,      mslug3,   neogeo_noslot,   mslug3,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 Hack (NEO SD)
-GAME( 2025, mslug3cqtnds,     mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-09-23) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3cqtnds,     mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-10-20) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3chuanqinds, mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-09-23) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3cqnds,      mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary 4.5 2025-07-14) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3cqtfbnds,   mslug3,   neogeo_68kram,   mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary Tower Defense 5.0 2025-06-10) (Neo SD)", MACHINE_SUPPORTS_SAVE )

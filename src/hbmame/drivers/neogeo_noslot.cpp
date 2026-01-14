@@ -6970,7 +6970,7 @@ ROM_START( crswd2bl )
 	ROM_LOAD16_BYTE( "054.c2", 0x000001, 0x400000, CRC(d6c6183d) SHA1(cc546ff063fae2c01c109fabcd5b2d29ec3299db) )
 ROM_END
 
-/* The King of Fighters '97 bootlegs */
+/* bootleg of The King of Fighters '97s */
 
 ROM_START( kof97pls )
 	ROM_REGION( 0x500000, "maincpu", 0 )
@@ -7072,7 +7072,7 @@ ROM_START( kogplus )
 	ROM_LOAD16_BYTE( "5232.c6", 0x2000001, 0x400000, CRC(d2bd967b) SHA1(c494e0a98e127d37ca360a28accc167fa50fb626) )
 ROM_END
 
-/* Shock Troopers - 2nd Squad bootleg */
+/* bootleg of Shock Troopers - 2nd Squad */
 
 ROM_START( lans2004 )
 	ROM_REGION( 0x600000, "maincpu", 0 )
@@ -15879,8 +15879,8 @@ GAME( 1992, ssideki,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 1994, kof94,      neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "The King of Fighters '94 (NGM-055 ~ NGH-055)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, aof2,       neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Art of Fighting 2 / Ryuuko no Ken 2 (NGM-056)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, aof2a,      aof2,     neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Art of Fighting 2 / Ryuuko no Ken 2 (NGH-056)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1993, fatfursp,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Fatal Fury Special / Garou Densetsu Special (set 1) (NGM-058 ~ NGH-058)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1993, fatfurspa,  fatfursp, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Fatal Fury Special / Garou Densetsu Special (set 2) (NGM-058 ~ NGH-058)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1993, fatfursp,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Fatal Fury Special / Garou Densetsu Special (NGM-058 ~ NGH-058, set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1993, fatfurspa,  fatfursp, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Fatal Fury Special / Garou Densetsu Special (NGM-058 ~ NGH-058, set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, savagere,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, ssideki2,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Super Sidekicks 2 - The World Championship / Tokuten Ou 2 - Real Fight Football (NGM-061 ~ NGH-061)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, samsho2,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (NGM-063 ~ NGH-063)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -15915,8 +15915,8 @@ GAME( 1997, kof97h,     kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 1997, kof97k,     kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "The King of Fighters '97 (Korean release)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1997, kof97pls,   kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters '97 Plus (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1997, kof97oro,   kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_kof97oro, ROT0, "bootleg", "The King of Fighters '97 Chongchu Jianghu Plus 2003 (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1997, kog,        kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kog,      ROT0, "bootleg", "King of Gladiator (The King of Fighters '97 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1997, kogplus,    kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kog,      ROT0, "bootleg", "King of Gladiator Plus (The King of Fighters '97 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1997, kog,        kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kog,      ROT0, "bootleg", "King of Gladiator (bootleg of The King of Fighters '97)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1997, kogplus,    kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kog,      ROT0, "bootleg", "King of Gladiator Plus (bootleg of The King of Fighters '97)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastblad,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (NGM-2340)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastbladh,  lastblad, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (NGH-2340)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastsold,   lastblad, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "The Last Soldier (Korean release of The Last Blade)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -15949,19 +15949,19 @@ GAME( 2001, sengoku3,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2001, sengoku3a,  sengoku3, neogeo_noslot,   neogeo, neogeo_state,   init_sengoku3, ROT0, "Noise Factory / SNK", "Sengoku 3 / Sengoku Densho 2001 (set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2001, kof2001,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGM-262?)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2001, kof2001h,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGH-2621)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
-GAME( 2003, cthd2003,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_cthd2003, ROT0, "bootleg (Phenixsoft)", "Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg, set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Protected Hack / Bootleg of kof2001 */
-GAME( 2003, ct2k3sp,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_ct2k3sp,  ROT0, "bootleg (Phenixsoft)", "Crouching Tiger Hidden Dragon 2003 Super Plus (The King of Fighters 2001 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Protected Hack / Bootleg of kof2001 */
-GAME( 2003, ct2k3sa,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_ct2k3sa,  ROT0, "bootleg (Phenixsoft)", "Crouching Tiger Hidden Dragon 2003 Super Plus, alternate (The King of Fighters 2001 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Hack / Bootleg of kof2001 */
+GAME( 2003, cthd2003,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_cthd2003, ROT0, "bootleg (Phenixsoft)", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Protected Hack / Bootleg of kof2001 */
+GAME( 2003, ct2k3sp,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_ct2k3sp,  ROT0, "bootleg (Phenixsoft)", "Crouching Tiger Hidden Dragon 2003 Super Plus (hack of The King of Fighters 2001)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Protected Hack / Bootleg of kof2001 */
+GAME( 2003, ct2k3sa,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_ct2k3sa,  ROT0, "bootleg (Phenixsoft)", "Crouching Tiger Hidden Dragon 2003 Super Plus (hack of The King of Fighters 2001, alternate)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Hack / Bootleg of kof2001 */
 GAME( 2002, kof2002,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "Eolith / Playmore", "The King of Fighters 2002 (NGM-2650 ~ NGH-2650)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2002, kof2002b,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002b, ROT0, "bootleg", "The King of Fighters 2002 (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2pls,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2002, kf2k2pla,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2002, kf2k2mp,    kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k2mp,  ROT0, "bootleg", "The King of Fighters 2002 Magic Plus (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2002, kf2k2mp2,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k2mp2, ROT0, "bootleg", "The King of Fighters 2002 Magic Plus II (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
-GAME( 2002, kof10th,    kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof10th,  ROT0, "bootleg", "The King of Fighters 10th Anniversary (The King of Fighters 2002 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // fake SNK copyright
-GAME( 2005, kf10thep,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf10thep, ROT0, "bootleg", "The King of Fighters 10th Anniversary Extra Plus (The King of Fighters 2002 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // fake SNK copyright
-GAME( 2004, kf2k5uni,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k5uni, ROT0, "bootleg", "The King of Fighters 10th Anniversary 2005 Unique (The King of Fighters 2002 bootleg, set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // fake SNK copyright
-GAME( 2004, kof2k4se,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_kof2k4se, ROT0, "bootleg", "The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg, Set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Hack / Bootleg of kof2002 */
+GAME( 2002, kof10th,    kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof10th,  ROT0, "bootleg", "The King of Fighters 10th Anniversary (bootleg of The King of Fighters 2002)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // fake SNK copyright
+GAME( 2005, kf10thep,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf10thep, ROT0, "bootleg", "The King of Fighters 10th Anniversary Extra Plus (bootleg of The King of Fighters 2002)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // fake SNK copyright
+GAME( 2004, kf2k5uni,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k5uni, ROT0, "bootleg", "The King of Fighters 10th Anniversary 2005 Unique (bootleg of The King of Fighters 2002, set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // fake SNK copyright
+GAME( 2004, kof2k4se,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_kof2k4se, ROT0, "bootleg", "The King of Fighters Special Edition 2004 (bootleg of The King of Fighters 2002, Set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Hack / Bootleg of kof2002 */
 GAME( 2003, svc,        neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_svc,      ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (NGM-2690 ~ NGH-2690)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcboot,    svc,      neogeo_noslot,   neogeo, neogeo_state,   init_svcboot,  ROT0, "bootleg", "SNK vs. Capcom - SVC Chaos (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcplus,    svc,      neogeo_noslot,   neogeo, neogeo_state,   init_svcplus,  ROT0, "bootleg", "SNK vs. Capcom - SVC Chaos Plus (bootleg set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -15975,11 +15975,11 @@ GAME( 2003, kof2003,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2003, kof2003h,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2003h, ROT0, "SNK Playmore", "The King of Fighters 2003 (NGH-2710)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kf2k3bl,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2003b, ROT0, "bootleg", "The King of Fighters 2003 (bootleg set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // zooming is wrong because its a bootleg of the pcb version on a cart (unless it was a bootleg pcb with the new bios?)
 GAME( 2003, kf2k3bla,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k3pl,  ROT0, "bootleg", "The King of Fighters 2003 (bootleg set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // zooming is wrong because its a bootleg of the pcb version on a cart
-GAME( 2003, kf2k3pl,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k3pl,  ROT0, "bootleg", "The King of Fighters 2004 Plus / Hero (The King of Fighters 2003 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // zooming is wrong because its a bootleg of the pcb version on a cart
-GAME( 2003, kf2k3upl,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k3upl, ROT0, "bootleg", "The King of Fighters 2004 Ultra Plus (The King of Fighters 2003 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // zooming is wrong because its a bootleg of the pcb version on a cart
+GAME( 2003, kf2k3pl,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k3pl,  ROT0, "bootleg", "The King of Fighters 2004 Plus / Hero (bootleg of The King of Fighters 2003)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // zooming is wrong because its a bootleg of the pcb version on a cart
+GAME( 2003, kf2k3upl,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k3upl, ROT0, "bootleg", "The King of Fighters 2004 Ultra Plus (bootleg of The King of Fighters 2003)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // zooming is wrong because its a bootleg of the pcb version on a cart
 GAME( 2004, samsh5sp,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGM-2720)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, samsh5sph,  samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720) (2nd release, less censored)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, samsh5spho, samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720) (1st release, censored)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, samsh5sph,  samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720, 2nd release, less censored)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, samsh5spho, samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720, 1st release, censored)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 
 /* Alpha Denshi Co. / ADK (changed name in 1993) */
 GAME( 1990, maglord,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Alpha Denshi Co.", "Magician Lord (NGM-005)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -16063,7 +16063,7 @@ GAME( 1996, stakwin2,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 1997, shocktro,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Saurus", "Shock Troopers (set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1997, shocktroa,  shocktro, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Saurus", "Shock Troopers (set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1998, shocktr2,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Saurus", "Shock Troopers - 2nd Squad", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, lans2004,   shocktr2, neogeo_noslot,   neogeo, neogeo_state,   init_lans2004, ROT0, "bootleg", "Lansquenet 2004 (Shock Troopers - 2nd Squad bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, lans2004,   shocktr2, neogeo_noslot,   neogeo, neogeo_state,   init_lans2004, ROT0, "bootleg", "Lansquenet 2004 (bootleg of Shock Troopers - 2nd Squad)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 
 /* Sunsoft */
 GAME( 1995, galaxyfg,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Sunsoft", "Galaxy Fight - Universal Warriors", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -16088,8 +16088,8 @@ GAME( 1996, sdodgeb,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 1996, twsoc96,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Tecmo", "Tecmo World Soccer '96", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 
 /* Viccom */
-GAME( 1994, fightfev,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Viccom", "Fight Fever / Wang Jung Wang (set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1994, fightfeva,  fightfev, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Viccom", "Fight Fever / Wang Jung Wang (set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1994, fightfev,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Viccom", "Fight Fever (set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1994, fightfeva,  fightfev, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Viccom", "Fight Fever (set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 
 /* Video System Co. */
 GAME( 1994, pspikes2,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Video System Co.", "Power Spikes II (NGM-068)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -16144,8 +16144,8 @@ GAME( 2005, lasthope,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 
 /* Jamma PCB */
 GAME( 2003, kf2k3pcb,   0,        neogeo_noslot,   neogeo,   neogeo_state, init_kf2k3pcb, ROT0, "SNK Playmore", "The King of Fighters 2003 (Japan, JAMMA PCB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // not a clone of neogeo because it's NOT a neogeo cart.
-GAME( 2003, svcpcb,     0,        neogeo_noslot,   dualbios, neogeo_state, init_svcpcb,   ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (JAMMA PCB, set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // not a clone of neogeo because it's NOT a neogeo cart.
-GAME( 2003, svcpcba,    svcpcb,   neogeo_noslot,   dualbios, neogeo_state, init_svcpcb,   ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (JAMMA PCB, set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted Code */
+GAME( 2003, svcpcb,     0,        neogeo_noslot,   dualbios, neogeo_state, init_svcpcb,   ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (JAMMA PCB, NEO-MVH MVO PCB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) // not a clone of neogeo because it's NOT a neogeo cart.
+GAME( 2003, svcpcba,    svcpcb,   neogeo_noslot,   dualbios, neogeo_state, init_svcpcb,   ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (JAMMA PCB, NEO-MVH MVOB PCB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE ) /* Encrypted Code */
 
 /* Alternate Board */
 GAME( 1992, fatfury2a,  fatfury2, neogeo_noslot,   neogeo, neogeo_state,   init_fatfury2, ROT0, "SNK", "Fatal Fury 2 / Garou Densetsu 2 - Arata-naru Tatakai (NGM-047) (Alternate board)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -16158,21 +16158,21 @@ GAME( 1994, wh2ja,      wh2j,     neogeo_noslot,   neogeo, neogeo_state,   init_
 /*    YEAR  NAME        PARENT    MACHINE          INPUT   INIT            MONITOR */
 /* SNK Predecrypted, Decrypted And Bootleg */
 GAME( 2000, bangbedd,   bangbead, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Bang Bead (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, cthd2k3d,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg, Fully Decrypted / set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, cthd2k3da,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg, Fully Decrypted / set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, cthd2k3a,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_cthd2k3a, ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg, set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, ct2k3spd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 Super Plus (The King of Fighters 2001 bootleg, Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, cthd2k3d,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, Fully Decrypted / set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, cthd2k3da,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, Fully Decrypted / set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, cthd2k3a,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_cthd2k3a, ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, set 2)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, ct2k3spd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 Super Plus (hack of The King of Fighters 2001, Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, ganryud,    ganryu,   neogeo_noslot,   neogeo, neogeo_state,   init_ganryu,   ROT0, "Visco", "Ganryu / Musashi Ganryuki (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, garoud,     garou,    neogeo_noslot,   neogeo, neogeo_state,   init_garou,    ROT0, "SNK", "Garou - Mark of the Wolves (NGM-2530) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, garouhd,    garou,    neogeo_noslot,   neogeo, neogeo_state,   init_garouh,   ROT0, "SNK", "Garou - Mark of the Wolves (NGM-2530 ~ NGH-2530) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, jockygpd,   jockeygp, neogeo_noslot,   jockeygp, neogeo_state, init_jockeygp, ROT0, "Sun Amusement / BrezzaSoft", "Jockey Grand Prix (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1996, kof96ep,    kof96,    neogeo_noslot,   neogeo, neogeo_state,   init_kof96ep,  ROT0, "bootleg", "The King of Fighters '96 (bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2003, kof97pla,   kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_kof97pla, ROT0, "bootleg", "The King of Fighters '97 Chongchu Jianghu Plus 2003 (bootleg set 1)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, kof97pla,   kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_kof97pla, ROT0, "bootleg", "The King of Fighters '97 Chongchu Jianghu Plus 2003 (bootleg set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof97orod,  kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters '97 Chongchu Jianghu Plus 2003 (bootleg) (Decrypted S)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, kof99d,     kof99,    neogeo_noslot,   neogeo, neogeo_state,   init_kof99,    ROT0, "SNK", "The King of Fighters '99  - Millennium Battle (NGM-2510) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, kof99kd,    kof99,    neogeo_noslot,   neogeo, neogeo_state,   init_kof99,    ROT0, "SNK", "The King of Fighters '99  - Millennium Battle (Korean release, Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, kof2kd,     kof2000,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2000,  ROT0, "SNK", "The King of Fighters 2000 (NGM-2570 ~ NGH-2570) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, kof2knd,    kof2000,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2000,  ROT0, "SNK", "The King of Fighters 2000 (Not encrypted) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, kof2knd,    kof2000,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2000,  ROT0, "SNK", "The King of Fighters 2000 (not encrypted) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kof2k1d,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGM-2621) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kof2k1hd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGH-2621) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kf2k1bh,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (bootleg / hack)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -16213,23 +16213,23 @@ GAME( 2003, kf2k3bd,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2003, kof2k3hd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2003h, ROT0, "SNK Playmore", "The King of Fighters 2003 (NGH-2710) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof2k3nd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK Playmore", "The King of Fighters 2003 (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kf2k3pcd,   kf2k3pcb, neogeo_noslot,   neogeo, neogeo_state,   init_kof2k3pcd,ROT0, "SNK Playmore", "The King of Fighters 2003 (Japan, JAMMA PCB / decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kf2k3pd,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Plus / Hero (The King of Fighters 2003 bootleg, Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2003, kf2k3upd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Ultra Plus (The King of Fighters 2003 bootleg, Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1997, kogd,       kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kogd,     ROT0, "bootleg", "King of Gladiator (The King of Fighters '97 bootleg / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 1997, kogplusd,   kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kogd,     ROT0, "bootleg", "King of Gladiator Plus (The King of Fighters '97 bootleg / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2005, kof10thd,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary (The King of Fighters 2002 bootleg / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2005, kf10thepp,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary Extra Plus (The King of Fighters 2002 bootleg) (Predecrypted S & P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2005, kof10thu,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof10thu, ROT0, "bootleg", "The King of Fighters 10th Anniversary 2005 Unique (The King of Fighters 2002 bootleg, set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2005, kf2k5unid,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary 2005 Unique (The King of Fighters 2002 bootleg, set 2) (Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kofse2k4,   kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2k4se, ROT0, "bootleg", "The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kofse2k4e,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg) (Encrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kofse2k4d,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kofse2k4p,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg) (Predecrypted P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kf2k4pls,   kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2k4pls,ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kf2k4plse,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg) (Encrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kf2k4plsd,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, kf2k4plsp,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg) (Predecrypted P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, lans2k4d,   shocktr2, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Lansquenet 2004 (Shock Troopers - 2nd Squad bootleg / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kf2k3pd,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Plus / Hero (bootleg of The King of Fighters 2003, Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2003, kf2k3upd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Ultra Plus (bootleg of The King of Fighters 2003, Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1997, kogd,       kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kogd,     ROT0, "bootleg", "King of Gladiator (bootleg of The King of Fighters '97 / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 1997, kogplusd,   kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kogd,     ROT0, "bootleg", "King of Gladiator Plus (bootleg of The King of Fighters '97 / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2005, kof10thd,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary (bootleg of The King of Fighters 2002 / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2005, kf10thepp,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary Extra Plus (bootleg of The King of Fighters 2002) (Predecrypted S & P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2005, kof10thu,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof10thu, ROT0, "bootleg", "The King of Fighters 10th Anniversary 2005 Unique (bootleg of The King of Fighters 2002, set 1)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2005, kf2k5unid,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary 2005 Unique (bootleg of The King of Fighters 2002, set 2) (Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kofse2k4,   kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2k4se, ROT0, "bootleg", "The King of Fighters Special Edition 2004 (bootleg of The King of Fighters 2002)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kofse2k4e,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 (bootleg of The King of Fighters 2002) (Encrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kofse2k4d,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 (bootleg of The King of Fighters 2002) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kofse2k4p,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters Special Edition 2004 (bootleg of The King of Fighters 2002) (Predecrypted P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kf2k4pls,   kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2k4pls,ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (bootleg of The King of Fighters 2002)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kf2k4plse,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (bootleg of The King of Fighters 2002) (Encrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kf2k4plsd,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (bootleg of The King of Fighters 2002) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, kf2k4plsp,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (bootleg of The King of Fighters 2002) (Predecrypted P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, lans2k4d,   shocktr2, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Lansquenet 2004 (bootleg of Shock Troopers - 2nd Squad / Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, matrimd,    matrim,   neogeo_noslot,   neogeo, neogeo_state,   init_matrimd,  ROT0, "Noise Factory / Atlus", "Matrimelee / Shin Gouketsuji Ichizoku Toukon (NGM-2660 ~ NGH-2660) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, matrimbd,   matrim,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Matrimelee / Shin Gouketsuji Ichizoku Toukon (bootleg) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, nitdd,      nitd,     neogeo_noslot,   neogeo, neogeo_state,   init_nitd,     ROT0, "Eleven / Gavaking",  "Nightmare in the Dark (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
@@ -16245,17 +16245,17 @@ GAME( 2003, samsh5d,    samsho5,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2003, samsh5hd,   samsho5,  neogeo_noslot,   neogeo, neogeo_state,   init_samsho5,  ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V / Samurai Spirits Zero (NGH-2700) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, samsh5nd,   samsho5,  neogeo_noslot,   neogeo, neogeo_state,   init_samsho5,  ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V / Samurai Spirits Zero (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2004, sams5spd,   samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGM-2720) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, sams5sod,   samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720) (1st release, censored) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, sams5shd,   samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720) (2nd release, less censored) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, sams5sond,  samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (1st release, censored) (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2004, sams5shnd,  samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (2nd release, less censored) (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, sams5sod,   samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720, 1st release, censored) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, sams5shd,   samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720, 2nd release, less censored) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, sams5sond,  samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720, 1st release, censored) (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, sams5shnd,  samsh5sp, neogeo_noslot,   neogeo, neogeo_state,   init_samsh5sp, ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V Special / Samurai Spirits Zero Special (NGH-2720, 2nd release, less censored) (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, sengok3d,   sengoku3, neogeo_noslot,   neogeo, neogeo_state,   init_sengoku3, ROT0, "Noise Factory / SNK",  "Sengoku 3 / Sengoku Densho 2001 (set 1) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcd,       svc,      neogeo_noslot,   neogeo, neogeo_state,   init_svc,      ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (NGM-2690 ~ NGH-2690) (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcnd,      svc,      neogeo_noslot,   neogeo, neogeo_state,   init_svc,      ROT0, "Playmore / Capcom", "SNK vs. Capcom - SVC Chaos (Fully Decrypted)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcbp,      svc,      neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "SNK vs. Capcom - SVC Chaos Plus (bootleg, set 3)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcplusp,   svc,      neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "SNK vs. Capcom - SVC Chaos Plus (bootleg, set 1) (Predecrypted S & P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, svcsplusp,  svc,      neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "SNK vs. Capcom - SVC Chaos Super Plus (bootleg) (Predecrypted S & P)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2003, svcpcbd,    svcpcb,   neogeo_noslot,   dualbios, neogeo_state, init_svc,      ROT0, "SNK Playmore", "SNK vs. Capcom - SVC Chaos (JAMMA PCB, Decrypted C & V)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2003, svcpcbd,    svcpcb,   neogeo_noslot,   dualbios, neogeo_state, init_svc,      ROT0, "SNK Playmore", "SNK vs. Capcom - SVC Chaos (JAMMA PCB, NEO-MVH MVO PCB, Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, zupapad,    zupapa,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK", "Zupapa! (Decrypted C)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR  NAME        PARENT    MACHINE          INPUT   INIT            MONITOR */

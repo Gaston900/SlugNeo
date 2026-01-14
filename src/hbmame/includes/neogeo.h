@@ -112,13 +112,17 @@ public:
 	void init_neogeo();
 	void init_bangbead();
 	void init_ct2k3sp();
+	void init_ct2k3spd();
 	void init_ct2k3sa();
+	void init_ct2k3sad();
 	void init_cthd2003();
 	void init_cthd2k3a();
 	void init_fatfury2();
 	void init_ganryu();
 	void init_garou();
+	void init_garoud();
 	void init_garouh();
+	void init_garouhd();
 	void init_garoubl();
 	void init_jockeygp();
 	void init_kf10thep();
@@ -130,7 +134,9 @@ public:
 	void init_kf2k2mp2();
 	void init_kf2k3pcb();
 	void init_kf2k3pl();
+	void init_kf2k3pld();
 	void init_kf2k3upl();
+	void init_kf2k3upld();
 	void init_kf2k5uni();
 	void init_kof10th();
 	void init_kof10thu();
@@ -138,15 +144,18 @@ public:
 	void init_kof2k4pls();
 	void init_kof2k4se();
 	void init_kof96ep();
-	void init_kof97pla();
 	void init_kof97oro();
+	void init_kof97pla();
 	void init_kof98();
 	void init_kof99();
+	void init_kof99d();
 	void init_kof2000();
+	void init_kof2000d();
 	void init_kof2001();
 	void init_kof2002();
 	void init_kof2002b();
 	void init_kof2003();
+	void init_kof2003d();
 	void init_kof2003h();
 	void init_kof2003b();
 	void init_kog();
@@ -156,19 +165,20 @@ public:
 	void init_matrima();
 	void init_matrimbl();
 	void init_matrimd();
+	void init_matrimnd();
 	void init_ms5pcb();
 	void init_ms5plus();
 	void init_mslug3();
 	void init_mslug3a();
 	void init_mslug3cqt();
     void init_mslug3b6();
-	void init_mslug3e();
+	void init_mslug3d();
 	void init_mslug4();
 	void init_mslug4lw();
 	void init_mslug4e();
 	void init_mslug5();
 	void init_mslug5b();
-	void init_mslug5e();
+	void init_mslug5d();
 	void init_mslug5nd();
 	void init_mslugx();
 	void init_nitd();
@@ -184,6 +194,7 @@ public:
 	void init_sengoku3();
 	void init_shockt2w();
 	void init_svc();
+	void init_svcd();
 	void init_svcboot();
 	void init_svcpcb();
 	void init_svcplus();
@@ -515,9 +526,9 @@ INPUT_PORTS_EXTERN(dualbios);
 #define NEOGEO_BIOS \
 	ROM_REGION16_BE( 0x80000, "mainbios", 0 ) \
 	ROM_SYSTEM_BIOS( 0, "arcade_mode", "Arcade Mode MVS" ) \
-	ROM_LOAD16_WORD_SWAP_BIOS( 0, "arcade mode.rom",  0x00000, 0x020000, CRC(0de70ac8) SHA1(d41ab190a2c9f91c52649f7e0faf85a9cfa8ed24) ) \
+	ROM_LOAD16_WORD_SWAP_BIOS( 0, "arcade mode.rom",  0x00000, 0x020000, CRC(31df6230) SHA1(69b3e8c4befb5af6ebef120eec6ccf1a80c28cd3) ) \
 	ROM_SYSTEM_BIOS( 1, "console_mode", "Consola Mode AES" ) \
-	ROM_LOAD16_WORD_SWAP_BIOS( 1, "console mode.rom", 0x00000, 0x020000, CRC(a371d430) SHA1(9519a43eaed7a5753a9fdffaca8167b7214c4d93) ) \
+	ROM_LOAD16_WORD_SWAP_BIOS( 1, "console mode.rom", 0x00000, 0x020000, CRC(9f49bcc8) SHA1(413868907914f424d98dedb5e84e879cec173496) ) \
 	ROM_DEFAULT_BIOS("arcade_mode")
 
 #define NEOGEO_UNIBIOS(x) \

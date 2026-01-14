@@ -8918,7 +8918,7 @@ GAME( 2003, mslug5b1,         mslug5,   neogeo_noslot,   mslug5,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 5 (Predecrypted, Decrypter, Earlier, Bootleg And Encrypted)
-GAME( 2003, ms5boot,          mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5e,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, ms5boot,          mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5d,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, ms5pcbd,          mslug5,   neogeo_noslot,   ms5pcb,     neogeo_state,    init_ms5pcb,     ROT0, "SNK Playmore",    "Metal Slug 5 (JAMMA PCB) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, ms5pluse,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5nd,   ROT0, "Bootleg",         "Metal Slug 5 Plus (Bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, ms5plusd,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5,     ROT0, "Bootleg",         "Metal Slug 5 Plus (Bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
@@ -8929,13 +8929,13 @@ GAME( 2003, mslug5e,          mslug5,   neogeo_noslot,   mslug5,     neogeo_stat
 GAME( 2003, mslug5n,          mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5,     ROT0, "SNK Playmore",    "Metal Slug 5 (Decrypted V & P)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, mslug5nd,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5,     ROT0, "SNK Playmore",    "Metal Slug 5 (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, mslug5nde,        mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5nd,   ROT0, "SNK Playmore",    "Metal Slug 5 (Fully Decrypted ~ Encrypted P)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, mslug5b2,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5e,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 2)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, mslug5b3,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5e,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 3)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, mslug5b4,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5e,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 4)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, mslug5b2,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5d,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 2)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, mslug5b3,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5d,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 3)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, mslug5b4,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5d,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 4)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, mslug5b5,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5,     ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 5)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, mslug5b6,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5,     ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 6)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, mslug5b7,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5e,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 7)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, mslug5b8,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5e,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 8)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, mslug5b7,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5d,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 7)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, mslug5b8,         mslug5,   neogeo_noslot,   mslug5,     neogeo_state,    init_mslug5d,    ROT0, "Bootleg",         "Metal Slug 5 (Bootleg, Set 8)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 5 (DARKSOFT)
@@ -8959,10 +8959,10 @@ GAME( 2015, mslug5wdd,        mslug5,   neoclock_noslot, mslug5w,    neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 5 (NEO SD)
-GAME( 2003, ms5pcbdnsd,       mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5e,    ROT0, "SNK Playmore",    "Metal Slug 5 (JAMMA PCB) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2003, ms5pcbdnsd,       mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5d,    ROT0, "SNK Playmore",    "Metal Slug 5 (JAMMA PCB) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
 GAME( 2003, ms5plusnsd,       mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5,     ROT0, "Bootleg",         "Metal Slug 5 Plus (Bootleg) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2003, mslug5nsd,        mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5e,    ROT0, "SNK Playmore",    "Metal Slug 5 (NGM-2680) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2003, mslug5hnsd,       mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5e,    ROT0, "SNK Playmore",    "Metal Slug 5 (NGH-2680) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2003, mslug5nsd,        mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5d,    ROT0, "SNK Playmore",    "Metal Slug 5 (NGM-2680) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2003, mslug5hnsd,       mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5d,    ROT0, "SNK Playmore",    "Metal Slug 5 (NGH-2680) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
 GAME( 2003, mslug5ndnsd,      mslug5,   neogeo_noslot,   mslug5,   neogeo_state,    init_mslug5,     ROT0, "SNK Playmore",    "Metal Slug 5 (Fully Decrypted) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */

@@ -1877,6 +1877,13 @@ void neogeo_state::init_kof99()
 	}
 }
 
+void neogeo_state::init_kof99d()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_sma_prot->kof99_install_protection(m_maincpu, m_banked_cart);
+}
+
 void neogeo_state::init_garou()
 {
 	init_neogeo();
@@ -1909,6 +1916,13 @@ void neogeo_state::init_garou()
 	}
 }
 
+void neogeo_state::init_garoud()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_sma_prot->garou_install_protection(m_maincpu,m_banked_cart);
+}
+
 void neogeo_state::init_garouh()
 {
 	init_neogeo();
@@ -1939,6 +1953,13 @@ void neogeo_state::init_garouh()
 		//printf("Fixed1=%X\n",ram[0x100]);
 		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
 	}
+}
+
+void neogeo_state::init_garouhd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 1;
+	m_sma_prot->garouh_install_protection(m_maincpu,m_banked_cart);
 }
 
 void neogeo_state::init_mslug3a()
@@ -2014,7 +2035,7 @@ void neogeo_state::init_mslug3cqt()
 	}
 }
 
-void neogeo_state::init_mslug3e()
+void neogeo_state::init_mslug3d()
 {
 	init_mslug3();
 	m_sma_prot->mslug3_install_protection(m_maincpu,m_banked_cart);
@@ -2061,6 +2082,13 @@ void neogeo_state::init_kof2000()
 		//printf("Fixed1=%X\n",ram[0x100]);
 		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
 	}
+}
+
+void neogeo_state::init_kof2000d()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_sma_prot->kof2000_install_protection(m_maincpu, m_banked_cart);
 }
 
 /*********************************************** CMC42 */
@@ -2533,7 +2561,7 @@ void neogeo_state::init_mslug5()
 	}
 }
 
-void neogeo_state::init_mslug5e()
+void neogeo_state::init_mslug5d()
 {
 	init_mslug5();
 	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
@@ -2632,6 +2660,13 @@ void neogeo_state::init_svc()
 	}
 }
 
+void neogeo_state::init_svcd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->install_pvc_protection(m_maincpu,m_banked_cart);
+}
+
 void neogeo_state::init_kof2003()
 {
 	init_neogeo();
@@ -2673,6 +2708,13 @@ void neogeo_state::init_kof2003()
 		//printf("Fixed1=%X\n",ram[0x100]);
 		m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
 	}
+}
+
+void neogeo_state::init_kof2003d()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
+	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
 }
 
 void neogeo_state::init_kof2003b() // hacks of kf2k3bl
@@ -2845,10 +2887,22 @@ void neogeo_state::init_ct2k3sp()
 	m_bootleg_prot->patch_cthd2003(m_maincpu,m_banked_cart, cpuregion, cpuregion_size);
 }
 
+void neogeo_state::init_ct2k3spd()
+{
+	init_neogeo();
+	m_bootleg_prot->patch_cthd2003(m_maincpu,m_banked_cart, cpuregion, cpuregion_size);
+}
+
 void neogeo_state::init_ct2k3sa()
 {
 	init_neogeo();
 	m_bootleg_prot->decrypt_ct2k3sa(spr_region, spr_region_size, audiocpu_region,audio_region_size);
+	m_bootleg_prot->patch_ct2k3sa(cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_ct2k3sad()
+{
+	init_neogeo();
 	m_bootleg_prot->patch_ct2k3sa(cpuregion, cpuregion_size);
 }
 
@@ -3038,7 +3092,6 @@ void neogeo_state::init_svcsplus()
 	m_pvc_prot->install_pvc_protection(m_maincpu, m_banked_cart);
 }
 
-
 void neogeo_state::init_kf2k3pl()
 {
 	init_neogeo();
@@ -3049,6 +3102,13 @@ void neogeo_state::init_kf2k3pl()
 	m_bootleg_prot->kf2k3pl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
 }
 
+void neogeo_state::init_kf2k3pld()
+{
+	init_neogeo();
+//	m_bootleg_prot->kf2k3pl_px_decrypt(cpuregion, cpuregion_size);
+	m_bootleg_prot->kf2k3pl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
+}
+
 void neogeo_state::init_kf2k3upl()
 {
 	init_neogeo();
@@ -3056,6 +3116,13 @@ void neogeo_state::init_kf2k3upl()
 	m_pcm2_prot->neo_pcm2_swap(ym_region, ym_region_size, 5);
 	m_bootleg_prot->kf2k3upl_px_decrypt(cpuregion, cpuregion_size);
 	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
+	m_bootleg_prot->kf2k3bl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
+}
+
+void neogeo_state::init_kf2k3upld()
+{
+	init_neogeo();
+//	m_bootleg_prot->kf2k3upl_px_decrypt(cpuregion, cpuregion_size);
 	m_bootleg_prot->kf2k3bl_install_protection(m_maincpu, m_banked_cart, cpuregion, cpuregion_size);
 }
 
@@ -3294,6 +3361,12 @@ void neogeo_state::init_matrimd()
 	m_sprgen->m_fixed_layer_bank_type = 2;
 	m_kof2002_prot->matrim_decrypt_68k(cpuregion, cpuregion_size);
 	m_cmc_prot->neogeo_sfix_decrypt(spr_region, spr_region_size, fix_region, fix_region_size);
+}
+
+void neogeo_state::init_matrimnd()
+{
+	init_neogeo();
+	m_sprgen->m_fixed_layer_bank_type = 2;
 }
 
 void neogeo_state::init_shockt2w()

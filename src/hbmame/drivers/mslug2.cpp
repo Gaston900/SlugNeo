@@ -1914,10 +1914,6 @@ INPUT_PORTS_END
 	ROM_REGION( 0x2000000, "sprites", 0 ) \
 	ROM_LOAD( "crom0fr", 0x0000000, 0x2000000, CRC(16abbde3) SHA1(c876556f85ed5ce1a63b93cf8d676d703d2ca125) )
 
-#define MSLUG2NSD_SPRITES \
-	ROM_REGION( 0x2000000, "sprites", 0 ) \
-	ROM_LOAD( "241nsd.c1", 0x0000000, 0x2000000, CRC(f7d491c1) SHA1(c50dbfda64dcde300251ddad2bc4a0cd9bb221e7) )
-
 #define MSLUG2FR_SPRITES \
 	ROM_REGION( 0x2000000, "sprites", 0 ) \
 	ROM_LOAD16_BYTE( "241_hc17.c1", 0x0000000, 0x800000, CRC(7df74035) SHA1(08322a2f4e87cd125ebc5b7a98754c7a5b8e91d2) )\
@@ -1940,6 +1936,51 @@ INPUT_PORTS_END
 	ROM_LOAD16_BYTE( "241.c4",      0x1000001, 0x800000, CRC(7d3e306f) SHA1(1499316fb381775218d897b81a6a0c3465d1a37c) )\
 	ROM_LOAD16_BYTE( "241_hc05.c5", 0x2000000, 0x800000, CRC(cae9af4f) SHA1(85f32cdc8069901f2f5fb628a2eda5e44f7994f7) )\
 	ROM_LOAD16_BYTE( "241_hc05.c6", 0x2000001, 0x800000, CRC(7cf51055) SHA1(ec5e78746190fc2bf087fa1b8efd9fc3433068d7) )
+
+#define MSLUG2_NEOSD \
+	ROM_REGION(0x2B41000, "asis", 0) \
+	ROM_LOAD("mslug2.neo", 0x000000, 0x001000, CRC(ac0aa8ef) SHA1(0b395461dcb24f0fdeba5491d4fe71bcf2640f4b) )\
+	ROM_CONTINUE(0x000000, 0x2B40000)\
+	ROM_REGION( 0x800000, "ymsnd", 0 )\
+	ROM_COPY("asis", 0x340000, 0x00000, 0x800000)\
+	ROM_REGION( 0x2000000, "sprites", 0 )\
+	ROM_COPY("asis", 0xB40000, 0x00000, 0x2000000)
+
+#define MSLUG2T_NEOSD \
+	ROM_REGION(0x2B41000, "asis", 0) \
+	ROM_LOAD("mslug2t.neo", 0x000000, 0x001000, CRC(2056e958) SHA1(7c85f0b2422d995528ebbd2b376c90a6fc602219) )\
+	ROM_CONTINUE(0x000000, 0x2B40000)\
+	ROM_REGION( 0x800000, "ymsnd", 0 )\
+	ROM_COPY("asis", 0x340000, 0x00000, 0x800000)\
+	ROM_REGION( 0x2000000, "sprites", 0 )\
+	ROM_COPY("asis", 0xB40000, 0x00000, 0x2000000)\
+
+#define MSLUG2DD_NEOSD \
+	ROM_REGION(0x2B41000, "asis", 0) \
+	ROM_LOAD("mslug2dd.neo", 0x000000, 0x001000, CRC(91c885a6) SHA1(621a49b178ca6e5550c704b0b810c9929f87a634) )\
+	ROM_CONTINUE(0x000000, 0x2B40000)\
+	ROM_REGION( 0x800000, "ymsnd", 0 )\
+	ROM_COPY("asis", 0x340000, 0x00000, 0x800000)\
+	ROM_REGION( 0x2000000, "sprites", 0 )\
+	ROM_COPY("asis", 0xB40000, 0x00000, 0x2000000)\
+
+#define MSLUG2EG_NEOSD \
+	ROM_REGION(0x3C41000, "asis", 0) \
+	ROM_LOAD("mslug2eg.neo", 0x000000, 0x001000, CRC(476b99f9) SHA1(1dc558935fb241946170a4a18fd6cdaeb954938e) )\
+	ROM_CONTINUE(0x000000, 0x3C40000)\
+	ROM_REGION( 0x800000, "ymsnd", 0 )\
+	ROM_COPY("asis", 0x440000, 0x00000, 0x800000)\
+	ROM_REGION( 0x3000000, "sprites", 0 )\
+	ROM_COPY("asis", 0xC40000, 0x00000, 0x3000000)\
+
+#define MSLUG2FR_NEOSD \
+	ROM_REGION(0x2B41000, "asis", 0) \
+	ROM_LOAD("mslug2fr.neo", 0x000000, 0x001000, CRC(1aee3a6a) SHA1(b4482cbeda425bd833c6f3ee93738724ebc00916) )\
+	ROM_CONTINUE(0x000000, 0x2B40000)\
+	ROM_REGION( 0x800000, "ymsnd", 0 )\
+	ROM_COPY("asis", 0x340000, 0x00000, 0x800000)\
+	ROM_REGION( 0x2000000, "sprites", 0 )\
+	ROM_COPY("asis", 0xB40000, 0x00000, 0x2000000)\
 
 /*********************
  MVS AND AES VERSION
@@ -2041,8 +2082,7 @@ ROM_START( mslug2nsd )
 	MSLUG2_ESSENTIALPATCH_MODS_FILL
 	MSLUG2_SFIX_128K
     MSLUG2_AUDIO_128K
-    MSLUG2DD_YMSND
-    MSLUG2NSD_SPRITES
+    MSLUG2_NEOSD
 ROM_END
 
 ROM_START( mslug2tnsd )
@@ -2053,8 +2093,7 @@ ROM_START( mslug2tnsd )
 	MSLUG2_ESSENTIALPATCH_MODS_FILL
 	MSLUG2_SFIX_128K
     MSLUG2_AUDIO_128K
-    MSLUG2DD_YMSND
-    MSLUG2NSD_SPRITES
+    MSLUG2T_NEOSD
 ROM_END
 
  /***************************
@@ -2069,8 +2108,7 @@ ROM_START( mslug2ddnds )
 	MSLUG2HB_ESSENTIALPATCH_MODS_FILL
     MSLUG2_SFIX_128K
     MSLUG2_AUDIO_128K
-    MSLUG2DD_YMSND
-    MSLUG2DDDD_SPRITES
+    MSLUG2DD_NEOSD
 ROM_END
 
 ROM_START( mslug2egnds )
@@ -2081,8 +2119,7 @@ ROM_START( mslug2egnds )
 	MSLUG2EG_ESSENTIALPATCH_MODS_FILL
     MSLUG2EG_SFIX_128K
     MSLUG2_AUDIO_BIOS_128K
-    MSLUG2DD_YMSND
-    MSLUG2EGDD_SPRITES
+    MSLUG2EG_NEOSD
 ROM_END
 
 ROM_START( mslug2frnds )
@@ -2093,8 +2130,7 @@ ROM_START( mslug2frnds )
 	MSLUG2HB_ESSENTIALPATCH_MODS_FILL
     MSLUG2FR_SFIX_128K
 	MSLUG2_AUDIO_128K
-    MSLUG2DD_YMSND
-	MSLUG2FRDD_SPRITES
+    MSLUG2FR_NEOSD
 ROM_END
 
  /**********************
@@ -2761,9 +2797,9 @@ GAME( 1998, mslug2tnsd,       mslug2,   neogeo_noslot,   mslug2,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 Hack (NEO SD)
-GAME( 2022, mslug2ddnds,      mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 2 (Starlight 2022-05-11) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 2021, mslug2egnds,      mslug2,   neoclock_noslot, mslug2eg,   neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 2 (Extraction Green Turbo 2021-09-16) (Neo SD)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
-GAME( 2006, mslug2frnds,      mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 2 (French Translation 2006-09-26) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2022, mslug2ddnds,      mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (Starlight 2022-05-11) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2021, mslug2egnds,      mslug2,   neoclock_noslot, mslug2eg,   neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (Extraction Green Turbo 2021-09-16) (Neo SD)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
+GAME( 2006, mslug2frnds,      mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (French Translation 2006-09-26) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 (Exclusive Fightcade2)

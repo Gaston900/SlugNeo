@@ -1,8 +1,8 @@
-﻿What's new in PSMSlugForever
+﻿What's new in SlugNeo
 =============================
-What is PSMSlugForever?
+What is SlugNeo?
 
-It is called Project Shadow Metal Slug Forever, this project was part of the HBMAME emulator in the year 2018 – 2020.
+It is called SlugNeo, this project was part of the HBMAME emulator in the year 2018 – 2020.
 
 Afterwards, it has been decided to make the project independent in 2021, providing all kinds of support, repairing all bugs 
 and glitches, correcting incompatibility with the NeoGeo system, etc.
@@ -17,8 +17,10 @@ Please Note That The Use Of This Emulator Is Prohibited For Any Commercial Use O
 ===============================================================================================================================
 2026-01-15
 
+- The PSMSlugForever project has been renamed "SlugNeo"
 - Support for Metal Slug games, the console system, GBA, GB Color, Megadrive, and NGPC.
-- Filters have been created to add the rest of the NeoGeo system games (They will be placed in the MVS ~ AES category)
+- All remaining games from the NeoGeo system catalog have been added; these were extracted 
+  from the NEOEX project and a filter was created which will allow them to be visible only in the "MVS ~ AES" folder.
 - Updated All Roms Metal Slug (Legendary Firepower Showdown 7.5 2025-09-29)
 
 

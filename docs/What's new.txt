@@ -15,6 +15,14 @@ for the 86/64 bit cpu of the compatible microprocessors.
 Please Note That The Use Of This Emulator Is Prohibited For Any Commercial Use Or Using The Project For A Fundraising Fundraiser.
 
 ===============================================================================================================================
+2026-01-15
+
+- Support for Metal Slug games, the console system, GBA, GB Color, Megadrive, and NGPC.
+- Filters have been created to add the rest of the NeoGeo system games (They will be placed in the MVS ~ AES category)
+- Updated All Roms Metal Slug (Legendary Firepower Showdown 7.5 2025-09-29)
+
+
+
 2025-07-20
 
 - Support For Multimvs Files (HBMAME)

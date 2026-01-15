@@ -33,9 +33,9 @@ Players 1 and 2 use this controller by default:
 * To move, use the arrow keys "Up, Down, Left, Right."
 * To perform actions, use the "A, S, D, Z" keys.
 
-Support For Multimvs Files (By HBMAME)
+Support For Multimvs Files (By [HBMAME](https://github.com/Robbbert/hbmame))
 
-Support For Neosd .neo Files (By HBMAME)
+Support For Neosd .neo Files (By [HBMAME](https://github.com/Robbbert/hbmame))
 
 Overclocking Default 200%.
 
@@ -95,6 +95,7 @@ The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is sugges
 Open Source Software Projects
 ------------------------------
 Although the source code is free to use, please note that the use of this code for any commercial exploitation or use of the project for fundraising purposes is prohibited.
+
 
 
 

@@ -11,7 +11,7 @@ It allows users to enjoy a unique and distinctive gaming experience, having a gr
 
 This project was dedicated with much effort and great care, it was developed with so much passion and with great enthusiasm, with such a deep dedication of interest in preserving the history in the roms that were published since the beginning of the emulation era since 1999 (Predecrypted, Decrypter, Encrypte, Earlier and Bootleg, Darksoft, Neo SD and Hack)
 
-All additional games from the [NEOEX](https://github.com/Gaston900/NeoEX) project have been added, and a filter has been created so that only the rest of the NeoGeo "MVS ~ AES" system game catalog is visible in the folder.
+All remaining games from the NeoGeo system catalog have been added; these were extracted from the [NEOEX](https://github.com/Gaston900/NeoEX) project and a filter was created which will allow them to be visible only in the "MVS ~ AES" folder.
 
 I am only supporting the operating systems, Windows 7, Windows 8, Windows 10 and Windows 11.
 
@@ -95,6 +95,7 @@ The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is sugges
 Open Source Software Projects
 ------------------------------
 Although the source code is free to use, please note that the use of this code for any commercial exploitation or use of the project for fundraising purposes is prohibited.
+
 
 
 

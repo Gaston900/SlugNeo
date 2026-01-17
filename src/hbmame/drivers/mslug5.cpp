@@ -6195,7 +6195,7 @@ INPUT_PORTS_END
 
 #define MSLUG5CQ_NEOSD \
 	ROM_REGION(0x5A41000, "asis", 0) \
-	ROM_LOAD("mslug5cq.neo", 0x000000, 0x001000, CRC(5fbaab81) SHA1(a88859ddcb97c5083e6da82d1747e1ee20fdad88) )\
+	ROM_LOAD("mslug5cq.neo", 0x000000, 0x001000, CRC(db452560) SHA1(c0196beeb4e64d6312094096390815d7d2668121) )\
 	ROM_CONTINUE(0x000000, 0x5A40000)\
 	ROM_REGION( 0x1000000, "ymsnd", 0 )\
 	ROM_COPY("asis", 0xA40000, 0x00000, 0x1000000)\
@@ -6593,7 +6593,7 @@ ROM_END
 
 ROM_START( mslug5cqdd )
 	ROM_REGION( 0xa00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "promcq", 0x000000, 0xa00000, CRC(5417dbcd) SHA1(9638c855cf53a0c0bc1b2fa6730359ef75729fdf) )
+	ROM_LOAD16_WORD_SWAP( "promcq", 0x000000, 0xa00000, CRC(86ac155a) SHA1(5d4893ebfa4bb592c36c803e9e92f5b995e7382f) )
     MSLUG5CQ_ESSENTIALPATCH_MODS_FILL
     MSLUG5D_SFIX_128K
     MSLUG5CQ_AUDIO_BIOS_128K
@@ -6717,7 +6717,7 @@ ROM_END
 
 ROM_START( mslug5cqnds )
 	ROM_REGION( 0xb00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "mslug5cq.neo", 0x000000, 0x001000, CRC(5fbaab81) SHA1(a88859ddcb97c5083e6da82d1747e1ee20fdad88) )
+	ROM_LOAD16_WORD_SWAP( "mslug5cq.neo", 0x000000, 0x001000, CRC(db452560) SHA1(c0196beeb4e64d6312094096390815d7d2668121) )
     ROM_CONTINUE( 0x000000, 0xa01000 )
 	ROM_IGNORE( 0x503F000 )
     MSLUG5CQ_ESSENTIALPATCH_MODS_FILL
@@ -9024,7 +9024,7 @@ GAME( 2003, mslug5ndd,        mslug5,   neogeo_noslot,   mslug5,     neogeo_stat
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 5 Hack (DARKSOFT)
 GAME( 2025, mslug5cqtdd,      mslug5,   neoclock_noslot, mslug5cqi,  neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 5 (Rise of the Ptolemaic Army 7.5T 2025-09-29) (Darksoft)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug5cqdd,       mslug5,   neoclock_noslot, mslug5cqi,  neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 5 (Legendary Firepower Showdown 7.5 2025-09-29) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug5cqdd,       mslug5,   neoclock_noslot, mslug5cqi,  neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 5 (Legendary Firepower Showdown 7.5 2025-10-20) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, mslug5fdd,        mslug5,   neoclock_noslot, mslug5w,    neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 5 (Fierce Battle 2015-04-10) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, mslug5frdd,       mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 5 (French Translation 2006-09-26) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslug5scdd,       mslug5,   neoclock_noslot, mslug5cq,   neogeo_state,    init_darksoft,   ROT0, "hack",            "Metal Slug 5 (Survival 2023-06-12) (Darksoft)", MACHINE_SUPPORTS_SAVE )
@@ -9044,7 +9044,7 @@ GAME( 2003, mslug5ndnsd,      mslug5,   neogeo_noslot,   mslug5,     neogeo_stat
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT           MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 5 Hack (NEO SD)
 GAME( 2025, mslug5cqtnds,     mslug5,   neoclock_noslot, mslug5cqi,  neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Rise of the Ptolemaic Army 7.5T 2025-09-29) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug5cqnds,      mslug5,   neoclock_noslot, mslug5cqi,  neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Legendary Firepower Showdown 7.5 2025-09-29) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug5cqnds,      mslug5,   neoclock_noslot, mslug5cqi,  neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Legendary Firepower Showdown 7.5 2025-10-20) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, mslug5fnds,       mslug5,   neoclock_noslot, mslug5w,    neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Fierce Battle 2015-04-10) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, mslug5frnds,      mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (French Translation 2006-09-26) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslug5scnds,      mslug5,   neoclock_noslot, mslug5cq,   neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Survival 2023-06-12) (Neo SD)", MACHINE_SUPPORTS_SAVE )

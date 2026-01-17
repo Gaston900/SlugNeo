@@ -7113,8 +7113,8 @@ GAME( 1999, mslugxnsd,        mslugx,   neogeo_noslot,   mslugx,     neogeo_stat
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X Hack (NEO SD)
 GAME( 2025, mslugxcqtnds,     mslugx,   neoclock_noslot, mslugxcqi,  neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Revenge of the Morden Army 7.5M 2025-09-22) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslugxchuanqinds, mslugx,   neoclock_noslot, mslugxcqi,  neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Legendary Firepower Showdown 7.5 2025-07-11) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, mslugxcqnds,      mslugx,   neoclock_noslot, mslugxcq,   neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Legendary 4.5 2024-06-13) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslugxchuanqinds, mslugx,   neoclock_noslot, mslugxcqi,  neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Legendary Firepower Showdown 7.5 2025-09-22) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, mslugxcqnds,      mslugx,   neoclock_noslot, mslugxcq,   neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Legendary 4.5 2024-12-02) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, mslugxddnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Starlight 2022-08-10) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, mslugxfrnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (French Translation 2006-09-26) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, mslugxlbnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Extreme Space 2015-04-21) (Neo SD)", MACHINE_SUPPORTS_SAVE )

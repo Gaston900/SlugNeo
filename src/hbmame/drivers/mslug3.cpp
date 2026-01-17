@@ -12171,7 +12171,7 @@ INPUT_PORTS_END
 
 #define MSLUG3CQT_NEOSD \
 	ROM_REGION(0x59A1000, "asis", 0) \
-	ROM_LOAD("mslug3cqt.neo", 0x000000, 0x001000, CRC(016bf543) SHA1(d8967464d84b83337cfcfd22feee2f6879cd47c8) )\
+	ROM_LOAD("mslug3cqt.neo", 0x000000, 0x001000, CRC(6a8dec32) SHA1(fe2e3c317018bc6b3c4bbd018c8bbe6fb5edf976) )\
 	ROM_CONTINUE(0x000000, 0x59A0000)\
 	ROM_REGION( 0x1000000, "ymsnd", 0 )\
 	ROM_COPY("asis", 0x9A0000, 0x00000, 0x1000000)\
@@ -12180,7 +12180,7 @@ INPUT_PORTS_END
 
 #define MSLUG3CQI_NEOSD \
 	ROM_REGION(0x59A1000, "asis", 0) \
-	ROM_LOAD("mslug3cqi.neo", 0x000000, 0x001000, CRC(d6574c1f) SHA1(ac91cff8c2018da0fcd6e2254ae593681a906798) )\
+	ROM_LOAD("mslug3cqi.neo", 0x000000, 0x001000, CRC(bdb1556e) SHA1(f0656713e168eff41654fb006f3494d87c6bb325) )\
 	ROM_CONTINUE(0x000000, 0x59A0000)\
 	ROM_REGION( 0x1000000, "ymsnd", 0 )\
 	ROM_COPY("asis", 0x9A0000, 0x00000, 0x1000000)\
@@ -12448,7 +12448,7 @@ ROM_END
 
 ROM_START( mslug3cqtdd )
 	ROM_REGION( 0x900000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "promcqt", 0x000000, 0x900000, CRC(94de23f2) SHA1(c33516d124a5a68ee73f069a41a55c7ba2d95b5f) )
+	ROM_LOAD16_WORD_SWAP( "promcqt", 0x000000, 0x900000, CRC(8d663163) SHA1(121d67abc1de94e4dffdbfa3d5ffd0d5668463d5) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 	MSLUG3HD_SFIX_128K
 	MSLUG3_AUDIO_BIOS_512K
@@ -12458,7 +12458,7 @@ ROM_END
 
 ROM_START( mslug3chuanqidd )
 	ROM_REGION( 0x900000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "promcqi", 0x000000, 0x900000, CRC(d6ebb3d3) SHA1(3e275c076f84deb10191a450c2a1bf393a2dc7f9) )
+	ROM_LOAD16_WORD_SWAP( "promcqi", 0x000000, 0x900000, CRC(cf53a142) SHA1(d5d2022b0dab670fc5b4851f8332815a0ff07d48) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 	MSLUG3HD_SFIX_128K
 	MSLUG3_AUDIO_BIOS_512K
@@ -12610,7 +12610,7 @@ ROM_END
 
 ROM_START( mslug3cqtnds )
 	ROM_REGION( 0xa00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "mslug3cqt.neo", 0x000000, 0x001000, CRC(016bf543) SHA1(d8967464d84b83337cfcfd22feee2f6879cd47c8) )
+	ROM_LOAD16_WORD_SWAP( "mslug3cqt.neo", 0x000000, 0x001000, CRC(6a8dec32) SHA1(fe2e3c317018bc6b3c4bbd018c8bbe6fb5edf976) )
     ROM_CONTINUE( 0x000000, 0x901000 )
 	ROM_IGNORE( 0x509F000 )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
@@ -12621,7 +12621,7 @@ ROM_END
 
 ROM_START( mslug3chuanqinds )
 	ROM_REGION( 0xa00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "mslug3cqi.neo", 0x000000, 0x001000, CRC(d6574c1f) SHA1(ac91cff8c2018da0fcd6e2254ae593681a906798) )
+	ROM_LOAD16_WORD_SWAP( "mslug3cqi.neo", 0x000000, 0x001000, CRC(bdb1556e) SHA1(f0656713e168eff41654fb006f3494d87c6bb325) )
     ROM_CONTINUE( 0x000000, 0x901000 )
 	ROM_IGNORE( 0x509F000 )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
@@ -13416,7 +13416,7 @@ ROM_END
 ROM_START( mslug3hc37 ) //mslug3chuanqi
 	ROM_REGION( 0xa00000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "256_hc37.p1", 0x000000, 0x100000, CRC(8e877210) SHA1(f3e8841bd47cb8a5f5d32ad8a7d3a9ea9a07c093) )
-	ROM_LOAD16_WORD_SWAP( "256_hc37.p2", 0x100000, 0x800000, CRC(92bee3f6) SHA1(561de4bf0ab56fe700f287a03b8da0019a2ddf69) )
+	ROM_LOAD16_WORD_SWAP( "256_hc37.p2", 0x100000, 0x800000, CRC(8b06f167) SHA1(08342da1b4efeeb2d6cc450f9f63245cac531478) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 	MSLUG3HD_SFIX_128K
 	MSLUG3_AUDIO_BIOS_512K
@@ -13427,7 +13427,7 @@ ROM_END
 ROM_START( mslug3hc38 ) //mslug3hamy
 	ROM_REGION( 0xa00000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "256_hc38.p1", 0x000000, 0x100000, CRC(8a1af079) SHA1(e706cc314e423e5a42500f0d941c9b4f86bdc48f) )
-	ROM_LOAD16_WORD_SWAP( "256_hc38.p2", 0x100000, 0x800000, CRC(7a802c89) SHA1(2b86dca2a0dd3b032270a2ea8f2e307e02a3331e) )
+	ROM_LOAD16_WORD_SWAP( "256_hc38.p2", 0x100000, 0x800000, CRC(63383e18) SHA1(9f4b6622246884b94cd1cbd82f2ad13e79d76318) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 	MSLUG3HD_SFIX_128K
 	MSLUG3_AUDIO_BIOS_512K
@@ -15465,8 +15465,8 @@ GAME( 2000, mslug3ndd,        mslug3,   neogeo_noslot,   mslug3,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 Hack (DARKSOFT)
-GAME( 2025, mslug3cqtdd,      mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-10-20) (Darksoft)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug3chuanqidd,  mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-09-23) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3cqtdd,      mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-11-07) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3chuanqidd,  mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-11-06) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3cqdd,       mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary 4.5 2025-07-14) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3cqtfbdd,    mslug3,   neogeo_68kram,   mslug3sc,   neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary Tower Defense 5.0 2025-06-10) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3cqztdd,     mslug3,   neoclock_noslot, mslug3sc,   neogeo_state,    init_mslug3ndd,  ROT0, "hack",            "Metal Slug 3 (Legendary Journey 2024-11-14) (Darksoft)", MACHINE_SUPPORTS_SAVE )
@@ -15489,8 +15489,8 @@ GAME( 2000, mslug3ndnsd,      mslug3,   neogeo_noslot,   mslug3,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 Hack (NEO SD)
-GAME( 2025, mslug3cqtnds,     mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-10-20) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug3chuanqinds, mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-09-23) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3cqtnds,     mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Dark Fate 7.5H 2025-11-07) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3chuanqinds, mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-11-06) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3cqnds,      mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary 4.5 2025-07-14) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3cqtfbnds,   mslug3,   neogeo_68kram,   mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary Tower Defense 5.0 2025-06-10) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3cqztnds,    mslug3,   neoclock_noslot, mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Legendary Journey 2024-11-14) (Neo SD)", MACHINE_SUPPORTS_SAVE )
@@ -15571,8 +15571,8 @@ GAME( 2018, mslug3hc33,       mslug3,   neoclock_noslot, mslug3,     neogeo_stat
 GAME( 2023, mslug3hc34,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "hack",            "Metal Slug 3 (Enemy Speed Up 2023-03-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslug3hc35,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Survival 2023-03-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3hc36,       mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary 4.5 2025-07-14)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug3hc37,       mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-09-23)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug3hc38,       mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Dark Fate 7.5H 2025-10-20)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3hc37,       mslug3,   neoclock_noslot, mslug3cq,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-11-06)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3hc38,       mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Dark Fate 7.5H 2025-11-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3hc39,       mslug3,   neogeo_68kram,   mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary Tower Defense 6.0 2025-06-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3hc40,       mslug3,   neoclock_noslot, mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary Journey 2024-11-14)", MACHINE_SUPPORTS_SAVE )
 

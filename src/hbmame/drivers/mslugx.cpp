@@ -28,6 +28,27 @@
 ************************************************************************************************************************************/
 
 /*************************************
+ *
+ *  Game-specific inits
+ *
+ *************************************/
+
+void neogeo_state::init_mslugx()
+{
+	init_neogeo();
+	m_mslugx_prot->mslugx_install_protection(m_maincpu);
+}
+
+/*********************************************** DARKSOFT */
+
+void neogeo_state::init_mslugxdd()
+{
+	init_neogeo();
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	m_mslugx_prot->mslugx_install_protection(m_maincpu);
+}
+
+/*************************************
     Game specific input definitions
  *************************************/
 

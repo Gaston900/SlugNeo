@@ -156,3 +156,29 @@ if (MACHINES["INTELFLASH"]~=null) then
 		MAME_DIR .. "src/devices/machine/intelfsh.h",
 	}
 end
+
+-- SYSTEM (PGM)
+---------------------------------------------------
+--
+--@src/devices/machine/v3021.h,MACHINES["V3021"] = true
+---------------------------------------------------
+
+if (MACHINES["V3021"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/v3021.cpp",
+		MAME_DIR .. "src/devices/machine/v3021.h",
+	}
+end
+
+-- SYSTEM (M92)
+---------------------------------------------------
+--
+--@src/devices/machine/pic8259.h,MACHINES["PIC8259"] = true
+---------------------------------------------------
+
+if (MACHINES["PIC8259"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/pic8259.cpp",
+		MAME_DIR .. "src/devices/machine/pic8259.h",
+	}
+end

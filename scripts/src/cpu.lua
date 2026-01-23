@@ -297,3 +297,51 @@ if (CPUS["ARM7"]~=null or _OPTIONS["with-tools"]) then
 	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/arm7/arm7dasm.cpp")
 	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/arm7/arm7dasm.h")
 end
+
+-- SYSTEM (M92)
+--------------------------------------------------
+-- NEC V-series Intel-compatible
+--@src/devices/cpu/nec/nec.h,CPUS["NEC"] = true
+--@src/devices/cpu/nec/v25.h,CPUS["NEC"] = true
+--@src/devices/cpu/nec/v5x.h,CPUS["NEC"] = true
+--@src/devices/cpu/v30mz/v30mz.h,CPUS["V30MZ"] = true
+--------------------------------------------------
+
+if (CPUS["NEC"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/cpu/nec/nec.cpp",
+		MAME_DIR .. "src/devices/cpu/nec/nec.h",
+		MAME_DIR .. "src/devices/cpu/nec/necea.h",
+		MAME_DIR .. "src/devices/cpu/nec/necinstr.h",
+		MAME_DIR .. "src/devices/cpu/nec/necinstr.hxx",
+		MAME_DIR .. "src/devices/cpu/nec/nec80inst.hxx",
+		MAME_DIR .. "src/devices/cpu/nec/necmacro.h",
+		MAME_DIR .. "src/devices/cpu/nec/necmodrm.h",
+		MAME_DIR .. "src/devices/cpu/nec/necpriv.ipp",
+		MAME_DIR .. "src/devices/cpu/nec/v25instr.h",
+		MAME_DIR .. "src/devices/cpu/nec/v25instr.hxx",
+		MAME_DIR .. "src/devices/cpu/nec/v25priv.ipp",
+		MAME_DIR .. "src/devices/cpu/nec/v25.cpp",
+		MAME_DIR .. "src/devices/cpu/nec/v25.h",
+		MAME_DIR .. "src/devices/cpu/nec/v25sfr.cpp",
+		MAME_DIR .. "src/devices/cpu/nec/v5x.cpp",
+		MAME_DIR .. "src/devices/cpu/nec/v5x.h",
+	}
+end
+
+if (CPUS["NEC"]~=null or _OPTIONS["with-tools"]) then
+	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/nec/necdasm.cpp")
+	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/nec/necdasm.h")
+end
+
+if (CPUS["V30MZ"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/cpu/v30mz/v30mz.cpp",
+		MAME_DIR .. "src/devices/cpu/v30mz/v30mz.h",
+	}
+end
+
+if (CPUS["V30MZ"]~=null or _OPTIONS["with-tools"]) then
+	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/nec/necdasm.cpp")
+	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/nec/necdasm.h")
+end

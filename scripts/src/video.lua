@@ -85,3 +85,16 @@ if (VIDEOS["GB_LCD"]~=null) then
 		MAME_DIR .. "src/devices/video/gb_lcd.h",
 	}
 end
+
+-- SYSTEM (M92)
+--------------------------------------------------
+--
+--@src/devices/video/bufsprite.h,VIDEOS["BUFSPRITE"] = true
+--------------------------------------------------
+
+if (VIDEOS["BUFSPRITE"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/video/bufsprite.cpp",
+		MAME_DIR .. "src/devices/video/bufsprite.h",
+	}
+end

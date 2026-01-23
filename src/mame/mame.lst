@@ -1075,6 +1075,30 @@ mslugxrmf01       // Hack
 mslugxrmg01       // Hack
 mslugxrmh01       // Hack
 
+
+
+/*****************************************************
+    List of all enabled drivers extras in the system.
+********************************************************/
+
+@source:pgm.cpp
+pgm               // Base Unit
+dmnfrnt           // (c) 2002 Demon Front
+dmnfrnt103        //
+dmnfrnt102        //
+
+@source:m92.cpp
+geostorm          // (c) 1994 Irem (Japan)
+geostorma         // (c) 1994 Irem (Japan)
+gunforc2          // (c) 1994 Irem
+gunforce          // (c) 1991 Irem (World)
+gunforcej         // (c) 1991 Irem (Japan)
+gunforceu         // (c) 1991 Irem America (US)
+inthunt           // (c) 1993 Irem (World)
+inthuntu          // (c) 1993 Irem (US)
+kaiteids          // (c) 1993 Irem (Japan)
+
+
 /*****************************************************
     List of all enabled drivers console in the system.
 ********************************************************/

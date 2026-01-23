@@ -114,7 +114,7 @@ extern const FOLDERDATA g_folderData[] =
 	{"Remix", 	            "remix",		       FOLDER_REMIX,		       IDI_FOLDER_REMIX,	           0,			 0, 		   0, CreateREMIXFolders },
 	{"Remix Extreme", 	    "remix extreme",	   FOLDER_REMIXEXTREME,        IDI_FOLDER_REMIXEXTREME,        0,			 0, 		   0, CreateREMIXEXTREMEFolders },
 	{"Update 2026", 	    "update 2026",	       FOLDER_UPDATE,              IDI_FOLDER_UPDATE,              0,			 0, 		   0, CreateUPDATEFolders },
-    {"MVS ~ AES", 	        "mvs",	               FOLDER_MVS,                 IDI_FOLDER_MVS,                 0,			 0, 		   0, NULL,                       DriverIsMvs,             true },
+    {"Misterix", 	        "mvs",	               FOLDER_MVS,                 IDI_FOLDER_MVS,                 0,			 0, 		   0, NULL,                       DriverIsMvs,             true },
 //	{"Mechanical",          "mechanical",          FOLDER_MECHANICAL,          IDI_MECHANICAL,                 0,            0,            0, NULL,                       DriverIsMechanical,      true },
 //	{"Unavailable",   "unavailable",      FOLDER_UNAVAILABLE,  IDI_FOLDER_UNAVAILABLE,   0,             F_AVAILABLE,  0, NULL,                       FilterAvailable,         false },
 //	{"Parents",       "originals",        FOLDER_ORIGINAL,     IDI_FOLDER_ORIGINALS,     F_ORIGINALS,   F_CLONES,     0, NULL,                       DriverIsClone,           false },

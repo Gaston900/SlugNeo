@@ -17,6 +17,7 @@ CPUS["I386"] = true  -- MEGADRIVE
 CPUS["LR35902"] = true -- GB
 CPUS["ARM7"] = true -- GB
 CPUS["NEC"] = true -- M92
+CPUS["V30MZ"] = true -- MEGADRIVE
 
 --------------------------------------------------
 -- specify available sound cores
@@ -53,6 +54,8 @@ MACHINES["Z80DAISY"] = true -- NEOGEO
 MACHINES["INTELFLASH"] = true -- GBA
 MACHINES["V3021"] = true --PGM
 MACHINES["PIC8259"] = true -- M92
+MACHINES["I2CMEM"] = true -- MEGADRIVE
+MACHINES["LC89510"] = true -- MEGADRIVE
 
 --------------------------------------------------
 -- specify available bus cores

@@ -81,11 +81,11 @@ In order to compile this version we will need the source code, for this we will 
 
 And we will apply this command to start the compilation, this command is for Windows 64-Bit system:
 ```
-make PTR64=1 TARGET=mame OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
+make PTR64=1 SUBTARGET=arcade OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
 ```
 And we will apply this command to start the compilation, this command is for Windows 32-Bit system:
 ```
-make PTR64=0 TARGET=mame OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
+make PTR64=0 SUBTARGET=arcade OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
 ```
 
 The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is suggested to be version msys64 2017-12-26.

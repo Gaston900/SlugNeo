@@ -91,28 +91,13 @@ extern const FOLDERDATA g_folderData[] =
     {"Not Working",         "nonworking",          FOLDER_NONWORKING,          IDI_NONWORKING,                 F_NONWORKING, F_WORKING,    0, NULL,                       DriverIsBroken,          true },
 	{"Console",             "console",             FOLDER_CONSOLE,             IDI_FOLDER_CONSOLE,             0,            0,            0, NULL,                       DriverIsConsole,        true },
 	{"BIOS",                "bios",                FOLDER_BIOS,                IDI_FOLDER_BIOS,                0,            0,            1, CreateBIOSFolders,          DriverIsBios,            true },
-	{"Apocalyptic Time",    "apocalyptic time",    FOLDER_AT,		           IDI_FOLDER_AT,                  0,			 0, 		   0, CreateATFolders },
 	{"Collection",          "collection",	       FOLDER_COLLECTION,          IDI_FOLDER_COLLECTION,          0,			 0, 		   0, CreateCOLLECTIONFolders },
-	{"Cuztom", 		        "cuztom",			   FOLDER_CUZTOM,		       IDI_FOLDER_CUZTOM,		       0,			 0, 		   0, CreateCUZTOMFolders },
-	{"Darksoft",		    "darksoft", 		   FOLDER_DARKSOFT,		       IDI_FOLDER_DARKSOFT,	           0,			 0, 		   0, CreateDARKSOFTFolders },
-	{"Darksoft ~ Hack",     "darksoft~hack",	   FOLDER_DARKSOFTHACK, 	   IDI_FOLDER_DARKSOFTHACK,        0,			 0, 		   0, CreateDARKSOFTHACKFolders },	
-	{"Decrypted E & B",	    "decrypted e & b",     FOLDER_DECRYPTEDEANDB,      IDI_FOLDER_DECRYPTEDEANDB,      0,			 0, 		   0, CreateDECRYPTEDEANDBFolders },
-	{"Encrypted C & P",	    "encrypted c & p",	   FOLDER_ENCRYPTEDCANDP,      IDI_FOLDER_ENCRYPTEDCANDP,      0,			 0,            0, CreateENCRYPTEDCANDPFolders },
-	{"FB4Droid ~ IPS",	    "fb4droid",	           FOLDER_FB4DROID,            IDI_FOLDER_FB4DROID,            0,			 0,            0, CreateFB4DROIDFolders },
-	{"Fightcade 2",	        "fightcade 2",	       FOLDER_FIGHTCADE2,          IDI_FOLDER_FIGHTCADE2,          0,			 0,            0, CreateFIGHTCADE2Folders },
-	{"GOTVG",	            "gotvg",	           FOLDER_GOTVG,               IDI_FOLDER_GOTVG,               0,			 0,            0, CreateGOTVGFolders },
-	{"HomeBrew", 	        "homebrew",		       FOLDER_HOMEBREW,		       IDI_FOLDER_HOMEBREW,	           0,			 0, 		   0, CreateHOMEBREWFolders },
 	{"Metal Slug 1",        "metalslug1",	       FOLDER_MSLUG,		       IDI_FOLDER_MSLUG,		       0,			 0, 		   0, CreateMSLUGFolders },
 	{"Metal Slug 2",        "metalslug2", 	       FOLDER_MSLUG2,		       IDI_FOLDER_MSLUG2,		       0,			 0, 		   0, CreateMSLUG2Folders },
 	{"Metal Slug 3",        "metalslug3", 	       FOLDER_MSLUG3,		       IDI_FOLDER_MSLUG3,		       0,			 0, 		   0, CreateMSLUG3Folders },
 	{"Metal Slug 4",        "metalslug4",		   FOLDER_MSLUG4,		       IDI_FOLDER_MSLUG4,		       0,			 0, 		   0, CreateMSLUG4Folders },
 	{"Metal Slug 5",        "metalslug5",		   FOLDER_MSLUG5,		       IDI_FOLDER_MSLUG5,		       0,			 0, 		   0, CreateMSLUG5Folders },
 	{"Metal Slug X",        "metalslugx",		   FOLDER_MSLUGX,		       IDI_FOLDER_MSLUGX,		       0,			 0, 		   0, CreateMSLUGXFolders },
-	{"NeoSD", 	            "neosd",		       FOLDER_NEOSD,		       IDI_FOLDER_NEOSD,	           0,			 0, 		   0, CreateNEOSDFolders },
-	{"NeoSD ~ Hack", 	    "neosd~hack",		   FOLDER_NEOSDHACK,		   IDI_FOLDER_NEOSDHACK,	       0,			 0, 		   0, CreateNEOSDHACKFolders },
-	{"Original", 	        "original",		       FOLDER_ORIGINAL,		       IDI_FOLDER_ORIGINAL,	           0,			 0, 		   0, CreateORIGINALFolders },
-	{"Remix", 	            "remix",		       FOLDER_REMIX,		       IDI_FOLDER_REMIX,	           0,			 0, 		   0, CreateREMIXFolders },
-	{"Remix Extreme", 	    "remix extreme",	   FOLDER_REMIXEXTREME,        IDI_FOLDER_REMIXEXTREME,        0,			 0, 		   0, CreateREMIXEXTREMEFolders },
 	{"Update 2026", 	    "update 2026",	       FOLDER_UPDATE,              IDI_FOLDER_UPDATE,              0,			 0, 		   0, CreateUPDATEFolders },
     {"Misterix", 	        "mvs",	               FOLDER_MVS,                 IDI_FOLDER_MVS,                 0,			 0, 		   0, NULL,                       DriverIsMvs,             true },
 //	{"Mechanical",          "mechanical",          FOLDER_MECHANICAL,          IDI_MECHANICAL,                 0,            0,            0, NULL,                       DriverIsMechanical,      true },
@@ -177,27 +162,12 @@ static const TREEICON treeIconNames[] =
 	{ IDI_FOLDER_ORIGINALS,    	"foldorig" },
 	{ IDI_FOLDER_SOURCE,		"foldsrc" },	
 //#ifdef USE_GAMEFOLDERS
- 	{ IDI_FOLDER_AT,	        "fold_at"},
- 	{ IDI_FOLDER_CUZTOM,	    "fold_cuztom"},
- 	{ IDI_FOLDER_DARKSOFT,	    "fold_darksoft"},
- 	{ IDI_FOLDER_DARKSOFTHACK,  "fold_darksofth"},
- 	{ IDI_FOLDER_DECRYPTEDEANDB,"fold_decryptedeb"},
-	{ IDI_FOLDER_ENCRYPTEDCANDP,"fold_encryptedcp"},
-	{ IDI_FOLDER_FB4DROID,      "fold_fb4droid"},
-	{ IDI_FOLDER_FIGHTCADE2,    "fold_fightcade2"},
-	{ IDI_FOLDER_GOTVG,         "fold_gotvg"},
-	{ IDI_FOLDER_HOMEBREW,	    "fold_homebrew" },
 	{ IDI_FOLDER_MSLUG,	        "fold_mslug" },
 	{ IDI_FOLDER_MSLUG2,        "fold_mslug2" },
 	{ IDI_FOLDER_MSLUG3,        "fold_mslug3" },
     { IDI_FOLDER_MSLUG4,	    "fold_mslug4" },
     { IDI_FOLDER_MSLUG5,	    "fold_mslug5" },
     { IDI_FOLDER_MSLUGX,	    "fold_mslugx" },
-    { IDI_FOLDER_NEOSD,	        "fold_neosd" },
-	{ IDI_FOLDER_NEOSDHACK,	    "fold_neosdh" },
-    { IDI_FOLDER_ORIGINAL,	    "fold_original" },
-	{ IDI_FOLDER_REMIX,	        "fold_remix" },
-	{ IDI_FOLDER_REMIXEXTREME,	"fold_remixe" },
 	{ IDI_FOLDER_COLLECTION,	"fold_collection" },
 	{ IDI_FOLDER_UPDATE,	    "fold_update" },
 	{ IDI_FOLDER_CONSOLE,    	"fold_console" },
@@ -2191,23 +2161,126 @@ void CreateMSLUGFolders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 
-	
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+    LPTREEFOLDER lpMsLugCZ, lpMsLugDS, lpMsLugDC, lpMsLugF2, lpMsLugOR, lpMsLugHC, lpMsLugSD, lpMsLugRM, lpMsLugRE;
+
+	// create our two subfolders
+    lpMsLugCZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugDS = NewFolder("Darksoft", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugDC = NewFolder("Decrypted C", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugF2 = NewFolder("Fightcade 2", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugOR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugHC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugSD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugRM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugRE = NewFolder("Remix Extreme", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+
+	AddFolder(lpMsLugCZ);
+	AddFolder(lpMsLugDS);
+	AddFolder(lpMsLugDC);
+	AddFolder(lpMsLugF2);
+	AddFolder(lpMsLugOR);
+	AddFolder(lpMsLugHC);
+	AddFolder(lpMsLugSD);		
+	AddFolder(lpMsLugRM);
+	AddFolder(lpMsLugRE);
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
 
 	for (jj = 0; jj < nGames; jj++)
 	{
-		const char *s = GetDriverFileName(jj);
+		const char *s = GetDriverGameName(jj);
 
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (  (!strcmp("mslug.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
+        // Cuztom
+		if (!strcmp("mslugctma01", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma02", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma03", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma04", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma05", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma06", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma07", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma08", s))			    AddGame(lpMsLugCZ, jj);
+		if (!strcmp("mslugctma09", s))			    AddGame(lpMsLugCZ, jj);
+
+        // Darksoft
+		if (!strcmp("mslugdd", s))			        AddGame(lpMsLugDS, jj);
+
+        // Decrypted C
+		if (!strcmp("msboot", s))			        AddGame(lpMsLugDC, jj);
+		if (!strcmp("msluge", s))	                AddGame(lpMsLugDC, jj);
+
+        // Fightcade 2
+		if (!strcmp("mslugdyf1", s))			    AddGame(lpMsLugF2, jj);
+
+        // Original
+		if (!strcmp("mslug", s))			        AddGame(lpMsLugOR, jj);
+
+        // Hack
+		if (!strcmp("mslughc01", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc02", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc03", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc04", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc05", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc06", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc07", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc08", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc09", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc10", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc11", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc12", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc13", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc14", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc15", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc16", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc17", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc18", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc19", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc20", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc21", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc22", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc23", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc24", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc25", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc26", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc27", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc28", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc29", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc30", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc31", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc32", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc33", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc34", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc35", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc36", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc37", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc38", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc39", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc40", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc41", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc42", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc43", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc44", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc45", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc46", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc47", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc48", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc49", s))		        AddGame(lpMsLugHC, jj);
+		if (!strcmp("mslughc50", s))		        AddGame(lpMsLugHC, jj);
+
+        // NeoSD
+		if (!strcmp("mslugnsd", s))			        AddGame(lpMsLugSD, jj);
+
+        // Remix
+		if (!strcmp("mslugla01", s))			    AddGame(lpMsLugRM, jj);
+		if (!strcmp("msluglb01", s))			    AddGame(lpMsLugRM, jj);
+
+        // Remix Extreme
+		if (!strcmp("mslugrma01", s))			    AddGame(lpMsLugRE, jj);
+		if (!strcmp("mslugrmb01", s))			    AddGame(lpMsLugRE, jj);
 	}
 }
 
@@ -2216,23 +2289,217 @@ void CreateMSLUG2Folders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 
-	
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+    LPTREEFOLDER lpMsLug2AP, lpMsLug2CZ, lpMsLug2DS, lpMsLug2DSH, lpMsLug2DC, lpMsLug2F2, lpMsLug2OR, lpMslug2HC, lpMsLug2SD, lpMsLug2SDH, lpMsLug2RM, lpMsLug2RE;
+
+	// create our two subfolders
+    lpMsLug2AP = NewFolder("Apocalyptic Time", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug2CZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug2DS = NewFolder("Darksoft", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug2DSH = NewFolder("Darksoft ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug2DC = NewFolder("Decrypted C", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug2F2 = NewFolder("Fightcade 2", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug2OR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslug2HC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug2SD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug2SDH = NewFolder("NeoSD ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug2RM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug2RE = NewFolder("Remix Extreme", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+
+	AddFolder(lpMsLug2AP);
+	AddFolder(lpMsLug2CZ);
+	AddFolder(lpMsLug2DS);
+	AddFolder(lpMsLug2DSH);
+	AddFolder(lpMsLug2DC);
+	AddFolder(lpMsLug2F2);
+	AddFolder(lpMsLug2OR);
+	AddFolder(lpMslug2HC);
+	AddFolder(lpMsLug2SD);
+    AddFolder(lpMsLug2SDH);	
+	AddFolder(lpMsLug2RM);
+	AddFolder(lpMsLug2RE);
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
 
 	for (jj = 0; jj < nGames; jj++)
 	{
-		const char *s = GetDriverFileName(jj);
+		const char *s = GetDriverGameName(jj);
 
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (  (!strcmp("mslug2.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
+        // Apocalyptic Time
+		if (!strcmp("mslug2at01", s))			    AddGame(lpMsLug2AP, jj);
+	
+        // Cuztom
+		if (!strcmp("mslug2ctma01", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma02", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma03", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma04", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma05", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma06", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma07", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma08", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma09", s))		        AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma10", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma11", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma12", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma13", s))			    AddGame(lpMsLug2CZ, jj);
+		if (!strcmp("mslug2ctma14", s))			    AddGame(lpMsLug2CZ, jj);
+
+        // Darksoft
+        if (!strcmp("mslug2dd", s))			        AddGame(lpMsLug2DS, jj);
+		if (!strcmp("mslug2tdd", s))			    AddGame(lpMsLug2DS, jj);
+   
+        // Darksoft ~ Hack
+	    if (!strcmp("mslug2dddd", s))		     	AddGame(lpMsLug2DSH, jj);
+		if (!strcmp("mslug2egdd", s))			    AddGame(lpMsLug2DSH, jj);
+		if (!strcmp("mslug2frdd", s))			    AddGame(lpMsLug2DSH, jj);
+		
+		// Decrypted C
+		if (!strcmp("mslug2t", s))		     	    AddGame(lpMsLug2DC, jj);
+
+        // Fightcade 2
+		if (!strcmp("mslug2fm", s))			        AddGame(lpMsLug2F2, jj);
+
+        // Original
+		if (!strcmp("mslug2", s))			        AddGame(lpMsLug2OR, jj);
+
+        // Hack
+		if (!strcmp("mslug2hc01", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc02", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc03", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc04", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc05", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc06", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc07", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc08", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc09", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc10", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc11", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc12", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc13", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc14", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc15", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc16", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc17", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc18", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc19", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc20", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc21", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc22", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc23", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc24", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc25", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc26", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc27", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc28", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc29", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc30", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc31", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc32", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc33", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc34", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc35", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc36", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc37", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc38", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc39", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc40", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc41", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc42", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc43", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc44", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc45", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc46", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc47", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc48", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc49", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc50", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc51", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc52", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc53", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc54", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc55", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc56", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc57", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc58", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc59", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc60", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc61", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc62", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc63", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc64", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc65", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc66", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc67", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc68", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc69", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc70", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc71", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc72", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc73", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc74", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc75", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc76", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc77", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc78", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc79", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc80", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc81", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc82", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc83", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc84", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc85", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc86", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc87", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc88", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc89", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc90", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc91", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc92", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc93", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc94", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc95", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc96", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc97", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc98", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc99", s))		        AddGame(lpMslug2HC, jj);
+		if (!strcmp("mslug2hc100", s))		        AddGame(lpMslug2HC, jj);
+
+        // NeoSD
+		if (!strcmp("mslug2nsd", s))			    AddGame(lpMsLug2SD, jj);
+		if (!strcmp("mslug2tnsd", s))			    AddGame(lpMsLug2SD, jj);
+
+        // NeoSD ~ Hack
+		if (!strcmp("mslug2ddnds", s))			    AddGame(lpMsLug2SDH, jj);
+		if (!strcmp("mslug2egnds", s))		 	    AddGame(lpMsLug2SDH, jj);
+		if (!strcmp("mslug2frnds", s))			    AddGame(lpMsLug2SDH, jj);
+
+        // Remix
+		if (!strcmp("mslug2la01", s))	            AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la02", s))		        AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la03", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la04", s))	            AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la05", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la06", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la07", s))		        AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2la08", s))		        AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb01", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb02", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb03", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb04", s))	            AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb05", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb06", s))			    AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb07", s))	            AddGame(lpMsLug2RM, jj);
+		if (!strcmp("mslug2lb08", s))			    AddGame(lpMsLug2RM, jj);
+
+        // Remix Extreme
+		if (!strcmp("mslug2rma01", s))		        AddGame(lpMsLug2RE, jj);
+		if (!strcmp("mslug2rma02", s))		        AddGame(lpMsLug2RE, jj);
+		if (!strcmp("mslug2rmb01", s))			    AddGame(lpMsLug2RE, jj);
+		if (!strcmp("mslug2rmb02", s))	            AddGame(lpMsLug2RE, jj);
 	}
 }
 
@@ -2241,23 +2508,421 @@ void CreateMSLUG3Folders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 
-	
+
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+    LPTREEFOLDER lpMsLug3CZ, lpMsLug3DS, lpMsLug3DSH, lpMsLug3DC, lpMsLug3EH, lpMsLug3OR, lpMslug3HC, lpMslug3HB, lpMsLug3SD, lpMsLug3SDH, lpMsLug3RM, lpMsLug3RE;
+
+	// create our two subfolders
+    lpMsLug3CZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug3DS = NewFolder("Darksoft", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug3DSH = NewFolder("Darksoft ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug3DC = NewFolder("Decrypted C", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug3EH = NewFolder("Encrypted ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug3OR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslug3HC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslug3HB = NewFolder("HomeBrew", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug3SD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug3SDH = NewFolder("NeoSD ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug3RM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug3RE = NewFolder("Remix Extreme", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+
+	AddFolder(lpMsLug3CZ);
+	AddFolder(lpMsLug3DS);
+	AddFolder(lpMsLug3DSH);
+	AddFolder(lpMsLug3DC);
+	AddFolder(lpMsLug3EH);
+	AddFolder(lpMsLug3OR);
+	AddFolder(lpMslug3HC);
+	AddFolder(lpMslug3HB);
+	AddFolder(lpMsLug3SD);
+    AddFolder(lpMsLug3SDH);	
+	AddFolder(lpMsLug3RM);
+	AddFolder(lpMsLug3RE);
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
 
 	for (jj = 0; jj < nGames; jj++)
 	{
-		const char *s = GetDriverFileName(jj);
+		const char *s = GetDriverGameName(jj);
 
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (  (!strcmp("mslug3.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
+        // Cuztom
+		if (!strcmp("mslug3ctma01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma02", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma03", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma07", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma08", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma09", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma10", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma13", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma15", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma16", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma17", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma18", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctma19", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb02", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb03", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb07", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb08", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb09", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb10", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb13", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb15", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb16", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb17", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb18", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmb19", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc02", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc03", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc07", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc08", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc09", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc10", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc13", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc15", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc16", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc17", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc18", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmc19", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd02", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd03", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd07", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd08", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd09", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd10", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd13", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd15", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmd16", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme02", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme03", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme07", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme08", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme09", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme10", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme13", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme15", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctme16", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf02", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf03", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf07", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf08", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf09", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf10", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf13", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf15", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmf16", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg01", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg02", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg03", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg04", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg05", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg06", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg07", s))		        AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg08", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg09", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg10", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg11", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg12", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg13", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg14", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg15", s))             AddGame(lpMsLug3CZ, jj);
+		if (!strcmp("mslug3ctmg16", s))             AddGame(lpMsLug3CZ, jj);
+
+        // Darksoft
+		if (!strcmp("mslug3dd", s))		            AddGame(lpMsLug3DS, jj);
+		if (!strcmp("mslug3hdd", s))			    AddGame(lpMsLug3DS, jj);
+		if (!strcmp("mslug3ndd", s))			    AddGame(lpMsLug3DS, jj);
+		if (!strcmp("mslug3b6dd", s))			    AddGame(lpMsLug3DS, jj);
+		
+        // Darksoft ~ Hack
+		if (!strcmp("mslug3cqtdd", s))		        AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3chuanqidd", s))		    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3cqdd", s))			    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3cqtfbdd", s))	        AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3cqztdd", s))			    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3dddd", s))			    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3frdd", s))		        AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3gdd", s))			    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3kidd", s))			    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3nddd", s))			    AddGame(lpMsLug3DSH, jj);
+		if (!strcmp("mslug3scdd", s))			    AddGame(lpMsLug3DSH, jj);
+		
+		// Decrypted C
+		if (!strcmp("ms3b6boot", s))	    		AddGame(lpMsLug3DC, jj);
+		if (!strcmp("mslug3d", s))			        AddGame(lpMsLug3DC, jj);
+		if (!strcmp("mslug3hd", s))			        AddGame(lpMsLug3DC, jj);
+		if (!strcmp("mslug3nd", s))		            AddGame(lpMsLug3DC, jj);
+		if (!strcmp("mslug3he", s))			        AddGame(lpMsLug3DC, jj);
+		if (!strcmp("mslug3b6d", s))			    AddGame(lpMsLug3DC, jj);
+		if (!strcmp("mslug3b6e", s))			    AddGame(lpMsLug3DC, jj);
+
+        // Encrypted ~ Hack
+		if (!strcmp("mslug31v2", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3burt", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3eb", s))		            AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3eb14", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3sd", s))	                AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3sc", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3cq", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3chuanqi", s))		    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3cqtfb", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3cqzt", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3dbplus", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3c", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3fr", s))	                AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3g", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3gw", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3i", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3dde", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3ki", s))		            AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3lw", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3se", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3unity", s))			    AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3v", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3zh", s))			        AddGame(lpMsLug3EH, jj);
+		if (!strcmp("mslug3xe", s))			        AddGame(lpMsLug3EH, jj);
+
+        // Original
+		if (!strcmp("mslug3", s))			        AddGame(lpMsLug3OR, jj);
+		if (!strcmp("mslug3a", s))			        AddGame(lpMsLug3OR, jj);
+		if (!strcmp("mslug3h", s))			        AddGame(lpMsLug3OR, jj);
+		if (!strcmp("mslug3b6", s))		            AddGame(lpMsLug3OR, jj);
+
+        // Hack
+		if (!strcmp("mslug3hc01", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc02", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc03", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc04", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc05", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc06", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc07", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc08", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc09", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc10", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc11", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc12", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc13", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc14", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc15", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc16", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc17", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc18", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc19", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc20", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc21", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc22", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc23", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc24", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc25", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc26", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc27", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc28", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc29", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc30", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc31", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc32", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc33", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc34", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc35", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc36", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc37", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc38", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc39", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc40", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc41", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc42", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc43", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc44", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc45", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc46", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc47", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc48", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc49", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc50", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc51", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc52", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc53", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc54", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc55", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc56", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc57", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc58", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc59", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc60", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc61", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc62", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc63", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc64", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc65", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc66", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc67", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc68", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc69", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc70", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc71", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc72", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc73", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc74", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc75", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc76", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc77", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc78", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc79", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc80", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc81", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc82", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc83", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc84", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc85", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc86", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc87", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc88", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc89", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc90", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc91", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc92", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc93", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc94", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc95", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc96", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc97", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc98", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc99", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3hc100", s))		        AddGame(lpMslug3HC, jj);
+
+        // HomeBrew
+		if (!strcmp("mslug3x", s))		            AddGame(lpMslug3HB, jj);
+		if (!strcmp("mslug3xb", s))		            AddGame(lpMslug3HB, jj);
+		if (!strcmp("mslug3x0", s))		            AddGame(lpMslug3HB, jj);
+		if (!strcmp("mslug3x1", s))		            AddGame(lpMslug3HB, jj);
+		if (!strcmp("mslug3x2", s))		            AddGame(lpMslug3HB, jj);
+		if (!strcmp("mslug3x3", s))		            AddGame(lpMslug3HB, jj);
+		if (!strcmp("neopang", s))		            AddGame(lpMslug3HB, jj);
+
+        // NeoSD
+		if (!strcmp("mslug3nsd", s))		        AddGame(lpMsLug3SD, jj);
+		if (!strcmp("mslug3hnsd", s))			    AddGame(lpMsLug3SD, jj);
+		if (!strcmp("mslug3ndnsd", s))			    AddGame(lpMsLug3SD, jj);
+		if (!strcmp("mslug3b6nsd", s))			    AddGame(lpMsLug3SD, jj);
+
+        // NeoSD ~ Hack
+		if (!strcmp("mslug3cqtnds", s))		        AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3chuanqinds", s))		    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3cqnds", s))			    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3cqtfbnds", s))	        AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3cqztnds", s))		    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3ddnds", s))			    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3frnds", s))		        AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3gnds", s))			    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3kinds", s))			    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3ndnds", s))			    AddGame(lpMsLug3SDH, jj);
+		if (!strcmp("mslug3scnds", s))			    AddGame(lpMsLug3SDH, jj);
+
+        // Remix
+		if (!strcmp("mslug3la01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3la02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3la03", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3la04", s))		        AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3la05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3la06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lb01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lb02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lb03", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lb04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lb05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lb06", s))		        AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lc01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lc02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lc03", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lc04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lc05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lc06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3ld01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3ld02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3ld03", s))		        AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3ld04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3ld05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3ld06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3le01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3le02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3le03", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3le04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3le05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3le06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lf01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lf02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lf03", s))		        AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lf04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lf05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lf06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lg01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lg02", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lg03", s))		        AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lg04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lg05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lg06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lh01", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lh02", s))		        AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lh03", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lh04", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lh05", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3lh06", s))	            AddGame(lpMsLug3RM, jj);
+		if (!strcmp("mslug3li01", s))	            AddGame(lpMsLug3RM, jj);
+
+        // Remix Extreme
+		if (!strcmp("mslug3rma01", s))			    AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmb01", s))			    AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmc01", s))		        AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmd01", s))			    AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rme01", s))			    AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmf01", s))			    AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmg01", s))			    AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmh01", s))	            AddGame(lpMsLug3RE, jj);
+		if (!strcmp("mslug3rmi01", s))			    AddGame(lpMsLug3RE, jj);
 	}
 }
 
@@ -2266,23 +2931,297 @@ void CreateMSLUG4Folders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 
-	
+
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+    LPTREEFOLDER lpMsLug4CZ, lpMsLug4DS, lpMsLug4DSH, lpMsLug4DC, lpMsLug4EH, lpMsLug4OR, lpMslug4HC, lpMsLug4SD, lpMsLug4SDH, lpMsLug4RM, lpMsLug4RE;
+
+	// create our two subfolders
+    lpMsLug4CZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug4DS = NewFolder("Darksoft", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug4DSH = NewFolder("Darksoft ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug4DC = NewFolder("Decrypted C", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug4EH = NewFolder("Encrypted ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug4OR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslug4HC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug4SD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug4SDH = NewFolder("NeoSD ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug4RM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug4RE = NewFolder("Remix Extreme", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+
+	AddFolder(lpMsLug4CZ);
+	AddFolder(lpMsLug4DS);
+	AddFolder(lpMsLug4DSH);
+	AddFolder(lpMsLug4DC);
+	AddFolder(lpMsLug4EH);
+	AddFolder(lpMsLug4OR);
+	AddFolder(lpMslug4HC);
+	AddFolder(lpMsLug4SD);
+    AddFolder(lpMsLug4SDH);	
+	AddFolder(lpMsLug4RM);
+	AddFolder(lpMsLug4RE);
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
 
 	for (jj = 0; jj < nGames; jj++)
 	{
-		const char *s = GetDriverFileName(jj);
+		const char *s = GetDriverGameName(jj);
 
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (  (!strcmp("mslug4.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
+        // Cuztom
+		if (!strcmp("mslug4ctma01", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma02", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma03", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma04", s))		        AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma05", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma06", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma07", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma08", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma09", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma10", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma11", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma12", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctma13", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb03", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb04", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb05", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb06", s))		        AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb07", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb08", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb09", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb10", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb11", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb12", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmb13", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc03", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc04", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc05", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc06", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc07", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc08", s))		        AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc09", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc10", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc11", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc12", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmc13", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd03", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd04", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd05", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd06", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd07", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd08", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd09", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd10", s))		        AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd11", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd12", s))             AddGame(lpMsLug4CZ, jj);
+		if (!strcmp("mslug4ctmd13", s))             AddGame(lpMsLug4CZ, jj);
+
+        // Darksoft
+		if (!strcmp("ms4plusdd", s))			    AddGame(lpMsLug4DS, jj);
+		if (!strcmp("mslug4dd", s))			        AddGame(lpMsLug4DS, jj);
+		if (!strcmp("mslug4hdd", s))			    AddGame(lpMsLug4DS, jj);
+		if (!strcmp("mslug4ndd", s))			    AddGame(lpMsLug4DS, jj);
+
+        // Darksoft ~ Hack
+		if (!strcmp("mslug4ammordd", s))	        AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4cqtdd", s))			    AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4cqidd", s))			    AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4dddd", s))			    AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4frdd", s))			    AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4kidd", s))			    AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4lwdd", s))		        AddGame(lpMsLug4DSH, jj);
+		if (!strcmp("mslug4lwqdd", s))			    AddGame(lpMsLug4DSH, jj);
+
+		// Decrypted C
+		if (!strcmp("ms4boot", s))			        AddGame(lpMsLug4DC, jj);
+		if (!strcmp("ms4plusa", s))	                AddGame(lpMsLug4DC, jj);
+		if (!strcmp("ms4plusd", s))			        AddGame(lpMsLug4DC, jj);
+		if (!strcmp("mslug4d", s))			        AddGame(lpMsLug4DC, jj);
+		if (!strcmp("mslug4hd", s))			        AddGame(lpMsLug4DC, jj);
+		if (!strcmp("mslug4nd", s))	                AddGame(lpMsLug4DC, jj);
+		if (!strcmp("mslug4e", s))			        AddGame(lpMsLug4DC, jj);
+
+        // Encrypted ~ Hack
+
+		if (!strcmp("mslug4fr", s))			        AddGame(lpMsLug4EH, jj);
+		if (!strcmp("mslug4lw", s))	                AddGame(lpMsLug4EH, jj);
+		if (!strcmp("mslug4ammor", s))			    AddGame(lpMsLug4EH, jj);
+		if (!strcmp("mslug4lwq", s))		        AddGame(lpMsLug4EH, jj);
+		if (!strcmp("mslug4dde", s))			    AddGame(lpMsLug4EH, jj);
+		if (!strcmp("mslug4ki", s))			        AddGame(lpMsLug4EH, jj);
+		if (!strcmp("mslug4cqi", s))			    AddGame(lpMsLug4EH, jj);
+
+        // Original
+		if (!strcmp("ms4plus", s))			        AddGame(lpMsLug4OR, jj);
+		if (!strcmp("mslug4", s))			        AddGame(lpMsLug4OR, jj);
+		if (!strcmp("mslug4h", s))			        AddGame(lpMsLug4OR, jj);
+
+        // Hack
+		if (!strcmp("mslug4hc01", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc02", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc03", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc04", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc05", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc06", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc07", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc08", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc09", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc10", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc11", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc12", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc13", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc14", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc15", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc16", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc17", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc18", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc19", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc20", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc21", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc22", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc23", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc24", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc25", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc26", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc27", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc28", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc29", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc30", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc31", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc32", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc33", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc34", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc35", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc36", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc37", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc38", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc39", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc40", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc41", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc42", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc43", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc44", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc45", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc46", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc47", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc48", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc49", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc50", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc51", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc52", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc53", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc54", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc55", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc56", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc57", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc58", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc59", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc60", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc61", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc62", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc63", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc64", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc65", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc66", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc67", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc68", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc69", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc70", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc71", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc72", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc73", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc74", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc75", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc76", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc77", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc78", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc79", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc80", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc81", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc82", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc83", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc84", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc85", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc86", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc87", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc88", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc89", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc90", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc91", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc92", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc93", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc94", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc95", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc96", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc97", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc98", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc99", s))		        AddGame(lpMslug4HC, jj);
+		if (!strcmp("mslug4hc100", s))		        AddGame(lpMslug4HC, jj);
+
+        // NeoSD
+		if (!strcmp("ms4plusnsd", s))			    AddGame(lpMsLug4SD, jj);
+		if (!strcmp("mslug4nsd", s))			    AddGame(lpMsLug4SD, jj);
+		if (!strcmp("mslug4hnsd", s))			    AddGame(lpMsLug4SD, jj);
+		if (!strcmp("mslug4ndnsd", s))			    AddGame(lpMsLug4SD, jj);
+
+        // NeoSD ~ Hack
+		if (!strcmp("mslug4ammornds", s))	        AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4cqtnds", s))	            AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4cqinds", s))			    AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4ddnds", s))			    AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4frnds", s))			    AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4kinds", s))			    AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4lwnds", s))		        AddGame(lpMsLug4SDH, jj);
+		if (!strcmp("mslug4lwqnds", s))			    AddGame(lpMsLug4SDH, jj);
+
+        // Remix
+		if (!strcmp("mslug4la01", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4la02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4la03", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4la04", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4la05", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lb01", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lb02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lb03", s))		        AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lb04", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lb05", s))	            AddGame(lpMsLug4RM, jj);
+        if (!strcmp("mslug4lc01", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lc02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lc03", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lc04", s))		        AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lc05", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4ld01", s))	            AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4ld02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4ld03", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4ld04", s))		        AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4ld05", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4le01", s))	            AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4le02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4le03", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4le04", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4le05", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lf01", s))		        AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lf02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lf03", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lf04", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lf05", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lg01", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lg02", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lg03", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lg04", s))               AddGame(lpMsLug4RM, jj);
+		if (!strcmp("mslug4lg05", s))	            AddGame(lpMsLug4RM, jj);
+
+        // Remix Extreme
+		if (!strcmp("mslug4rma01", s))			    AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rmb01", s))	            AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rmc01", s))			    AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rmd01", s))			    AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rme01", s))			    AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rmf01", s))			    AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rmg01", s))		        AddGame(lpMsLug4RE, jj);
+		if (!strcmp("mslug4rmh01", s))			    AddGame(lpMsLug4RE, jj);
 	}
 }
 
@@ -2291,23 +3230,389 @@ void CreateMSLUG5Folders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 
-	
+
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+    LPTREEFOLDER lpMsLug5CZ, lpMsLug5DS, lpMsLug5DSH, lpMsLug5DC, lpMsLug5EH, lpMslug5F2, lpMsLug5OR, lpMslug5HC, lpMsLug5SD, lpMsLug5SDH, lpMsLug5RM, lpMsLug5RE;
+
+	// create our two subfolders
+    lpMsLug5CZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug5DS = NewFolder("Darksoft", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug5DSH = NewFolder("Darksoft ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug5DC = NewFolder("Decrypted C", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug5EH = NewFolder("Encrypted ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslug5F2 = NewFolder("Fightcade 2", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug5OR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslug5HC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug5SD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug5SDH = NewFolder("NeoSD ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLug5RM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLug5RE = NewFolder("Remix Extreme", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+
+	AddFolder(lpMsLug5CZ);
+	AddFolder(lpMsLug5DS);
+	AddFolder(lpMsLug5DSH);
+	AddFolder(lpMsLug5DC);
+	AddFolder(lpMsLug5EH);
+	AddFolder(lpMslug5F2);
+	AddFolder(lpMsLug5OR);
+	AddFolder(lpMslug5HC);
+	AddFolder(lpMsLug5SD);
+    AddFolder(lpMsLug5SDH);	
+	AddFolder(lpMsLug5RM);
+	AddFolder(lpMsLug5RE);
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
 
 	for (jj = 0; jj < nGames; jj++)
 	{
-		const char *s = GetDriverFileName(jj);
+		const char *s = GetDriverGameName(jj);
 
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (  (!strcmp("mslug5.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
+        // Cuztom
+		if (!strcmp("mslug5ctma01", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma03", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma05", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma06", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma09", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma10", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma13", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma14", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma16", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctma17", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb01", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb03", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb05", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb06", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb09", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb10", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb13", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb14", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmb16", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc01", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc03", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc05", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc06", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc09", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc10", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc13", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc14", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmc16", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd01", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd03", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd05", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd06", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd09", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd10", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd13", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd14", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd16", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmd17", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme01", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme03", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme05", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme06", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme09", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme10", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme13", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme14", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme16", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctme17", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf01", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf03", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf05", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf06", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf09", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf10", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf13", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf14", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf16", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmf17", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg01", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg02", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg03", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg04", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg05", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg06", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg07", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg08", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg09", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg10", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg11", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg12", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg13", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg14", s))		        AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg15", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg16", s))             AddGame(lpMsLug5CZ, jj);
+		if (!strcmp("mslug5ctmg17", s))             AddGame(lpMsLug5CZ, jj);
+
+        // Darksoft
+		if (!strcmp("ms5pcbdd", s))			        AddGame(lpMsLug5DS, jj);
+		if (!strcmp("ms5plusdd", s))			    AddGame(lpMsLug5DS, jj);
+		if (!strcmp("mslug5dd", s))			        AddGame(lpMsLug5DS, jj);
+		if (!strcmp("mslug5hdd", s))			    AddGame(lpMsLug5DS, jj);
+		if (!strcmp("mslug5ndd", s))			    AddGame(lpMsLug5DS, jj);
+
+        // Darksoft ~ Hack
+		if (!strcmp("mslug5cqtdd", s))		    	AddGame(lpMsLug5DSH, jj);
+		if (!strcmp("mslug5cqdd", s))			    AddGame(lpMsLug5DSH, jj);
+		if (!strcmp("mslug5fdd", s))			    AddGame(lpMsLug5DSH, jj);
+		if (!strcmp("mslug5frdd", s))			    AddGame(lpMsLug5DSH, jj);
+		if (!strcmp("mslug5scdd", s))			    AddGame(lpMsLug5DSH, jj);
+		if (!strcmp("mslug5wdd", s))			    AddGame(lpMsLug5DSH, jj);
+
+		// Decrypted C
+		if (!strcmp("ms5boot", s))		            AddGame(lpMsLug5DC, jj);
+		if (!strcmp("ms5pcbd", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("ms5plusd", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("ms5plusnd", s))		        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("ms5pluse", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5d", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5hd", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5e", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5n", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5nd", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5nde", s))		        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b2", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b3", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b4", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b5", s))	                AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b6", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b7", s))			        AddGame(lpMsLug5DC, jj);
+		if (!strcmp("mslug5b8", s))			        AddGame(lpMsLug5DC, jj);
+
+        // Encrypted ~ Hack
+		if (!strcmp("ms5plush", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug51v2", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5ae", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5bs", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5burt", s))		        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5ddd", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5db", s))	                AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5c", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5esr", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5ex", s))		            AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5f", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5g", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5w", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5unity", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5sc", s))	                AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5sg", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5cq", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5ki", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5l9a", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5l9b", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5mg", s))			        AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5rmk", s))			    AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5x", s))		            AddGame(lpMsLug5EH, jj);
+		if (!strcmp("mslug5zh", s))			        AddGame(lpMsLug5EH, jj);
+
+        // Original
+		if (!strcmp("ms5pcb", s))			        AddGame(lpMsLug5OR, jj);
+		if (!strcmp("ms5plus", s))			        AddGame(lpMsLug5OR, jj);
+		if (!strcmp("mslug5", s))			        AddGame(lpMsLug5OR, jj);
+		if (!strcmp("mslug5h", s))			        AddGame(lpMsLug5OR, jj);
+		if (!strcmp("mslug5b1", s))			        AddGame(lpMsLug5OR, jj);
+
+        // Hack
+		if (!strcmp("mslug5hc01", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc02", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc03", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc04", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc05", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc06", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc07", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc08", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc09", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc10", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc11", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc12", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc13", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc14", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc15", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc16", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc17", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc18", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc19", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc20", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc21", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc22", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc23", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc24", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc25", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc26", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc27", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc28", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc29", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc30", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc31", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc32", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc33", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc34", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc35", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc36", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc37", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc38", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc39", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc40", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc41", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc42", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc43", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc44", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc45", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc46", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc47", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc48", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc49", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc50", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc51", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc52", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc53", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc54", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc55", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc56", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc57", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc58", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc59", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc60", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc61", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc62", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc63", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc64", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc65", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc66", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc67", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc68", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc69", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc70", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc71", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc72", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc73", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc74", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc75", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc76", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc77", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc78", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc79", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc80", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc81", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc82", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc83", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc84", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc85", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc86", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc87", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc88", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc89", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc90", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc91", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc92", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc93", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc94", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc95", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc96", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc97", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc98", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc99", s))		        AddGame(lpMslug5HC, jj);
+		if (!strcmp("mslug5hc100", s))		        AddGame(lpMslug5HC, jj);
+
+        // Fightcade 2
+		if (!strcmp("mslug5sgf", s))			    AddGame(lpMslug5F2, jj);
+
+        // NeoSD
+		if (!strcmp("ms5pcbdnsd", s))			    AddGame(lpMsLug5SD, jj);
+		if (!strcmp("ms5plusnsd", s))			    AddGame(lpMsLug5SD, jj);
+		if (!strcmp("mslug5nsd", s))			    AddGame(lpMsLug5SD, jj);
+		if (!strcmp("mslug5hnsd", s))			    AddGame(lpMsLug5SD, jj);
+		if (!strcmp("mslug5ndnsd", s))			    AddGame(lpMsLug5SD, jj);
+
+        // NeoSD ~ Hack
+		if (!strcmp("mslug5cqtnds", s))			    AddGame(lpMsLug5SDH, jj);
+		if (!strcmp("mslug5cqnds", s))			    AddGame(lpMsLug5SDH, jj);
+		if (!strcmp("mslug5fnds", s))			    AddGame(lpMsLug5SDH, jj);
+		if (!strcmp("mslug5frnds", s))			    AddGame(lpMsLug5SDH, jj);
+		if (!strcmp("mslug5scnds", s))			    AddGame(lpMsLug5SDH, jj);
+		if (!strcmp("mslug5wnds", s))			    AddGame(lpMsLug5SDH, jj);
+
+        // Remix
+		if (!strcmp("mslug5la01", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5la02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5la03", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lb01", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lb02", s))		        AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lb03", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lc01", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lc02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lc03", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5ld01", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5ld02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5ld03", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5le01", s))		        AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5le02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5le03", s))	            AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lf01", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lf02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lf03", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lg01", s))	            AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lg02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lg03", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lh01", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lh02", s))               AddGame(lpMsLug5RM, jj);
+		if (!strcmp("mslug5lh03", s))		        AddGame(lpMsLug5RM, jj);
+
+        // Remix Extreme
+		if (!strcmp("mslug5rma01", s))			    AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rmb01", s))			    AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rmc01", s))			    AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rmd01", s))			    AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rme01", s))			    AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rmf01", s))			    AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rmg01", s))		        AddGame(lpMsLug5RE, jj);
+		if (!strcmp("mslug5rmh01", s))			    AddGame(lpMsLug5RE, jj);
 	}
 }
 
@@ -2316,58 +3621,36 @@ void CreateMSLUGXFolders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 
-	
+
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+    LPTREEFOLDER lpMsLugXAP, lpMsLugXCZ, lpMsLugXDS, lpMsLugXDSH, lpMsLugXDC, lpMslugXF2, lpMsLugXOR, lpMslugXHC, lpMsLugXSD, lpMsLugXSDH, lpMsLugXRM, lpMsLugXRE;
 
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
+	// create our two subfolders
+    lpMsLugXAP = NewFolder("Apocalyptic Time", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugXCZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugXDS = NewFolder("Darksoft", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugXDSH = NewFolder("Darksoft ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugXDC = NewFolder("Decrypted C", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslugXF2 = NewFolder("Fightcade 2", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugXOR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMslugXHC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugXSD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugXSDH = NewFolder("NeoSD ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMsLugXRM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpMsLugXRE = NewFolder("Remix Extreme", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
 
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverFileName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (  (!strcmp("mslugx.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
-	}
-}
-
-void CreateHOMEBREWFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverFileName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (  (!strcmp("homebrew.cpp", s)) )
-		{
-			AddGame(lpFolder, jj);
-		}
-	}
-}
-
-void CreateATFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+	AddFolder(lpMsLugXAP);
+	AddFolder(lpMsLugXCZ);
+	AddFolder(lpMsLugXDS);
+	AddFolder(lpMsLugXDSH);
+	AddFolder(lpMsLugXDC);
+	AddFolder(lpMslugXF2);
+	AddFolder(lpMsLugXOR);
+	AddFolder(lpMslugXHC);
+	AddFolder(lpMsLugXSD);
+    AddFolder(lpMsLugXSDH);	
+	AddFolder(lpMsLugXRM);
+	AddFolder(lpMsLugXRE);
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
@@ -2379,1425 +3662,321 @@ void CreateATFolders(int parent_index)
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (!strcmp("mslug2at01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxtst01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxtao01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat06", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxat10", s))			AddGame(lpFolder, jj);
-	}
-}
+        // Apocalyptic Time
+		if (!strcmp("mslugxtst01", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxtao01", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat01", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat02", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat03", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat04", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat05", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat06", s))		        AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat07", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat08", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat09", s))			    AddGame(lpMsLugXAP, jj);
+		if (!strcmp("mslugxat10", s))			    AddGame(lpMsLugXAP, jj);
 
-void CreateCUZTOMFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
+        // Cuztom
+		if (!strcmp("mslugxctma01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctma16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmb16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmc16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmd16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctme16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmf16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmg16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh01", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh02", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh03", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh04", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh05", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh06", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh07", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh08", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh09", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh10", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh11", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh12", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh13", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh14", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh15", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmh16", s))             AddGame(lpMsLugXCZ, jj);
+		if (!strcmp("mslugxctmi01", s))             AddGame(lpMsLugXCZ, jj);
 
+        // Darksoft
+		if (!strcmp("mslugxdd", s))		            AddGame(lpMsLugXDS, jj);
+
+        // Darksoft ~ Hack
+		if (!strcmp("mslugxcqtdd", s))	            AddGame(lpMsLugXDSH, jj);
+		if (!strcmp("mslugxchuanqidd", s))	        AddGame(lpMsLugXDSH, jj);
+		if (!strcmp("mslugxcqdd", s))			    AddGame(lpMsLugXDSH, jj);
+		if (!strcmp("mslugxdddd", s))		        AddGame(lpMsLugXDSH, jj);
+		if (!strcmp("mslugxfrdd", s))			    AddGame(lpMsLugXDSH, jj);
+		if (!strcmp("mslugxlbdd", s))			    AddGame(lpMsLugXDSH, jj);
+		if (!strcmp("mslugxscdd", s))			    AddGame(lpMsLugXDSH, jj);
+
+		// Decrypted C
+		if (!strcmp("mslugxb", s))			        AddGame(lpMsLugXDC, jj);
+
+        // Original
+		if (!strcmp("mslugx", s))			        AddGame(lpMsLugXOR, jj);
+
+        // Hack
+		if (!strcmp("mslugxhc01", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc02", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc03", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc04", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc05", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc06", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc07", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc08", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc09", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc10", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc11", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc12", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc13", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc14", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc15", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc16", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc17", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc18", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc19", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc20", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc21", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc22", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc23", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc24", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc25", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc26", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc27", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc28", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc29", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc30", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc31", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc32", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc33", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc34", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc35", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc36", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc37", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc38", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc39", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc40", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc41", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc42", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc43", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc44", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc45", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc46", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc47", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc48", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc49", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc50", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc51", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc52", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc53", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc54", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc55", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc56", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc57", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc58", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc59", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc60", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc61", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc62", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc63", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc64", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc65", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc66", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc67", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc68", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc69", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc70", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc71", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc72", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc73", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc74", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc75", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc76", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc77", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc78", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc79", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc80", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc81", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc82", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc83", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc84", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc85", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc86", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc87", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc88", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc89", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc90", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc91", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc92", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc93", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc94", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc95", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc96", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc97", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc98", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc99", s))		        AddGame(lpMslugXHC, jj);
+		if (!strcmp("mslugxhc100", s))		        AddGame(lpMslugXHC, jj);
+
+        // Fightcade 2
+		if (!strcmp("mslugxsrf", s))		        AddGame(lpMslugXF2, jj);
+
+        // NeoSD
+		if (!strcmp("mslugxnsd", s))		        AddGame(lpMsLugXSD, jj);
 	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslug2ctma01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma09", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2ctma14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma08", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma18", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctma19", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb02", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb15", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb18", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmb19", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc09", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc18", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmc19", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd03", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmd16", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme13", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctme16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf10", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmf16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg07", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ctmg16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma04", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctma13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb06", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmb13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc08", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmc13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd10", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ctmd13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma10", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctma17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb06", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmb16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc03", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmc16", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd13", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmd17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme09", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctme17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf05", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmf17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg01", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg14", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ctmg17", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugctma09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma01", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma14", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctma16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb11", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmb16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc08", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmc16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd05", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmd16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme02", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme15", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctme16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf12", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmf16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg06", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg09", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmg16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh01", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh02", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh03", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh04", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh05", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh06", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh07", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh08", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh09", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh10", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh11", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh12", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh13", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh14", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh15", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmh16", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxctmi01", s))			AddGame(lpFolder, jj);
-	}
-}
-
-void CreateDARKSOFTFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("ms4bootdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("ms5bootdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("ms5pcbdd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms4plusdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("ms5plusdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugdd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug2dd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug2tdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3dd", s))		        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ndd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3b6dd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4dd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ndd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5dd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ndd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxdd", s))		        AddGame(lpFolder, jj);
-	}
-}
-
-void CreateDARKSOFTHACKFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslug2dddd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2egdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug2frdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqtdd", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3chuanqidd", s))		AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqtfbdd", s))	    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqztdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3dddd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3frdd", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3gdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3kidd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3nddd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3scdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ammordd", s))	    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4cqtdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4cqidd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4dddd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4frdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4kidd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lwdd", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lwqdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5cqtdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5cqdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5fdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5frdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5scdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug5wdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxcqtdd", s))	        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxchuanqidd", s))	    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxcqdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxdddd", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxfrdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlbdd", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslugxscdd", s))			AddGame(lpFolder, jj);
-	}
-}
-
-void CreateDECRYPTEDEANDBFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("msboot", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms3b6boot", s))			AddGame(lpFolder, jj);
-		if (!strcmp("ms4boot", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms5boot", s))		        AddGame(lpFolder, jj);
-		if (!strcmp("ms5pcbd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms4plusa", s))	            AddGame(lpFolder, jj);
-		if (!strcmp("ms4plusd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms5pluse", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms5plusd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms5plusnd", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("msluge", s))	            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2t", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3d", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3nd", s))		        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3he", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3b6d", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug3b6e", s))			AddGame(lpFolder, jj);
-		if (!strcmp("mslug4d", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4nd", s))	            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4e", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5d", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5e", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5n", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5nd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5nde", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b2", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b3", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b4", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b5", s))	            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b6", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b7", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b8", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxb", s))			    AddGame(lpFolder, jj);
-	}
-}
-
-void CreateENCRYPTEDCANDPFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("ms5plush", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug31v2", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3burt", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3eb", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3eb14", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3sd", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3sc", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cq", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3chuanqi", s))		    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqtfb", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqzt", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3dbplus", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3c", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3fr", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3g", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3gw", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3i", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3dde", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ki", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lw", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3se", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3unity", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3v", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3zh", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4fr", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lw", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ammor", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lwq", s))		        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4dde", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ki", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4cqi", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug51v2", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ae", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5bs", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5burt", s))		        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ddd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5db", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5c", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5esr", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ex", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5f", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5g", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5w", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5unity", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5sc", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5sg", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5cq", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ki", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5l9a", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5l9b", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5mg", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmk", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5x", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5zh", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3xe", s))	                AddGame(lpFolder, jj);
-	}
-}
-
-void CreateFB4DROIDFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslughc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc07", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslughc08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc09", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslughc10", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc11", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc12", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslughc16", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc07", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc12", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc13", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc15", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc16", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc17", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc18", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc19", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc07", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc13", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc14", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc15", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc16", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc17", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc19", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc21", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc22", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc24", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc28", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc29", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc30", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc31", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc32", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc33", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc34", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc11", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc15", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc16", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc17", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc18", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc19", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc20", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc21", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc22", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc23", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc24", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc01", s))	                AddGame(lpFolder, jj);
-        if (!strcmp("mslug5hc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc11", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc18", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc19", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc24", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc25", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc28", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc07", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc09", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc14", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc16", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc18", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc25", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc26", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc27", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc28", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc29", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc30", s))			        AddGame(lpFolder, jj);
-	}
-}
-
-void CreateFIGHTCADE2Folders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslugdyf1", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2fm", s))			            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5sgf", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxsrf", s))		            AddGame(lpFolder, jj);
-	}
-}
-
-
-void CreateGOTVGFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslughc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc13", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslughc14", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc15", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslughc17", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc18", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc19", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslughc20", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc21", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc22", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc23", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc24", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslughc25", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc26", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc27", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslughc28", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc29", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc30", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc31", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc32", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslughc33", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc34", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc35", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslughc36", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc09", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc10", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc11", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc14", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc20", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc21", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc22", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc23", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc24", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc25", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc26", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc27", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc28", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc29", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc30", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc31", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc32", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc33", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc34", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc35", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc36", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc37", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc38", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc39", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc40", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2hc41", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc04", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc06", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc09", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc10", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc11", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc12", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc18", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc20", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc23", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc25", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc26", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc27", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc35", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc36", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc37", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc38", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc39", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc40", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc41", s))	                AddGame(lpFolder, jj);
-        if (!strcmp("mslug3hc42", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc43", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc44", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc45", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc46", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc47", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc48", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc49", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc50", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc51", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc52", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc53", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc54", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc55", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc56", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc57", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc58", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc59", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc60", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hc61", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc07", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc09", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc10", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc12", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc13", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc14", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc25", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc26", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc27", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc28", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc29", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc30", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc31", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc32", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc33", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc34", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc35", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc36", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc37", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc38", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc39", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc40", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc41", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc42", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc43", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc44", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc45", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hc46", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc07", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc09", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc10", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc12", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc13", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc14", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc15", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc16", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc17", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc20", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc21", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc22", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc23", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc26", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc27", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc29", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc30", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc31", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc32", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc33", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc34", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc35", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc36", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc37", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc38", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc39", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc40", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc41", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc42", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc43", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc44", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc45", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc46", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc47", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc48", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc49", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc50", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc51", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc52", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc53", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc54", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc55", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hc56", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc10", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc11", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc12", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc13", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc15", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc17", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc19", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc20", s))	                AddGame(lpFolder, jj);
-        if (!strcmp("mslugxhc21", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc22", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc23", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc24", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc31", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc32", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc33", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc34", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc35", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc36", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc37", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc38", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc39", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc40", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc41", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc42", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc43", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc44", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc45", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc46", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc47", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc48", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxhc49", s))			        AddGame(lpFolder, jj);
-	}
-}
-
-void CreateNEOSDFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("ms5bootnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms4bootnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms5pcbdnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms4plusnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("ms5plusnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslugnsd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2nsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug2tnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3nsd", s))		        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3hnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ndnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug3b6nsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4nsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4hnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ndnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5nsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5hnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ndnsd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("mslugxnsd", s))		        AddGame(lpFolder, jj);
-	}
-}
-
-void CreateNEOSDHACKFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslug2ddnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug2egnds", s))		 	   AddGame(lpFolder, jj);
-		if (!strcmp("mslug2frnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqtnds", s))		       AddGame(lpFolder, jj);
-		if (!strcmp("mslug3chuanqinds", s))		   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqtfbnds", s))	       AddGame(lpFolder, jj);
-		if (!strcmp("mslug3cqztnds", s))		   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ddnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3frnds", s))		       AddGame(lpFolder, jj);
-		if (!strcmp("mslug3gnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3kinds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ndnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug3scnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ammornds", s))	       AddGame(lpFolder, jj);
-		if (!strcmp("mslug4cqtnds", s))	           AddGame(lpFolder, jj);
-		if (!strcmp("mslug4cqinds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ddnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug4frnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug4kinds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lwnds", s))		       AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lwqnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug5cqtnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug5cqnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug5fnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug5frnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug5scnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslug5wnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslugxcqtnds", s))	           AddGame(lpFolder, jj);
-		if (!strcmp("mslugxchuanqinds", s))	       AddGame(lpFolder, jj);
-		if (!strcmp("mslugxcqnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslugxddnds", s))		       AddGame(lpFolder, jj);
-		if (!strcmp("mslugxfrnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlbnds", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("mslugxscnds", s))			   AddGame(lpFolder, jj);
-	}
-}
-
-void CreateORIGINALFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("ms5pcb", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("ms4plus", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("ms5plus", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3a", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3h", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3b6", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4h", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5h", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5b1", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugx", s))			        AddGame(lpFolder, jj);
-	}
-}
-
-void CreateREMIXFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslugla01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("msluglb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la02", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la04", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la07", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2la08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb04", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb07", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug2lb08", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3la01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3la02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3la03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3la04", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3la05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3la06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lb02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lb03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lb04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lb05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lb06", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lc04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lc06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ld01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ld02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ld03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ld04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ld05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3ld06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3le01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3le02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3le03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3le04", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3le05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3le06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lf01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lf02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lf03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lf04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lf05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lf06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lg01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lg02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lg03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lg04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lg05", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lg06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lh01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lh02", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lh03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lh04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lh05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3lh06", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3li01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4la01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4la02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4la03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4la04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4la05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lb02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lb03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lb04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lb05", s))	                AddGame(lpFolder, jj);
-        if (!strcmp("mslug4lc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lc04", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lc05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ld01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ld02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ld03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ld04", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4ld05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4le01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4le02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4le03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4le04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4le05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lf01", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lf02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lf03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lf04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lf05", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lg01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lg02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lg03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lg04", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4lg05", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5la01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5la02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5la03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lb02", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lb03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ld01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ld02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5ld03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5le01", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5le02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5le03", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lf01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lf02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lf03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lg01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lg02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lg03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lh01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lh02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5lh03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxla01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxla02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxla03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlb02", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlb03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlc02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlc03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxld01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxld02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxld03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxle01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxle02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxle03", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlf01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlf02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlf03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlg01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlg02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlg03", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlh01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlh02", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxlh03", s))		            AddGame(lpFolder, jj);
-	}
-}
-
-void CreateREMIXEXTREMEFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-
-	
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverGameName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-		if (!strcmp("mslugrma01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugrmb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2rma01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2rma02", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug2rmb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug2rmb02", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rma01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmc01", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmd01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rme01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmf01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmg01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmh01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug3rmi01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rma01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rmb01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rmc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rmd01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rme01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rmf01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rmg01", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug4rmh01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rma01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmd01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rme01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmf01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmg01", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug5rmh01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrma01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrmb01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrmc01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrmd01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrme01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrmf01", s))	                AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrmg01", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslugxrmh01", s))		            AddGame(lpFolder, jj);
+        // NeoSD ~ Hack
+		if (!strcmp("mslugxcqtnds", s))	            AddGame(lpMsLugXSDH, jj);
+		if (!strcmp("mslugxchuanqinds", s))	        AddGame(lpMsLugXSDH, jj);
+		if (!strcmp("mslugxcqnds", s))			    AddGame(lpMsLugXSDH, jj);
+		if (!strcmp("mslugxddnds", s))		        AddGame(lpMsLugXSDH, jj);
+		if (!strcmp("mslugxfrnds", s))			    AddGame(lpMsLugXSDH, jj);
+		if (!strcmp("mslugxlbnds", s))			    AddGame(lpMsLugXSDH, jj);
+		if (!strcmp("mslugxscnds", s))			    AddGame(lpMsLugXSDH, jj);
+
+        // Remix
+		if (!strcmp("mslugxla01", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxla02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxla03", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlb01", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlb02", s))		        AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlb03", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlc01", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlc02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlc03", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxld01", s))	            AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxld02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxld03", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxle01", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxle02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxle03", s))		        AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlf01", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlf02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlf03", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlg01", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlg02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlg03", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlh01", s))	            AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlh02", s))			    AddGame(lpMsLugXRM, jj);
+		if (!strcmp("mslugxlh03", s))		        AddGame(lpMsLugXRM, jj);
+
+        // Remix Extreme
+		if (!strcmp("mslugxrma01", s))			    AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrmb01", s))			    AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrmc01", s))			    AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrmd01", s))			    AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrme01", s))			    AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrmf01", s))	            AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrmg01", s))			    AddGame(lpMsLugXRE, jj);
+		if (!strcmp("mslugxrmh01", s))		        AddGame(lpMsLugXRE, jj);
 	}
 }
 

@@ -2833,6 +2833,8 @@ void CreateMSLUG3Folders(int parent_index)
 		if (!strcmp("mslug3hc98", s))		        AddGame(lpMslug3HC, jj);
 		if (!strcmp("mslug3hc99", s))		        AddGame(lpMslug3HC, jj);
 		if (!strcmp("mslug3hc100", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3esl", s))		        AddGame(lpMslug3HC, jj);
+		if (!strcmp("mslug3or", s))		            AddGame(lpMslug3HC, jj);
 
         // HomeBrew
 		if (!strcmp("mslug3x", s))		            AddGame(lpMslug3HB, jj);

@@ -169,12 +169,13 @@
 #define IDI_FOLDER_MSLUG4				289
 #define IDI_FOLDER_MSLUG5				290
 #define IDI_FOLDER_MSLUGX				291
-#define IDI_FOLDER_COLLECTION		    292
-#define IDI_FOLDER_UPDATE				293
-#define IDI_FOLDER_CONSOLE              294
-#define IDI_FOLDER_MVS			        295
-#define IDI_HEADER_UP                   296
-#define IDI_HEADER_DOWN                 297
+#define IDI_FOLDER_HOMEBREW				292
+#define IDI_FOLDER_COLLECTION		    293
+#define IDI_FOLDER_UPDATE				294
+#define IDI_FOLDER_CONSOLE              295
+#define IDI_FOLDER_MVS			        296
+#define IDI_HEADER_UP                   297
+#define IDI_HEADER_DOWN                 298
 
 #define IDC_LIST                        1000
 #define IDC_JOYSTICK                    1003

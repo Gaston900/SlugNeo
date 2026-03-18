@@ -92,6 +92,7 @@ enum
 	FOLDER_MSLUG4,
 	FOLDER_MSLUG5,
 	FOLDER_MSLUGX,
+	FOLDER_HOMEBREW,
     FOLDER_COLLECTION,
 	FOLDER_UPDATE,
 	FOLDER_MVS,
@@ -180,6 +181,7 @@ void CreateMSLUG3Folders(int parent_index);
 void CreateMSLUG4Folders(int parent_index);
 void CreateMSLUG5Folders(int parent_index);
 void CreateMSLUGXFolders(int parent_index);
+void CreateHOMEBREWFolders(int parent_index);
 void CreateCOLLECTIONFolders(int parent_index);
 void CreateUPDATEFolders(int parent_index);
 //#endif

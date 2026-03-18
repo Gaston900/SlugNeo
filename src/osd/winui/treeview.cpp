@@ -98,6 +98,7 @@ extern const FOLDERDATA g_folderData[] =
 	{"Metal Slug 4",        "metalslug4",		   FOLDER_MSLUG4,		       IDI_FOLDER_MSLUG4,		       0,			 0, 		   0, CreateMSLUG4Folders },
 	{"Metal Slug 5",        "metalslug5",		   FOLDER_MSLUG5,		       IDI_FOLDER_MSLUG5,		       0,			 0, 		   0, CreateMSLUG5Folders },
 	{"Metal Slug X",        "metalslugx",		   FOLDER_MSLUGX,		       IDI_FOLDER_MSLUGX,		       0,			 0, 		   0, CreateMSLUGXFolders },
+	{"HomeBrew", 	        "homebrew",		       FOLDER_HOMEBREW,		       IDI_FOLDER_HOMEBREW,	           0,			 0, 		   0, CreateHOMEBREWFolders },
 	{"Update 2026", 	    "update 2026",	       FOLDER_UPDATE,              IDI_FOLDER_UPDATE,              0,			 0, 		   0, CreateUPDATEFolders },
     {"Misterix", 	        "mvs",	               FOLDER_MVS,                 IDI_FOLDER_MVS,                 0,			 0, 		   0, NULL,                       DriverIsMvs,             true },
 //	{"Mechanical",          "mechanical",          FOLDER_MECHANICAL,          IDI_MECHANICAL,                 0,            0,            0, NULL,                       DriverIsMechanical,      true },
@@ -168,6 +169,7 @@ static const TREEICON treeIconNames[] =
     { IDI_FOLDER_MSLUG4,	    "fold_mslug4" },
     { IDI_FOLDER_MSLUG5,	    "fold_mslug5" },
     { IDI_FOLDER_MSLUGX,	    "fold_mslugx" },
+	{ IDI_FOLDER_HOMEBREW,	    "fold_homebrew" },
 	{ IDI_FOLDER_COLLECTION,	"fold_collection" },
 	{ IDI_FOLDER_UPDATE,	    "fold_update" },
 	{ IDI_FOLDER_CONSOLE,    	"fold_console" },
@@ -2282,6 +2284,16 @@ void CreateMSLUGFolders(int parent_index)
 		if (!strcmp("mslugrma01", s))			    AddGame(lpMsLugRE, jj);
 		if (!strcmp("mslugrmb01", s))			    AddGame(lpMsLugRE, jj);
 	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mslug.cpp", s))                AddGame(lpFolder, jj);
+	}
 }
 
 void CreateMSLUG2Folders(int parent_index)
@@ -2501,6 +2513,16 @@ void CreateMSLUG2Folders(int parent_index)
 		if (!strcmp("mslug2rmb01", s))			    AddGame(lpMsLug2RE, jj);
 		if (!strcmp("mslug2rmb02", s))	            AddGame(lpMsLug2RE, jj);
 	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mslug2.cpp", s))                AddGame(lpFolder, jj);
+	}
 }
 
 void CreateMSLUG3Folders(int parent_index)
@@ -2510,7 +2532,7 @@ void CreateMSLUG3Folders(int parent_index)
 
 
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-    LPTREEFOLDER lpMsLug3CZ, lpMsLug3DS, lpMsLug3DSH, lpMsLug3DC, lpMsLug3EH, lpMsLug3OR, lpMslug3HC, lpMslug3HB, lpMsLug3SD, lpMsLug3SDH, lpMsLug3RM, lpMsLug3RE;
+    LPTREEFOLDER lpMsLug3CZ, lpMsLug3DS, lpMsLug3DSH, lpMsLug3DC, lpMsLug3EH, lpMsLug3OR, lpMslug3HC, lpMsLug3SD, lpMsLug3SDH, lpMsLug3RM, lpMsLug3RE;
 
 	// create our two subfolders
     lpMsLug3CZ = NewFolder("Cuztom", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
@@ -2520,7 +2542,6 @@ void CreateMSLUG3Folders(int parent_index)
 	lpMsLug3EH = NewFolder("Encrypted ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpMsLug3OR = NewFolder("Original", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpMslug3HC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
-    lpMslug3HB = NewFolder("HomeBrew", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpMsLug3SD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpMsLug3SDH = NewFolder("NeoSD ~ Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
 	lpMsLug3RM = NewFolder("Remix", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
@@ -2533,7 +2554,6 @@ void CreateMSLUG3Folders(int parent_index)
 	AddFolder(lpMsLug3EH);
 	AddFolder(lpMsLug3OR);
 	AddFolder(lpMslug3HC);
-	AddFolder(lpMslug3HB);
 	AddFolder(lpMsLug3SD);
     AddFolder(lpMsLug3SDH);	
 	AddFolder(lpMsLug3RM);
@@ -2836,15 +2856,6 @@ void CreateMSLUG3Folders(int parent_index)
 		if (!strcmp("mslug3esl", s))		        AddGame(lpMslug3HC, jj);
 		if (!strcmp("mslug3or", s))		            AddGame(lpMslug3HC, jj);
 
-        // HomeBrew
-		if (!strcmp("mslug3x", s))		            AddGame(lpMslug3HB, jj);
-		if (!strcmp("mslug3xb", s))		            AddGame(lpMslug3HB, jj);
-		if (!strcmp("mslug3x0", s))		            AddGame(lpMslug3HB, jj);
-		if (!strcmp("mslug3x1", s))		            AddGame(lpMslug3HB, jj);
-		if (!strcmp("mslug3x2", s))		            AddGame(lpMslug3HB, jj);
-		if (!strcmp("mslug3x3", s))		            AddGame(lpMslug3HB, jj);
-		if (!strcmp("neopang", s))		            AddGame(lpMslug3HB, jj);
-
         // NeoSD
 		if (!strcmp("mslug3nsd", s))		        AddGame(lpMsLug3SD, jj);
 		if (!strcmp("mslug3hnsd", s))			    AddGame(lpMsLug3SD, jj);
@@ -2925,6 +2936,16 @@ void CreateMSLUG3Folders(int parent_index)
 		if (!strcmp("mslug3rmg01", s))			    AddGame(lpMsLug3RE, jj);
 		if (!strcmp("mslug3rmh01", s))	            AddGame(lpMsLug3RE, jj);
 		if (!strcmp("mslug3rmi01", s))			    AddGame(lpMsLug3RE, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mslug3.cpp", s))                AddGame(lpFolder, jj);
 	}
 }
 
@@ -3224,6 +3245,16 @@ void CreateMSLUG4Folders(int parent_index)
 		if (!strcmp("mslug4rmf01", s))			    AddGame(lpMsLug4RE, jj);
 		if (!strcmp("mslug4rmg01", s))		        AddGame(lpMsLug4RE, jj);
 		if (!strcmp("mslug4rmh01", s))			    AddGame(lpMsLug4RE, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mslug4.cpp", s))                AddGame(lpFolder, jj);
 	}
 }
 
@@ -3616,6 +3647,16 @@ void CreateMSLUG5Folders(int parent_index)
 		if (!strcmp("mslug5rmg01", s))		        AddGame(lpMsLug5RE, jj);
 		if (!strcmp("mslug5rmh01", s))			    AddGame(lpMsLug5RE, jj);
 	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mslug5.cpp", s))                AddGame(lpFolder, jj);
+	}
 }
 
 void CreateMSLUGXFolders(int parent_index)
@@ -3979,6 +4020,41 @@ void CreateMSLUGXFolders(int parent_index)
 		if (!strcmp("mslugxrmf01", s))	            AddGame(lpMsLugXRE, jj);
 		if (!strcmp("mslugxrmg01", s))			    AddGame(lpMsLugXRE, jj);
 		if (!strcmp("mslugxrmh01", s))		        AddGame(lpMsLugXRE, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mslugx.cpp", s))                AddGame(lpFolder, jj);
+	}
+}
+
+void CreateHOMEBREWFolders(int parent_index)
+{
+	int jj;
+	int nGames = GetNumGames();
+
+
+	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+
+	// no games in top level folder
+	SetAllBits(lpFolder->m_lpGameBits,FALSE);
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (  (!strcmp("homebrew.cpp", s)) )
+		{
+			AddGame(lpFolder, jj);
+		}
 	}
 }
 

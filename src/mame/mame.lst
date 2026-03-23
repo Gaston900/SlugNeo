@@ -8,6 +8,7 @@
 neogeo            // MVS
 neosd             // NDS (.neo support)
 multimvs          // Multimvs support
+//neogno            // (.gno support)
 ms5pcb            // SNK Playmore
 ms4plus           // Bootleg
 ms5plus           // Bootleg

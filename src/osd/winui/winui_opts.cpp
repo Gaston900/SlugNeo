@@ -101,7 +101,7 @@ const options_entry winui_options::s_option_entries[] =
 	{ MUIOPTION_ENABLE_SEVENZIP,			"0",        	OPTION_BOOLEAN, nullptr },
 	{ MUIOPTION_STRETCH_SCREENSHOT_LARGER,	"1",        	OPTION_BOOLEAN, nullptr },
 	{ MUIOPTION_CYCLE_SCREENSHOT,			"0",        	OPTION_INTEGER, nullptr },
-	{ MUIOPTION_SCREENSHOT_BORDER_SIZE,		"1",        	OPTION_INTEGER, nullptr },
+	{ MUIOPTION_SCREENSHOT_BORDER_SIZE,		"2",        	OPTION_INTEGER, nullptr },
 	{ MUIOPTION_SCREENSHOT_BORDER_COLOR,	"187,0,0",     	OPTION_INTEGER, nullptr },
 
 	{ nullptr,								nullptr,       	OPTION_HEADER, "SEARCH PATH OPTIONS" },

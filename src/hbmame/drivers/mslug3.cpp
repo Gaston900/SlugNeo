@@ -15559,10 +15559,10 @@ ROM_END
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 (MVS AND AES VERSION)
-GAME( 2000, mslug3,           neogeo,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGM-2560)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3a,          mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3a,    ROT0, "SNK",             "Metal Slug 3 (NGM-2560, Earlier)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX - revision Mar/17/2000 1:36 (from SMA rom) */
-GAME( 2000, mslug3h,          mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2560)", MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
-GAME( 2000, mslug3b6,         mslug3,   neogeo_noslot,   mslug3b6,   neogeo_state,    init_mslug3b6,   ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3)", MACHINE_SUPPORTS_SAVE ) /* real Metal Slug 6 is an Atomiswave HW game, see naomi.c ;-) */
+GAME( 2000, mslug3,           neogeo,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGM-2560)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3a,          mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3a,    ROT0, "SNK",             "Metal Slug 3 (NGM-2560, Earlier)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX - revision Mar/17/2000 1:36 (from SMA rom) */
+GAME( 2000, mslug3h,          mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2560)", MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
+GAME( 2000, mslug3b6,         mslug3,   neoclock_noslot, mslug3b6,   neogeo_state,    init_mslug3b6,   ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3)", MACHINE_SUPPORTS_SAVE ) /* real Metal Slug 6 is an Atomiswave HW game, see naomi.c ;-) */
 
 /***************************************************************************************************************************************************
   The prototype roms that had been published by the NEORAGEX, FBA Evolution, MAMEYA Lite, Mame Plus, Neomame32 Plus, Caname emulator are included, in 
@@ -15572,20 +15572,20 @@ GAME( 2000, mslug3b6,         mslug3,   neogeo_noslot,   mslug3b6,   neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 (Predecrypted, Decrypter, Earlier, Bootleg And Encrypted)
-GAME( 2000, ms3b6boot,        mslug3,   neogeo_noslot,   mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3) (Decrypted S & P)", MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mslug3d,          mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGM-2560) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mslug3hd,         mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2560) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mslug3he,         mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2560) (Encrypted P)", MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mslug3nd,         mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mslug3b6d,        mslug3,   neogeo_noslot,   mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mslug3b6e,        mslug3,   neogeo_noslot,   mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, ms3b6boot,        mslug3,   neoclock_noslot, mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3) (Decrypted S & P)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3d,          mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGM-2560) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3hd,         mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2560) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3he,         mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2560) (Encrypted P)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3nd,         mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3b6d,        mslug3,   neoclock_noslot, mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3b6e,        mslug3,   neoclock_noslot, mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "Bootleg",         "Metal Slug 6 (bootleg of Metal Slug 3) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 (DARKSOFT)
-GAME( 2000, mslug3dd,         mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3dd,   ROT0, "SNK",             "Metal Slug 3 (NGM-2560) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3hdd,        mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3dd,   ROT0, "SNK",             "Metal Slug 3 (NGH-2560) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3b6dd,       mslug3,   neogeo_noslot,   mslug3b6,   neogeo_state,    init_mslug3dd,   ROT0, "SNK",             "Metal Slug 6 (bootleg of Metal Slug 3) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3ndd,        mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3ndd,  ROT0, "SNK",             "Metal Slug 3 (Fully Decrypted) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3dd,         mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3dd,   ROT0, "SNK",             "Metal Slug 3 (NGM-2560) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3hdd,        mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3dd,   ROT0, "SNK",             "Metal Slug 3 (NGH-2560) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3b6dd,       mslug3,   neoclock_noslot, mslug3b6,   neogeo_state,    init_mslug3dd,   ROT0, "SNK",             "Metal Slug 6 (bootleg of Metal Slug 3) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3ndd,        mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3ndd,  ROT0, "SNK",             "Metal Slug 3 (Fully Decrypted) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 Hack (DARKSOFT)
@@ -15606,10 +15606,10 @@ GAME( 2023, mslug3scdd,       mslug3,   neoclock_noslot, mslug3,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 (NEO SD)
-GAME( 2000, mslug3nsd,        mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3d,    ROT0, "SNK",             "Metal Slug 3 (NGM-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3hnsd,       mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3b6nsd,      mslug3,   neogeo_noslot,   mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 6 (bootleg of Metal Slug 3) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2000, mslug3ndnsd,      mslug3,   neogeo_noslot,   mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (Fully Decrypted) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mslug3nsd,        mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3d,    ROT0, "SNK",             "Metal Slug 3 (NGM-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3hnsd,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (NGH-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3b6nsd,      mslug3,   neoclock_noslot, mslug3b6,   neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 6 (bootleg of Metal Slug 3) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2000, mslug3ndnsd,      mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "SNK",             "Metal Slug 3 (Fully Decrypted) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 Hack (NEO SD)

@@ -7106,7 +7106,7 @@ ROM_END
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X (MVS AND AES VERSION)
-GAME( 1999, mslugx,           neogeo,   neogeo_noslot,   mslugx,     neogeo_state,    init_mslugx,     ROT0, "SNK",             "Metal Slug X - Super Vehicle-001 (NGM-2500 ~ NGH-2500)", MACHINE_SUPPORTS_SAVE )
+GAME( 1999, mslugx,           neogeo,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "SNK",             "Metal Slug X - Super Vehicle-001 (NGM-2500 ~ NGH-2500)", MACHINE_SUPPORTS_SAVE )
 
 /***************************************************************************************************************************************************
   The prototype roms that had been published by the NEORAGEX, FBA Evolution, MAMEYA Lite, Mame Plus, Neomame32 Plus, Caname emulator are included, in 
@@ -7116,11 +7116,11 @@ GAME( 1999, mslugx,           neogeo,   neogeo_noslot,   mslugx,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X (Predecrypted, Decrypter, Earlier, Bootleg And Encrypted)
-GAME( 1999, mslugxb,          mslugx,   neogeo_noslot,   mslugx,     neogeo_state,    init_mslugx,     ROT0, "Bootleg",         "Metal Slug X (Bootleg)", MACHINE_SUPPORTS_SAVE ) 
+GAME( 1999, mslugxb,          mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "Bootleg",         "Metal Slug X (Bootleg)", MACHINE_SUPPORTS_SAVE ) 
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X (DARKSOFT)
-GAME( 1999, mslugxdd,         mslugx,   neogeo_noslot,   mslugx,     neogeo_state,    init_mslugxdd,   ROT0, "SNK",             "Metal Slug X (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 1999, mslugxdd,         mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugxdd,   ROT0, "SNK",             "Metal Slug X (Darksoft)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X Hack (DARKSOFT)
@@ -7137,7 +7137,7 @@ GAME( 2023, mslugxscdd,       mslugx,   neoclock_noslot, mslugx,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X (NEO SD)
-GAME( 1999, mslugxnsd,        mslugx,   neogeo_noslot,   mslugx,     neogeo_state,    init_mslugx,     ROT0, "SNK",             "Metal Slug X (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 1999, mslugxnsd,        mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "SNK",             "Metal Slug X (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X Hack (NEO SD)

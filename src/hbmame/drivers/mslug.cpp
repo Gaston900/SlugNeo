@@ -1494,7 +1494,7 @@ ROM_END
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug (MVS AND AES VERSION)
-GAME( 1996, mslug,            neogeo,   neogeo_noslot,   mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug - Super Vehicle-001", MACHINE_SUPPORTS_SAVE )
+GAME( 1996, mslug,            neogeo,   neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug - Super Vehicle-001", MACHINE_SUPPORTS_SAVE )
 
 /***************************************************************************************************************************************************
   The prototype roms that had been published by the NEORAGEX, FBA Evolution, MAMEYA Lite, Mame Plus, Neomame32 Plus, Caname emulator are included, in 
@@ -1504,19 +1504,19 @@ GAME( 1996, mslug,            neogeo,   neogeo_noslot,   mslug,     neogeo_state
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug (Predecrypted, Decrypter, Earlier, Bootleg And Encrypted)
-GAME( 1996, msboot,           mslug,    neogeo_noslot,   mslug,     neogeo_state,    init_neogeo,     ROT0, "Bootleg",         "Metal Slug (Bootleg)", MACHINE_SUPPORTS_SAVE )
-GAME( 1996, msluge,           mslug,    neogeo_noslot,   mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug (Earlier)", MACHINE_SUPPORTS_SAVE )
+GAME( 1996, msboot,           mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Bootleg",         "Metal Slug (Bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 1996, msluge,           mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug (Earlier)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug (DARKSOFT)
-GAME( 1996, mslugdd,          mslug,    neogeo_noslot,   mslug,     neogeo_state,    init_darksoft,   ROT0, "Nazca",           "Metal Slug (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 1996, mslugdd,          mslug,    neoclock_noslot, mslug,     neogeo_state,    init_darksoft,   ROT0, "Nazca",           "Metal Slug (Darksoft)", MACHINE_SUPPORTS_SAVE )
 
 // This uses a .neo file: 0x1000 bytes for header, then p rom (word_swap).
 // The .neo (P1) boot file is used independently of the GFX Encrypted/Decrypted.
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug (NEO SD)
-GAME( 1996, mslugnsd,         mslug,    neogeo_noslot,   mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 1996, mslugnsd,         mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug (Exclusive Fightcade2)

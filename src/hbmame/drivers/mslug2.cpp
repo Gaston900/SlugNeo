@@ -2769,7 +2769,7 @@ ROM_END
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 (MVS AND AES VERSION)
-GAME( 1998, mslug2,           neogeo,   neogeo_noslot,   mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 - Super Vehicle-001/II (NGM-2410 ~ NGH-2410)", MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mslug2,           neogeo,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 - Super Vehicle-001/II (NGM-2410 ~ NGH-2410)", MACHINE_SUPPORTS_SAVE )
 
 /***************************************************************************************************************************************************
   The prototype roms that had been published by the NEORAGEX, FBA Evolution, MAMEYA Lite, Mame Plus, Neomame32 Plus, Caname emulator are included, in 
@@ -2779,12 +2779,12 @@ GAME( 1998, mslug2,           neogeo,   neogeo_noslot,   mslug2,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 (Predecrypted, Decrypter, Earlier, Bootleg And Encrypted)
-GAME( 2015, mslug2t,          mslug2,   neogeo_noslot,   mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 Turbo", MACHINE_SUPPORTS_SAVE )
+GAME( 2015, mslug2t,          mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 Turbo", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 (DARKSOFT)
-GAME( 1998, mslug2dd,         mslug2,   neogeo_noslot,   mslug2,     neogeo_state,    init_darksoft,   ROT0, "SNK",             "Metal Slug 2 (Darksoft)", MACHINE_SUPPORTS_SAVE )
-GAME( 1998, mslug2tdd,        mslug2,   neogeo_noslot,   mslug2,     neogeo_state,    init_darksoft,   ROT0, "SNK",             "Metal Slug 2 Turbo (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mslug2dd,         mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_darksoft,   ROT0, "SNK",             "Metal Slug 2 (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mslug2tdd,        mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_darksoft,   ROT0, "SNK",             "Metal Slug 2 Turbo (Darksoft)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 Hack (DARKSOFT)
@@ -2797,8 +2797,8 @@ GAME( 2006, mslug2frdd,       mslug2,   neoclock_noslot, mslug2,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 (NEO SD)
-GAME( 1998, mslug2nsd,        mslug2,   neogeo_noslot,   mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 1998, mslug2tnsd,       mslug2,   neogeo_noslot,   mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 Turbo (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mslug2nsd,        mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mslug2tnsd,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "SNK",             "Metal Slug 2 Turbo (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 2 Hack (NEO SD)

@@ -7593,9 +7593,9 @@ ROM_END
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 4 (MVS AND AES VERSION)
-GAME( 2002, ms4plus,          mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg)",  MACHINE_SUPPORTS_SAVE )
-GAME( 2002, mslug4,           neogeo,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, mslug4h,          mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, ms4plus,          mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg)",  MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mslug4,           neogeo,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mslug4h,          mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630)", MACHINE_SUPPORTS_SAVE )
 
 /***************************************************************************************************************************************************
   The prototype roms that had been published by the NEORAGEX, FBA Evolution, MAMEYA Lite, Mame Plus, Neomame32 Plus, Caname emulator are included, in 
@@ -7605,20 +7605,20 @@ GAME( 2002, mslug4h,          mslug4,   neogeo_noslot,   mslug4,     neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 4 (Predecrypted, Decrypter, Earlier, Bootleg And Encrypted)
-GAME( 2002, ms4boot,          mslug4,   neogeo_noslot,   mslug4vh,   neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 (Bootleg)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, ms4pluse,         mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, ms4plusd,         mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, mslug4d,          mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, mslug4hd,         mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, mslug4nd,         mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, mslug4e,          mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4e,    ROT0, "Mega / Playmore", "Metal Slug 4 (Earlier)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, ms4boot,          mslug4,   neoclock_noslot, mslug4vh,   neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 (Bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, ms4pluse,         mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, ms4plusd,         mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mslug4d,          mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mslug4hd,         mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mslug4nd,         mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mslug4e,          mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4e,    ROT0, "Mega / Playmore", "Metal Slug 4 (Earlier)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 4 (DARKSOFT)
-GAME( 2002, ms4plusdd,        mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4dd,   ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2002, mslug4dd,         mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4dd,   ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2002, mslug4hdd,        mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4dd,   ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2002, mslug4ndd,        mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4ndd,  ROT0, "Mega / Playmore", "Metal Slug 4 (Fully Decrypted) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, ms4plusdd,        mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4dd,   ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2002, mslug4dd,         mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4dd,   ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2002, mslug4hdd,        mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4dd,   ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630) (Darksoft)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2002, mslug4ndd,        mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4ndd,  ROT0, "Mega / Playmore", "Metal Slug 4 (Fully Decrypted) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 4 Hack (DARKSOFT)
@@ -7636,10 +7636,10 @@ GAME( 2023, mslug4lwqdd,      mslug4,   neoclock_noslot, mslug4vh,   neogeo_stat
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 4 (NEO SD)
-GAME( 2002, ms4plusnsd,       mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2002, mslug4nsd,        mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2002, mslug4hnsd,       mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
-GAME( 2002, mslug4ndnsd,      mslug4,   neogeo_noslot,   mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (Fully Decrypted) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, ms4plusnsd,       mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Bootleg",         "Metal Slug 4 Plus (Bootleg) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2002, mslug4nsd,        mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGM-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2002, mslug4hnsd,       mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (NGH-2630) (Neo SD)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
+GAME( 2002, mslug4ndnsd,      mslug4,   neoclock_noslot, mslug4,     neogeo_state,    init_mslug4,     ROT0, "Mega / Playmore", "Metal Slug 4 (Fully Decrypted) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT          MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 4 Hack (NEO SD)

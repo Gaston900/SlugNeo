@@ -951,7 +951,7 @@ GFXDECODE_END
 void neogeo_state::neogeo_base(machine_config &config)
 {
 	/* basic machine hardware */
-	M68000(config, m_maincpu, NEOGEO_MAIN_CPU_CLOCK);
+	M68000(config, m_maincpu, 24000000 / 2);
 	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::neogeo_main_map);
 
 	Z80(config, m_audiocpu, NEOGEO_AUDIO_CPU_CLOCK);
@@ -1046,8 +1046,15 @@ void neogeo_state::neogeo_68kram_map(address_map &map)
 
 void neogeo_state::neogeo_68kram(machine_config &config)
 {
-	neoclock_arcade(config);
+	neoclock_noslot(config);
 	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::neogeo_68kram_map);
+}
+
+void neogeo_state::neoclock_noslot(machine_config &config)
+{
+	neogeo_noslot(config);
+
+	m_maincpu->set_clock(48000000 / 2);
 }
 
 void neogeo_state::neosd(machine_config &config)
@@ -1321,80 +1328,196 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	return image_init_result::PASS;
 }
 
-/*************************************
- *  Machine Driver Overclocking 2X
- *************************************/
-
-void neogeo_state::neoclock_base(machine_config &config)
+void neogeo_state::neogno(machine_config &config)
 {
-	/* basic machine hardware */
-	M68000(config, m_maincpu, NEOGEO_MAIN_CPU2X_CLOCK);
-	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::neogeo_main_map);
-
-	Z80(config, m_audiocpu, NEOGEO_AUDIO_CPU_CLOCK);
-	m_audiocpu->set_addrmap(AS_PROGRAM, &neogeo_state::audio_map);
-	m_audiocpu->set_addrmap(AS_IO, &neogeo_state::audio_io_map);
-
-	/* video hardware */
-	config.set_default_layout(layout_neogeo);
-
-	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
-	m_screen->set_raw(NEOGEO_PIXEL_CLOCK, NEOGEO_HTOTAL, NEOGEO_HBEND, NEOGEO_HBSTART, NEOGEO_VTOTAL, NEOGEO_VBEND, NEOGEO_VBSTART);
-	m_screen->set_screen_update(FUNC(neogeo_state::screen_update_neogeo));
-
-	GFXDECODE(config, "gfxdecode", m_palette, gfx_neogeo);
-	/* 4096 colors * two banks * normal and shadow */
-	PALETTE(config, m_palette, palette_device::BLACK, 4096*2*2);
-
-	NEOGEO_SPRITE(config, m_sprgen, 0).set_screen(m_screen);
-
-	/* audio hardware */
-	SPEAKER(config, "lspeaker").front_left();
-	SPEAKER(config, "rspeaker").front_right();
-
-	GENERIC_LATCH_8(config, m_soundlatch);
-	GENERIC_LATCH_8(config, m_soundlatch2);
-
-	YM2610(config, m_ym, NEOGEO_YM2610_CLOCK);
-	m_ym->irq_handler().set_inputline(m_audiocpu, 0);
-	m_ym->add_route(0, "lspeaker", 0.28);
-	m_ym->add_route(0, "rspeaker", 0.28);
-	m_ym->add_route(1, "lspeaker", 0.98);
-	m_ym->add_route(2, "rspeaker", 0.98);
-	NEOGEO_BANKED_CART(config, "banked_cart");
-}
-
-void neogeo_state::neoclock_arcade(machine_config &config)
-{
-	neoclock_base(config);
-	WATCHDOG_TIMER(config, "watchdog").set_time(attotime::from_ticks(3244030, NEOGEO_MASTER_CLOCK));
-	UPD4990A(config, m_upd4990a);
-	NVRAM(config, "saveram", nvram_device::DEFAULT_ALL_0);
-	NG_MEMCARD(config, "memcard");
-}
-
-void neogeo_state::neoclock_noslot(machine_config &config)
-{
-	neoclock_arcade(config); // no slot config (legacy mame)
+	mvs(config);
 	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::main_map_noslot);
 
-	//joystick controller
-	NEOGEO_CTRL_EDGE_CONNECTOR(config, m_edge, neogeo_arc_edge, "joy", true);
+	// quickload
+	quickload_image_device &quickload(QUICKLOAD(config, "quickload", "gno", attotime::from_seconds(1)));
+	quickload.set_load_callback(FUNC(neogeo_state::gno_q_cb));
+	quickload.set_interface("gno_quik");
+	SOFTWARE_LIST(config, "quik_list").set_original("gno_quik");
+}
 
-	//no mahjong controller
-	NEOGEO_CONTROL_PORT(config, "ctrl1", neogeo_arc_pin15, nullptr, true);
-	NEOGEO_CONTROL_PORT(config, "ctrl2", neogeo_arc_pin15, nullptr, true);
+// Problems:
+// - Protected sets either won't load, or get address error
+// - Need to find out what "c-usage" and "s-usage" are for: (regions 10 and 11).
+// - Gfx are broken; need to unscramble FIX and SPR
+QUICKLOAD_LOAD_MEMBER(neogeo_state::gno_q_cb)
+{
+	if (image.length() < 0x60000)
+	{
+		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "File too short");
+		printf("File too short\n");
+		image.message("File too short");
+		return image_init_result::FAIL;
+	}
 
-	MSLUGX_PROT(config, "mslugx_prot");
-	SMA_PROT(config, "sma_prot");
-	CMC_PROT(config, "cmc_prot");
-	PCM2_PROT(config, "pcm2_prot");
-	PVC_PROT(config, "pvc_prot");
-	NGBOOTLEG_PROT(config, "bootleg_prot");
-	KOF2002_PROT(config, "kof2002_prot");
-	FATFURY2_PROT(config, "fatfury2_prot");
-	KOF98_PROT(config, "kof98_prot");
-	SBP_PROT(config, "sbp_prot");
+	// main header
+	// 8 bytes = "gnodmpv1"
+	// 8 bytes = game name (we don't use)
+	// 4 bytes = flags (we don't use)
+	// 1 byte  = number of regions
+	u8 header[21];
+	image.fread( &header, 21);
+
+	if ((header[0] == 'g') && (header[1] == 'n') && (header[2] == 'o') && (header[3] == 'd')
+		&& (header[4] == 'm') && (header[5] == 'p') && (header[6] == 'v') && (header[7] == '1'))
+	{
+	}
+	else
+	{
+		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "GNO header missing");
+		printf("GNO header missing\n");
+		image.message("GNO header missing");
+		return image_init_result::FAIL;
+	}
+
+	u32 region_size = 0, csize = 0, ssize = 0, ym2_region_size = 0, offset = 21;
+
+	for (uint8_t regions = 0; regions < header[20]; regions++)
+	{
+		// Get a region header
+		// 4 bytes = size
+		// 1 byte  = region code
+		// 1 byte  = type (we don't use, 00 assumed)
+		// size bytes = data
+		u8 region_code = 0, region_type = 0;
+		image.fread( &region_size, 4);
+		image.fread( &region_code, 1);
+		image.fread( &region_type, 1);
+		offset += 6;
+		// choose region, check size, and write to it
+		printf ("region code = %d with size %d at offset %08X\n",region_code,region_size,offset);
+		offset += region_size;
+		switch (region_code)
+		{
+			case 1:
+				if (region_size > (audio_region_size - 0x10000))
+				{
+					image.seterror(IMAGE_ERROR_INVALIDIMAGE, "AUDIO region in GNO file is larger than supported");
+					printf("AUDIO region (%08X) in GNO file is larger than supported\n",region_size);
+					image.message("AUDIO region in GNO file is larger than supported");
+					return image_init_result::FAIL;
+				}
+				else
+				{
+					image.fread(&audiocpu_region[0x10000], region_size);
+					std::copy(&audiocpu_region[0x10000], &audiocpu_region[0x1ffff], &audiocpu_region[0]);
+				}
+				break;
+
+			case 3:
+				if (region_size > ym_region_size)
+				{
+					image.seterror(IMAGE_ERROR_INVALIDIMAGE, "ADPCMA region in GNO file is larger than supported");
+					printf("ADPCMA size requested (%08X) is greater than available (%08X)\n",region_size,ym_region_size);
+					image.message("ADPCMA region in GNO file is larger than supported");
+					return image_init_result::FAIL;
+				}
+				else
+				{
+					image.fread(&ym_region[0], region_size);
+					std::copy(&ym_region[0], &ym_region[region_size-1], &memregion("ymsnd.deltat")->base()[0]); // fix totc,rotd
+				}
+				break;
+
+			case 4:
+				ym2_region_size = memregion("ymsnd.deltat")->bytes();
+				if ((region_size > ym2_region_size) || (ym_region_size > ym2_region_size))
+				{
+					image.seterror(IMAGE_ERROR_INVALIDIMAGE, "ADPCMB region in GNO file is larger than supported");
+					printf("ADPCMB size requested (%08X) is greater than available (%08X)\n",region_size,ym2_region_size);
+					image.message("ADPCMB region in GNO file is larger than supported");
+					return image_init_result::FAIL;
+				}
+				else
+				{
+					image.fread(&memregion("ymsnd.deltat")->base()[0],region_size);
+				}
+				break;
+
+			case 6:
+				if (region_size > fix_region_size)
+				{
+					image.seterror(IMAGE_ERROR_INVALIDIMAGE, "FIX region in GNO file is larger than supported");
+					printf("FIX size requested (%08X) is greater than available (%08X)\n",region_size,fix_region_size);
+					image.message("FIX region in GNO file is larger than supported");
+					return image_init_result::FAIL;
+				}
+				else
+				{
+					image.fread(&fix_region[0],region_size);
+					ssize = region_size;
+				}
+				break;
+
+			case 8:
+				if (region_size > cpuregion_size)
+				{
+					image.seterror(IMAGE_ERROR_INVALIDIMAGE, "CPU region in GNO file is larger than supported");
+					printf("CPU size requested (%08X) is greater than available (%08X)\n",region_size,cpuregion_size);
+					image.message("CPU region in GNO file is larger than supported");
+					return image_init_result::FAIL;
+				}
+				else
+				{
+					image.fread(&cpuregion[0],region_size);
+				}
+				break;
+
+			case 9:
+				if (region_size > spr_region_size)
+				{
+					image.seterror(IMAGE_ERROR_INVALIDIMAGE, "SPR region in GNO file is larger than supported");
+					printf("SPR size requested (%08X) is greater than available (%08X)\n",region_size,spr_region_size);
+					image.message("SPR region in GNO file is larger than supported");
+					return image_init_result::FAIL;
+				}
+				else
+				{
+					image.fread(&spr_region[0],region_size);
+					csize = region_size;
+				}
+				break;
+
+			default:
+				// Unsupported regions:
+				// 0  - audio bios (not used)
+				// 2  - audio encrypted (not used)
+				// 5  - fix bios (not used)
+				// 7  - 68k bios (not used)
+				// 10 - C(SPR) usage
+				// 11 - S(FIX) usage
+				printf("...ignored\n");
+				// jump past this region, point to next one
+				image.fseek(region_size, SEEK_CUR);
+		}
+	}
+
+	// Prepare the system
+	printf("Ready to start\n");fflush(stdout);
+	init_neogeo();
+	m_sprgen->set_sprite_region(m_region_sprites->base(), csize); // fix wh2
+	m_sprgen->set_fixed_regions(m_region_fixed->base(), ssize, m_region_fixedbios);
+	m_sprgen->optimize_sprite_data(); // fix sprites
+
+	// Fix the 512k text with horrible game-specific stuff
+	if (ssize > 0x20000)
+	{
+		u16 game = cpuregion[0x109] * 256 + cpuregion[0x108];
+		// identify kof2000, matrim, svc, kof2003
+		if ((game == 0x257) || (game == 0x266) || (game == 0x269) || (game == 0x271))
+			m_sprgen->m_fixed_layer_bank_type = 2;
+		else
+			m_sprgen->m_fixed_layer_bank_type = 1;
+	}
+
+	m_audiocpu->reset();
+	machine_reset();
+
+	return image_init_result::PASS;
 }
 
 /*********************************************** non-carts */
@@ -1483,7 +1606,33 @@ ROM_START( multimvs )
 	ROM_REGION( 0x4000000, "sprites", ROMREGION_ERASEFF )
 ROM_END
 
+ROM_START( neogno )
+	MULTIMVS_BIOS
+
+	ROM_REGION( 0x900000, "maincpu", ROMREGION_ERASEFF )
+
+	ROM_REGION( 0x20000, "audiobios", 0 )
+	ROM_LOAD( "sm1.sm1", 0x00000, 0x20000, CRC(94416d67) SHA1(42f9d7ddd6c0931fd64226a60dc73602b2819dcf) )
+
+	ROM_REGION( 0x90000, "audiocpu", 0 )
+	ROM_LOAD( "sm1.sm1", 0x00000, 0x20000, CRC(94416d67) SHA1(42f9d7ddd6c0931fd64226a60dc73602b2819dcf) )
+
+	ROM_Y_ZOOM
+
+	ROM_REGION( 0x80000, "fixed", ROMREGION_ERASEFF )
+
+	ROM_REGION( 0x20000, "fixedbios", 0 )
+	ROM_LOAD( "sfix.sfix", 0x000000, 0x20000, CRC(c2ea0cfd) SHA1(fd4a618cdcdbf849374f0a50dd8efe9dbab706c3) )
+
+	ROM_REGION( 0x1000000, "ymsnd:adpcma", ROMREGION_ERASEFF )
+
+	ROM_REGION( 0x1000000, "ymsnd.deltat", ROMREGION_ERASEFF )
+
+	ROM_REGION( 0x4000000, "sprites", ROMREGION_ERASEFF )
+ROM_END
+
 /*    YEAR  NAME         PARENT    MACHINE      INPUT           CLASS         INIT    */
 GAME( 1990, neogeo,      0,        mvs,         neogeo_6slot,   neogeo_state, init_neogeo,  ROT0, "SNK", "Neo-Geo", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
-GAME( 1990, neosd,       neogeo,   neosd,       neogeo,         neogeo_state, init_neogeo,  ROT0, "SNK", "Neo-Geo SD .neo Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
-GAME( 1990, multimvs,    neogeo,   multimvs,    neogeo,         neogeo_state, init_neogeo,  ROT0, "SNK", "Neo-Geo MultiMVS Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
+GAME( 1990, neosd,       neogeo,   neosd,       neogeo,         neogeo_state, empty_init,   ROT0, "SNK", "Neo-Geo SD .neo Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
+GAME( 1990, multimvs,    neogeo,   multimvs,    neogeo,         neogeo_state, empty_init,   ROT0, "SNK", "Neo-Geo MultiMVS Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
+GAME( 1990, neogno,      neogeo,   neogno,      neogeo,         neogeo_state, empty_init,   ROT0, "SNK", "Neo-Geo .gno support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )

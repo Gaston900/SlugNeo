@@ -4,8 +4,6 @@
 
 // todo, move these back, currently the sprite code needs some of the values tho
 #define NEOGEO_MASTER_CLOCK                     (24000000)
-#define NEOGEO_CPU2X_CLOCK                      (48000000)
-#define NEOGEO_MAIN_CPU2X_CLOCK                 (NEOGEO_CPU2X_CLOCK / 2)
 #define NEOGEO_MAIN_CPU_CLOCK                   (NEOGEO_MASTER_CLOCK / 2)
 #define NEOGEO_AUDIO_CPU_CLOCK                  (NEOGEO_MASTER_CLOCK / 6)
 #define NEOGEO_YM2610_CLOCK                     (NEOGEO_MASTER_CLOCK / 3)

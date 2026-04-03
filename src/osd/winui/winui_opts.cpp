@@ -89,7 +89,6 @@ const options_entry winui_options::s_option_entries[] =
 	{ MUIOPTION_COLUMN_ORDER,				"0,4,1,2,5,3,6,7", OPTION_STRING, nullptr },
 	{ MUIOPTION_COLUMN_SHOWN,				"1,1,1,1,1,1,0,0", OPTION_STRING, nullptr },
 
-// Disable
 #ifdef UIGRAPHICIMPROVEMENT
 	{ MUIOPTION_SPLITTERS,					"185,1395",  	OPTION_STRING, nullptr },
 	{ MUIOPTION_GUI_FONT,					"-11,0,0,0,400,0,0,0,0,3,2,1,34,Tahoma", OPTION_STRING, nullptr },

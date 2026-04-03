@@ -89,6 +89,18 @@ const options_entry winui_options::s_option_entries[] =
 	{ MUIOPTION_COLUMN_ORDER,				"0,4,1,2,5,3,6,7", OPTION_STRING, nullptr },
 	{ MUIOPTION_COLUMN_SHOWN,				"1,1,1,1,1,1,0,0", OPTION_STRING, nullptr },
 
+// Disable
+#ifdef UIGRAPHICIMPROVEMENT
+	{ MUIOPTION_SPLITTERS,					"185,1395",  	OPTION_STRING, nullptr },
+	{ MUIOPTION_GUI_FONT,					"-11,0,0,0,400,0,0,0,0,3,2,1,34,Tahoma", OPTION_STRING, nullptr },
+	{ MUIOPTION_LIST_FONT,					"-15,0,0,0,400,0,0,0,0,3,2,1,34,Tahoma", OPTION_STRING, nullptr },
+	{ MUIOPTION_HISTORY_FONT,				"-15,0,0,0,400,0,0,0,0,3,2,1,34,Verdana", OPTION_STRING, nullptr },
+	{ MUIOPTION_TREE_FONT,					"-15,0,0,0,400,0,0,0,0,3,2,1,34,Tahoma", OPTION_STRING, nullptr },
+	{ MUIOPTION_COLUMN_WIDTHS,				"707,115,92,140,48,260,60,70", OPTION_STRING, nullptr },
+	{ MUIOPTION_COLUMN_ORDER,				"0,4,1,2,5,3,6,7", OPTION_STRING, nullptr },
+	{ MUIOPTION_COLUMN_SHOWN,				"1,1,1,1,1,1,0,0", OPTION_STRING, nullptr },
+#endif
+
 	{ nullptr,								nullptr,     	OPTION_HEADER, "INTERFACE OPTIONS" },
 	{ MUIOPTION_NOROMS_GAMES,				"1",        	OPTION_BOOLEAN, nullptr },
 	{ MUIOPTION_TRAY_ICON,					"0",        	OPTION_BOOLEAN, nullptr },

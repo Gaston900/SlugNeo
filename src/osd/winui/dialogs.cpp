@@ -664,6 +664,8 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 #endif
 /****************************************************************************************************/
 
+			hFont = CreateFont(-11, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
+			hFontFX = CreateFont(-12, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT1), hFont, true);
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT2), hFont, true);
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT3), hFont, true);

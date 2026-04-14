@@ -3,6 +3,12 @@
 
 #include "winui.h"
 
+// 修改的 代码来源 (缘来是你)
+//========= DIP=============>>>
+float g_fDpiScale = 1.0f;
+UINT g_uCurrentDpi = 96;
+//==========================>>>
+
 static struct ComboBoxHistoryTab
 {
 	const wchar_t*	m_pText;
@@ -645,27 +651,27 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 			char tmp[256];
 			CenterWindow(hDlg);
 			hBrush = CreateSolidBrush(RGB(235, 233, 237));
-			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			SendMessage(GetDlgItem(hDlg, IDC_ABOUT), STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBmp);
-
 
 // 修改的 代码来源 (缘来是你)
-/****************************************************************************************************/
-#ifdef UIGRAPHICIMPROVEMENT
+//========================== DPI =============================>>>
+			UINT currentDpi = 96; // 默认值
 			HDC hdc = GetDC(hDlg);
-			int dpi = GetDeviceCaps(hdc, LOGPIXELSX);
-			ReleaseDC(hDlg, hdc);
-			float scale = (float)dpi / 96.0f;
-			
-			int fontSizeBase = (int)(11 * scale);
-			int fontSizeFX = (int)(12 * scale);
-			hFont = CreateFont(-fontSizeBase, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
-			hFontFX = CreateFont(-fontSizeFX, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
-#endif
-/****************************************************************************************************/
+			if (hdc) {
+				currentDpi = GetDeviceCaps(hdc, LOGPIXELSX);
+				ReleaseDC(hDlg, hdc);
+			}
+			float dpiScale = (float)currentDpi / 96.0f;
+			int imgWidth = (int)(461 * dpiScale);
+			int imgHeight = (int)(136 * dpiScale);
+			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, imgWidth, imgHeight, LR_CREATEDIBSECTION);
+			SendMessage(GetDlgItem(hDlg, IDC_ABOUT), STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBmp);
+			// 自适应字体大小
+			int fontSize = (int)(-11 * dpiScale);
+			int fontSizeFX = (int)(-12 * dpiScale);
+			hFont = CreateFont(fontSize, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
+			hFontFX = CreateFont(fontSizeFX, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
+//=============================================================>>>
 
-			hFont = CreateFont(-11, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
-			hFontFX = CreateFont(-12, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT1), hFont, true);
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT2), hFont, true);
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT3), hFont, true);

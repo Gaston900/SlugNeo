@@ -22,6 +22,48 @@ int				_nAviNo = 0;
 #define FAST_AUDIT
 //#define LOGSAVE
 
+// 修改的 代码来源 (缘来是你)
+//=================================== 缘来是你 ========================================>>>
+#define USE_SPLASH_SCREEN 1  // 关闭启动画面
+
+// DPI
+static UINT g_uCurrentDpi = 96;
+static float g_fDpiScale = 1.0f;
+static int g_guiPointSize = 0;
+static int g_listPointSize = 0;
+static int g_histPointSize = 0;
+static int g_treePointSize = 0;
+static bool g_fontPointsInitialized = false;
+
+static UINT GetWindowDpiSafe(HWND hWnd)
+{
+    typedef UINT (WINAPI *GetDpiForWindowPtr)(HWND);
+    HMODULE hUser32 = GetModuleHandleW(L"user32.dll");
+    GetDpiForWindowPtr fnGetDpiForWindow = (GetDpiForWindowPtr)GetProcAddress(hUser32, "GetDpiForWindow");
+    
+    if (fnGetDpiForWindow) {
+        return fnGetDpiForWindow(hWnd);
+    } else {
+        HDC hdc = GetDC(NULL);
+        UINT dpi = GetDeviceCaps(hdc, LOGPIXELSX);
+        ReleaseDC(NULL, hdc);
+        return dpi;
+    }
+}
+
+static void EnableNonClientDpiScalingSafe(HWND hWnd)
+{
+    typedef BOOL (WINAPI *EnableNonClientDpiScalingPtr)(HWND);
+    HMODULE hUser32 = GetModuleHandleW(L"user32.dll");
+    EnableNonClientDpiScalingPtr fnEnableNonClientDpiScaling = 
+        (EnableNonClientDpiScalingPtr)GetProcAddress(hUser32, "EnableNonClientDpiScaling");
+    
+    if (fnEnableNonClientDpiScaling) {
+        fnEnableNonClientDpiScaling(hWnd);
+    }
+}
+//======================================================================================>>>
+
 static int MIN_WIDTH  = DBU_MIN_WIDTH;
 static int MIN_HEIGHT = DBU_MIN_HEIGHT;
 
@@ -196,7 +238,13 @@ static void ButtonUpListViewDrag(POINTS p);
 static void CalculateBestScreenShotRect(HWND hWnd, RECT *pRect, bool restrict_height);
 static void SwitchFullScreenMode(void);
 static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+// 修改的 代码来源 (缘来是你)
+/******************************************************************************************/
+#if USE_SPLASH_SCREEN
 static intptr_t CALLBACK StartupProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+#endif
+/******************************************************************************************/
 static uintptr_t CALLBACK HookProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 static uintptr_t CALLBACK OFNHookProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 static char* ConvertAmpersandString(const char *s);
@@ -866,11 +914,18 @@ int MameUIMain(HINSTANCE hInstance, LPWSTR lpCmdLine)
 	wcscpy(MameIcon.szInfo, TEXT("Still running...."));
 	wcscpy(MameIcon.szTip, TEXT("ARCADE"));
 
+// 修改的 代码来源 (缘来是你)
+//===============禁用启动画面 =============>>>
+#if USE_SPLASH_SCREEN
 	hSplash = CreateDialog(hInstance, MAKEINTRESOURCE(IDD_STARTUP), hMain, StartupProc);
 	SetActiveWindow(hSplash);
 	SetForegroundWindow(hSplash);
 	Win32UI_init();
 	DestroyWindow(hSplash);
+	#else
+    Win32UI_init();
+#endif
+//==========================================>>>
 
 	while(GetMessage(&msg, NULL, 0, 0))
 	{
@@ -1637,6 +1692,17 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 
 			return (LRESULT) hBrushDlg;
 
+// 修改的 代码来源 (缘来是你)
+//=============== 缘来是你 ==== DPI ===============>>>
+		case WM_CREATE:
+		{
+			EnableNonClientDpiScalingSafe(hWnd);
+			g_uCurrentDpi = GetWindowDpiSafe(hWnd);
+			g_fDpiScale = (float)g_uCurrentDpi / 96.0f;
+			return FALSE; 
+		}
+//================================================>>>
+
 		case WM_INITDIALOG:
 			/* Initialize info for resizing subitems */
 			GetClientRect(hWnd, &main_resize.rect);
@@ -1654,6 +1720,30 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 		case WM_SIZE:
 			OnSize(hWnd, wParam, LOWORD(lParam), HIWORD(wParam));
 			return true;
+
+// 修改的 代码来源 (缘来是你)
+//=============== 缘来是你 ==== DPI ===============>>>
+		case WM_DPICHANGED:
+		{
+			UINT newDpi = HIWORD(wParam);
+			if (newDpi == g_uCurrentDpi)
+				break;
+			g_uCurrentDpi = newDpi;
+			g_fDpiScale = (float)newDpi / 96.0f;
+			
+			ResetFonts();
+			
+			RECT* rcNew = (RECT*)lParam;
+			SetWindowPos(hWnd, NULL,
+				rcNew->left, rcNew->top,
+				rcNew->right - rcNew->left,
+				rcNew->bottom - rcNew->top,
+				SWP_NOZORDER | SWP_NOACTIVATE);
+			
+			InvalidateRect(hWnd, NULL, TRUE);
+			return 0;
+		}
+//================================================>>>
 
 		case MM_PLAY_GAME:
 			MamePlayGame();
@@ -2478,57 +2568,71 @@ static void UpdateStatusBar(void)
 	}
 }
 
+// 修改的 代码来源 (缘来是你)
+//============================== 缘来是你 ===========================>>>
+//DPI 修改
 static void ResetFonts(void)
 {
 	LOGFONT font;
-	LOGFONT font1;
-	LOGFONT font2;
-	LOGFONT font3;
-
-	GetGuiFont(&font);
-
-	if (hFontGui != NULL)
-		DeleteFont(hFontGui);
-
-	hFontGui = CreateFontIndirect(&font);
-
-	if (hFontGui != NULL)
+	
+	if (!g_fontPointsInitialized)
 	{
-		SetWindowFont(hSearchWnd, hFontGui, true);
-		SetWindowFont(hTabCtrl, hFontGui, true);
-		SetWindowFont(hStatusBar, hFontGui, true);
+		int refDpi = 96; // 参考 DPI
+		GetGuiFont(&font);
+		g_guiPointSize = MulDiv(-font.lfHeight, 72, refDpi);
+		GetListFont(&font);
+		g_listPointSize = MulDiv(-font.lfHeight, 72, refDpi);
+		GetHistoryFont(&font);
+		g_histPointSize = MulDiv(-font.lfHeight, 72, refDpi);
+		GetTreeFont(&font);
+		g_treePointSize = MulDiv(-font.lfHeight, 72, refDpi);
+		g_fontPointsInitialized = true;
 	}
-
-	GetListFont(&font1);
-
-	if (hFontList != NULL)
-		DeleteFont(hFontList);
-
-	hFontList = CreateFontIndirect(&font1);
-
-	if (hFontList != NULL)
-		SetWindowFont(hWndList, hFontList, true);
-
-	GetHistoryFont(&font2);
-
-	if (hFontHist != NULL)
-		DeleteFont(hFontHist);
-
-	hFontHist = CreateFontIndirect(&font2);
-
-	if (hFontHist != NULL)
-		SetWindowFont(GetDlgItem(hMain, IDC_HISTORY), hFontHist, true);
-
-	GetTreeFont(&font3);
-
-	if (hFontTree != NULL)
-		DeleteFont(hFontTree);
-
-	hFontTree = CreateFontIndirect(&font3);
-
-	if (hFontTree != NULL)
-		SetWindowFont(hTreeView, hFontTree, true);
+	
+	int guiHeight = -MulDiv(g_guiPointSize, g_uCurrentDpi, 72);
+	int listHeight = -MulDiv(g_listPointSize, g_uCurrentDpi, 72);
+	int histHeight = -MulDiv(g_histPointSize, g_uCurrentDpi, 72);
+	int treeHeight = -MulDiv(g_treePointSize, g_uCurrentDpi, 72);
+	
+	if (hFontGui) DeleteObject(hFontGui);
+	if (hFontList) DeleteObject(hFontList);
+	if (hFontHist) DeleteObject(hFontHist);
+	if (hFontTree) DeleteObject(hFontTree);
+	
+	GetGuiFont(&font);
+	font.lfHeight = guiHeight;
+	hFontGui = CreateFontIndirect(&font);
+	
+	GetListFont(&font);
+	font.lfHeight = listHeight;
+	hFontList = CreateFontIndirect(&font);
+	
+	GetHistoryFont(&font);
+	font.lfHeight = histHeight;
+	hFontHist = CreateFontIndirect(&font);
+	
+	GetTreeFont(&font);
+	font.lfHeight = treeHeight;
+	hFontTree = CreateFontIndirect(&font);
+	
+	if (hFontGui)
+	{
+		SetWindowFont(hSearchWnd, hFontGui, TRUE);
+		SetWindowFont(hTabCtrl, hFontGui, TRUE);
+		SetWindowFont(hStatusBar, hFontGui, TRUE);
+	}
+	if (hFontList)
+		SetWindowFont(hWndList, hFontList, TRUE);
+	if (hFontHist)
+		SetWindowFont(GetDlgItem(hMain, IDC_HISTORY), hFontHist, TRUE);
+	if (hFontTree)
+		SetWindowFont(hTreeView, hFontTree, TRUE);
+	if (hWndList) {
+		ListView_SetTextColor(hWndList, GetListFontColor());
+		ListView_SetBkColor(hWndList, GetListBgColor());
+	}
 }
+//=============================================================>>>
 
 static void InitListTree(void)
 {
@@ -5971,20 +6075,40 @@ static void SwitchFullScreenMode(void)
 	}
 }
 
+// 修改的 代码来源 (缘来是你)
+// 缘来是你==================================== DPI ===================================>>>
+#if USE_SPLASH_SCREEN
 static intptr_t CALLBACK StartupProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
 		case WM_INITDIALOG:
 		{
-			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			int imgWidth = (int)(461 * g_fDpiScale);
+			int imgHeight = (int)(136 * g_fDpiScale);
+			
+			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, imgWidth, imgHeight, LR_CREATEDIBSECTION);
 			SendMessage(GetDlgItem(hDlg, IDC_SPLASH), STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBmp);
+			
 			hBrush = GetSysColorBrush(COLOR_3DFACE);
-			hProgress = CreateWindowEx(0, PROGRESS_CLASS, NULL, WS_CHILD | WS_VISIBLE, 0, 136, 526, 18, hDlg, NULL, hInst, NULL);
+			
+			int progX = 0;
+			int progY = imgHeight; 
+			int progW = imgWidth;
+			int progH = (int)(18 * g_fDpiScale);
+			
+			hProgress = CreateWindowEx(0, PROGRESS_CLASS, NULL, WS_CHILD | WS_VISIBLE, progX, progY, progW, progH, hDlg, NULL, hInst, NULL);
 			SetWindowTheme(hProgress, L" ", L" ");
 			SendMessage(hProgress, PBM_SETBKCOLOR, 0, GetSysColor(COLOR_3DFACE));
 			SendMessage(hProgress, PBM_SETRANGE, 0, MAKELPARAM(0, 120));
 			SendMessage(hProgress, PBM_SETPOS, 0, 0);
+			return true;
+		}
+
+		case WM_DESTROY:
+		{
+			HBITMAP hBmp = (HBITMAP)SendMessage(GetDlgItem(hDlg, IDC_SPLASH), STM_GETIMAGE, IMAGE_BITMAP, 0);
+			if (hBmp) DeleteObject(hBmp);
 			return true;
 		}
 
@@ -6000,6 +6124,8 @@ static intptr_t CALLBACK StartupProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM
 
 	return false;
 }
+#endif
+//======================================================================================>>>
 
 static bool CommonListDialog(common_file_dialog_proc cfd, int filetype)
 {

@@ -102,6 +102,11 @@
 
 #define MM_PLAY_GAME		(WM_APP + 15000)
 
+// 修改的 代码来源 (加斯顿90)
+/************************************/
+#define WM_DPICHANGED       0x02E0
+/************************************/
+
 #define JOYGUI_MS 			100
 
 #define JOYGUI_TIMER 		1

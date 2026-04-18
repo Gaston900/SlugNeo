@@ -4354,63 +4354,42 @@ static void ReloadIcons(void)
 	}
 }
 
+// EKMAME
 static DWORD GetShellLargeIconSize(void)
 {
-	DWORD  dwSize = 32, dwLength = 512, dwType = REG_SZ;
-	HKEY   hKey;
-	LPTSTR tErrorMessage = NULL;
-
-	/* Get the Key */
-	LONG lRes = RegOpenKey(HKEY_CURRENT_USER, TEXT("Control Panel\\Desktop\\WindowMetrics"), &hKey);
-	if( lRes != ERROR_SUCCESS )
-	{
-		//GetSystemErrorMessage(lRes, &tErrorMessage);
-		MessageBox(GetMainWindow(), tErrorMessage, TEXT("Large shell icon size registry access"), MB_OK | MB_ICONERROR);
-		LocalFree(tErrorMessage);
-		return dwSize;
-	}
-
-	/* Save the last size */
-	TCHAR  szBuffer[512];
-	lRes = RegQueryValueEx(hKey, TEXT("Shell Icon Size"), NULL, &dwType, (LPBYTE)szBuffer, &dwLength);
-	if( lRes != ERROR_SUCCESS )
-	{
-		//GetSystemErrorMessage(lRes, &tErrorMessage);
-		MessageBox(GetMainWindow(), tErrorMessage, TEXT("Large shell icon size registry query"), MB_OK | MB_ICONERROR);
-		LocalFree(tErrorMessage);
-		RegCloseKey(hKey);
-		return dwSize;
-	}
-
-	dwSize = _ttol(szBuffer);
-	if (dwSize < 32)
-		dwSize = 32;
-
-	if (dwSize > 48)
-		dwSize = 48;
-
-	/* Clean up */
-	RegCloseKey(hKey);
-	return dwSize;
+    DWORD dwSize = 32;
+    HKEY hKey;
+    
+    if (RegOpenKeyEx(HKEY_CURRENT_USER, 
+        TEXT("Control Panel\\Desktop\\WindowMetrics"), 
+        0, KEY_QUERY_VALUE, &hKey) == ERROR_SUCCESS)
+    {
+        TCHAR szBuffer[16];
+        DWORD dwType = REG_SZ;
+        DWORD dwLength = sizeof(szBuffer);
+        
+        if (RegQueryValueEx(hKey, TEXT("Shell Icon Size"), NULL, 
+            &dwType, (LPBYTE)szBuffer, &dwLength) == ERROR_SUCCESS)
+        {
+            dwSize = _ttoi(szBuffer);
+            if (dwSize < 16) dwSize = 16;
+            if (dwSize > 64) dwSize = 64;
+        }
+        RegCloseKey(hKey);
+    }
+    return dwSize;
 }
 
-
+// EKMAME
 static DWORD GetShellSmallIconSize(void)
 {
-	DWORD dwSize = ICONMAP_WIDTH;
-
-	if (dwSize < 48)
-	{
-		if (dwSize < 32)
-			dwSize = 16;
-		else
-			dwSize = 32;
-	}
-	else
-	{
-		dwSize = 48;
-	}
-	return dwSize;
+    DWORD dwLargeSize = GetShellLargeIconSize();
+    if (dwLargeSize >= 48)
+        return 32;
+    else if (dwLargeSize >= 32)
+        return 24;
+    else
+        return 16;
 }
 
 // create iconlist for Listview control

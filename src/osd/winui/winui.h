@@ -78,9 +78,9 @@
 #endif
 
 #ifdef PTR64
-#define MAMEUINAME			"SlugNeo (Metal Slug MVS/AES Collection)"
+#define MAMEUINAME			"SlugNeo"
 #else
-#define MAMEUINAME			"SlugNeo (Metal Slug MVS/AES Collection)"
+#define MAMEUINAME			"SlugNeo"
 #endif
 #define MAMENAME			"SlugNeo"
 

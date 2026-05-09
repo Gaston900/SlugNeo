@@ -2208,7 +2208,7 @@ void CreateCOLLECTIONFolders(int parent_index)
 
         // Serie Easy Mode
 		if (!strcmp("mslughc11", s))			        AddGame(lpSerieEM, jj);
-		if (!strcmp("mslug2hc19", s))			        AddGame(lpSerieEM, jj);
+		if (!strcmp("mslug2hc18", s))			        AddGame(lpSerieEM, jj);
 		if (!strcmp("mslug3hc33", s))			        AddGame(lpSerieEM, jj);
 		if (!strcmp("mslug4hc22", s))		            AddGame(lpSerieEM, jj);
 		if (!strcmp("mslug5hc25", s))			        AddGame(lpSerieEM, jj);
@@ -4122,7 +4122,7 @@ void CreateUPDATEFolders(int parent_index)
 	int nGames = GetNumGames();
 
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-    LPTREEFOLDER lpSerie26, lpSerie25, lpSerie24, lpSerie23, lpSerie22, lpSerie21, lpSerie20, lpSerie19, lpSerie18, lpSerie17, lpSerie16, lpSerie15, lpSerie14, lpSerie13, lpSerie12, lpSerie11, lpSerie10, lpSerie08, lpSerie07, lpSerie06, lpSerie05;
+    LPTREEFOLDER lpSerie26, lpSerie25, lpSerie24, lpSerie23, lpSerie22, lpSerie21, lpSerie20, lpSerie19, lpSerie18, lpSerie17, lpSerie16, lpSerie15, lpSerie14, lpSerie13, lpSerie12, lpSerie10, lpSerie08, lpSerie07, lpSerie06, lpSerie05;
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
@@ -4143,7 +4143,6 @@ void CreateUPDATEFolders(int parent_index)
     lpSerie14 = NewFolder("2014", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSerie13 = NewFolder("2013", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSerie12 = NewFolder("2012", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
-    lpSerie11 = NewFolder("2011", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSerie10 = NewFolder("2010", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSerie08 = NewFolder("2008", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSerie07 = NewFolder("2007", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
@@ -4165,7 +4164,6 @@ void CreateUPDATEFolders(int parent_index)
 	AddFolder(lpSerie14);
 	AddFolder(lpSerie13);
 	AddFolder(lpSerie12);
-	AddFolder(lpSerie11);
 	AddFolder(lpSerie10);
 	AddFolder(lpSerie08);
 	AddFolder(lpSerie07);
@@ -4325,7 +4323,7 @@ void CreateUPDATEFolders(int parent_index)
 		if (!strcmp("mslug2hc07", s))			        AddGame(lpSerie18, jj);
 		if (!strcmp("mslug2hc10", s))		            AddGame(lpSerie18, jj);
 		if (!strcmp("mslug2hc13", s))			        AddGame(lpSerie18, jj);
-		if (!strcmp("mslug2hc19", s))	                AddGame(lpSerie18, jj);
+		if (!strcmp("mslug2hc18", s))	                AddGame(lpSerie18, jj);
 		if (!strcmp("mslug3hc10", s))			        AddGame(lpSerie18, jj);
 		if (!strcmp("mslug3hc33", s))			        AddGame(lpSerie18, jj);
 		if (!strcmp("mslug4hc22", s))		            AddGame(lpSerie18, jj);
@@ -4392,9 +4390,6 @@ void CreateUPDATEFolders(int parent_index)
 		if (!strcmp("mslug4hc16", s))	                AddGame(lpSerie12, jj);
 		if (!strcmp("mslug4hc24", s))			        AddGame(lpSerie12, jj);
 		if (!strcmp("mslugxhc27", s))			        AddGame(lpSerie12, jj);
-
-        // 2011
-		if (!strcmp("mslug2hc18", s))	                AddGame(lpSerie11, jj);
 
         // 2010
 		if (!strcmp("neopang", s))	                    AddGame(lpSerie10, jj);

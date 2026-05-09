@@ -2346,18 +2346,7 @@ ROM_END
 
 ROM_START( mslug2hc18 )
 	ROM_REGION( 0x300000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "241_hc18.p1",  0x000000, 0x100000, CRC(5261ffd7) SHA1(d514f35f4d8278c31d7619ff45df6af117c6ee0f) )
-	ROM_LOAD16_WORD_SWAP( "241.p2",       0x100000, 0x200000, CRC(38883f44) SHA1(fcf34b8c6e37774741542393b963635412484a27) )
-    MSLUG2HB_ESSENTIALPATCH_MODS_FILL
-    MSLUG2_SFIX_128K
-    MSLUG2_AUDIO_128K
-    MSLUG2_YMSND
-    MSLUG2_SPRITES
-ROM_END
-
-ROM_START( mslug2hc19 )
-	ROM_REGION( 0x300000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "241_hc19.p1", 0x000000, 0x100000, CRC(34233c1f) SHA1(eb137f71bbbdd06672cbb761bc37d39bc06d3d86) )
+	ROM_LOAD16_WORD_SWAP( "241_hc18.p1", 0x000000, 0x100000, CRC(34233c1f) SHA1(eb137f71bbbdd06672cbb761bc37d39bc06d3d86) )
 	ROM_LOAD16_WORD_SWAP( "241.p2",      0x100000, 0x200000, CRC(38883f44) SHA1(fcf34b8c6e37774741542393b963635412484a27) )
     MSLUG2HB_ESSENTIALPATCH_MODS_FILL
     MSLUG2_SFIX_128K
@@ -2829,8 +2818,7 @@ GAME( 2022, mslug2hc14,       mslug2,   neoclock_noslot, mslug2,     neogeo_stat
 GAME( 2016, mslug2hc15,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug 2 (Stage Select 2016-10-19)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, mslug2hc16,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug 2 (Jump In Mid Air 2015-08-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, mslug2hc17,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "Shyma.X",         "Metal Slug 2 (French Translation 2006-09-26)", MACHINE_SUPPORTS_SAVE )
-GAME( 2011, mslug2hc18,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (A Full Screen Attack 2011-01-16)", MACHINE_SUPPORTS_SAVE )
-GAME( 2018, mslug2hc19,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (Easy Mode 2018-11-26)", MACHINE_SUPPORTS_SAVE )
+GAME( 2018, mslug2hc18,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (Easy Mode 2018-11-26)", MACHINE_SUPPORTS_SAVE )
 
 /*********************************************************************************
 * This game sector is exclusive 2017 - 2025, its modifications that load have been customized

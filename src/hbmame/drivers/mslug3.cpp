@@ -13110,32 +13110,6 @@ ROM_START( mslug3zh )
 	MSLUG3_SPRITES
 ROM_END
 
-
- /**********************************
-  Exclusive Material Soldier Rebel
-*************************************/
-
-ROM_START( mslug3esl )
-	ROM_REGION( 0x900000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "256esl.p1", 0x000000, 0x900000, CRC(c3ffa496) SHA1(ae8faf524707307453f5955449122d12ff03ebd2) )
-    ROM_DEFAULT_BIOS( "console_mode" )
-	MSLUG3ESL_ESSENTIALPATCH_MODS_FILL
-	MSLUG3_SFIX_MT_512K
-	MSLUG3_AUDIO_512K
-    MSLUG3_YMSND
-	MSLUG3_SPRITES
-ROM_END
-
-ROM_START( mslug3or )
-	ROM_REGION( 0x900000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "256or.p1", 0x000000, 0x900000, CRC(1bf28288) SHA1(d8477f3c78f3858b70312a622d6a1391158275b7) )
-	MSLUG3DD_ESSENTIALPATCH_MODS_FILL
-	MSLUG3_SFIX_MT_512K
-	MSLUG3_AUDIO_512K
-    MSLUG3_YMSND
-	MSLUG3_SPRITES
-ROM_END
-
  /*****
   Hack
 ********/
@@ -13579,6 +13553,17 @@ ROM_START( mslug3hc40 ) //mslug3cqzt
 	MSLUG3_AUDIO_512K
     MSLUG3_YMSND
     MSLUG3CQZT_SPRITES
+ROM_END
+
+ROM_START( mslug3hc41 )
+	ROM_REGION( 0x900000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "256_hc41.p1", 0x000000, 0x900000, CRC(c3ffa496) SHA1(ae8faf524707307453f5955449122d12ff03ebd2) )
+    ROM_DEFAULT_BIOS( "console_mode" )
+	MSLUG3ESL_ESSENTIALPATCH_MODS_FILL
+	MSLUG3_SFIX_MT_512K
+	MSLUG3_AUDIO_512K
+    MSLUG3_YMSND
+	MSLUG3_SPRITES
 ROM_END
 
  /*******
@@ -15651,12 +15636,6 @@ GAME( 2021, mslug3unity,      mslug3,   neoclock_noslot, mslug3,     neogeo_stat
 GAME( 2012, mslug3v,          mslug3,   neoclock_noslot, mslug3v,    neogeo_state,    init_mslug3,     ROT0, "Decrypter to Encrypted Conversion",   "Metal Slug 3 (Violence 2012-03-01) (Encrypted C)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
 GAME( 2017, mslug3zh,         mslug3,   neoclock_noslot, mslug3zh,   neogeo_state,    init_mslug3,     ROT0, "Decrypter to Encrypted Conversion",   "Metal Slug 3 (Vehicle Summon 2017-04-04) (Encrypted C)", MACHINE_SUPPORTS_SAVE ) /* Encrypted Code & GFX */
 
-// YouTube Channel: https://www.youtube.com/@soldierrebel6603
-/*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
-// Metal Slug 3 (Exclusive Material Soldier Rebel)
-GAME( 2025, mslug3esl,        mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3d,    ROT0, "Soldier Rebel",   "Metal Slug 3 (Enemy Survival v0.4 2025-02-09)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, mslug3or,         mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3d,    ROT0, "Soldier Rebel",   "Metal Slug 3 (Ostrich Route Revamp Showcase v1.2 2024-05-13)", MACHINE_SUPPORTS_SAVE )
-
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 3 (Hack)
 GAME( 2012, mslug3hc01,       mslug3,   neoclock_noslot, mslug3sd,   neogeo_state,    init_mslug3,     ROT0, "HappyAsr",        "Metal Slug 3 (Super D Version 2012-03-28)", MACHINE_SUPPORTS_SAVE )
@@ -15699,6 +15678,7 @@ GAME( 2025, mslug3hc37,       mslug3,   neoclock_noslot, mslug3cq,   neogeo_stat
 GAME( 2025, mslug3hc38,       mslug3,   neoclock_noslot, mslug3cqi,  neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Dark Fate 7.5H 2025-11-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3hc39,       mslug3,   neogeo_68kram,   mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary Tower Defense 6.0 2025-06-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3hc40,       mslug3,   neoclock_noslot, mslug3sc,   neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Legendary Journey 2024-11-14)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3hc41,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3d,    ROT0, "Soldier Rebel",   "Metal Slug 3 (Enemy Survival v0.4 2025-02-09)", MACHINE_SUPPORTS_SAVE )
 
 /*********************************************************************************
 * This game sector is exclusive 2017 - 2025, its modifications that load have been customized

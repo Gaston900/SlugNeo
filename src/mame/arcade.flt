@@ -1,6 +1,4 @@
 neogeo.cpp
-pgm.cpp
-m92.cpp
 gb.cpp
 gba.cpp
 megadriv.cpp

@@ -4781,21 +4781,6 @@ ROM_START( mslugxscnds )
 	MSLUGXSC_NEOSD
 ROM_END
 
- /**********************
-  Exclusive Fightcade2
-*************************/
-
-ROM_START( mslugxsrf )
-	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "250srf.p1", 0x000000, 0x100000, CRC(aed327fe) SHA1(3a8888dd7752be94bce9f3f0df942d7feeff4bae) )
-	ROM_LOAD16_WORD_SWAP( "250srf.p2", 0x100000, 0x400000, CRC(4389f47d) SHA1(8774ed04cb5d66e6cdda2f27165e0dfcc230bd8a) )
-    MSLUGXHB_ESSENTIALPATCH_MODS_FILL
-    MSLUGX_SFIX_128K
-    MSLUGX_AUDIO_128K
-	MSLUGX_YMSND
-	MSLUGX_SPRITES
-ROM_END
-
  /*****
   Hack
 ********/
@@ -7148,10 +7133,6 @@ GAME( 2022, mslugxddnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_stat
 GAME( 2006, mslugxfrnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (French Translation 2006-09-26) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, mslugxlbnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Extreme Space 2015-04-21) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslugxscnds,      mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (Survival 2023-02-13) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-
-/*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
-// Metal Slug X (Exclusive Fightcade2)
-GAME( 2021, mslugxsrf,        mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "hack",            "Metal Slug X (AzStar Soda Remix 2021-02-12) (Fightcade2)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug X (Hack)

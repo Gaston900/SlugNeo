@@ -7292,20 +7292,6 @@ ROM_START( mslug5zh )
 	MSLUG5_SPRITES
 ROM_END
 
- /**********************
-  Exclusive Fightcade2
-*************************/
-
-ROM_START( mslug5sgf )
-	ROM_REGION( 0x600000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "268sgf.p1", 0x000000, 0x600000, CRC(b1fbb850) SHA1(4fc556a11107c2ff9bf1c0620fa635ae206f46d7) )
-    MSLUG5ND_ESSENTIALPATCH_MODS_FILL
-    MSLUG5D_SFIX_128K
-    MSLUG5D_AUDIO_512K
-	MSLUG5D_YMSND
-	MSLUG5D_SPRITES
-ROM_END
-
  /*****
   Hack
 ********/
@@ -9330,10 +9316,6 @@ GAME( 2019, mslug5mg,         mslug5,   neoclock_noslot, mslug5vh,   neogeo_stat
 GAME( 2021, mslug5rmk,        mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5nd,   ROT0, "Decrypter to Encrypted Conversion",   "Metal Slug 5 (Remake 2021-10-03) (Encrypted C)", MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2022, mslug5x,          mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_mslug5nd,   ROT0, "Decrypter to Encrypted Conversion",   "Metal Slug 5 (X 2022-06-06) (Encrypted C)", MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
 GAME( 2018, mslug5zh,         mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5nd,   ROT0, "Decrypter to Encrypted Conversion",   "Metal Slug 5 (Vehicle Slug 2018-09-18) (Encrypted C)", MACHINE_SUPPORTS_SAVE ) /* Encrypted GFX */
-
-/*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
-// Metal Slug 5 (Exclusive Fightcade2)
-GAME( 2021, mslug5sgf,        mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Remake 2021-10-03) (Fightcade2)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug 5 (Hack)

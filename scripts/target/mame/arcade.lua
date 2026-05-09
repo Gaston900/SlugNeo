@@ -16,7 +16,6 @@ CPUS["SSP1601"] = true -- MEGADRIVE
 CPUS["I386"] = true  -- MEGADRIVE
 CPUS["LR35902"] = true -- GB
 CPUS["ARM7"] = true -- GB
-CPUS["NEC"] = true -- M92
 CPUS["V30MZ"] = true -- MEGADRIVE
 
 --------------------------------------------------
@@ -37,11 +36,6 @@ SOUNDS["CDDA"] = true -- MEGADRIVE
 SOUNDS["RF5C68"] = true -- MEGADRIVE
 SOUNDS["SN76496"] = true -- MEGADRIVE
 SOUNDS["GB_SOUND"] = true -- GBA
-SOUNDS["ICS2115"] = true -- PGM
-SOUNDS["IREMGA20"] = true -- M92
-SOUNDS["OKIM6295"] = true -- M92
-SOUNDS["SAMPLES"] = true -- M92
-SOUNDS["YM2151"] = true -- M92
 
 --------------------------------------------------
 -- specify available machine cores
@@ -52,8 +46,6 @@ MACHINES["UPD1990A"] = true -- NEOGEO
 MACHINES["WATCHDOG"] = true -- NEOGEO
 MACHINES["Z80DAISY"] = true -- NEOGEO
 MACHINES["INTELFLASH"] = true -- GBA
-MACHINES["V3021"] = true --PGM
-MACHINES["PIC8259"] = true -- M92
 MACHINES["I2CMEM"] = true -- MEGADRIVE
 MACHINES["LC89510"] = true -- MEGADRIVE
 
@@ -74,7 +66,6 @@ VIDEOS["SEGA315_5124"] = true -- MEGADRIVE
 VIDEOS["SEGA315_5313"] = true -- MEGADRIVE
 VIDEOS["GBA_LCD"] = true -- GBA
 VIDEOS["GB_LCD"] = true -- GB
-VIDEOS["BUFSPRITE"] = true -- M92
 
 --------------------------------------------------
 -- this is the list of driver libraries that
@@ -84,8 +75,6 @@ VIDEOS["BUFSPRITE"] = true -- M92
 
 function linkProjects_mame_arcade(_target, _subtarget)
 	links {
-		"igs",
-		"irem",
 		"neogeo",
 		"nintendo",
 		"sega",
@@ -110,11 +99,9 @@ function createMAMEProjects(_target, _subtarget, _name)
 		MAME_DIR .. "src/mame",
 		MAME_DIR .. "src/lib",
 		MAME_DIR .. "src/lib/util",
---		MAME_DIR .. "src/lib/netlist",
 		MAME_DIR .. "3rdparty",
 		MAME_DIR .. "3rdparty/zlib",
 		GEN_DIR  .. "mame/layout",
---		GEN_DIR  .. "hbmame/layout",
 	}
 	includedirs {
 		ext_includedir("flac"),
@@ -129,42 +116,6 @@ function createProjects_mame_arcade(_target, _subtarget)
 -- the following files are general components and
 -- shared across a number of drivers
 --------------------------------------------------
-
-createMAMEProjects(_target, _subtarget, "igs")
-files {
-	MAME_DIR .. "src/mame/drivers/pgm.cpp",
-	MAME_DIR .. "src/mame/includes/pgm.h",
-	MAME_DIR .. "src/mame/video/pgm.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs027a_type1.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs027a_type1.h",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs027a_type2.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs027a_type2.h",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs027a_type3.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs027a_type3.h",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs025_igs012.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs025_igs012.h",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs025_igs022.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs025_igs022.h",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs025_igs028.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_igs025_igs028.h",
-	MAME_DIR .. "src/mame/machine/pgmprot_orlegend.cpp",
-	MAME_DIR .. "src/mame/machine/pgmprot_orlegend.h",
-	MAME_DIR .. "src/mame/machine/pgmcrypt.cpp",
-	MAME_DIR .. "src/mame/machine/pgmcrypt.h",
-	MAME_DIR .. "src/mame/machine/igs025.cpp",
-	MAME_DIR .. "src/mame/machine/igs025.h",
-	MAME_DIR .. "src/mame/machine/igs022.cpp",
-	MAME_DIR .. "src/mame/machine/igs022.h",
-	MAME_DIR .. "src/mame/machine/igs028.cpp",
-	MAME_DIR .. "src/mame/machine/igs028.h",
-}
-
-createMAMEProjects(_target, _subtarget, "irem")
-files {
-	MAME_DIR .. "src/mame/drivers/m92.cpp",
-	MAME_DIR .. "src/mame/video/m92.cpp",
-	MAME_DIR .. "src/mame/machine/irem_cpu.cpp",
-}
 
 createMAMEProjects(_target, _subtarget, "neogeo")
 files {

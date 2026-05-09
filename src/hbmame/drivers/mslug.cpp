@@ -1142,21 +1142,6 @@ ROM_START( mslugnsd )
     MSLUG_NEOSD
 ROM_END
 
- /**********************
-  Exclusive Fightcade2
-*************************/
-
-ROM_START( mslugdyf1 )
-	ROM_REGION( 0x200000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "201dyf1.p1", 0x100000, 0x100000, CRC(84c96797) SHA1(c945254b0e1b62a6bafccc9ce57a69ed2c6b4cf8) )
-	ROM_CONTINUE( 0x000000, 0x100000 )
-    MSLUGDYF1_ESSENTIALPATCH_MODS_FILL
-	MSLUG_SFIX_128K
-	MSLUG_AUDIO_128K
-    MSLUG_YMSND
-    MSLUG_SPRITES
-ROM_END
-
  /*****
   Hack
 ********/
@@ -1331,6 +1316,17 @@ ROM_START( mslughc16 )
 	ROM_LOAD16_WORD_SWAP( "201_hc16.p1", 0x100000, 0x100000, CRC(f0561050) SHA1(b9d5973cd49b935922d29612f5e8f7681c5a1f29) )
 	ROM_CONTINUE( 0x000000, 0x100000 )
     MSLUGHB_ESSENTIALPATCH_MODS_FILL
+	MSLUG_SFIX_128K
+	MSLUG_AUDIO_128K
+    MSLUG_YMSND
+    MSLUG_SPRITES
+ROM_END
+
+ROM_START( mslughc17 ) //mslugdyf1
+	ROM_REGION( 0x200000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "201dyf1.p1", 0x100000, 0x100000, CRC(84c96797) SHA1(c945254b0e1b62a6bafccc9ce57a69ed2c6b4cf8) )
+	ROM_CONTINUE( 0x000000, 0x100000 )
+    MSLUGDYF1_ESSENTIALPATCH_MODS_FILL
 	MSLUG_SFIX_128K
 	MSLUG_AUDIO_128K
     MSLUG_YMSND
@@ -1519,10 +1515,6 @@ GAME( 1996, mslugdd,          mslug,    neoclock_noslot, mslug,     neogeo_state
 GAME( 1996, mslugnsd,         mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Nazca",           "Metal Slug (Neo SD)", MACHINE_SUPPORTS_SAVE )
 
 /*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
-// Metal Slug (Exclusive Fightcade2)
-GAME( 2025, mslugdyf1,        mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Alice",           "Metal Slug (Origins Random Item 2025-07-18) (Fightcade2)", MACHINE_SUPPORTS_SAVE )
-
-/*    YEAR   NAME             PARENT       MACHINE       INPUT                         INIT        MONITOR COMPANY           FULLNAME FLAGS */
 // Metal Slug (Hack)
 GAME( 2016, mslughc01,        mslug,    neoclock_noslot, mslugwp,   neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug (Change Weapon 2016-03-26)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, mslughc02,        mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "FBN4DROID",       "Metal Slug (Random Items Explosives 2021-06-08)", MACHINE_SUPPORTS_SAVE )
@@ -1540,6 +1532,7 @@ GAME( 2024, mslughc13,        mslug,    neoclock_noslot, mslug,     neogeo_state
 GAME( 2024, mslughc14,        mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "GOTVG",           "Metal Slug (Unity Random Item, Powerful Enemy Defense 2024-04-15) (Earlier)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslughc15,        mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "GOTVG",           "Metal Slug (Unity Random Item, Powerful Enemy Defense 2024-11-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2013, mslughc16,        mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug (Unlimited Firepower 2013-06-13)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslughc17,        mslug,    neoclock_noslot, mslug,     neogeo_state,    init_neogeo,     ROT0, "Fightcade2",      "Metal Slug (Origins Random Item 2025-07-18)", MACHINE_SUPPORTS_SAVE )
 
 /*********************************************************************************
 * This game sector is exclusive 2017 - 2025, its modifications that load have been customized

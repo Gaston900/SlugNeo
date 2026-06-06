@@ -15,7 +15,7 @@ function dat.check(set, softlist)
 		if driver then
 			local parent = driver.parent
 			if parent and parent ~= set and parent ~= "" then
-				status, info = pcall(datread, 'story', 'info', parent)
+				status, info = pcall(datread, "story", "info", parent)
 				if status and info then
 					return _("Mamescore")
 				end

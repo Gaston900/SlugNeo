@@ -147,7 +147,7 @@ struct _play_options
 };
 
 //#ifdef USE_KLIST
-#define TSVNAME "Arcade_List.lst"
+#define TSVNAME "SlugNeo.lst"
 #define LINEBUF_SIZE  1024
 #define NUM_COLUMNS   3
 
@@ -1835,6 +1835,122 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 				LPNMHDR lpNmHdr = (LPNMHDR)lParam;
 				wchar_t szClass[128];
 
+// 修改的 代码来源 (加斯顿90)
+//===========================================================================================================>>>
+				if (lpNmHdr->hwndFrom == hTreeView && lpNmHdr->code == NM_CUSTOMDRAW)
+				{
+					LPNMTVCUSTOMDRAW lptvcd = (LPNMTVCUSTOMDRAW)lParam;
+					switch (lptvcd->nmcd.dwDrawStage)
+					{
+						case CDDS_PREPAINT:
+							return CDRF_NOTIFYITEMDRAW;
+
+						case CDDS_ITEMPREPAINT:
+						{
+							if ((lptvcd->nmcd.uItemState & CDIS_SELECTED) && (GetFocus() != hTreeView))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(0, 0, 0);         // Texto Negro Puro
+								lptvcd->clrTextBk = RGB(255, 255, 255); // Fondo Blanco Puro Sólido
+
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(255, 255, 255)); // Borde Blanco
+								if (hWhiteBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
+									DeleteObject(hWhiteBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if ((lptvcd->nmcd.uItemState & CDIS_HOT) && (lptvcd->nmcd.uItemState & CDIS_SELECTED))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(255, 255, 255);   // Letras Blancas Puras
+								lptvcd->clrTextBk = RGB(0, 162, 232);  // Fondo Celeste
+
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232)); // Fondo Celeste
+								if (hWhiteBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
+									DeleteObject(hWhiteBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if (!(lptvcd->nmcd.uItemState & (CDIS_HOT)) && (lptvcd->nmcd.uItemState & CDIS_SELECTED))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(255, 255, 255);   // Letras Blancas Puras
+								lptvcd->clrTextBk = RGB(0, 162, 232);  // Fondo Celeste
+
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232)); // Fondo Celeste
+								if (hWhiteBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
+									DeleteObject(hWhiteBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if ((lptvcd->nmcd.uItemState & CDIS_HOT) && !(lptvcd->nmcd.uItemState & CDIS_SELECTED))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(255, 255, 255);   // Texto Blanco Puro
+								lptvcd->clrTextBk = RGB(36, 36, 36);    // Fondo Gris Carbón
+								
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hBlackBorderBrush = CreateSolidBrush(RGB(0, 0, 0)); // Borde Negro Puro
+								if (hBlackBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hBlackBorderBrush);
+									DeleteObject(hBlackBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if (!(lptvcd->nmcd.uItemState & (CDIS_SELECTED | CDIS_FOCUS | CDIS_HOT)))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, TRANSPARENT);
+								lptvcd->clrText = RGB(255, 255, 255);
+								lptvcd->clrTextBk = GetFolderBgColor();
+								return CDRF_NEWFONT;
+							}
+							
+							return CDRF_DODEFAULT;
+						}
+					}
+					return CDRF_DODEFAULT;
+				}
+
+//===========================================================================================================>>>
+
 				/* Fetch tooltip text */
 				if (lpNmHdr->code == TTN_NEEDTEXT)
 				{
@@ -2017,8 +2133,41 @@ static bool GameCheck(void)
 	if (changed && i != -1)
 		(void)ListView_RedrawItems(hWndList, i, i);
 
+// 修改的 代码来源 (加斯顿90)
+//===========================================================================================================>>>
+//DPI
 	if (percentage != oldpercent)
 	{
+		RECT rect_status;
+		GetClientRect(hStatusBar, &rect_status);
+
+		int iBaseWidth = 190;
+		if (g_fDpiScale <= 1.01f)
+		{
+			iBaseWidth = 170;
+		}
+
+		int iNewWidth = (int)(iBaseWidth * g_fDpiScale);
+		int widths[2];
+		widths[0] = iNewWidth;
+		widths[1] = -1;
+
+		SendMessage(hStatusBar, SB_SETPARTS, 2, (LPARAM)widths);
+		
+		StatusBar_GetItemRect(hStatusBar, 1, &rect_status);
+		MoveWindow(hProgWnd, rect_status.left, rect_status.top, rect_status.right - rect_status.left, rect_status.bottom - rect_status.top, TRUE);
+
+		HWND hStatusTextChild = GetDlgItem(hStatusBar, 0);
+		if (hStatusTextChild != NULL && hFontGui != NULL)
+		{
+			SendMessage(hStatusTextChild, WM_SETFONT, (WPARAM)hFontGui, MAKELPARAM(TRUE, 0));
+		}
+		else
+		{
+			SendMessage(hStatusBar, WM_SETFONT, (WPARAM)hFontGui, MAKELPARAM(TRUE, 0));
+		}
+//===========================================================================================================>>>
+
 		SetStatusBarTextW(0, TEXT("Game search %d%% completed"), percentage);
 		oldpercent = percentage;
 	}
@@ -2219,7 +2368,15 @@ static void ResizeWindow(HWND hParent, Resize *r)
 static void ProgressBarShow()
 {
 	RECT rect;
-	int widths[2] = {160, -1};
+
+// 修改的 代码来源 (加斯顿90)
+//====================================================>>>
+//DPI
+	int iNewWidth = (int)(260 * g_fDpiScale);
+	int widths[2];
+	widths[0] = iNewWidth;
+	widths[1] = -1;
+//====================================================>>>
 
 	SendMessage(hStatusBar, SB_SETPARTS, 2, (LPARAM)widths);
 	SendMessage(hProgWnd, PBM_SETRANGE, 0, MAKELPARAM(0, game_total));
@@ -2458,10 +2615,42 @@ static void InitToolbar(void)
 	int idx = SendMessage(hToolBar, TB_BUTTONCOUNT, 0, 0) - 1;
 	SendMessage(hToolBar, TB_GETITEMRECT, idx, (LPARAM)&rect);
 	int iPosX = rect.right + 8;
-	int iPosY = (rect.bottom - rect.top) / 4;
-	int iHeight = rect.bottom - rect.top - 17;
-	// create Search Edit Control
-	hSearchWnd = CreateWindowEx(0, WC_EDIT, TEXT(SEARCH_PROMPT), ES_LEFT | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER | WS_VISIBLE, iPosX, iPosY, 200, iHeight, hToolBar, (HMENU)ID_TOOLBAR_EDIT, hInst, NULL );
+
+// 修改的 代码来源 (加斯顿90)
+//==========================================================================================================>>>
+//DPI
+	int iHeight = 24;
+	if (g_fDpiScale <= 1.01f)
+	{
+		iHeight = 20;
+	}
+
+	int nToolbarHeight = rect.bottom - rect.top;
+	int iPosY = (nToolbarHeight - iHeight) / 2;
+	if (iPosY < 2) iPosY = 2;
+
+	hSearchWnd = CreateWindowEx(0, WC_EDIT, TEXT(SEARCH_PROMPT), ES_LEFT | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER | WS_VISIBLE, iPosX, iPosY, 220, iHeight, hToolBar, (HMENU)ID_TOOLBAR_EDIT, hInst, NULL );
+	
+	if (hSearchWnd != NULL)
+	{
+		LOGFONT lf;
+		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf))
+		{
+			if (g_fDpiScale <= 1.01f)
+			{
+				lf.lfHeight = -13;
+				lf.lfWidth = 0;
+				HFONT hSearchFont = CreateFontIndirect(&lf);
+				SendMessage(hSearchWnd, WM_SETFONT, (WPARAM)hSearchFont, MAKELPARAM(TRUE, 0));
+			}
+		}
+
+		int nLeftMargin = 46;
+		int nRightMargin = 6;
+		SendMessage(hSearchWnd, EM_SETMARGINS, EC_LEFTMARGIN | EC_RIGHTMARGIN, MAKELPARAM(nLeftMargin, nRightMargin));
+	}
+//==========================================================================================================>>>
 }
 
 static void InitTabView(void)
@@ -2566,6 +2755,31 @@ static void UpdateStatusBar(void)
 		SetStatusBarText(5, MAMEUINAME);
 		SendMessage(hStatusBar, SB_SETICON, 5, (LPARAM)hIconFX);
 	}
+
+// 修改的 代码来源 (加斯顿90)
+//========================================================================================================>>>
+//DPI
+	int widths[6];
+	RECT rectDlg;
+	GetClientRect(hMain, &rectDlg);
+	int nTotalWidth = rectDlg.right - rectDlg.left;
+
+	widths[5] = (int)(100 * g_fDpiScale); // Panel de MAMEUINAME
+	widths[4] = (int)(90 * g_fDpiScale);  // Panel del Contador de Juegos (Incrementado para respiro)
+	widths[3] = (int)(180 * g_fDpiScale); // Panel de Información de Pantalla (Hz)
+	widths[2] = (int)(150 * g_fDpiScale); // Panel de Estado (Working)
+	widths[1] = (int)(120 * g_fDpiScale); // Panel del Nombre de ROM Corto
+	widths[0] = -1;                       // El primer panel ocupa el resto izquierdo de forma automática
+
+	widths[0] = nTotalWidth - (widths[1] + widths[2] + widths[3] + widths[4] + widths[5]);
+	widths[1] += widths[0];
+	widths[2] += widths[1];
+	widths[3] += widths[2];
+	widths[4] += widths[3];
+	widths[5] += widths[4];
+
+	SendMessage(hStatusBar, SB_SETPARTS, 6, (LPARAM)widths);
+//========================================================================================================>>>
 }
 
 // 修改的 代码来源 (缘来是你)
@@ -2580,6 +2794,17 @@ static void ResetFonts(void)
 		int refDpi = 96; // 参考 DPI
 		GetGuiFont(&font);
 		g_guiPointSize = MulDiv(-font.lfHeight, 72, refDpi);
+
+		int nCalculatedPoints = (int)(8 * g_fDpiScale);
+		if (nCalculatedPoints < 9)
+		{
+			g_guiPointSize = 9;
+		}
+		else
+		{
+			g_guiPointSize = nCalculatedPoints;
+		}
+		
 		GetListFont(&font);
 		g_listPointSize = MulDiv(-font.lfHeight, 72, refDpi);
 		GetHistoryFont(&font);
@@ -2589,7 +2814,12 @@ static void ResetFonts(void)
 		g_fontPointsInitialized = true;
 	}
 	
-	int guiHeight = -MulDiv(g_guiPointSize, g_uCurrentDpi, 72);
+// 修改的 代码来源 (加斯顿90)
+//================================================================================>>>
+//DPI
+	int guiHeight = (int)(-MulDiv(g_guiPointSize, g_uCurrentDpi, 72) * 0.96f);
+//================================================================================>>>
+
 	int listHeight = -MulDiv(g_listPointSize, g_uCurrentDpi, 72);
 	int histHeight = -MulDiv(g_histPointSize, g_uCurrentDpi, 72);
 	int treeHeight = -MulDiv(g_treePointSize, g_uCurrentDpi, 72);
@@ -2638,8 +2868,60 @@ static void InitListTree(void)
 {
 	hTreeView = GetDlgItem(hMain, IDC_TREE);
 	hWndList = GetDlgItem(hMain, IDC_LIST);
+
+// 修改的 代码来源 (加斯顿90)
+//==================================================================================================>>>
+//DPI
 	SetWindowTheme(hWndList, L"Explorer", NULL);
 	SetWindowTheme(hTreeView, L"Explorer", NULL);
+
+	HWND hMainTreeView = GetDlgItem(hMain, IDC_TREE);
+	if (hMainTreeView != NULL)
+	{
+		LOGFONT lf;
+		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+		
+		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf))
+		{
+			lf.lfHeight = (int)(lf.lfHeight * g_fDpiScale);
+			lf.lfWidth = (int)(lf.lfWidth * g_fDpiScale);
+			
+			HFONT hScaledTreeFont = CreateFontIndirect(&lf);
+			SendMessage(hMainTreeView, WM_SETFONT, (WPARAM)hScaledTreeFont, MAKELPARAM(TRUE, 0));
+
+			int nNewRowHeight = (int)(16 * g_fDpiScale);
+			TreeView_SetItemHeight(hMainTreeView, nNewRowHeight);
+		}
+
+		TreeView_SetBkColor(hMainTreeView, GetFolderBgColor());
+		TreeView_SetTextColor(hMainTreeView, GetTreeFontColor()); 
+
+		DWORD dwExStyle = 0;
+		SendMessage(hMainTreeView, TVM_SETEXTENDEDSTYLE, dwExStyle, dwExStyle);
+
+		InvalidateRect(hMainTreeView, NULL, TRUE);
+		UpdateWindow(hMainTreeView);
+	}
+
+	if (hTabCtrl != NULL)
+	{
+		LONG_PTR dwStyle = GetWindowLongPtr(hTabCtrl, GWL_STYLE);
+		SetWindowLongPtr(hTabCtrl, GWL_STYLE, dwStyle & ~TCS_FIXEDWIDTH);
+
+		int nCalculatedHeight = (int)(20 * g_fDpiScale);
+		int nNewTabHeight = (nCalculatedHeight < 24) ? 24 : nCalculatedHeight;
+		TabCtrl_SetItemSize(hTabCtrl, 0, nNewTabHeight);
+
+		int nPadX = (int)(6 * g_fDpiScale);
+		int nPadY = (int)(1 * g_fDpiScale);
+		if (nPadY < 1) nPadY = 1;
+		
+		SendMessage(hTabCtrl, TCM_SETPADDING, 0, MAKELPARAM(nPadX, nPadY));
+
+		InvalidateRect(hTabCtrl, NULL, TRUE);
+		UpdateWindow(hTabCtrl);
+	}
+//==================================================================================================>>>
 
 	if (IsWindowsSevenOrHigher())
 	{
@@ -6063,7 +6345,7 @@ static intptr_t CALLBACK StartupProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM
 	{
 		case WM_INITDIALOG:
 		{
-			int imgWidth = (int)(461 * g_fDpiScale);
+			int imgWidth = (int)(485 * g_fDpiScale);
 			int imgHeight = (int)(136 * g_fDpiScale);
 			
 			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, imgWidth, imgHeight, LR_CREATEDIBSECTION);

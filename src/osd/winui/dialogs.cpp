@@ -653,7 +653,8 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 			hBrush = CreateSolidBrush(RGB(235, 233, 237));
 
 // 修改的 代码来源 (缘来是你)
-//========================== DPI =============================>>>
+//===========================================================================================================>>>
+//DPI
 			UINT currentDpi = 96; // 默认值
 			HDC hdc = GetDC(hDlg);
 			if (hdc) {
@@ -661,16 +662,109 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 				ReleaseDC(hDlg, hdc);
 			}
 			float dpiScale = (float)currentDpi / 96.0f;
-			int imgWidth = (int)(461 * dpiScale);
-			int imgHeight = (int)(136 * dpiScale);
+			int imgWidth = (int)(491 * dpiScale);
+			int imgHeight = (int)(156 * dpiScale);
+			/* Original image size. If this does not display correctly, please use the code below */
+			//int imgWidth = (int)(461 * dpiScale);
+			//int imgHeight = (int)(136 * dpiScale);
+
 			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, imgWidth, imgHeight, LR_CREATEDIBSECTION);
 			SendMessage(GetDlgItem(hDlg, IDC_ABOUT), STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBmp);
+
 			// 自适应字体大小
 			int fontSize = (int)(-11 * dpiScale);
 			int fontSizeFX = (int)(-12 * dpiScale);
 			hFont = CreateFont(fontSize, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
 			hFontFX = CreateFont(fontSizeFX, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
-//=============================================================>>>
+//===========================================================================================================>>>
+
+// 修改的 代码来源 (加斯顿90)
+//===========================================================================================================>>>
+//DPI
+			RECT rcDialog;
+			GetWindowRect(hDlg, &rcDialog);
+			int nBaseHeight = rcDialog.bottom - rcDialog.top;
+			int nEdgeMargin = (int)(11 * dpiScale);
+			int nFinalWidth = imgWidth + (nEdgeMargin * 2);
+			int nFinalHeight = (int)(nBaseHeight * dpiScale);
+
+			SetWindowPos(hDlg, NULL, 0, 0, nFinalWidth, nFinalHeight, SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
+
+			HWND hAboutCtrl = GetDlgItem(hDlg, IDC_ABOUT);
+			if (hAboutCtrl != NULL)
+			{
+				RECT rcAbout;
+				GetWindowRect(hAboutCtrl, &rcAbout);
+				MapWindowPoints(HWND_DESKTOP, hDlg, (LPPOINT)&rcAbout, 2);
+
+				MoveWindow(hAboutCtrl, nEdgeMargin, rcAbout.top, imgWidth, imgHeight, TRUE);
+			}
+
+			nEdgeMargin = (int)(11 * dpiScale);
+
+			HWND hVersionCtrl = GetDlgItem(hDlg, IDC_BUILDVER);
+			if (hVersionCtrl != NULL)
+			{
+				RECT rcVersion;
+				GetWindowRect(hVersionCtrl, &rcVersion);
+				MapWindowPoints(HWND_DESKTOP, hDlg, (LPPOINT)&rcVersion, 2);
+				MoveWindow(hVersionCtrl, nEdgeMargin, rcVersion.top, rcVersion.right - rcVersion.left, rcVersion.bottom - rcVersion.top, TRUE);
+			}
+
+			HWND hBuildCtrl = GetDlgItem(hDlg, IDC_BUILD);
+			if (hBuildCtrl != NULL)
+			{
+				RECT rcBuild;
+				GetWindowRect(hBuildCtrl, &rcBuild);
+				MapWindowPoints(HWND_DESKTOP, hDlg, (LPPOINT)&rcBuild, 2);
+				
+				int nTxtWidth = rcBuild.right - rcBuild.left;
+				int nTxtHeight = rcBuild.bottom - rcBuild.top;
+				int nSafetyMargin = (int)(8 * dpiScale);
+				int nNewBuildX = nFinalWidth - nTxtWidth - nEdgeMargin - nSafetyMargin;
+				
+				MoveWindow(hBuildCtrl, nNewBuildX, rcBuild.top, nTxtWidth, nTxtHeight, TRUE);
+			}
+
+			HWND hChild = GetWindow(hDlg, GW_CHILD);
+			int nMaxBottom = 0;
+
+			while (hChild != NULL)
+			{
+				int id = GetDlgCtrlID(hChild);
+
+				if (id != IDC_BUILD && id != IDC_BUILDVER && id != IDC_ABOUT && id != IDOK)
+				{
+					RECT rcCtrl;
+					GetWindowRect(hChild, &rcCtrl);
+					MapWindowPoints(HWND_DESKTOP, hDlg, (LPPOINT)&rcCtrl, 2);
+
+					int nCtrlH = rcCtrl.bottom - rcCtrl.top;
+					int nNewTxtW = nFinalWidth - (nEdgeMargin * 2);
+					MoveWindow(hChild, nEdgeMargin, rcCtrl.top, nNewTxtW, nCtrlH, TRUE);
+
+					if (rcCtrl.top + nCtrlH > nMaxBottom) 
+						nMaxBottom = rcCtrl.top + nCtrlH;
+				}
+				else if (id == IDOK)
+				{
+					RECT rcCtrl;
+					GetWindowRect(hChild, &rcCtrl);
+					MapWindowPoints(HWND_DESKTOP, hDlg, (LPPOINT)&rcCtrl, 2);
+					
+					if (rcCtrl.bottom > nMaxBottom)
+						nMaxBottom = rcCtrl.bottom;
+				}
+
+				hChild = GetNextWindow(hChild, GW_HWNDNEXT);
+			}
+
+			if (nMaxBottom > 0)
+			{
+				nFinalHeight = nMaxBottom + (int)(24 * dpiScale);
+				SetWindowPos(hDlg, NULL, 0, 0, nFinalWidth, nFinalHeight, SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
+			}
+//===========================================================================================================>>>
 
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT1), hFont, true);
 			SetWindowFont(GetDlgItem(hDlg, IDC_TEXT2), hFont, true);
@@ -680,6 +774,12 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_BUILD), "Build time: " __DATE__" - " __TIME__"");
 			snprintf(tmp, WINUI_ARRAY_LENGTH(tmp), "Version: %s", MAME_VERSION);
 			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_BUILDVER), tmp);
+			
+// 修改的 代码来源 (加斯顿90)
+//==================================================================================================>>>
+//DPI
+			CenterWindow(hDlg);
+//====================================================================>>>
 			return true;
 		}
 

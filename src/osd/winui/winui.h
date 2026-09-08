@@ -145,6 +145,16 @@
 #define NUM_TOOLBUTTONS     WINUI_ARRAY_LENGTH(tbb)
 #define NUM_TOOLTIPS 		(16)
 
+// 修改的 代码来源 (加斯顿90)
+//=============================================================>>>
+#ifndef TVS_EX_AUTOHIDEBUTTONS
+#define TVS_EX_AUTOHIDEBUTTONS       0x0002
+#endif
+#ifndef TVS_EX_FADEINOUTEXPANDOS
+#define TVS_EX_FADEINOUTEXPANDOS     0x0040
+#endif
+//=============================================================>>>
+
 enum
 {
 	TAB_PICKER = 0,

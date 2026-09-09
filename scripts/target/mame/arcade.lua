@@ -48,6 +48,8 @@ MACHINES["Z80DAISY"] = true -- NEOGEO
 MACHINES["INTELFLASH"] = true -- GBA
 MACHINES["I2CMEM"] = true -- MEGADRIVE
 MACHINES["LC89510"] = true -- MEGADRIVE
+MACHINES["TTL74259"] = true -- NEOGEO CD
+MACHINES["INPUT_MERGER"] = true -- NEOGEO CD
 
 --------------------------------------------------
 -- specify available bus cores
@@ -129,7 +131,7 @@ files {
 	MAME_DIR .. "src/hbmame/drivers/homebrew.cpp",
 	MAME_DIR .. "src/hbmame/video/neogeo.cpp",
 	MAME_DIR .. "src/hbmame/video/neogeo_spr.cpp",
-	MAME_DIR .. "src/hbmame/machine/ng_memcard.cpp",
+	MAME_DIR .. "src/hbmame/machine/nghb_memcard.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo/prot.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo/banked_cart.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/ctrl.cpp",
@@ -167,6 +169,12 @@ files {
 	MAME_DIR .. "src/mame/drivers/ngp.cpp",
 	MAME_DIR .. "src/mame/video/k1ge.cpp",
 	MAME_DIR .. "src/mame/video/k1ge.h",
+	MAME_DIR .. "src/mame/snk/neogeocd.cpp",
+	MAME_DIR .. "src/mame/snk/neogeo_spr.cpp",
+	MAME_DIR .. "src/mame/snk/neogeo.cpp",
+	MAME_DIR .. "src/mame/snk/neogeo_v.cpp",
+	MAME_DIR .. "src/devices/bus/neogeo/slot.cpp",
+	MAME_DIR .. "src/mame/snk/ng_memcard.cpp",
 }
 
 end

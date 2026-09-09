@@ -1,3 +1,4 @@
+neogeocd.cpp
 neogeo.cpp
 gb.cpp
 gba.cpp

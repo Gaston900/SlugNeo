@@ -1072,6 +1072,9 @@ mslugxrmh01       // Hack
     List of all enabled drivers console in the system.
 ********************************************************/
 
+@source:neogeocd.cpp
+neocdz            // NeoGeo CD
+
 @source:ngp.cpp
 ngpc              // NeoGeo Pocket Color
 

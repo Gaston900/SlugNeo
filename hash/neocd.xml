@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+license:CC0
+-->
+<softwarelist name="neocd" description="SNK NeoGeo CD CD-ROMs">
+
+	<software name="mslug">
+		<description>Metal Slug (Jpn, USA)</description>
+		<year>1996</year>
+		<publisher>SNK</publisher>
+		<info name="alt_title" value="メタルスラッグ" />
+		<info name="serial" value="NGCD-201 (JPN)" />
+		<info name="release" value="19960705 (JPN)" />
+		<part name="cdrom" interface="neocd_cdrom">
+			<diskarea name="cdrom">
+				<disk name="metal slug (1996)(snk)(jp-us)" sha1="b4f83b0b7046e9445f9cc16c40e57fd84b575ef9"/>
+			</diskarea>
+		</part>
+	</software>
+
+	<software name="mslug2">
+		<description>Metal Slug 2 (Jpn)</description>
+		<year>1998</year>
+		<publisher>SNK</publisher>
+		<info name="alt_title" value="メタルスラッグ2" />
+		<info name="serial" value="NGCD-2410" />
+		<info name="release" value="19980625" />
+		<part name="cdrom" interface="neocd_cdrom">
+			<diskarea name="cdrom">
+				<disk name="metal slug 2 (1998)(snk)(jp)" sha1="8cc8fc89d4effec887c25ca18d6caf4893572302"/>
+			</diskarea>
+		</part>
+	</software>
+
+</softwarelist>

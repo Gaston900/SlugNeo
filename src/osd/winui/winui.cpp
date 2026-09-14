@@ -1850,8 +1850,8 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 							if ((lptvcd->nmcd.uItemState & CDIS_SELECTED) && (GetFocus() != hTreeView))
 							{
 								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
-								lptvcd->clrText = RGB(0, 0, 0);         // Texto Negro Puro
-								lptvcd->clrTextBk = RGB(255, 255, 255); // Fondo Blanco Puro Sólido
+								lptvcd->clrText = GetTreeFontColor();   
+								lptvcd->clrTextBk = RGB(255, 255, 255); 
 
 								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
 								if (hSoftWhiteBrush != NULL)
@@ -1860,7 +1860,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 									DeleteObject(hSoftWhiteBrush);
 								}
 
-								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(255, 255, 255)); // Borde Blanco
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(255, 255, 255));
 								if (hWhiteBorderBrush != NULL)
 								{
 									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
@@ -1872,8 +1872,8 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 							if ((lptvcd->nmcd.uItemState & CDIS_HOT) && (lptvcd->nmcd.uItemState & CDIS_SELECTED))
 							{
 								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
-								lptvcd->clrText = RGB(255, 255, 255);   // Letras Blancas Puras
-								lptvcd->clrTextBk = RGB(0, 162, 232);  // Fondo Celeste
+								lptvcd->clrText = RGB(255, 255, 255);   
+								lptvcd->clrTextBk = RGB(0, 162, 232);  
 
 								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
 								if (hSoftWhiteBrush != NULL)
@@ -1882,7 +1882,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 									DeleteObject(hSoftWhiteBrush);
 								}
 
-								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232)); // Fondo Celeste
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232));
 								if (hWhiteBorderBrush != NULL)
 								{
 									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
@@ -1894,8 +1894,8 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 							if (!(lptvcd->nmcd.uItemState & (CDIS_HOT)) && (lptvcd->nmcd.uItemState & CDIS_SELECTED))
 							{
 								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
-								lptvcd->clrText = RGB(255, 255, 255);   // Letras Blancas Puras
-								lptvcd->clrTextBk = RGB(0, 162, 232);  // Fondo Celeste
+								lptvcd->clrText = RGB(255, 255, 255);   
+								lptvcd->clrTextBk = RGB(0, 162, 232);  
 
 								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
 								if (hSoftWhiteBrush != NULL)
@@ -1904,7 +1904,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 									DeleteObject(hSoftWhiteBrush);
 								}
 
-								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232)); // Fondo Celeste
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232));
 								if (hWhiteBorderBrush != NULL)
 								{
 									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
@@ -1916,8 +1916,8 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 							if ((lptvcd->nmcd.uItemState & CDIS_HOT) && !(lptvcd->nmcd.uItemState & CDIS_SELECTED))
 							{
 								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
-								lptvcd->clrText = RGB(255, 255, 255);   // Texto Blanco Puro
-								lptvcd->clrTextBk = RGB(36, 36, 36);    // Fondo Gris Carbón
+								lptvcd->clrText = RGB(255, 255, 255);   
+								lptvcd->clrTextBk = RGB(36, 36, 36);    
 								
 								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
 								if (hSoftWhiteBrush != NULL)
@@ -1926,7 +1926,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 									DeleteObject(hSoftWhiteBrush);
 								}
 
-								HBRUSH hBlackBorderBrush = CreateSolidBrush(RGB(0, 0, 0)); // Borde Negro Puro
+								HBRUSH hBlackBorderBrush = CreateSolidBrush(RGB(0, 0, 0));
 								if (hBlackBorderBrush != NULL)
 								{
 									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hBlackBorderBrush);
@@ -1938,7 +1938,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 							if (!(lptvcd->nmcd.uItemState & (CDIS_SELECTED | CDIS_FOCUS | CDIS_HOT)))
 							{
 								SetBkMode(lptvcd->nmcd.hdc, TRANSPARENT);
-								lptvcd->clrText = RGB(255, 255, 255);
+								lptvcd->clrText = GetTreeFontColor();
 								lptvcd->clrTextBk = GetFolderBgColor();
 								return CDRF_NEWFONT;
 							}
@@ -1948,7 +1948,6 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 					}
 					return CDRF_DODEFAULT;
 				}
-
 //===========================================================================================================>>>
 
 				/* Fetch tooltip text */
@@ -2813,17 +2812,67 @@ static void ResetFonts(void)
 		g_treePointSize = MulDiv(-font.lfHeight, 72, refDpi);
 		g_fontPointsInitialized = true;
 	}
-	
+
 // 修改的 代码来源 (加斯顿90)
 //================================================================================>>>
 //DPI
-	int guiHeight = (int)(-MulDiv(g_guiPointSize, g_uCurrentDpi, 72) * 0.96f);
+    int nScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+	float fFontMultiplier = 1.25f;
+
+	if (nScreenHeight <= 768)
+	{
+		fFontMultiplier = 1.10f;
+	}
 //================================================================================>>>
 
-	int listHeight = -MulDiv(g_listPointSize, g_uCurrentDpi, 72);
-	int histHeight = -MulDiv(g_histPointSize, g_uCurrentDpi, 72);
-	int treeHeight = -MulDiv(g_treePointSize, g_uCurrentDpi, 72);
-	
+    int guiHeight = -MulDiv(g_guiPointSize, g_uCurrentDpi, 72);
+	int nScaledListPoints = (int)(g_listPointSize * fFontMultiplier);
+	int listHeight = -MulDiv(nScaledListPoints, g_uCurrentDpi, 72);
+	int nScaledHistPoints = (int)(g_histPointSize * fFontMultiplier);
+	int histHeight = -MulDiv(nScaledHistPoints, g_uCurrentDpi, 72);
+	int nScaledTreePoints = (int)(g_treePointSize * fFontMultiplier);
+	int treeHeight = -MulDiv(nScaledTreePoints, g_uCurrentDpi, 72);
+
+// 修改的 代码来源 (加斯顿90)
+//================================================================================>>>
+//DPI
+	if (g_listPointSize == 10)
+	{
+		if (nScreenHeight <= 768)
+		{
+			listHeight = -11;
+		}
+		else
+		{
+			listHeight = -MulDiv(10, g_uCurrentDpi, 72);
+		}
+	}
+
+	if (g_treePointSize == 10)
+	{
+		if (nScreenHeight <= 768)
+		{
+			treeHeight = -11;
+		}
+		else
+		{
+			treeHeight = -MulDiv(10, g_uCurrentDpi, 72);
+		}
+	}
+
+	if (g_histPointSize == 10)
+	{
+		if (nScreenHeight <= 768)
+		{
+			histHeight = -11;
+		}
+		else
+		{
+			histHeight = -MulDiv(10, g_uCurrentDpi, 72);
+		}
+	}
+//================================================================================>>>
+
 	if (hFontGui) DeleteObject(hFontGui);
 	if (hFontList) DeleteObject(hFontList);
 	if (hFontHist) DeleteObject(hFontHist);
@@ -2862,6 +2911,7 @@ static void ResetFonts(void)
 		ListView_SetBkColor(hWndList, GetListBgColor());
 	}
 }
+
 //=============================================================>>>
 
 static void InitListTree(void)
@@ -2889,8 +2939,39 @@ static void InitListTree(void)
 			HFONT hScaledTreeFont = CreateFontIndirect(&lf);
 			SendMessage(hMainTreeView, WM_SETFONT, (WPARAM)hScaledTreeFont, MAKELPARAM(TRUE, 0));
 
-			int nNewRowHeight = (int)(16 * g_fDpiScale);
+			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nNewRowHeight = 26;
+
+			LOGFONT init_tree_font;
+			GetTreeFont(&init_tree_font);
+			int nCheckBootPoints = MulDiv(-init_tree_font.lfHeight, 72, 96);
+
+			if (nCheckBootPoints <= 8)
+			{
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = 16;
+				}
+			}
+			else
+			{
+				int nFontPixelHeight = -init_tree_font.lfHeight;
+				if (nFontPixelHeight <= 0) nFontPixelHeight = 11;
+				
+				nNewRowHeight = nFontPixelHeight + 16;
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = nFontPixelHeight + 10;
+				}
+			}
+
+			if (nNewRowHeight < 16)
+			{
+				nNewRowHeight = 16;
+			}
+
 			TreeView_SetItemHeight(hMainTreeView, nNewRowHeight);
+//==================================================================================================>>>
 		}
 
 		TreeView_SetBkColor(hMainTreeView, GetFolderBgColor());
@@ -2921,7 +3002,6 @@ static void InitListTree(void)
 		InvalidateRect(hTabCtrl, NULL, TRUE);
 		UpdateWindow(hTabCtrl);
 	}
-//==================================================================================================>>>
 
 	if (IsWindowsSevenOrHigher())
 	{
@@ -3498,12 +3578,14 @@ static void PickFont(LOGFONT *font, COLORREF *color)
 	*color = cf.rgbColors;
 }
 
+// 修改的 代码来源 (加斯顿90)
+//==================================================================================================>>>
 static void PickListFont(void)
 {
 	LOGFONT FontList;
-
 	GetListFont(&FontList); 
 	COLORREF ColorList = GetListFontColor();
+
 	PickFont(&FontList, &ColorList);
 
 	if (bChangedHook)
@@ -3511,26 +3593,66 @@ static void PickListFont(void)
 		SetListFont(&FontList);
 		SetListFontColor(ColorList);
 
-		if (hFontList != NULL)
-			DeleteFont(hFontList);
+		int nSelectedPoints = MulDiv(-FontList.lfHeight, 72, 96);
 
-		hFontList = CreateFontIndirect(&FontList);
-
-		if (hFontList != NULL)
+		if (nSelectedPoints <= 8)
 		{
-			SetWindowFont(hWndList, hFontList, true);
-			(void)ListView_SetTextColor(hWndList, ColorList);
-			UpdateListView();
+			g_listPointSize = 10;
 		}
+		else
+		{
+			g_listPointSize = nSelectedPoints;
+		}
+
+		ResetFonts(); 
+
+		HWND hMainListLock = GetDlgItem(hMain, IDC_LIST);
+		if (hMainListLock != NULL && hFontList != NULL)
+		{
+			SendMessage(hMainListLock, WM_SETFONT, (WPARAM)hFontList, MAKELPARAM(TRUE, 0));
+			(void)ListView_SetTextColor(hMainListLock, ColorList);
+			
+			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nNewRowHeight = 26;
+
+			if (g_listPointSize == 10)
+			{
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = 16;
+				}
+			}
+			else
+			{
+				nNewRowHeight = (int)(g_listPointSize * g_fDpiScale) + 16;
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = (int)(g_listPointSize * g_fDpiScale) + 10;
+				}
+			}
+
+			if (nNewRowHeight < 16) nNewRowHeight = 16;
+
+			InvalidateRect(hMainListLock, NULL, TRUE);
+			UpdateWindow(hMainListLock);
+		}
+		else if (hWndList != NULL)
+		{
+			SetWindowFont(hWndList, hFontList, TRUE);
+			(void)ListView_SetTextColor(hWndList, ColorList);
+			UpdateWindow(hWndList);
+		}
+
+		UpdateListView();
 	}
 }
 
 static void PickHistoryFont(void)
 {
 	LOGFONT FontHist;
-
 	GetHistoryFont(&FontHist); 
 	COLORREF ColorHist = GetHistoryFontColor();
+
 	PickFont(&FontHist, &ColorHist);
 
 	if (bChangedHook)
@@ -3538,22 +3660,61 @@ static void PickHistoryFont(void)
 		SetHistoryFont(&FontHist);
 		SetHistoryFontColor(ColorHist);
 
-		if (hFontHist != NULL)
-			DeleteFont(hFontHist);
+		int nSelectedPoints = MulDiv(-FontHist.lfHeight, 72, 96);
 
-		hFontHist = CreateFontIndirect(&FontHist);
+		if (nSelectedPoints <= 8)
+		{
+			g_histPointSize = 10;
+		}
+		else
+		{
+			g_histPointSize = nSelectedPoints;
+		}
 
-		if (hFontHist != NULL)
-			SetWindowFont(GetDlgItem(hMain, IDC_HISTORY), hFontHist, true);
+		ResetFonts(); 
+
+		HWND hMainHistoryLock = GetDlgItem(hMain, IDC_HISTORY);
+		if (hMainHistoryLock != NULL && hFontHist != NULL)
+		{
+			SendMessage(hMainHistoryLock, WM_SETFONT, (WPARAM)hFontHist, MAKELPARAM(TRUE, 0));
+			
+			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nNewRowHeight = 26;
+
+			if (g_histPointSize == 10)
+			{
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = 16;
+				}
+			}
+			else
+			{
+				nNewRowHeight = (int)(g_histPointSize * g_fDpiScale) + 16;
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = (int)(g_histPointSize * g_fDpiScale) + 10;
+				}
+			}
+
+			if (nNewRowHeight < 16) nNewRowHeight = 16;
+
+			InvalidateRect(hMainHistoryLock, NULL, TRUE);
+			UpdateWindow(hMainHistoryLock);
+		}
+		else if (hFontHist)
+		{
+			SetWindowFont(GetDlgItem(hMain, IDC_HISTORY), hFontHist, TRUE);
+		}
 	}
 }
 
 static void PickFoldersFont(void)
 {
 	LOGFONT FontTree;
-
 	GetTreeFont(&FontTree); 
 	COLORREF ColorTree = GetTreeFontColor();
+
 	PickFont(&FontTree, &ColorTree);
 
 	if (bChangedHook)
@@ -3561,18 +3722,60 @@ static void PickFoldersFont(void)
 		SetTreeFont(&FontTree);
 		SetTreeFontColor(ColorTree);
 
-		if (hFontTree != NULL)
-			DeleteFont(hFontTree);
+		int nSelectedPoints = MulDiv(-FontTree.lfHeight, 72, 96);
 
-		hFontTree = CreateFontIndirect(&FontTree);
-
-		if (hFontTree != NULL)
+		if (nSelectedPoints <= 8)
 		{
-			SetWindowFont(hTreeView, hFontTree, true);
+			g_treePointSize = 10;
+		}
+		else
+		{
+			g_treePointSize = nSelectedPoints;
+		}
+
+		ResetFonts(); 
+		
+		HWND hMainTreeLock = GetDlgItem(hMain, IDC_TREE);
+		if (hMainTreeLock != NULL && hFontTree != NULL)
+		{
+			SendMessage(hMainTreeLock, WM_SETFONT, (WPARAM)hFontTree, MAKELPARAM(TRUE, 0));
+			(void)TreeView_SetTextColor(hMainTreeLock, ColorTree);
+			
+			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nNewRowHeight = 26;
+
+			if (g_treePointSize == 10)
+			{
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = 16;
+				}
+			}
+			else
+			{
+				nNewRowHeight = (int)(g_treePointSize * g_fDpiScale) + 16;
+				if (nTargetScreenHeight <= 768)
+				{
+					nNewRowHeight = (int)(g_treePointSize * g_fDpiScale) + 10;
+				}
+			}
+
+			if (nNewRowHeight < 16) nNewRowHeight = 16;
+			
+			TreeView_SetItemHeight(hMainTreeLock, nNewRowHeight);
+
+			InvalidateRect(hMainTreeLock, NULL, TRUE);
+			UpdateWindow(hMainTreeLock);
+		}
+		else if (hTreeView != NULL)
+		{
+			SetWindowFont(hTreeView, hFontTree, TRUE);
 			(void)TreeView_SetTextColor(hTreeView, ColorTree);
+			UpdateWindow(hTreeView);
 		}
 	}
 }
+//==================================================================================================>>>
 
 static void PickColor(COLORREF *cDefault)
 {
@@ -4687,10 +4890,23 @@ static void CreateIcons(void)
 	while(g_iconData[icon_count].icon_name)
 		icon_count++;
 
+// 修改的 代码来源 (加斯顿90)
+//==================================================================================================>>>
+//DPI																									   
 	dwStyle = GetWindowLong(hWndList,GWL_STYLE);
 	SetWindowLong(hWndList,GWL_STYLE,(dwStyle & ~LVS_TYPEMASK) | LVS_ICON);
 
-	hSmall = ImageList_Create(dwSmallIconSize, dwSmallIconSize, ILC_COLORDDB | ILC_MASK, icon_count, icon_count + grow);
+
+	int nDpiSmallSize = (int)(dwSmallIconSize * g_fDpiScale);
+	int nScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+	if (nScreenHeight <= 768)
+	{
+		if (nDpiSmallSize > 20) nDpiSmallSize = 20;
+	}
+
+	hSmall = ImageList_Create(nDpiSmallSize, nDpiSmallSize, ILC_COLOR32 | ILC_MASK, icon_count, icon_count + grow);
+//==================================================================================================>>>
 
 	if (hSmall == NULL) 
 	{

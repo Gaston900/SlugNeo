@@ -752,8 +752,23 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 					GetWindowRect(hChild, &rcCtrl);
 					MapWindowPoints(HWND_DESKTOP, hDlg, (LPPOINT)&rcCtrl, 2);
 					
-					if (rcCtrl.bottom > nMaxBottom)
-						nMaxBottom = rcCtrl.bottom;
+					
+// 修改的 代码来源 (加斯顿90)
+//=================================================================================================================>>>
+					int nBtnWidth = (int)((rcCtrl.right - rcCtrl.left) * dpiScale);
+					if (nBtnWidth < 70) nBtnWidth = 70;
+					
+					int nBtnHeight = (int)((rcCtrl.bottom - rcCtrl.top) * dpiScale);
+					if (nBtnHeight < 24) nBtnHeight = 24;
+
+					int nNewBtnX = (nFinalWidth - nBtnWidth) / 2;
+
+					MoveWindow(hChild, nNewBtnX, rcCtrl.top, nBtnWidth, nBtnHeight, TRUE);
+
+					if (rcCtrl.top + nBtnHeight > nMaxBottom)
+//=================================================================================================================>>>
+					nMaxBottom = rcCtrl.top + nBtnHeight;
+
 				}
 
 				hChild = GetNextWindow(hChild, GW_HWNDNEXT);

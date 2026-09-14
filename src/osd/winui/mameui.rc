@@ -430,7 +430,7 @@ BEGIN
     CTEXT           "Jeff Miller, John Hardy IV and Michael Soderstrom",IDC_TEXT4,6,142,310,10
     CTEXT           "Additional MAMEUIFX code and features by Mamesick",IDC_TEXT4,6,154,310,10
     CTEXT           "Additional EKMAME code and features by Kaze",IDC_SICKFX,6,154,310,10
-    DEFPUSHBUTTON   "OK",IDOK,146,166,30,14
+    DEFPUSHBUTTON   "OK",IDOK,145,166,30,14
 END
 
 IDD_AUDIT DIALOGEX 0, 0, 284, 206

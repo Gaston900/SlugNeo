@@ -28,6 +28,12 @@ private:
 
 	virtual void populate(float &customtop, float &custombottom) override;
 	virtual void handle() override;
+
+// 修改的 代码来源 (加斯顿90)
+//===========================================================================================================>>>
+	virtual void custom_render(void *selectedref, float top, float bottom, float x1, float y1, float x2, float y2) override;
+//===========================================================================================================>>>
+
 };
 
 } // namespace ui

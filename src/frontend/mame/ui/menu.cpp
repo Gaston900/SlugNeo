@@ -628,7 +628,7 @@ void menu::draw(uint32_t flags)
 	float const x2 = visible_left + visible_width + lr_border;
 	float const y2 = visible_top + visible_main_menu_height + ui().box_tb_border();
 	if (!customonly)
-		ui().draw_outlined_box(container(), x1, y1, x2, y2, UI_BACKGROUND_CMD_COLOR);
+		ui().draw_outlined_box(container(), x1, y1, x2, y2, ui().colors().background_color());
 	
 	if (top_line < 0 || is_first_selected())
 		top_line = 0;
@@ -1359,7 +1359,7 @@ void menu::extra_text_draw_box(float origx1, float origx2, float origy, float ys
 	ui().draw_outlined_box(container(), x1, y1, x2, y2, ui().colors().background_color());
 
 	// take off the borders
-	x1 += ui().box_lr_border();
+	x1 += ui().box_lr_border() * machine().render().ui_aspect(&container());
 	y1 += ui().box_tb_border();
 
 	// draw the text within it

@@ -1089,7 +1089,7 @@ void menu_command_content::populate(float &customtop, float &custombottom)
 		//  fprintf(fp,"%s\n",commandbuf);
 		//  fclose(fp);
 
-		ui().draw_text_box_fixed_width(&container(), commandbuf, 0, 0.5f, 0.5f, UI_BACKGROUND_CMD_COLOR);
+		ui().draw_text_box_fixed_width(&container(), commandbuf, 0, 0.5f, 0.5f, ui().colors().background_color());
 	}
 
 	if (!game_paused)

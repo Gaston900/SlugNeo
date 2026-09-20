@@ -174,32 +174,32 @@ static struct fix_command_t expand_text[] =
 static struct fix_strings_t convert_text[] =
 {
 	// Alphabetic Buttons: A~Z
-	{ "Button1",  1 },	// BTN_A
-	{ "Button2",  2 },	// BTN_B
-	{ "Button3",  3 },	// BTN_C
-	{ "Button4",  4 },	// BTN_D
-	{ "Button5",  5 },	// BTN_E
-	{ "Button6",  6 },	// BTN_F
-	{ "Button7",  7 },	// BTN_G
-	{ "Button8",  8 },	// BTN_H
-	{ "Button9",  9 },	// BTN_I
-	{ "Button10", 10 },	// BTN_J
-	{ "Button11", 11 },	// BTN_K
-	{ "Button12", 12 },	// BTN_L
-	{ "Button13", 13 },	// BTN_M
-	{ "Button14", 14 },	// BTN_N
-	{ "Button15", 15 },	// BTN_O
-	{ "Button16", 16 },	// BTN_P
-	{ "Button17", 17 },	// BTN_Q
-	{ "Button18", 18 },	// BTN_R
-	{ "Button19", 19 },	// BTN_S
-	{ "Button20", 20 },	// BTN_T
-	{ "Button21", 21 },	// BTN_U
-	{ "Button22", 22 },	// BTN_V
-	{ "Button23", 23 },	// BTN_W
-	{ "Button24", 24 },	// BTN_X
-	{ "Button25", 25 },	// BTN_Y
 	{ "Button26", 26 },	// BTN_Z
+	{ "Button25", 25 },	// BTN_Y
+	{ "Button24", 24 },	// BTN_X
+	{ "Button23", 23 },	// BTN_W
+	{ "Button22", 22 },	// BTN_V
+	{ "Button21", 21 },	// BTN_U
+	{ "Button20", 20 },	// BTN_T
+	{ "Button19", 19 },	// BTN_S
+	{ "Button18", 18 },	// BTN_R
+	{ "Button17", 17 },	// BTN_Q
+	{ "Button16", 16 },	// BTN_P
+	{ "Button15", 15 },	// BTN_O
+	{ "Button14", 14 },	// BTN_N
+	{ "Button13", 13 },	// BTN_M
+	{ "Button12", 12 },	// BTN_L
+	{ "Button11", 11 },	// BTN_K
+	{ "Button10", 10 },	// BTN_J
+	{ "Button9",  9 },	// BTN_I
+	{ "Button8",  8 },	// BTN_H
+	{ "Button7",  7 },	// BTN_G
+	{ "Button6",  6 },	// BTN_F
+	{ "Button5",  5 },	// BTN_E
+	{ "Button4",  4 },	// BTN_D
+	{ "Button3",  3 },	// BTN_C
+	{ "Button2",  2 },	// BTN_B
+	{ "Button1",  1 },	// BTN_A
 	// Special Moves and Buttons
 	{ "decrease", 37 },	// BTN_DEC
 	{ "increase", 38 },	// BTN_INC

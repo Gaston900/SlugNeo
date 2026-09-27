@@ -1295,59 +1295,30 @@ void ResizePickerControls(HWND hWnd)
 	int nListWidth = nSplitterOffset[nSplitterCount - 1];
 	int nScreenShotWidth = (rect.right - nListWidth);
 
+// 修改的 代码来源 (加斯顿90)
+//==========================================================================================================>>>
 	/* Screen shot Page tab control */
 	if (bShowTabCtrl)
 	{
-		MoveWindow(GetDlgItem(hWnd, IDC_SSTAB), nListWidth + 2, rect.top + 3, nScreenShotWidth - 4, (rect.bottom - rect.top) - 7, doSSControls);
+		MoveWindow(GetDlgItem(hWnd, IDC_SSTAB), nListWidth + 2, rect.top + 3, nScreenShotWidth - 4, (rect.bottom - rect.top) - 7, doSSControls); //
 
-// 修改的 代码来源 (加斯顿90)
-//===========================================================================================================>>>
-//DPI
-		rect.top += (int)(24 * g_fDpiScale); 
+		int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+		int nTabSpacerHeight = 24;
+
+		if (nRealScreenHeight <= 1080)
+		{
+			nTabSpacerHeight = 20;
+		}
+		rect.top += (int)(nTabSpacerHeight * g_fDpiScale); //
 	}
 	else
-		MoveWindow(GetDlgItem(hWnd, IDC_SSBORDER), nListWidth + 2, rect.top + 3, nScreenShotWidth - 6, (rect.bottom - rect.top) - 8, doSSControls);
-
-	MoveWindow(GetDlgItem(hWnd, IDC_SSFRAME), nListWidth + 3, rect.top + 4, nScreenShotWidth - 8, (rect.bottom - rect.top) - 10, doSSControls);
-
-	if (hSearchWnd != NULL)
 	{
-		int nDpiSearchWidth = 0;
-		int nDpiSearchHeight = 0; 
-		int nDpiSearchPosY = 0;   
-		int nDpiSearchPosX = 0;
-
-		int nHardwareResolutionHeight = GetSystemMetrics(SM_CYSCREEN);
-
-		if (g_fDpiScale <= 1.26f)
-		{
-			if (nHardwareResolutionHeight <= 1080)
-			{
-				nDpiSearchWidth = 200;
-				nDpiSearchPosX = 696;
-				nDpiSearchHeight = 21;
-				nDpiSearchPosY = 9;
-			}
-			else
-			{
-				nDpiSearchWidth = 210;
-				nDpiSearchPosX = 696;
-				nDpiSearchHeight = 25;
-				nDpiSearchPosY = 6;
-			}
-		}
-		else
-		{
-			nDpiSearchWidth = (int)(177 * g_fDpiScale);
-			nDpiSearchHeight = (int)(24 * g_fDpiScale);
-			nDpiSearchPosX = (int)(465 * g_fDpiScale);
-			nDpiSearchPosY = (int)(1 * g_fDpiScale);
-		}
-
-		MoveWindow(hSearchWnd, nDpiSearchPosX, nDpiSearchPosY, nDpiSearchWidth, nDpiSearchHeight, TRUE);
+		MoveWindow(GetDlgItem(hWnd, IDC_SSBORDER), nListWidth + 2, rect.top + 3, nScreenShotWidth - 6, (rect.bottom - rect.top) - 8, doSSControls); //
 	}
-//===========================================================================================================>>>
+//==========================================================================================================>>>
 
+	/* resize the Screen shot frame */
+	MoveWindow(GetDlgItem(hWnd, IDC_SSFRAME), nListWidth + 3, rect.top + 4, nScreenShotWidth - 8, (rect.bottom - rect.top) - 10, doSSControls);
 	/* The screen shot controls */
 	GetClientRect(GetDlgItem(hWnd, IDC_SSFRAME), &frameRect);
 
@@ -1457,6 +1428,55 @@ static void memory_error(const char *message)
 
 static void Win32UI_init(void)
 {
+// 修改的 代码来源 (加斯顿90)
+//=======================================================================>>>
+	// A semi-automatic folder is created.
+	CreateDirectoryA(".\\config", nullptr);
+	CreateDirectoryA(".\\support", nullptr);
+	CreateDirectoryA(".\\roms", nullptr);
+
+    // Semi-automatic Subfolder is created
+	CreateDirectoryA(".\\config\\bgfx", nullptr);
+	CreateDirectoryA(".\\config\\cfg", nullptr);
+	CreateDirectoryA(".\\config\\diff", nullptr);
+	CreateDirectoryA(".\\config\\docs", nullptr);
+	CreateDirectoryA(".\\config\\folders", nullptr);
+	CreateDirectoryA(".\\config\\glsl", nullptr);
+	CreateDirectoryA(".\\config\\hash", nullptr);
+	CreateDirectoryA(".\\config\\hlsl", nullptr);
+	CreateDirectoryA(".\\config\\language", nullptr);
+	CreateDirectoryA(".\\config\\nvram", nullptr);
+	CreateDirectoryA(".\\config\\plugins", nullptr);
+	CreateDirectoryA(".\\config\\share", nullptr);
+	CreateDirectoryA(".\\config\\sta", nullptr);
+	CreateDirectoryA(".\\config\\ui", nullptr);
+	CreateDirectoryA(".\\support\\artpreview", nullptr);
+	CreateDirectoryA(".\\support\\artwork", nullptr);
+	CreateDirectoryA(".\\support\\bosses", nullptr);
+	CreateDirectoryA(".\\support\\cabinets", nullptr);
+	CreateDirectoryA(".\\support\\cheat", nullptr);
+	CreateDirectoryA(".\\support\\cpanel", nullptr);
+	CreateDirectoryA(".\\support\\ctrlr", nullptr);
+	CreateDirectoryA(".\\support\\dats", nullptr);
+	CreateDirectoryA(".\\support\\ends", nullptr);
+	CreateDirectoryA(".\\support\\flyers", nullptr);
+	CreateDirectoryA(".\\support\\gameover", nullptr);
+	CreateDirectoryA(".\\support\\history", nullptr);
+	CreateDirectoryA(".\\support\\howto", nullptr);
+	CreateDirectoryA(".\\support\\icons", nullptr);
+	CreateDirectoryA(".\\support\\logo", nullptr);
+	CreateDirectoryA(".\\support\\manuals", nullptr);
+	CreateDirectoryA(".\\support\\marquees", nullptr);
+	CreateDirectoryA(".\\support\\pcb", nullptr);
+	CreateDirectoryA(".\\support\\samples", nullptr);
+	CreateDirectoryA(".\\support\\scores", nullptr);
+	CreateDirectoryA(".\\support\\select", nullptr);
+	CreateDirectoryA(".\\support\\snap", nullptr);
+	CreateDirectoryA(".\\support\\titles", nullptr);
+	CreateDirectoryA(".\\support\\versus", nullptr);
+	CreateDirectoryA(".\\support\\video", nullptr);
+//=======================================================================>>>
+
 	RECT rect;
 	extern const FOLDERDATA g_folderData[];
 	extern const FILTER_ITEM g_filterList[];
@@ -2661,17 +2681,29 @@ static void InitToolbar(void)
 // 修改的 代码来源 (加斯顿90)
 //==========================================================================================================>>>
 //DPI
+	int nRealScreenHeightForSearch = GetSystemMetrics(SM_CYSCREEN);
 	int iHeight = 24;
-	if (g_fDpiScale <= 1.01f)
+	int nSearchWidth = 220;
+	int nSearchTextSize = -13;
+
+	if (nRealScreenHeightForSearch <= 1080)
 	{
-		iHeight = 20;
+		iHeight = 21;
+		nSearchWidth = 200;
+		nSearchTextSize = -11;
+	}
+	else if (nRealScreenHeightForSearch > 1080 && g_fDpiScale >= 1.49f)
+	{
+		iHeight = 34;        
+		nSearchWidth = (int)(220 * g_fDpiScale);
+		nSearchTextSize = -13;
 	}
 
 	int nToolbarHeight = rect.bottom - rect.top;
 	int iPosY = (nToolbarHeight - iHeight) / 2;
 	if (iPosY < 2) iPosY = 2;
 
-	hSearchWnd = CreateWindowEx(0, WC_EDIT, TEXT(SEARCH_PROMPT), ES_LEFT | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER | WS_VISIBLE, iPosX, iPosY, 220, iHeight, hToolBar, (HMENU)ID_TOOLBAR_EDIT, hInst, NULL );
+	hSearchWnd = CreateWindowEx(0, WC_EDIT, TEXT(SEARCH_PROMPT), ES_LEFT | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER | WS_VISIBLE, iPosX, iPosY, nSearchWidth, iHeight, hToolBar, (HMENU)ID_TOOLBAR_EDIT, hInst, NULL );
 	
 	if (hSearchWnd != NULL)
 	{
@@ -2679,18 +2711,17 @@ static void InitToolbar(void)
 		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
 		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf))
 		{
-			if (g_fDpiScale <= 1.01f)
-			{
-				lf.lfHeight = -13;
-				lf.lfWidth = 0;
-				HFONT hSearchFont = CreateFontIndirect(&lf);
-				SendMessage(hSearchWnd, WM_SETFONT, (WPARAM)hSearchFont, MAKELPARAM(TRUE, 0));
-			}
+			lf.lfHeight = (int)(nSearchTextSize * g_fDpiScale);
+			lf.lfWidth = 0;
+			lf.lfWeight = 400;
+			
+			HFONT hSearchFontExclusiveNeoEX = CreateFontIndirect(&lf);
+			SendMessage(hSearchWnd, WM_SETFONT, (WPARAM)hSearchFontExclusiveNeoEX, MAKELPARAM(TRUE, 0)); //
 		}
 
-		int nLeftMargin = 46;
-		int nRightMargin = 6;
-		SendMessage(hSearchWnd, EM_SETMARGINS, EC_LEFTMARGIN | EC_RIGHTMARGIN, MAKELPARAM(nLeftMargin, nRightMargin));
+		int nLeftMargin = 4;
+		int nRightMargin = 4;
+		SendMessage(hSearchWnd, EM_SETMARGINS, EC_LEFTMARGIN | EC_RIGHTMARGIN, MAKELPARAM(nLeftMargin, nRightMargin)); //
 	}
 //==========================================================================================================>>>
 }
@@ -2821,7 +2852,7 @@ static void UpdateStatusBar(void)
 		widths[5] = (int)(96 * g_fDpiScale); 
 		widths[4] = (int)(80 * g_fDpiScale);  
 		widths[3] = (int)(160 * g_fDpiScale); 
-		widths[2] = (int)(120 * g_fDpiScale); 
+		widths[2] = (int)(140 * g_fDpiScale); 
 		widths[1] = (int)(105 * g_fDpiScale); 
 	}
 
@@ -2894,7 +2925,7 @@ static void ResetFonts(void)
 	}
 //================================================================================>>>
 
-    int guiHeight = -MulDiv(g_guiPointSize, g_uCurrentDpi, 72);
+//    int guiHeight = -MulDiv(g_guiPointSize, g_uCurrentDpi, 72);
 	int nScaledListPoints = (int)(g_listPointSize * fFontMultiplier);
 	int listHeight = -MulDiv(nScaledListPoints, g_uCurrentDpi, 72);
 	int nScaledHistPoints = (int)(g_histPointSize * fFontMultiplier);
@@ -2947,9 +2978,9 @@ static void ResetFonts(void)
 	if (hFontHist) DeleteObject(hFontHist);
 	if (hFontTree) DeleteObject(hFontTree);
 	
-	GetGuiFont(&font);
-	font.lfHeight = guiHeight;
-	hFontGui = CreateFontIndirect(&font);
+//	GetGuiFont(&font);
+//	font.lfHeight = guiHeight;
+//	hFontGui = CreateFontIndirect(&font);
 	
 	GetListFont(&font);
 	font.lfHeight = listHeight;
@@ -2962,19 +2993,163 @@ static void ResetFonts(void)
 	GetTreeFont(&font);
 	font.lfHeight = treeHeight;
 	hFontTree = CreateFontIndirect(&font);
-	
+
+// 修改的 代码来源 (加斯顿90)
+//============================================================================================================>>>
+//DPI
 	if (hFontGui)
 	{
+		LOGFONT font_gui_sync;
+		if (GetObject(hFontGui, sizeof(LOGFONT), &font_gui_sync))
+		{
+			int nAbsolutePixelHeight = (font_gui_sync.lfHeight < 0) ? -font_gui_sync.lfHeight : font_gui_sync.lfHeight;
+//			if (nAbsolutePixelHeight <= 0) nAbsolutePixelHeight = 11;
+
+			int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nDivisorHorizontal = 9;
+
+			if (nRealScreenHeight <= 1080)
+			{
+				if (g_guiPointSize <= 20)
+				{
+					nDivisorHorizontal = 120;
+				}
+				else if (g_guiPointSize <= 14)
+				{
+					nDivisorHorizontal = 10;
+				}
+				else
+				{
+					nDivisorHorizontal = 9;
+				}
+			}
+
+			font_gui_sync.lfWeight = 400;
+			font_gui_sync.lfWidth = (int)((nAbsolutePixelHeight * 4) / nDivisorHorizontal);
+
+			DeleteObject(hFontGui);
+			hFontGui = CreateFontIndirect(&font_gui_sync);
+		}
+
 		SetWindowFont(hSearchWnd, hFontGui, TRUE);
 		SetWindowFont(hTabCtrl, hFontGui, TRUE);
 		SetWindowFont(hStatusBar, hFontGui, TRUE);
 	}
+
 	if (hFontList)
+	{
+		if (hWndList != NULL)
+		{
+			LOGFONT font_list_sync;
+			if (GetObject(hFontList, sizeof(LOGFONT), &font_list_sync))
+			{
+				int nAbsolutePixelHeight = (font_list_sync.lfHeight < 0) ? -font_list_sync.lfHeight : font_list_sync.lfHeight; //
+
+				int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+				int nDivisorHorizontal = 9;
+
+				if (nRealScreenHeight <= 1080)
+				{
+					if (g_listPointSize <= 20)
+					{
+						nDivisorHorizontal = 120;
+					}
+					else if (g_listPointSize <= 14)
+					{
+						nDivisorHorizontal = 10;
+					}
+					else
+					{
+						nDivisorHorizontal = 9;
+					}
+				}
+
+				font_list_sync.lfWeight = 400;
+				font_list_sync.lfWidth = (int)((nAbsolutePixelHeight * 4) / nDivisorHorizontal);
+
+				DeleteObject(hFontList);
+				hFontList = CreateFontIndirect(&font_list_sync);
+			}
+		}
+
 		SetWindowFont(hWndList, hFontList, TRUE);
+	}
+
 	if (hFontHist)
+	{
+		HWND hMainHistoryLock = GetDlgItem(hMain, IDC_HISTORY);
+		if (hMainHistoryLock != NULL)
+		{
+			LOGFONT font_hist_sync;
+			if (GetObject(hFontHist, sizeof(LOGFONT), &font_hist_sync))
+			{
+				int nAbsolutePixelHeight = (font_hist_sync.lfHeight < 0) ? -font_hist_sync.lfHeight : font_hist_sync.lfHeight;
+				int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+				int nDivisorHorizontal = 9;
+
+				if (nRealScreenHeight <= 1080)
+				{
+					if (g_histPointSize <= 20)
+					{
+						nDivisorHorizontal = 120;
+					}
+					else if (g_histPointSize <= 14)
+					{
+						nDivisorHorizontal = 10;
+					}
+					else
+					{
+						nDivisorHorizontal = 9;
+					}
+				}
+
+				font_hist_sync.lfWeight = 400;
+				font_hist_sync.lfWidth = (int)((nAbsolutePixelHeight * 4) / nDivisorHorizontal);
+
+				DeleteObject(hFontHist);
+				hFontHist = CreateFontIndirect(&font_hist_sync);
+			}
+		}
 		SetWindowFont(GetDlgItem(hMain, IDC_HISTORY), hFontHist, TRUE);
+	}
+
 	if (hFontTree)
+	{
+		if (hTreeView != NULL)
+		{
+			LOGFONT font_tree_sync;
+			if (GetObject(hFontTree, sizeof(LOGFONT), &font_tree_sync))
+			{
+				int nAbsolutePixelHeight = (font_tree_sync.lfHeight < 0) ? -font_tree_sync.lfHeight : font_tree_sync.lfHeight;
+				int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+				int nDivisorHorizontal = 9;
+
+				if (nRealScreenHeight <= 1080)
+				{
+					if (g_treePointSize <= 20)
+					{
+						nDivisorHorizontal = 120;
+					}
+					else if (g_treePointSize <= 14)
+					{
+						nDivisorHorizontal = 10;
+					}
+					else
+					{
+						nDivisorHorizontal = 9;
+					}
+				}
+
+				font_tree_sync.lfWeight = 400;
+				font_tree_sync.lfWidth = (int)((nAbsolutePixelHeight * 4) / nDivisorHorizontal);
+
+				DeleteObject(hFontTree);
+				hFontTree = CreateFontIndirect(&font_tree_sync);
+			}
+		}
 		SetWindowFont(hTreeView, hFontTree, TRUE);
+	}
+//============================================================================================================>>>
 	if (hWndList) {
 		ListView_SetTextColor(hWndList, GetListFontColor());
 		ListView_SetBkColor(hWndList, GetListBgColor());
@@ -3008,40 +3183,33 @@ static void InitListTree(void)
 			HFONT hScaledTreeFont = CreateFontIndirect(&lf);
 			SendMessage(hMainTreeView, WM_SETFONT, (WPARAM)hScaledTreeFont, MAKELPARAM(TRUE, 0));
 
-			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
-			int nNewRowHeight = 26;
-
 			LOGFONT init_tree_font;
 			GetTreeFont(&init_tree_font);
-			int nCheckBootPoints = MulDiv(-init_tree_font.lfHeight, 72, 96);
+			int nFontPixelHeight = -init_tree_font.lfHeight;
+			if (nFontPixelHeight <= 0) nFontPixelHeight = 11;
 
-			if (nCheckBootPoints <= 8)
+			int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nDpiAmortiguador = 10;
+
+			if (nRealScreenHeight <= 1080)
 			{
-				if (nTargetScreenHeight <= 1080)
-				{
-					nNewRowHeight = 16;
-				}
+				nDpiAmortiguador = 6;
+			}
+
+			int nNewRowHeight = nFontPixelHeight + (int)(nDpiAmortiguador * g_fDpiScale);
+
+			if (nRealScreenHeight <= 1080)
+			{
+				if (nNewRowHeight < 16) nNewRowHeight = 16;
 			}
 			else
 			{
-				int nFontPixelHeight = -init_tree_font.lfHeight;
-				if (nFontPixelHeight <= 0) nFontPixelHeight = 11;
-				
-				nNewRowHeight = nFontPixelHeight + 16;
-				if (nTargetScreenHeight <= 1080)
-				{
-					nNewRowHeight = nFontPixelHeight + 10;
-				}
-			}
-
-			if (nNewRowHeight < 16)
-			{
-				nNewRowHeight = 16;
+				if (nNewRowHeight < 24) nNewRowHeight = 24;
 			}
 
 			TreeView_SetItemHeight(hMainTreeView, nNewRowHeight);
-//==================================================================================================>>>
 		}
+//==================================================================================================>>>
 
 		TreeView_SetBkColor(hMainTreeView, GetFolderBgColor());
 		TreeView_SetTextColor(hMainTreeView, GetTreeFontColor()); 
@@ -3053,24 +3221,52 @@ static void InitListTree(void)
 		UpdateWindow(hMainTreeView);
 	}
 
+// 修改的 代码来源 (加斯顿90)
+//==================================================================================================>>>
+//DPI
 	if (hTabCtrl != NULL)
 	{
 		LONG_PTR dwStyle = GetWindowLongPtr(hTabCtrl, GWL_STYLE);
 		SetWindowLongPtr(hTabCtrl, GWL_STYLE, dwStyle & ~TCS_FIXEDWIDTH);
 
-		int nCalculatedHeight = (int)(20 * g_fDpiScale);
-		int nNewTabHeight = (nCalculatedHeight < 24) ? 24 : nCalculatedHeight;
-		TabCtrl_SetItemSize(hTabCtrl, 0, nNewTabHeight);
+		int nRealScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+		int nTargetFontHeight = -13;
+		int nBaseTabHeight = 22;
+		int nPadX = 6;
+		int nBasePadY = 1;
 
-		int nPadX = (int)(6 * g_fDpiScale);
-		int nPadY = (int)(1 * g_fDpiScale);
+		if (nRealScreenHeight <= 1080)
+		{
+			nTargetFontHeight = -11;
+			nBaseTabHeight = 19;
+			nPadX = 4;
+			nBasePadY = 3;
+		}
+
+		LOGFONT lf_tab_sync;
+		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf_tab_sync))
+		{
+			lf_tab_sync.lfHeight = (int)(nTargetFontHeight * g_fDpiScale);
+			lf_tab_sync.lfWidth = 0; 
+			lf_tab_sync.lfWeight = 400;
+			
+			HFONT hTabFontExclusive = CreateFontIndirect(&lf_tab_sync);
+			SendMessage(hTabCtrl, WM_SETFONT, (WPARAM)hTabFontExclusive, MAKELPARAM(TRUE, 0));
+		}
+
+		int nCalculatedHeight = (int)(nBaseTabHeight * g_fDpiScale);
+		TabCtrl_SetItemSize(hTabCtrl, 0, nCalculatedHeight);
+
+		int nPadY = (int)(nBasePadY * g_fDpiScale);
 		if (nPadY < 1) nPadY = 1;
-		
-		SendMessage(hTabCtrl, TCM_SETPADDING, 0, MAKELPARAM(nPadX, nPadY));
+
+		SendMessage(hTabCtrl, TCM_SETPADDING, 0, MAKELPARAM((int)(nPadX * g_fDpiScale), nPadY));
 
 		InvalidateRect(hTabCtrl, NULL, TRUE);
 		UpdateWindow(hTabCtrl);
 	}
+//==================================================================================================>>>
 
 	if (IsWindowsSevenOrHigher())
 	{
@@ -3803,39 +3999,43 @@ static void PickFoldersFont(void)
 		}
 
 		ResetFonts(); 
-		
+
 		HWND hMainTreeLock = GetDlgItem(hMain, IDC_TREE);
 		if (hMainTreeLock != NULL && hFontTree != NULL)
 		{
 			SendMessage(hMainTreeLock, WM_SETFONT, (WPARAM)hFontTree, MAKELPARAM(TRUE, 0));
 			(void)TreeView_SetTextColor(hMainTreeLock, ColorTree);
-			
-			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
-			int nNewRowHeight = 26;
 
-			if (g_treePointSize == 10)
+			LOGFONT init_tree_font;
+			GetTreeFont(&init_tree_font);
+			int nFontPixelHeight = -init_tree_font.lfHeight;
+			if (nFontPixelHeight <= 0) nFontPixelHeight = 11;
+
+			int nTargetScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+			int nDpiAmortiguador = 10;
+
+			if (nTargetScreenHeight <= 1080)
 			{
-				if (nTargetScreenHeight <= 1080)
-				{
-					nNewRowHeight = 16;
-				}
+				nDpiAmortiguador = 6;
+			}
+
+			int nNewRowHeight = nFontPixelHeight + (int)(nDpiAmortiguador * g_fDpiScale);
+
+			if (nTargetScreenHeight <= 1080)
+			{
+				if (nNewRowHeight < 16) nNewRowHeight = 16;
 			}
 			else
 			{
-				nNewRowHeight = (int)(g_treePointSize * g_fDpiScale) + 16;
-				if (nTargetScreenHeight <= 1080)
-				{
-					nNewRowHeight = (int)(g_treePointSize * g_fDpiScale) + 10;
-				}
+				if (nNewRowHeight < 24) nNewRowHeight = 24;
 			}
 
-			if (nNewRowHeight < 16) nNewRowHeight = 16;
-			
 			TreeView_SetItemHeight(hMainTreeLock, nNewRowHeight);
 
 			InvalidateRect(hMainTreeLock, NULL, TRUE);
 			UpdateWindow(hMainTreeLock);
 		}
+
 		else if (hTreeView != NULL)
 		{
 			SetWindowFont(hTreeView, hFontTree, TRUE);

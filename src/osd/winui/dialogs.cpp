@@ -671,10 +671,20 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 			HBITMAP hBmp = (HBITMAP)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_SPLASH), IMAGE_BITMAP, imgWidth, imgHeight, LR_CREATEDIBSECTION);
 			SendMessage(GetDlgItem(hDlg, IDC_ABOUT), STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)hBmp);
 
-			// 自适应字体大小
-			int fontSize = (int)(-11 * dpiScale);
-			int fontSizeFX = (int)(-12 * dpiScale);
-			hFont = CreateFont(fontSize, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
+			int nRealScreenHeightForAbout = GetSystemMetrics(SM_CYSCREEN);
+			int nBaseTextSizeNormal = -12;
+			int nBaseTextSizeFX     = -13;
+
+			if (nRealScreenHeightForAbout <= 1080)
+			{
+				nBaseTextSizeNormal = -11;
+				nBaseTextSizeFX     = -12;
+			}
+
+			int fontSize   = (int)(nBaseTextSizeNormal * dpiScale);
+			int fontSizeFX = (int)(nBaseTextSizeFX * dpiScale);
+
+			hFont   = CreateFont(fontSize, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
 			hFontFX = CreateFont(fontSizeFX, 0, 0, 0, 400, 0, 0, 0, 0, 3, 2, 1, 34, TEXT("Verdana"));
 //===========================================================================================================>>>
 

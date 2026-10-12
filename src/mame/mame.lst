@@ -41,7 +41,7 @@ mslug2t           // Bootleg
 mslug3d           // SNK
 mslug3hd          // SNK
 mslug3nd          // SNK
-mslug3he          // SNK
+//mslug3he          // SNK
 mslug3b6d         // Bootleg
 mslug3b6e         // Bootleg
 mslug4d           // Mega / Playmore
@@ -53,7 +53,7 @@ mslug5hd          // SNK Playmore
 mslug5e           // SNK Playmore
 mslug5n           // SNK Playmore
 mslug5nd          // SNK Playmore
-mslug5nde         // SNK Playmore
+//mslug5nde         // SNK Playmore
 mslug5b2          // Bootleg
 mslug5b3          // Bootleg
 mslug5b4          // Bootleg
@@ -73,51 +73,51 @@ mslug2tdd         // SNK (Darksoft)
 mslug3dd          // SNK (Darksoft)
 mslug3hdd         // SNK (Darksoft)
 mslug3b6dd        // Bootleg (Darksoft)
-mslug3ndd         // SNK (Fully Decrypted) (Darksoft)
+//mslug3ndd         // SNK (Fully Decrypted) (Darksoft)
 mslug4dd          // Mega / Playmore (Darksoft)
 mslug4hdd         // Mega / Playmore (Darksoft)
-mslug4ndd         // Mega / Playmore (Fully Decrypted) (Darksoft)
+//mslug4ndd         // Mega / Playmore (Fully Decrypted) (Darksoft)
 mslug5dd          // SNK Playmore (Darksoft)
 mslug5hdd         // SNK Playmore (Darksoft)
-mslug5ndd         // SNK Playmore (Fully Decrypted) (Darksoft)
+//mslug5ndd         // SNK Playmore (Fully Decrypted) (Darksoft)
 mslugxdd          // SNK (Darksoft)
 
 @source:neogeo.cpp
-mslug2dddd        // Hack (Darksoft)
-mslug2egdd        // Hack (Darksoft)
-mslug2frdd        // Hack (Darksoft)
-mslug3cqtdd       // Hack (Darksoft)
-mslug3chuanqidd   // Hack (Darksoft)
-mslug3cqdd        // Hack (Darksoft)
-mslug3cqtfbdd     // Hack (Darksoft)
-mslug3cqztdd      // Hack (Darksoft)
-mslug3dddd        // Hack (Darksoft)
-mslug3frdd        // Hack (Darksoft)
-mslug3gdd         // Hack (Darksoft)
-mslug3kidd        // Hack (Darksoft)
-mslug3nddd        // Hack (Darksoft)
-mslug3scdd        // Hack (Darksoft)
-mslug4ammordd     // Hack (Darksoft)
-mslug4cqtdd       // Hack (Darksoft)
-mslug4cqidd       // Hack (Darksoft)
-mslug4dddd        // Hack (Darksoft)
-mslug4frdd        // Hack (Darksoft)
-mslug4kidd        // Hack (Darksoft)
-mslug4lwdd        // Hack (Darksoft)
-mslug4lwqdd       // Hack (Darksoft)
-mslug5cqtdd       // Hack (Darksoft)
-mslug5cqdd        // Hack (Darksoft)
-mslug5fdd         // Hack (Darksoft)
-mslug5frdd        // Hack (Darksoft)
-mslug5scdd        // Hack (Darksoft)
-mslug5wdd         // Hack (Darksoft)
-mslugxcqtdd       // Hack (Darksoft)
-mslugxchuanqidd   // Hack (Darksoft)
-mslugxcqdd        // Hack (Darksoft)
-mslugxdddd        // Hack (Darksoft)
-mslugxfrdd        // Hack (Darksoft)
-mslugxlbdd        // Hack (Darksoft)
-mslugxscdd        // Hack (Darksoft)
+//mslug2dddd        // Hack (Darksoft)
+//mslug2egdd        // Hack (Darksoft)
+//mslug2frdd        // Hack (Darksoft)
+//mslug3cqtdd       // Hack (Darksoft)
+//mslug3chuanqidd   // Hack (Darksoft)
+//mslug3cqdd        // Hack (Darksoft)
+//mslug3cqtfbdd     // Hack (Darksoft)
+//mslug3cqztdd      // Hack (Darksoft)
+//mslug3dddd        // Hack (Darksoft)
+//mslug3frdd        // Hack (Darksoft)
+//mslug3gdd         // Hack (Darksoft)
+//mslug3kidd        // Hack (Darksoft)
+//mslug3nddd        // Hack (Darksoft)
+//mslug3scdd        // Hack (Darksoft)
+//mslug4ammordd     // Hack (Darksoft)
+//mslug4cqtdd       // Hack (Darksoft)
+//mslug4cqidd       // Hack (Darksoft)
+//mslug4dddd        // Hack (Darksoft)
+//mslug4frdd        // Hack (Darksoft)
+//mslug4kidd        // Hack (Darksoft)
+//mslug4lwdd        // Hack (Darksoft)
+//mslug4lwqdd       // Hack (Darksoft)
+//mslug5cqtdd       // Hack (Darksoft)
+//mslug5cqdd        // Hack (Darksoft)
+//mslug5fdd         // Hack (Darksoft)
+//mslug5frdd        // Hack (Darksoft)
+//mslug5scdd        // Hack (Darksoft)
+//mslug5wdd         // Hack (Darksoft)
+//mslugxcqtdd       // Hack (Darksoft)
+//mslugxchuanqidd   // Hack (Darksoft)
+//mslugxcqdd        // Hack (Darksoft)
+//mslugxdddd        // Hack (Darksoft)
+//mslugxfrdd        // Hack (Darksoft)
+//mslugxlbdd        // Hack (Darksoft)
+//mslugxscdd        // Hack (Darksoft)
 
 @source:neogeo.cpp
 ms5pcbdnsd        // SNK Playmore (Neo SD)
@@ -129,117 +129,117 @@ mslug2tnsd        // SNK (Neo SD)
 mslug3nsd         // SNK (Neo SD)
 mslug3hnsd        // SNK (Neo SD)
 mslug3b6nsd       // Bootleg (Neo SD)
-mslug3ndnsd       // SNK (Fully Decrypted) (Neo SD)
+//mslug3ndnsd       // SNK (Fully Decrypted) (Neo SD)
 mslug4nsd         // Mega / Playmore (Neo SD)
 mslug4hnsd        // Mega / Playmore (Neo SD)
-mslug4ndnsd       // Mega / Playmore (Fully Decrypted) (Neo SD)
+//mslug4ndnsd       // Mega / Playmore (Fully Decrypted) (Neo SD)
 mslug5nsd         // SNK Playmore (Neo SD)
 mslug5hnsd        // SNK Playmore (Neo SD)
-mslug5ndnsd       // SNK Playmore (Fully Decrypted) (Neo SD)
+//mslug5ndnsd       // SNK Playmore (Fully Decrypted) (Neo SD)
 mslugxnsd         // SNK (Neo SD)
 
 @source:neogeo.cpp
-mslug2ddnds       // Hack (Neo SD)
-mslug2egnds       // Hack (Neo SD)
-mslug2frnds       // Hack (Neo SD)
-mslug3cqtnds      // Hack (Neo SD)
-mslug3chuanqinds  // Hack (Neo SD)
-mslug3cqnds       // Hack (Neo SD)
-mslug3cqtfbnds    // Hack (Neo SD)
-mslug3cqztnds     // Hack (Neo SD)
-mslug3ddnds       // Hack (Neo SD)
-mslug3frnds       // Hack (Neo SD)
-mslug3gnds        // Hack (Neo SD)
-mslug3kinds       // Hack (Neo SD)
-mslug3ndnds       // Hack (Neo SD)
-mslug3scnds       // Hack (Neo SD)
-mslug4ammornds    // Hack (Neo SD)
-mslug4cqtnds      // Hack (Neo SD)
-mslug4cqinds      // Hack (Neo SD)
-mslug4ddnds       // Hack (Neo SD)
-mslug4frnds       // Hack (Neo SD)
-mslug4kinds       // Hack (Neo SD)
-mslug4lwnds       // Hack (Neo SD)
-mslug4lwqnds      // Hack (Neo SD)
-mslug5cqtnds      // Hack (Neo SD)
-mslug5cqnds       // Hack (Neo SD)
-mslug5fnds        // Hack (Neo SD)
-mslug5frnds       // Hack (Neo SD)
-mslug5scnds       // Hack (Neo SD)
-mslug5wnds        // Hack (Neo SD)
-mslugxcqtnds      // Hack (Neo SD)
-mslugxchuanqinds  // Hack (Neo SD)
-mslugxcqnds       // Hack (Neo SD)
-mslugxddnds       // Hack (Neo SD)
-mslugxfrnds       // Hack (Neo SD)
-mslugxlbnds       // Hack (Neo SD)
-mslugxscnds       // Hack (Neo SD)
+//mslug2ddnds       // Hack (Neo SD)
+//mslug2egnds       // Hack (Neo SD)
+//mslug2frnds       // Hack (Neo SD)
+//mslug3cqtnds      // Hack (Neo SD)
+//mslug3chuanqinds  // Hack (Neo SD)
+//mslug3cqnds       // Hack (Neo SD)
+//mslug3cqtfbnds    // Hack (Neo SD)
+//mslug3cqztnds     // Hack (Neo SD)
+//mslug3ddnds       // Hack (Neo SD)
+//mslug3frnds       // Hack (Neo SD)
+//mslug3gnds        // Hack (Neo SD)
+//mslug3kinds       // Hack (Neo SD)
+//mslug3ndnds       // Hack (Neo SD)
+//mslug3scnds       // Hack (Neo SD)
+//mslug4ammornds    // Hack (Neo SD)
+//mslug4cqtnds      // Hack (Neo SD)
+//mslug4cqinds      // Hack (Neo SD)
+//mslug4ddnds       // Hack (Neo SD)
+//mslug4frnds       // Hack (Neo SD)
+//mslug4kinds       // Hack (Neo SD)
+//mslug4lwnds       // Hack (Neo SD)
+//mslug4lwqnds      // Hack (Neo SD)
+//mslug5cqtnds      // Hack (Neo SD)
+//mslug5cqnds       // Hack (Neo SD)
+//mslug5fnds        // Hack (Neo SD)
+//mslug5frnds       // Hack (Neo SD)
+//mslug5scnds       // Hack (Neo SD)
+//mslug5wnds        // Hack (Neo SD)
+//mslugxcqtnds      // Hack (Neo SD)
+//mslugxchuanqinds  // Hack (Neo SD)
+//mslugxcqnds       // Hack (Neo SD)
+//mslugxddnds       // Hack (Neo SD)
+//mslugxfrnds       // Hack (Neo SD)
+//mslugxlbnds       // Hack (Neo SD)
+//mslugxscnds       // Hack (Neo SD)
 
 @source:neogeo.cpp
 mslug3x           // Metal Slug 3X HomeBrew (Complete Collection)
-mslug3xb          // Metal Slug 3X HomeBrew (Complete Collection)
-mslug3x0          // Metal Slug 3X HomeBrew (Complete Collection)
-mslug3x1          // Metal Slug 3X HomeBrew (Complete Collection)
-mslug3x2          // Metal Slug 3X HomeBrew (Complete Collection)
-mslug3x3          // Metal Slug 3X HomeBrew (Complete Collection)
+//mslug3xb          // Metal Slug 3X HomeBrew (Complete Collection)
+//mslug3x0          // Metal Slug 3X HomeBrew (Complete Collection)
+//mslug3x1          // Metal Slug 3X HomeBrew (Complete Collection)
+//mslug3x2          // Metal Slug 3X HomeBrew (Complete Collection)
+//mslug3x3          // Metal Slug 3X HomeBrew (Complete Collection)
 neopang           // HomeBrew
 
 @source:neogeo.cpp
-ms5plush          // Hack Encrypted GFX (Documentation)
-mslug31v2         // Hack Encrypted GFX (Documentation)
-mslug3burt        // Hack Encrypted GFX (Documentation)
-mslug3eb          // Hack Encrypted GFX (Documentation)
-mslug3eb14        // Hack Encrypted GFX (Documentation)
-mslug3sd          // Hack Encrypted GFX (Documentation)
-mslug3sc          // Hack Encrypted GFX (Documentation)
-mslug3cq          // Hack Encrypted GFX (Documentation)
-mslug3chuanqi     // Hack Encrypted GFX (Documentation)
-mslug3cqtfb       // Hack Encrypted GFX (Documentation)
-mslug3cqzt        // Hack Encrypted GFX (Documentation)
-mslug3dbplus      // Hack Encrypted GFX (Documentation)
-mslug3c           // Hack Encrypted GFX (Documentation)
-mslug3fr          // Hack Encrypted GFX (Documentation)
-mslug3g           // Hack Encrypted GFX (Documentation)
-mslug3gw          // Hack Encrypted GFX (Documentation)
-mslug3i           // Hack Encrypted GFX (Documentation)
-mslug3dde         // Hack Encrypted GFX (Documentation)
-mslug3ki          // Hack Encrypted GFX (Documentation)
-mslug3lw          // Hack Encrypted GFX (Documentation)
-mslug3se          // Hack Encrypted GFX (Documentation)
-mslug3unity       // Hack Encrypted GFX (Documentation)
-mslug3v           // Hack Encrypted GFX (Documentation)
-mslug3zh          // Hack Encrypted GFX (Documentation)
-mslug4fr          // Hack Encrypted GFX (Documentation)
-mslug4lw          // Hack Encrypted GFX (Documentation)
-mslug4ammor       // Hack Encrypted GFX (Documentation)
-mslug4lwq         // Hack Encrypted GFX (Documentation)
-mslug4dde         // Hack Encrypted GFX (Documentation)
-mslug4ki          // Hack Encrypted GFX (Documentation)
-mslug4cqi         // Hack Encrypted GFX (Documentation)
-mslug51v2         // Hack Encrypted GFX (Documentation)
-mslug5ae          // Hack Encrypted GFX (Documentation)
-mslug5bs          // Hack Encrypted GFX (Documentation)
-mslug5burt        // Hack Encrypted GFX (Documentation)
-mslug5ddd         // Hack Encrypted GFX (Documentation)
-mslug5db          // Hack Encrypted GFX (Documentation)
-mslug5c           // Hack Encrypted GFX (Documentation)
-mslug5esr         // Hack Encrypted GFX (Documentation)
-mslug5ex          // Hack Encrypted GFX (Documentation)
-mslug5f           // Hack Encrypted GFX (Documentation)
-mslug5g           // Hack Encrypted GFX (Documentation)
-mslug5w           // Hack Encrypted GFX (Documentation)
-mslug5unity       // Hack Encrypted GFX (Documentation)
-mslug5sc          // Hack Encrypted GFX (Documentation)
-mslug5sg          // Hack Encrypted GFX (Documentation)
-mslug5cq          // Hack Encrypted GFX (Documentation)
-mslug5ki          // Hack Encrypted GFX (Documentation)
-mslug5l9a         // Hack Encrypted GFX (Documentation)
-mslug5l9b         // Hack Encrypted GFX (Documentation)
-mslug5mg          // Hack Encrypted GFX (Documentation)
-mslug5rmk         // Hack Encrypted GFX (Documentation)
-mslug5x           // Hack Encrypted GFX (Documentation)
-mslug5zh          // Hack Encrypted GFX (Documentation)
-mslug3xe          // Hack Encrypted GFX (Documentation)
+//ms5plush          // Hack Encrypted GFX (Documentation)
+//mslug31v2         // Hack Encrypted GFX (Documentation)
+//mslug3burt        // Hack Encrypted GFX (Documentation)
+//mslug3eb          // Hack Encrypted GFX (Documentation)
+//mslug3eb14        // Hack Encrypted GFX (Documentation)
+//mslug3sd          // Hack Encrypted GFX (Documentation)
+//mslug3sc          // Hack Encrypted GFX (Documentation)
+//mslug3cq          // Hack Encrypted GFX (Documentation)
+//mslug3chuanqi     // Hack Encrypted GFX (Documentation)
+//mslug3cqtfb       // Hack Encrypted GFX (Documentation)
+//mslug3cqzt        // Hack Encrypted GFX (Documentation)
+//mslug3dbplus      // Hack Encrypted GFX (Documentation)
+//mslug3c           // Hack Encrypted GFX (Documentation)
+//mslug3fr          // Hack Encrypted GFX (Documentation)
+//mslug3g           // Hack Encrypted GFX (Documentation)
+//mslug3gw          // Hack Encrypted GFX (Documentation)
+//mslug3i           // Hack Encrypted GFX (Documentation)
+//mslug3dde         // Hack Encrypted GFX (Documentation)
+//mslug3ki          // Hack Encrypted GFX (Documentation)
+//mslug3lw          // Hack Encrypted GFX (Documentation)
+//mslug3se          // Hack Encrypted GFX (Documentation)
+//mslug3unity       // Hack Encrypted GFX (Documentation)
+//mslug3v           // Hack Encrypted GFX (Documentation)
+//mslug3zh          // Hack Encrypted GFX (Documentation)
+//mslug4fr          // Hack Encrypted GFX (Documentation)
+//mslug4lw          // Hack Encrypted GFX (Documentation)
+//mslug4ammor       // Hack Encrypted GFX (Documentation)
+//mslug4lwq         // Hack Encrypted GFX (Documentation)
+//mslug4dde         // Hack Encrypted GFX (Documentation)
+//mslug4ki          // Hack Encrypted GFX (Documentation)
+//mslug4cqi         // Hack Encrypted GFX (Documentation)
+//mslug51v2         // Hack Encrypted GFX (Documentation)
+//mslug5ae          // Hack Encrypted GFX (Documentation)
+//mslug5bs          // Hack Encrypted GFX (Documentation)
+//mslug5burt        // Hack Encrypted GFX (Documentation)
+//mslug5ddd         // Hack Encrypted GFX (Documentation)
+//mslug5db          // Hack Encrypted GFX (Documentation)
+//mslug5c           // Hack Encrypted GFX (Documentation)
+//mslug5esr         // Hack Encrypted GFX (Documentation)
+//mslug5ex          // Hack Encrypted GFX (Documentation)
+//mslug5f           // Hack Encrypted GFX (Documentation)
+//mslug5g           // Hack Encrypted GFX (Documentation)
+//mslug5w           // Hack Encrypted GFX (Documentation)
+//mslug5unity       // Hack Encrypted GFX (Documentation)
+//mslug5sc          // Hack Encrypted GFX (Documentation)
+//mslug5sg          // Hack Encrypted GFX (Documentation)
+//mslug5cq          // Hack Encrypted GFX (Documentation)
+//mslug5ki          // Hack Encrypted GFX (Documentation)
+//mslug5l9a         // Hack Encrypted GFX (Documentation)
+//mslug5l9b         // Hack Encrypted GFX (Documentation)
+//mslug5mg          // Hack Encrypted GFX (Documentation)
+//mslug5rmk         // Hack Encrypted GFX (Documentation)
+//mslug5x           // Hack Encrypted GFX (Documentation)
+//mslug5zh          // Hack Encrypted GFX (Documentation)
+//mslug3xe          // Hack Encrypted GFX (Documentation)
 
 @source:neogeo.cpp
 mslughc01         // Hack
@@ -415,448 +415,448 @@ mslugxhc35        // Hack
 ********************/
 
 @source:neogeo.cpp
-mslugctma01       // Hack
-mslugctma02       // Hack
-mslugctma03       // Hack
-mslugctma04       // Hack
-mslugctma05       // Hack
-mslugctma06       // Hack
-mslugctma07       // Hack
-mslugctma08       // Hack
-mslugctma09       // Hack
-mslug2ctma01      // Hack
-mslug2ctma02      // Hack
-mslug2ctma03      // Hack
-mslug2ctma04      // Hack
-mslug2ctma05      // Hack
-mslug2ctma06      // Hack
-mslug2ctma07      // Hack
-mslug2ctma08      // Hack
-mslug2ctma09      // Hack
-mslug2ctma10      // Hack
-mslug2ctma11      // Hack
-mslug2ctma12      // Hack
-mslug2ctma13      // Hack
-mslug2ctma14      // Hack
-mslug3ctma01      // Hack
-mslug3ctma02      // Hack
-mslug3ctma03      // Hack
-mslug3ctma04      // Hack
-mslug3ctma05      // Hack
-mslug3ctma06      // Hack
-mslug3ctma07      // Hack
-mslug3ctma08      // Hack
-mslug3ctma09      // Hack
-mslug3ctma10      // Hack
-mslug3ctma11      // Hack
-mslug3ctma12      // Hack
-mslug3ctma13      // Hack
-mslug3ctma14      // Hack
-mslug3ctma15      // Hack
-mslug3ctma16      // Hack
-mslug3ctma17      // Hack
-mslug3ctma18      // Hack
-mslug3ctma19      // Hack
-mslug3ctmb01      // Hack
-mslug3ctmb02      // Hack
-mslug3ctmb03      // Hack
-mslug3ctmb04      // Hack
-mslug3ctmb05      // Hack
-mslug3ctmb06      // Hack
-mslug3ctmb07      // Hack
-mslug3ctmb08      // Hack
-mslug3ctmb09      // Hack
-mslug3ctmb10      // Hack
-mslug3ctmb11      // Hack
-mslug3ctmb12      // Hack
-mslug3ctmb13      // Hack
-mslug3ctmb14      // Hack
-mslug3ctmb15      // Hack
-mslug3ctmb16      // Hack
-mslug3ctmb17      // Hack
-mslug3ctmb18      // Hack
-mslug3ctmb19      // Hack
-mslug3ctmc01      // Hack
-mslug3ctmc02      // Hack
-mslug3ctmc03      // Hack
-mslug3ctmc04      // Hack
-mslug3ctmc05      // Hack
-mslug3ctmc06      // Hack
-mslug3ctmc07      // Hack
-mslug3ctmc08      // Hack
-mslug3ctmc09      // Hack
-mslug3ctmc10      // Hack
-mslug3ctmc11      // Hack
-mslug3ctmc12      // Hack
-mslug3ctmc13      // Hack
-mslug3ctmc14      // Hack
-mslug3ctmc15      // Hack
-mslug3ctmc16      // Hack
-mslug3ctmc17      // Hack
-mslug3ctmc18      // Hack
-mslug3ctmc19      // Hack
-mslug3ctmd01      // Hack
-mslug3ctmd02      // Hack
-mslug3ctmd03      // Hack
-mslug3ctmd04      // Hack
-mslug3ctmd05      // Hack
-mslug3ctmd06      // Hack
-mslug3ctmd07      // Hack
-mslug3ctmd08      // Hack
-mslug3ctmd09      // Hack
-mslug3ctmd10      // Hack
-mslug3ctmd11      // Hack
-mslug3ctmd12      // Hack
-mslug3ctmd13      // Hack
-mslug3ctmd14      // Hack
-mslug3ctmd15      // Hack
-mslug3ctmd16      // Hack
-mslug3ctme01      // Hack
-mslug3ctme02      // Hack
-mslug3ctme03      // Hack
-mslug3ctme04      // Hack
-mslug3ctme05      // Hack
-mslug3ctme06      // Hack
-mslug3ctme07      // Hack
-mslug3ctme08      // Hack
-mslug3ctme09      // Hack
-mslug3ctme10      // Hack
-mslug3ctme11      // Hack
-mslug3ctme12      // Hack
-mslug3ctme13      // Hack
-mslug3ctme14      // Hack
-mslug3ctme15      // Hack
-mslug3ctme16      // Hack
-mslug3ctmf01      // Hack
-mslug3ctmf02      // Hack
-mslug3ctmf03      // Hack
-mslug3ctmf04      // Hack
-mslug3ctmf05      // Hack
-mslug3ctmf06      // Hack
-mslug3ctmf07      // Hack
-mslug3ctmf08      // Hack
-mslug3ctmf09      // Hack
-mslug3ctmf10      // Hack
-mslug3ctmf11      // Hack
-mslug3ctmf12      // Hack
-mslug3ctmf13      // Hack
-mslug3ctmf14      // Hack
-mslug3ctmf15      // Hack
-mslug3ctmf16      // Hack
-mslug3ctmg01      // Hack
-mslug3ctmg02      // Hack
-mslug3ctmg03      // Hack
-mslug3ctmg04      // Hack
-mslug3ctmg05      // Hack
-mslug3ctmg06      // Hack
-mslug3ctmg07      // Hack
-mslug3ctmg08      // Hack
-mslug3ctmg09      // Hack
-mslug3ctmg10      // Hack
-mslug3ctmg11      // Hack
-mslug3ctmg12      // Hack
-mslug3ctmg13      // Hack
-mslug3ctmg14      // Hack
-mslug3ctmg15      // Hack
-mslug3ctmg16      // Hack
-mslug4ctma01      // Hack
-mslug4ctma02      // Hack
-mslug4ctma03      // Hack
-mslug4ctma04      // Hack
-mslug4ctma05      // Hack
-mslug4ctma06      // Hack
-mslug4ctma07      // Hack
-mslug4ctma08      // Hack
-mslug4ctma09      // Hack
-mslug4ctma10      // Hack
-mslug4ctma11      // Hack
-mslug4ctma12      // Hack
-mslug4ctma13      // Hack
+//mslugctma01       // Hack
+//mslugctma02       // Hack
+//mslugctma03       // Hack
+//mslugctma04       // Hack
+//mslugctma05       // Hack
+//mslugctma06       // Hack
+//mslugctma07       // Hack
+//mslugctma08       // Hack
+//mslugctma09       // Hack
+//mslug2ctma01      // Hack
+//mslug2ctma02      // Hack
+//mslug2ctma03      // Hack
+//mslug2ctma04      // Hack
+//mslug2ctma05      // Hack
+//mslug2ctma06      // Hack
+//mslug2ctma07      // Hack
+//mslug2ctma08      // Hack
+//mslug2ctma09      // Hack
+//mslug2ctma10      // Hack
+//mslug2ctma11      // Hack
+//mslug2ctma12      // Hack
+//mslug2ctma13      // Hack
+//mslug2ctma14      // Hack
+//mslug3ctma01      // Hack
+//mslug3ctma02      // Hack
+//mslug3ctma03      // Hack
+//mslug3ctma04      // Hack
+//mslug3ctma05      // Hack
+//mslug3ctma06      // Hack
+//mslug3ctma07      // Hack
+//mslug3ctma08      // Hack
+//mslug3ctma09      // Hack
+//mslug3ctma10      // Hack
+//mslug3ctma11      // Hack
+//mslug3ctma12      // Hack
+//mslug3ctma13      // Hack
+//mslug3ctma14      // Hack
+//mslug3ctma15      // Hack
+//mslug3ctma16      // Hack
+//mslug3ctma17      // Hack
+//mslug3ctma18      // Hack
+//mslug3ctma19      // Hack
+//mslug3ctmb01      // Hack
+//mslug3ctmb02      // Hack
+//mslug3ctmb03      // Hack
+//mslug3ctmb04      // Hack
+//mslug3ctmb05      // Hack
+//mslug3ctmb06      // Hack
+//mslug3ctmb07      // Hack
+//mslug3ctmb08      // Hack
+//mslug3ctmb09      // Hack
+//mslug3ctmb10      // Hack
+//mslug3ctmb11      // Hack
+//mslug3ctmb12      // Hack
+//mslug3ctmb13      // Hack
+//mslug3ctmb14      // Hack
+//mslug3ctmb15      // Hack
+//mslug3ctmb16      // Hack
+//mslug3ctmb17      // Hack
+//mslug3ctmb18      // Hack
+//mslug3ctmb19      // Hack
+//mslug3ctmc01      // Hack
+//mslug3ctmc02      // Hack
+//mslug3ctmc03      // Hack
+//mslug3ctmc04      // Hack
+//mslug3ctmc05      // Hack
+//mslug3ctmc06      // Hack
+//mslug3ctmc07      // Hack
+//mslug3ctmc08      // Hack
+//mslug3ctmc09      // Hack
+//mslug3ctmc10      // Hack
+//mslug3ctmc11      // Hack
+//mslug3ctmc12      // Hack
+//mslug3ctmc13      // Hack
+//mslug3ctmc14      // Hack
+//mslug3ctmc15      // Hack
+//mslug3ctmc16      // Hack
+//mslug3ctmc17      // Hack
+//mslug3ctmc18      // Hack
+//mslug3ctmc19      // Hack
+//mslug3ctmd01      // Hack
+//mslug3ctmd02      // Hack
+//mslug3ctmd03      // Hack
+//mslug3ctmd04      // Hack
+//mslug3ctmd05      // Hack
+//mslug3ctmd06      // Hack
+//mslug3ctmd07      // Hack
+//mslug3ctmd08      // Hack
+//mslug3ctmd09      // Hack
+//mslug3ctmd10      // Hack
+//mslug3ctmd11      // Hack
+//mslug3ctmd12      // Hack
+//mslug3ctmd13      // Hack
+//mslug3ctmd14      // Hack
+//mslug3ctmd15      // Hack
+//mslug3ctmd16      // Hack
+//mslug3ctme01      // Hack
+//mslug3ctme02      // Hack
+//mslug3ctme03      // Hack
+//mslug3ctme04      // Hack
+//mslug3ctme05      // Hack
+//mslug3ctme06      // Hack
+//mslug3ctme07      // Hack
+//mslug3ctme08      // Hack
+//mslug3ctme09      // Hack
+//mslug3ctme10      // Hack
+//mslug3ctme11      // Hack
+//mslug3ctme12      // Hack
+//mslug3ctme13      // Hack
+//mslug3ctme14      // Hack
+//mslug3ctme15      // Hack
+//mslug3ctme16      // Hack
+//mslug3ctmf01      // Hack
+//mslug3ctmf02      // Hack
+//mslug3ctmf03      // Hack
+//mslug3ctmf04      // Hack
+//mslug3ctmf05      // Hack
+//mslug3ctmf06      // Hack
+//mslug3ctmf07      // Hack
+//mslug3ctmf08      // Hack
+//mslug3ctmf09      // Hack
+//mslug3ctmf10      // Hack
+//mslug3ctmf11      // Hack
+//mslug3ctmf12      // Hack
+//mslug3ctmf13      // Hack
+//mslug3ctmf14      // Hack
+//mslug3ctmf15      // Hack
+//mslug3ctmf16      // Hack
+//mslug3ctmg01      // Hack
+//mslug3ctmg02      // Hack
+//mslug3ctmg03      // Hack
+//mslug3ctmg04      // Hack
+//mslug3ctmg05      // Hack
+//mslug3ctmg06      // Hack
+//mslug3ctmg07      // Hack
+//mslug3ctmg08      // Hack
+//mslug3ctmg09      // Hack
+//mslug3ctmg10      // Hack
+//mslug3ctmg11      // Hack
+//mslug3ctmg12      // Hack
+//mslug3ctmg13      // Hack
+//mslug3ctmg14      // Hack
+//mslug3ctmg15      // Hack
+//mslug3ctmg16      // Hack
+//mslug4ctma01      // Hack
+//mslug4ctma02      // Hack
+//mslug4ctma03      // Hack
+//mslug4ctma04      // Hack
+//mslug4ctma05      // Hack
+//mslug4ctma06      // Hack
+//mslug4ctma07      // Hack
+//mslug4ctma08      // Hack
+//mslug4ctma09      // Hack
+//mslug4ctma10      // Hack
+//mslug4ctma11      // Hack
+//mslug4ctma12      // Hack
+//mslug4ctma13      // Hack
 //mslug4ctmb01      // Hack
 //mslug4ctmb02      // Hack
-mslug4ctmb03      // Hack
-mslug4ctmb04      // Hack
-mslug4ctmb05      // Hack
-mslug4ctmb06      // Hack
-mslug4ctmb07      // Hack
-mslug4ctmb08      // Hack
-mslug4ctmb09      // Hack
-mslug4ctmb10      // Hack
-mslug4ctmb11      // Hack
-mslug4ctmb12      // Hack
-mslug4ctmb13      // Hack
+//mslug4ctmb03      // Hack
+//mslug4ctmb04      // Hack
+//mslug4ctmb05      // Hack
+//mslug4ctmb06      // Hack
+//mslug4ctmb07      // Hack
+//mslug4ctmb08      // Hack
+//mslug4ctmb09      // Hack
+//mslug4ctmb10      // Hack
+//mslug4ctmb11      // Hack
+//mslug4ctmb12      // Hack
+//mslug4ctmb13      // Hack
 //mslug4ctmc01      // Hack
 //mslug4ctmc02      // Hack
-mslug4ctmc03      // Hack
-mslug4ctmc04      // Hack
-mslug4ctmc05      // Hack
-mslug4ctmc06      // Hack
-mslug4ctmc07      // Hack
-mslug4ctmc08      // Hack
-mslug4ctmc09      // Hack
-mslug4ctmc10      // Hack
-mslug4ctmc11      // Hack
-mslug4ctmc12      // Hack
-mslug4ctmc13      // Hack
+//mslug4ctmc03      // Hack
+//mslug4ctmc04      // Hack
+//mslug4ctmc05      // Hack
+//mslug4ctmc06      // Hack
+//mslug4ctmc07      // Hack
+//mslug4ctmc08      // Hack
+//mslug4ctmc09      // Hack
+//mslug4ctmc10      // Hack
+//mslug4ctmc11      // Hack
+//mslug4ctmc12      // Hack
+//mslug4ctmc13      // Hack
 //mslug4ctmd01      // Hack
 //mslug4ctmd02      // Hack
-mslug4ctmd03      // Hack
-mslug4ctmd04      // Hack
-mslug4ctmd05      // Hack
-mslug4ctmd06      // Hack
-mslug4ctmd07      // Hack
-mslug4ctmd08      // Hack
-mslug4ctmd09      // Hack
-mslug4ctmd10      // Hack
-mslug4ctmd11      // Hack
-mslug4ctmd12      // Hack
-mslug4ctmd13      // Hack
-mslug5ctma01      // Hack
-mslug5ctma02      // Hack
-mslug5ctma03      // Hack
-mslug5ctma04      // Hack
-mslug5ctma05      // Hack
-mslug5ctma06      // Hack
-mslug5ctma07      // Hack
-mslug5ctma08      // Hack
-mslug5ctma09      // Hack
-mslug5ctma10      // Hack
-mslug5ctma11      // Hack
-mslug5ctma12      // Hack
-mslug5ctma13      // Hack
-mslug5ctma14      // Hack
-mslug5ctma15      // Hack
-mslug5ctma16      // Hack
-mslug5ctma17      // Hack
-mslug5ctmb01      // Hack
-mslug5ctmb02      // Hack
-mslug5ctmb03      // Hack
-mslug5ctmb04      // Hack
-mslug5ctmb05      // Hack
-mslug5ctmb06      // Hack
-mslug5ctmb07      // Hack
-mslug5ctmb08      // Hack
-mslug5ctmb09      // Hack
-mslug5ctmb10      // Hack
-mslug5ctmb11      // Hack
-mslug5ctmb12      // Hack
-mslug5ctmb13      // Hack
-mslug5ctmb14      // Hack
-mslug5ctmb15      // Hack
-mslug5ctmb16      // Hack
-mslug5ctmc01      // Hack
-mslug5ctmc02      // Hack
-mslug5ctmc03      // Hack
-mslug5ctmc04      // Hack
-mslug5ctmc05      // Hack
-mslug5ctmc06      // Hack
-mslug5ctmc07      // Hack
-mslug5ctmc08      // Hack
-mslug5ctmc09      // Hack
-mslug5ctmc10      // Hack
-mslug5ctmc11      // Hack
-mslug5ctmc12      // Hack
-mslug5ctmc13      // Hack
-mslug5ctmc14      // Hack
-mslug5ctmc15      // Hack
-mslug5ctmc16      // Hack
-mslug5ctmd01      // Hack
-mslug5ctmd02      // Hack
-mslug5ctmd03      // Hack
-mslug5ctmd04      // Hack
-mslug5ctmd05      // Hack
-mslug5ctmd06      // Hack
-mslug5ctmd07      // Hack
-mslug5ctmd08      // Hack
-mslug5ctmd09      // Hack
-mslug5ctmd10      // Hack
-mslug5ctmd11      // Hack
-mslug5ctmd12      // Hack
-mslug5ctmd13      // Hack
-mslug5ctmd14      // Hack
-mslug5ctmd15      // Hack
-mslug5ctmd16      // Hack
-mslug5ctmd17      // Hack
-mslug5ctme01      // Hack
-mslug5ctme02      // Hack
-mslug5ctme03      // Hack
-mslug5ctme04      // Hack
-mslug5ctme05      // Hack
-mslug5ctme06      // Hack
-mslug5ctme07      // Hack
-mslug5ctme08      // Hack
-mslug5ctme09      // Hack
-mslug5ctme10      // Hack
-mslug5ctme11      // Hack
-mslug5ctme12      // Hack
-mslug5ctme13      // Hack
-mslug5ctme14      // Hack
-mslug5ctme15      // Hack
-mslug5ctme16      // Hack
-mslug5ctme17      // Hack
-mslug5ctmf01      // Hack
-mslug5ctmf02      // Hack
-mslug5ctmf03      // Hack
-mslug5ctmf04      // Hack
-mslug5ctmf05      // Hack
-mslug5ctmf06      // Hack
-mslug5ctmf07      // Hack
-mslug5ctmf08      // Hack
-mslug5ctmf09      // Hack
-mslug5ctmf10      // Hack
-mslug5ctmf11      // Hack
-mslug5ctmf12      // Hack
-mslug5ctmf13      // Hack
-mslug5ctmf14      // Hack
-mslug5ctmf15      // Hack
-mslug5ctmf16      // Hack
-mslug5ctmf17      // Hack
-mslug5ctmg01      // Hack
-mslug5ctmg02      // Hack
-mslug5ctmg03      // Hack
-mslug5ctmg04      // Hack
-mslug5ctmg05      // Hack
-mslug5ctmg06      // Hack
-mslug5ctmg07      // Hack
-mslug5ctmg08      // Hack
-mslug5ctmg09      // Hack
-mslug5ctmg10      // Hack
-mslug5ctmg11      // Hack
-mslug5ctmg12      // Hack
-mslug5ctmg13      // Hack
-mslug5ctmg14      // Hack
-mslug5ctmg15      // Hack
-mslug5ctmg16      // Hack
-mslug5ctmg17      // Hack
-mslugxctma01      // Hack
-mslugxctma02      // Hack
-mslugxctma03      // Hack
-mslugxctma04      // Hack
-mslugxctma05      // Hack
-mslugxctma06      // Hack
-mslugxctma07      // Hack
-mslugxctma08      // Hack
-mslugxctma09      // Hack
-mslugxctma10      // Hack
-mslugxctma11      // Hack
-mslugxctma12      // Hack
-mslugxctma13      // Hack
-mslugxctma14      // Hack
-mslugxctma15      // Hack
-mslugxctma16      // Hack
-mslugxctmb01      // Hack
-mslugxctmb02      // Hack
-mslugxctmb03      // Hack
-mslugxctmb04      // Hack
-mslugxctmb05      // Hack
-mslugxctmb06      // Hack
-mslugxctmb07      // Hack
-mslugxctmb08      // Hack
-mslugxctmb09      // Hack
-mslugxctmb10      // Hack
-mslugxctmb11      // Hack
-mslugxctmb12      // Hack
-mslugxctmb13      // Hack
-mslugxctmb14      // Hack
-mslugxctmb15      // Hack
-mslugxctmb16      // Hack
-mslugxctmc01      // Hack
-mslugxctmc02      // Hack
-mslugxctmc03      // Hack
-mslugxctmc04      // Hack
-mslugxctmc05      // Hack
-mslugxctmc06      // Hack
-mslugxctmc07      // Hack
-mslugxctmc08      // Hack
-mslugxctmc09      // Hack
-mslugxctmc10      // Hack
-mslugxctmc11      // Hack
-mslugxctmc12      // Hack
-mslugxctmc13      // Hack
-mslugxctmc14      // Hack
-mslugxctmc15      // Hack
-mslugxctmc16      // Hack
-mslugxctmd01      // Hack
-mslugxctmd02      // Hack
-mslugxctmd03      // Hack
-mslugxctmd04      // Hack
-mslugxctmd05      // Hack
-mslugxctmd06      // Hack
-mslugxctmd07      // Hack
-mslugxctmd08      // Hack
-mslugxctmd09      // Hack
-mslugxctmd10      // Hack
-mslugxctmd11      // Hack
-mslugxctmd12      // Hack
-mslugxctmd13      // Hack
-mslugxctmd14      // Hack
-mslugxctmd15      // Hack
-mslugxctmd16      // Hack
-mslugxctme01      // Hack
-mslugxctme02      // Hack
-mslugxctme03      // Hack
-mslugxctme04      // Hack
-mslugxctme05      // Hack
-mslugxctme06      // Hack
-mslugxctme07      // Hack
-mslugxctme08      // Hack
-mslugxctme09      // Hack
-mslugxctme10      // Hack
-mslugxctme11      // Hack
-mslugxctme12      // Hack
-mslugxctme13      // Hack
-mslugxctme14      // Hack
-mslugxctme15      // Hack
-mslugxctme16      // Hack
-mslugxctmf01      // Hack
-mslugxctmf02      // Hack
-mslugxctmf03      // Hack
-mslugxctmf04      // Hack
-mslugxctmf05      // Hack
-mslugxctmf06      // Hack
-mslugxctmf07      // Hack
-mslugxctmf08      // Hack
-mslugxctmf09      // Hack
-mslugxctmf10      // Hack
-mslugxctmf11      // Hack
-mslugxctmf12      // Hack
-mslugxctmf13      // Hack
-mslugxctmf14      // Hack
-mslugxctmf15      // Hack
-mslugxctmf16      // Hack
-mslugxctmg01      // Hack
-mslugxctmg02      // Hack
-mslugxctmg03      // Hack
-mslugxctmg04      // Hack
-mslugxctmg05      // Hack
-mslugxctmg06      // Hack
-mslugxctmg07      // Hack
-mslugxctmg08      // Hack
-mslugxctmg09      // Hack
-mslugxctmg10      // Hack
-mslugxctmg11      // Hack
-mslugxctmg12      // Hack
-mslugxctmg13      // Hack
-mslugxctmg14      // Hack
-mslugxctmg15      // Hack
-mslugxctmg16      // Hack
-mslugxctmh01      // Hack
-mslugxctmh02      // Hack
-mslugxctmh03      // Hack
-mslugxctmh04      // Hack
-mslugxctmh05      // Hack
-mslugxctmh06      // Hack
-mslugxctmh07      // Hack
-mslugxctmh08      // Hack
-mslugxctmh09      // Hack
-mslugxctmh10      // Hack
-mslugxctmh11      // Hack
-mslugxctmh12      // Hack
-mslugxctmh13      // Hack
-mslugxctmh14      // Hack
-mslugxctmh15      // Hack
-mslugxctmh16      // Hack
-mslugxctmi01      // Hack
+//mslug4ctmd03      // Hack
+//mslug4ctmd04      // Hack
+//mslug4ctmd05      // Hack
+//mslug4ctmd06      // Hack
+//mslug4ctmd07      // Hack
+//mslug4ctmd08      // Hack
+//mslug4ctmd09      // Hack
+//mslug4ctmd10      // Hack
+//mslug4ctmd11      // Hack
+//mslug4ctmd12      // Hack
+//mslug4ctmd13      // Hack
+//mslug5ctma01      // Hack
+//mslug5ctma02      // Hack
+//mslug5ctma03      // Hack
+//mslug5ctma04      // Hack
+//mslug5ctma05      // Hack
+//mslug5ctma06      // Hack
+//mslug5ctma07      // Hack
+//mslug5ctma08      // Hack
+//mslug5ctma09      // Hack
+//mslug5ctma10      // Hack
+//mslug5ctma11      // Hack
+//mslug5ctma12      // Hack
+//mslug5ctma13      // Hack
+//mslug5ctma14      // Hack
+//mslug5ctma15      // Hack
+//mslug5ctma16      // Hack
+//mslug5ctma17      // Hack
+//mslug5ctmb01      // Hack
+//mslug5ctmb02      // Hack
+//mslug5ctmb03      // Hack
+//mslug5ctmb04      // Hack
+//mslug5ctmb05      // Hack
+//mslug5ctmb06      // Hack
+//mslug5ctmb07      // Hack
+//mslug5ctmb08      // Hack
+//mslug5ctmb09      // Hack
+//mslug5ctmb10      // Hack
+//mslug5ctmb11      // Hack
+//mslug5ctmb12      // Hack
+//mslug5ctmb13      // Hack
+//mslug5ctmb14      // Hack
+//mslug5ctmb15      // Hack
+//mslug5ctmb16      // Hack
+//mslug5ctmc01      // Hack
+//mslug5ctmc02      // Hack
+//mslug5ctmc03      // Hack
+//mslug5ctmc04      // Hack
+//mslug5ctmc05      // Hack
+//mslug5ctmc06      // Hack
+//mslug5ctmc07      // Hack
+//mslug5ctmc08      // Hack
+//mslug5ctmc09      // Hack
+//mslug5ctmc10      // Hack
+//mslug5ctmc11      // Hack
+//mslug5ctmc12      // Hack
+//mslug5ctmc13      // Hack
+//mslug5ctmc14      // Hack
+//mslug5ctmc15      // Hack
+//mslug5ctmc16      // Hack
+//mslug5ctmd01      // Hack
+//mslug5ctmd02      // Hack
+//mslug5ctmd03      // Hack
+//mslug5ctmd04      // Hack
+//mslug5ctmd05      // Hack
+//mslug5ctmd06      // Hack
+//mslug5ctmd07      // Hack
+//mslug5ctmd08      // Hack
+//mslug5ctmd09      // Hack
+//mslug5ctmd10      // Hack
+//mslug5ctmd11      // Hack
+//mslug5ctmd12      // Hack
+//mslug5ctmd13      // Hack
+//mslug5ctmd14      // Hack
+//mslug5ctmd15      // Hack
+//mslug5ctmd16      // Hack
+//mslug5ctmd17      // Hack
+//mslug5ctme01      // Hack
+//mslug5ctme02      // Hack
+//mslug5ctme03      // Hack
+//mslug5ctme04      // Hack
+//mslug5ctme05      // Hack
+//mslug5ctme06      // Hack
+//mslug5ctme07      // Hack
+//mslug5ctme08      // Hack
+//mslug5ctme09      // Hack
+//mslug5ctme10      // Hack
+//mslug5ctme11      // Hack
+//mslug5ctme12      // Hack
+//mslug5ctme13      // Hack
+//mslug5ctme14      // Hack
+//mslug5ctme15      // Hack
+//mslug5ctme16      // Hack
+//mslug5ctme17      // Hack
+//mslug5ctmf01      // Hack
+//mslug5ctmf02      // Hack
+//mslug5ctmf03      // Hack
+//mslug5ctmf04      // Hack
+//mslug5ctmf05      // Hack
+//mslug5ctmf06      // Hack
+//mslug5ctmf07      // Hack
+//mslug5ctmf08      // Hack
+//mslug5ctmf09      // Hack
+//mslug5ctmf10      // Hack
+//mslug5ctmf11      // Hack
+//mslug5ctmf12      // Hack
+//mslug5ctmf13      // Hack
+//mslug5ctmf14      // Hack
+//mslug5ctmf15      // Hack
+//mslug5ctmf16      // Hack
+//mslug5ctmf17      // Hack
+//mslug5ctmg01      // Hack
+//mslug5ctmg02      // Hack
+//mslug5ctmg03      // Hack
+//mslug5ctmg04      // Hack
+//mslug5ctmg05      // Hack
+//mslug5ctmg06      // Hack
+//mslug5ctmg07      // Hack
+//mslug5ctmg08      // Hack
+//mslug5ctmg09      // Hack
+//mslug5ctmg10      // Hack
+//mslug5ctmg11      // Hack
+//mslug5ctmg12      // Hack
+//mslug5ctmg13      // Hack
+//mslug5ctmg14      // Hack
+//mslug5ctmg15      // Hack
+//mslug5ctmg16      // Hack
+//mslug5ctmg17      // Hack
+//mslugxctma01      // Hack
+//mslugxctma02      // Hack
+//mslugxctma03      // Hack
+//mslugxctma04      // Hack
+//mslugxctma05      // Hack
+//mslugxctma06      // Hack
+//mslugxctma07      // Hack
+//mslugxctma08      // Hack
+//mslugxctma09      // Hack
+//mslugxctma10      // Hack
+//mslugxctma11      // Hack
+//mslugxctma12      // Hack
+//mslugxctma13      // Hack
+//mslugxctma14      // Hack
+//mslugxctma15      // Hack
+//mslugxctma16      // Hack
+//mslugxctmb01      // Hack
+//mslugxctmb02      // Hack
+//mslugxctmb03      // Hack
+//mslugxctmb04      // Hack
+//mslugxctmb05      // Hack
+//mslugxctmb06      // Hack
+//mslugxctmb07      // Hack
+//mslugxctmb08      // Hack
+//mslugxctmb09      // Hack
+//mslugxctmb10      // Hack
+//mslugxctmb11      // Hack
+//mslugxctmb12      // Hack
+//mslugxctmb13      // Hack
+//mslugxctmb14      // Hack
+//mslugxctmb15      // Hack
+//mslugxctmb16      // Hack
+//mslugxctmc01      // Hack
+//mslugxctmc02      // Hack
+//mslugxctmc03      // Hack
+//mslugxctmc04      // Hack
+//mslugxctmc05      // Hack
+//mslugxctmc06      // Hack
+//mslugxctmc07      // Hack
+//mslugxctmc08      // Hack
+//mslugxctmc09      // Hack
+//mslugxctmc10      // Hack
+//mslugxctmc11      // Hack
+//mslugxctmc12      // Hack
+//mslugxctmc13      // Hack
+//mslugxctmc14      // Hack
+//mslugxctmc15      // Hack
+//mslugxctmc16      // Hack
+//mslugxctmd01      // Hack
+//mslugxctmd02      // Hack
+//mslugxctmd03      // Hack
+//mslugxctmd04      // Hack
+//mslugxctmd05      // Hack
+//mslugxctmd06      // Hack
+//mslugxctmd07      // Hack
+//mslugxctmd08      // Hack
+//mslugxctmd09      // Hack
+//mslugxctmd10      // Hack
+//mslugxctmd11      // Hack
+//mslugxctmd12      // Hack
+//mslugxctmd13      // Hack
+//mslugxctmd14      // Hack
+//mslugxctmd15      // Hack
+//mslugxctmd16      // Hack
+//mslugxctme01      // Hack
+//mslugxctme02      // Hack
+//mslugxctme03      // Hack
+//mslugxctme04      // Hack
+//mslugxctme05      // Hack
+//mslugxctme06      // Hack
+//mslugxctme07      // Hack
+//mslugxctme08      // Hack
+//mslugxctme09      // Hack
+//mslugxctme10      // Hack
+//mslugxctme11      // Hack
+//mslugxctme12      // Hack
+//mslugxctme13      // Hack
+//mslugxctme14      // Hack
+//mslugxctme15      // Hack
+//mslugxctme16      // Hack
+//mslugxctmf01      // Hack
+//mslugxctmf02      // Hack
+//mslugxctmf03      // Hack
+//mslugxctmf04      // Hack
+//mslugxctmf05      // Hack
+//mslugxctmf06      // Hack
+//mslugxctmf07      // Hack
+//mslugxctmf08      // Hack
+//mslugxctmf09      // Hack
+//mslugxctmf10      // Hack
+//mslugxctmf11      // Hack
+//mslugxctmf12      // Hack
+//mslugxctmf13      // Hack
+//mslugxctmf14      // Hack
+//mslugxctmf15      // Hack
+//mslugxctmf16      // Hack
+//mslugxctmg01      // Hack
+//mslugxctmg02      // Hack
+//mslugxctmg03      // Hack
+//mslugxctmg04      // Hack
+//mslugxctmg05      // Hack
+//mslugxctmg06      // Hack
+//mslugxctmg07      // Hack
+//mslugxctmg08      // Hack
+//mslugxctmg09      // Hack
+//mslugxctmg10      // Hack
+//mslugxctmg11      // Hack
+//mslugxctmg12      // Hack
+//mslugxctmg13      // Hack
+//mslugxctmg14      // Hack
+//mslugxctmg15      // Hack
+//mslugxctmg16      // Hack
+//mslugxctmh01      // Hack
+//mslugxctmh02      // Hack
+//mslugxctmh03      // Hack
+//mslugxctmh04      // Hack
+//mslugxctmh05      // Hack
+//mslugxctmh06      // Hack
+//mslugxctmh07      // Hack
+//mslugxctmh08      // Hack
+//mslugxctmh09      // Hack
+//mslugxctmh10      // Hack
+//mslugxctmh11      // Hack
+//mslugxctmh12      // Hack
+//mslugxctmh13      // Hack
+//mslugxctmh14      // Hack
+//mslugxctmh15      // Hack
+//mslugxctmh16      // Hack
+//mslugxctmi01      // Hack
 
 @source:neogeo.cpp
 mslug2at01        // Hack
@@ -877,153 +877,153 @@ mslugxat10        // Hack
 mslugla01         // Hack
 msluglb01         // Hack
 mslug2la01        // Hack
-mslug2la02        // Hack
+//mslug2la02        // Hack
 mslug2la03        // Hack
-mslug2la04        // Hack
+//mslug2la04        // Hack
 mslug2la05        // Hack
-mslug2la06        // Hack
-mslug2la07        // Hack
-mslug2la08        // Hack
+//mslug2la06        // Hack
+//mslug2la07        // Hack
+//mslug2la08        // Hack
 mslug2lb01        // Hack
-mslug2lb02        // Hack
+//mslug2lb02        // Hack
 mslug2lb03        // Hack
-mslug2lb04        // Hack
+//mslug2lb04        // Hack
 mslug2lb05        // Hack
-mslug2lb06        // Hack
-mslug2lb07        // Hack
-mslug2lb08        // Hack
+//mslug2lb06        // Hack
+//mslug2lb07        // Hack
+//mslug2lb08        // Hack
 mslug3la01        // Hack
-mslug3la02        // Hack
+//mslug3la02        // Hack
 mslug3la03        // Hack
-mslug3la04        // Hack
-mslug3la05        // Hack
+//mslug3la04        // Hack
+//mslug3la05        // Hack
 mslug3la06        // Hack
 mslug3lb01        // Hack
-mslug3lb02        // Hack
+//mslug3lb02        // Hack
 mslug3lb03        // Hack
-mslug3lb04        // Hack
-mslug3lb05        // Hack
+//mslug3lb04        // Hack
+//mslug3lb05        // Hack
 mslug3lb06        // Hack
 mslug3lc01        // Hack
-mslug3lc02        // Hack
+//mslug3lc02        // Hack
 mslug3lc03        // Hack
-mslug3lc04        // Hack
-mslug3lc05        // Hack
+//mslug3lc04        // Hack
+//mslug3lc05        // Hack
 mslug3lc06        // Hack
 mslug3ld01        // Hack
-mslug3ld02        // Hack
+//mslug3ld02        // Hack
 mslug3ld03        // Hack
-mslug3ld04        // Hack
-mslug3ld05        // Hack
+//mslug3ld04        // Hack
+//mslug3ld05        // Hack
 mslug3ld06        // Hack
 mslug3le01        // Hack
-mslug3le02        // Hack
+//mslug3le02        // Hack
 mslug3le03        // Hack
-mslug3le04        // Hack
-mslug3le05        // Hack
+//mslug3le04        // Hack
+//mslug3le05        // Hack
 mslug3le06        // Hack
 mslug3lf01        // Hack
-mslug3lf02        // Hack
+//mslug3lf02        // Hack
 mslug3lf03        // Hack
-mslug3lf04        // Hack
-mslug3lf05        // Hack
+//mslug3lf04        // Hack
+//mslug3lf05        // Hack
 mslug3lf06        // Hack
 mslug3lg01        // Hack
-mslug3lg02        // Hack
+//mslug3lg02        // Hack
 mslug3lg03        // Hack
-mslug3lg04        // Hack
-mslug3lg05        // Hack
+//mslug3lg04        // Hack
+//mslug3lg05        // Hack
 mslug3lg06        // Hack
 mslug3lh01        // Hack
-mslug3lh02        // Hack
+//mslug3lh02        // Hack
 mslug3lh03        // Hack
-mslug3lh04        // Hack
-mslug3lh05        // Hack
+//mslug3lh04        // Hack
+//mslug3lh05        // Hack
 mslug3lh06        // Hack
-mslug3li01        // Hack
+//mslug3li01        // Hack
 mslug4la01        // Hack
-mslug4la02        // Hack
+//mslug4la02        // Hack
 mslug4la03        // Hack
-mslug4la04        // Hack
-mslug4la05        // Hack
+//mslug4la04        // Hack
+//mslug4la05        // Hack
 mslug4lb01        // Hack
-mslug4lb02        // Hack
+//mslug4lb02        // Hack
 mslug4lb03        // Hack
-mslug4lb04        // Hack
-mslug4lb05        // Hack
+//mslug4lb04        // Hack
+//mslug4lb05        // Hack
 mslug4lc01        // Hack
-mslug4lc02        // Hack
+//mslug4lc02        // Hack
 mslug4lc03        // Hack
-mslug4lc04        // Hack
-mslug4lc05        // Hack
+//mslug4lc04        // Hack
+//mslug4lc05        // Hack
 mslug4ld01        // Hack
-mslug4ld02        // Hack
+//mslug4ld02        // Hack
 mslug4ld03        // Hack
-mslug4ld04        // Hack
-mslug4ld05        // Hack
+//mslug4ld04        // Hack
+//mslug4ld05        // Hack
 mslug4le01        // Hack
-mslug4le02        // Hack
+//mslug4le02        // Hack
 mslug4le03        // Hack
-mslug4le04        // Hack
-mslug4le05        // Hack
+//mslug4le04        // Hack
+//mslug4le05        // Hack
 mslug4lf01        // Hack
-mslug4lf02        // Hack
+//mslug4lf02        // Hack
 mslug4lf03        // Hack
-mslug4lf04        // Hack
-mslug4lf05        // Hack
+//mslug4lf04        // Hack
+//mslug4lf05        // Hack
 mslug4lg01        // Hack
-mslug4lg02        // Hack
+//mslug4lg02        // Hack
 mslug4lg03        // Hack
-mslug4lg04        // Hack
-mslug4lg05        // Hack
+//mslug4lg04        // Hack
+//mslug4lg05        // Hack
 mslug5la01        // Hack
-mslug5la02        // Hack
-mslug5la03        // Hack
+//mslug5la02        // Hack
+//mslug5la03        // Hack
 mslug5lb01        // Hack
-mslug5lb02        // Hack
-mslug5lb03        // Hack
+//mslug5lb02        // Hack
+//mslug5lb03        // Hack
 mslug5lc01        // Hack
-mslug5lc02        // Hack
-mslug5lc03        // Hack
+//mslug5lc02        // Hack
+//mslug5lc03        // Hack
 mslug5ld01        // Hack
-mslug5ld02        // Hack
-mslug5ld03        // Hack
+//mslug5ld02        // Hack
+//mslug5ld03        // Hack
 mslug5le01        // Hack
-mslug5le02        // Hack
-mslug5le03        // Hack
+//mslug5le02        // Hack
+//mslug5le03        // Hack
 mslug5lf01        // Hack
-mslug5lf02        // Hack
-mslug5lf03        // Hack
+//mslug5lf02        // Hack
+//mslug5lf03        // Hack
 mslug5lg01        // Hack
-mslug5lg02        // Hack
-mslug5lg03        // Hack
+//mslug5lg02        // Hack
+//mslug5lg03        // Hack
 mslug5lh01        // Hack
-mslug5lh02        // Hack
-mslug5lh03        // Hack
+//mslug5lh02        // Hack
+//mslug5lh03        // Hack
 mslugxla01        // Hack
-mslugxla02        // Hack
-mslugxla03        // Hack
+//mslugxla02        // Hack
+//mslugxla03        // Hack
 mslugxlb01        // Hack
-mslugxlb02        // Hack
-mslugxlb03        // Hack
+//mslugxlb02        // Hack
+//mslugxlb03        // Hack
 mslugxlc01        // Hack
-mslugxlc02        // Hack
-mslugxlc03        // Hack
+//mslugxlc02        // Hack
+//mslugxlc03        // Hack
 mslugxld01        // Hack
-mslugxld02        // Hack
-mslugxld03        // Hack
+//mslugxld02        // Hack
+//mslugxld03        // Hack
 mslugxle01        // Hack
-mslugxle02        // Hack
-mslugxle03        // Hack
+//mslugxle02        // Hack
+//mslugxle03        // Hack
 mslugxlf01        // Hack
-mslugxlf02        // Hack
-mslugxlf03        // Hack
+//mslugxlf02        // Hack
+//mslugxlf03        // Hack
 mslugxlg01        // Hack
-mslugxlg02        // Hack
-mslugxlg03        // Hack
+//mslugxlg02        // Hack
+//mslugxlg03        // Hack
 mslugxlh01        // Hack
-mslugxlh02        // Hack
-mslugxlh03        // Hack
+//mslugxlh02        // Hack
+//mslugxlh03        // Hack
 
 @source:neogeo.cpp
 mslugrma01        // Hack

@@ -1995,6 +1995,7 @@ INPUT_PORTS_END
     MSLUGXRMX_PLAYERS_CHANGING_UNIFORM_MODS_FILL \
 	MSLUGXAT_SOLDIERSHIELD_CHANGING_UNIFORM_MODS_FILL \
 	MSLUGX_HELICOPTER_FIX_FILL \
+	MSLUGX_BIGHEAVYMACHINEGUNBOMB_MODS_FILL \
     MSLUGX_DEBUGMENUENGLISHTRANSLATION_MODS_FILL \
 	MSLUGXRMX_MVS_FILL \
 	MSLUGX_AES_FIX_FILL \
@@ -4342,6 +4343,13 @@ INPUT_PORTS_END
 	ROM_FILL(0x2DAD76,1,0x06)\
     ROM_FILL(0x2DAD77,1,0xC5)
 
+#define MSLUGX_BIGHEAVYMACHINEGUNBOMB_MODS_FILL \
+	ROM_FILL(0xC0E75,1,0x01)\
+    ROM_FILL(0xC0EF2,1,0x10)\
+	ROM_FILL(0xC0EF3,1,0x0A)\
+	ROM_FILL(0xC33AB,1,0x01)\
+    ROM_FILL(0xC0E83,1,0x14)
+
 #define MSLUGX_ANTIAIRCRAFT_FIX_FILL \
 	ROM_FILL(0x7BBD4,1,0x00)\
     ROM_FILL(0x7BBD5,1,0x02)\
@@ -5164,6 +5172,28 @@ ROM_START( mslugxhc35 ) //mslugxmdjdfc
     MSLUGX_AUDIO_128K
 	MSLUGX_YMSND
 	MSLUGXCQI_SPRITES
+ROM_END
+
+ROM_START( mslugxhc36 )
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "250_hc36.p1", 0x000000, 0x100000, CRC(4f365912) SHA1(a4fd6ab9bad2093323676e8877e2b9ef0688156d) )
+	ROM_LOAD16_WORD_SWAP( "250_hc36.p2", 0x100000, 0x400000, CRC(9d8ec80f) SHA1(9b75d57a7e71574144936c05073e8538ad2fed83) )
+    MSLUGXAT5_CUZTOMESSENTIALPATCH_MODS_FILL
+    MSLUGX_SFIX_128K
+    MSLUGX_AUDIO_128K
+	MSLUGX_YMSND
+	MSLUGXLB_SPRITES
+ROM_END
+
+ROM_START( mslugxhc37 )
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "250_hc37.p1", 0x000000, 0x100000, CRC(76aed1e2) SHA1(0308d3d49a7967657ef5e6b1f2784484654af312) )
+	ROM_LOAD16_WORD_SWAP( "250_hc37.p2", 0x100000, 0x400000, CRC(fd7f67ae) SHA1(2f60ae3a130d766acf21c89d6b557018e30c5252) )
+    MSLUGXAT5_CUZTOMESSENTIALPATCH_MODS_FILL
+    MSLUGX_SFIX_128K
+    MSLUGX_AUDIO_128K
+	MSLUGX_YMSND
+	MSLUGXLB_SPRITES
 ROM_END
 
  /*******
@@ -7167,6 +7197,8 @@ GAME( 2023, mslugxhc32,       mslugx,   neoclock_noslot, mslugx,     neogeo_stat
 GAME( 2024, mslugxhc33,       mslugx,   neoclock_noslot, mslugxcq,   neogeo_state,    init_mslugx,     ROT0, "GOTVG",           "Metal Slug X (Legendary 4.5 2024-12-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslugxhc34,       mslugx,   neoclock_noslot, mslugxcqi,  neogeo_state,    init_mslugx,     ROT0, "GOTVG",           "Metal Slug X (Legendary Firepower Showdown 7.5 2025-09-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslugxhc35,       mslugx,   neoclock_noslot, mslugxcqi,  neogeo_state,    init_mslugx,     ROT0, "GOTVG",           "Metal Slug X (Revenge of the Morden Army 7.5M 2025-09-22)", MACHINE_SUPPORTS_SAVE )
+GAME( 2021, mslugxhc36,       mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "Gaston90",        "Metal Slug X (Apocalyptic Time The 2 Beginning Of The End Of Time 7.1 2R 2021-12-05) (Earlier)", MACHINE_SUPPORTS_SAVE ) // Update 2023-03-21
+GAME( 2023, mslugxhc37,       mslugx,   neoclock_noslot, mslugx,     neogeo_state,    init_mslugx,     ROT0, "Gaston90",        "Metal Slug X (Apocalyptic Time The 3 Beginning Of The End Of Time 8.2 2R 2023-04-09)", MACHINE_SUPPORTS_SAVE ) // Update 2023-03-21
 
 /*********************************************************************************
 * This game sector is exclusive 2017 - 2025, its modifications that load have been customized

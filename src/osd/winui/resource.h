@@ -188,6 +188,30 @@
 #define IDI_HEADER_UP                   308
 #define IDI_HEADER_DOWN                 309
 
+// 修改的 代码来源 (加斯顿90)
+//=====================================================>>>
+#define IDB_NEOCD_SLUG1                 310
+#define IDB_NEOCD_SLUG2                 311 
+#define IDB_ATOMIS_SLUG6                312
+#define IDB_PS2_SLUG6                   313
+#define IDB_PS2_SLUG6_PLUS              314
+#define IDB_PS2_SLUG6_SLUG              315
+#define IDB_NDS_SLUG7                   316
+#define IDB_NDS_SLUG7_MIX               317
+#define IDB_NDS_SLUG7_PLUS              318
+#define IDB_NDS_SLUG7_SLUG              319
+#define IDB_PSP_SLUGXX                  320
+#define IDB_PSP_SLUGXX_MIX              321
+#define IDB_PSP_SLUGXX_PLUS             322
+#define IDB_GBA_SLUG_ADVANCE            323
+#define IDB_GBA_SLUG_ADVANCE_TRAINER    324
+#define IDB_GBA_SLUG_ADVANCE_BETA       325
+#define IDB_GBA_SLUG_ADVANCE_MIX        326
+#define IDB_GBA_SLUG_ADVANCE_PLUS       327
+#define IDB_NGPC_SLUG_1ST               328
+#define IDB_NGPC_SLUG_2ND               329
+//=====================================================>>>
+
 #define IDC_LIST                        1000
 #define IDC_JOYSTICK                    1003
 #define IDC_SIZES                       1005
@@ -549,9 +573,29 @@
 #define IDC_AVI_POS_CENTER              1854 // MAME_AVI
 #define IDC_FPS                         1855 // MAME_AVI
 
-
-
-
+// 修改的 代码来源 (加斯顿90)
+//=====================================================>>>
+#define ID_NEOCD_SLUG1                  5201
+#define ID_NEOCD_SLUG2                  5202
+#define ID_ATOMISWAVE_SLUG6             5203
+#define ID_PS2_SLUG6_ORIGINAL           5204 
+#define ID_PS2_SLUG6_PLUS               5205
+#define ID_PS2_SLUG6_SLUG               5206
+#define ID_NDS_SLUG7                    5207
+#define ID_NDS_SLUG7_MIX                5208
+#define ID_NDS_SLUG7_PLUS               5209
+#define ID_NDS_SLUG7_SLUG               5210
+#define ID_PSP_SLUGXX                   5211
+#define ID_PSP_SLUGXX_MIX               5212
+#define ID_PSP_SLUGXX_PLUS              5213
+#define ID_GBA_SLUG_ADVANCE             5214
+#define ID_GBA_SLUG_ADVANCE_TRAINER     5215
+#define ID_GBA_SLUG_ADVANCE_BETA        5216
+#define ID_GBA_SLUG_ADVANCE_MIX         5217
+#define ID_GBA_SLUG_ADVANCE_PLUS        5218
+#define ID_NGPC_SLUG_1ST                5219
+#define ID_NGPC_SLUG_2ND                5220
+//=====================================================>>>
 
 #define ID_CONTEXT_SHOW_FOLDER_START    39000
 #define ID_CONTEXT_SHOW_FOLDER_END      39499

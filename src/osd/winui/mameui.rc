@@ -1259,6 +1259,30 @@ IDB_REMOVE                BITMAP                    "res\\remove.bmp"
 IDB_RENAME                BITMAP                    "res\\rename.bmp"
 IDB_RESET                BITMAP                    "res\\reset.bmp"
 IDB_KLIST				 BITMAP					   "res\\klist.bmp"
+
+// 修改的 代码来源 (加斯顿90)
+//==============================================================================================>>>
+IDB_NEOCD_SLUG1          BITMAP                     "res\\neocd_slug1.bmp"
+IDB_NEOCD_SLUG2          BITMAP                     "res\\neocd_slug2.bmp"
+IDB_ATOMIS_SLUG6         BITMAP                     "res\\atomis_slug6.bmp"
+IDB_PS2_SLUG6            BITMAP                     "res\\ps2_slug6.bmp"
+IDB_PS2_SLUG6_PLUS       BITMAP                     "res\\ps2_slug6_plus.bmp"
+IDB_PS2_SLUG6_SLUG       BITMAP                     "res\\ps2_slug6_slug.bmp"
+IDB_NDS_SLUG7            BITMAP                     "res\\nds_slug7.bmp"
+IDB_NDS_SLUG7_MIX        BITMAP                     "res\\nds_slug7_mix.bmp"
+IDB_NDS_SLUG7_PLUS       BITMAP                     "res\\nds_slug7_plus.bmp"
+IDB_NDS_SLUG7_SLUG       BITMAP                     "res\\nds_slug7_slug.bmp"
+IDB_PSP_SLUGXX           BITMAP                     "res\\psp_slugxx.bmp"
+IDB_PSP_SLUGXX_MIX       BITMAP                     "res\\psp_slugxx_mix.bmp"
+IDB_PSP_SLUGXX_PLUS      BITMAP                     "res\\psp_slugxx_plus.bmp"
+IDB_GBA_SLUG_ADVANCE     BITMAP                     "res\\gba_slug_advance.bmp"
+IDB_GBA_SLUG_ADVANCE_TRAINER  BITMAP                "res\\gba_slug_advance_trainer.bmp"
+IDB_GBA_SLUG_ADVANCE_BETA  BITMAP                   "res\\gba_slug_advance_beta.bmp"
+IDB_GBA_SLUG_ADVANCE_MIX   BITMAP                   "res\\gba_slug_advance_mix.bmp"
+IDB_GBA_SLUG_ADVANCE_PLUS  BITMAP                   "res\\gba_slug_advance_plus.bmp"
+IDB_NGPC_SLUG_1ST        BITMAP                     "res\\ngpc_slug_1st.bmp"
+IDB_NGPC_SLUG_2ND        BITMAP                     "res\\ngpc_slug_2nd.bmp"
+//==============================================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //
 // Cursor

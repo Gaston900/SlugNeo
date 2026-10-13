@@ -404,6 +404,31 @@ static HBITMAP hRemove = NULL;
 static HBITMAP hRename = NULL;
 static HBITMAP hReset = NULL;
 static HBITMAP hklist = NULL;	//use_KLIST
+
+// 修改的 代码来源 (加斯顿90)
+//=============================================================>>>
+static HBITMAP hNeoCdSlug1 = NULL;
+static HBITMAP hNeoCdSlug2 = NULL;
+static HBITMAP hAtomisSlug6 = NULL;
+static HBITMAP hPs2Slug6 = NULL;
+static HBITMAP hPs2Slug6Plus = NULL;
+static HBITMAP hPs2Slug6Slug = NULL;
+static HBITMAP hNdsSlug7 = NULL;
+static HBITMAP hNdsSlug7Mix = NULL;
+static HBITMAP hNdsSlug7Plus = NULL;
+static HBITMAP hNdsSlug7Slug = NULL;
+static HBITMAP hPspSlugXX = NULL;
+static HBITMAP hPspSlugXXMix = NULL;
+static HBITMAP hPspSlugXXPlus = NULL;
+static HBITMAP hGbaSlugAdvance = NULL;
+static HBITMAP hGbaSlugAdvanceTrainer = NULL;
+static HBITMAP hGbaSlugAdvanceBeta = NULL;
+static HBITMAP hGbaSlugAdvanceMix = NULL;
+static HBITMAP hGbaSlugAdvancePlus = NULL;
+static HBITMAP hNgpcSlug1st = NULL;
+static HBITMAP hNgpcSlug2nd = NULL;
+//=============================================================>>>
+
 static int optionfolder_count = 0;
 /* global data--know where to send messages */
 static bool in_emulation = false;
@@ -1434,12 +1459,26 @@ static void Win32UI_init(void)
 	CreateDirectoryA(".\\config", nullptr);
 	CreateDirectoryA(".\\support", nullptr);
 	CreateDirectoryA(".\\roms", nullptr);
+	CreateDirectoryA(".\\roms\\Arcade", nullptr);
+	CreateDirectoryA(".\\roms\\Atomiswave", nullptr);
+	CreateDirectoryA(".\\roms\\GBA", nullptr);
+	CreateDirectoryA(".\\roms\\NDS", nullptr);
+	CreateDirectoryA(".\\roms\\NeoCD", nullptr);
+	CreateDirectoryA(".\\roms\\NGPC", nullptr);
+	CreateDirectoryA(".\\roms\\PS2", nullptr);
+	CreateDirectoryA(".\\roms\\PSP", nullptr);
 
     // Semi-automatic Subfolder is created
 	CreateDirectoryA(".\\config\\bgfx", nullptr);
 	CreateDirectoryA(".\\config\\cfg", nullptr);
 	CreateDirectoryA(".\\config\\diff", nullptr);
 	CreateDirectoryA(".\\config\\docs", nullptr);
+	CreateDirectoryA(".\\config\\emu", nullptr);
+	CreateDirectoryA(".\\config\\emu\\BizHawk", nullptr);
+	CreateDirectoryA(".\\config\\emu\\DeSmuME", nullptr);
+	CreateDirectoryA(".\\config\\emu\\Flycast", nullptr);
+	CreateDirectoryA(".\\config\\emu\\PCSX2", nullptr);
+	CreateDirectoryA(".\\config\\emu\\PPSSPP", nullptr);
 	CreateDirectoryA(".\\config\\folders", nullptr);
 	CreateDirectoryA(".\\config\\glsl", nullptr);
 	CreateDirectoryA(".\\config\\hash", nullptr);
@@ -1721,6 +1760,31 @@ static void Win32UI_exit(void)
 	DeleteBitmap(hReset);
 	DeleteBitmap(hMissing_bitmap);
 	DeleteBitmap(hklist);// USE_KLIST
+
+// 修改的 代码来源 (加斯顿90)
+//=============================================================>>>
+	DeleteBitmap(hNeoCdSlug1);
+	DeleteBitmap(hNeoCdSlug2);
+    DeleteBitmap(hAtomisSlug6);
+	DeleteBitmap(hPs2Slug6);
+	DeleteBitmap(hPs2Slug6Plus);
+	DeleteBitmap(hPs2Slug6Slug);
+	DeleteBitmap(hNdsSlug7);
+	DeleteBitmap(hNdsSlug7Mix);
+	DeleteBitmap(hNdsSlug7Plus);
+	DeleteBitmap(hNdsSlug7Slug);
+	DeleteBitmap(hPspSlugXX);
+	DeleteBitmap(hPspSlugXXMix);
+	DeleteBitmap(hPspSlugXXPlus);
+	DeleteBitmap(hGbaSlugAdvance);
+	DeleteBitmap(hGbaSlugAdvanceTrainer);
+	DeleteBitmap(hGbaSlugAdvanceBeta);
+	DeleteBitmap(hGbaSlugAdvanceMix);
+	DeleteBitmap(hGbaSlugAdvancePlus);
+	DeleteBitmap(hNgpcSlug1st);
+	DeleteBitmap(hNgpcSlug2nd);
+//=============================================================>>>
+
 	DeleteFont(hFontGui);
 	DeleteFont(hFontList);
 	DeleteFont(hFontHist);
@@ -2620,6 +2684,50 @@ static void InitMenuIcons(void)
 	hReset = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_KLIST)); // USE_KLIST
 	hklist = CreateBitmapTransparent(hTemp);
+
+// 修改的 代码来源 (加斯顿90)
+//=====================================================================>>>
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NEOCD_SLUG1));
+	hNeoCdSlug1 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NEOCD_SLUG2));
+	hNeoCdSlug2 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_ATOMIS_SLUG6));
+	hAtomisSlug6 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PS2_SLUG6));
+	hPs2Slug6 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PS2_SLUG6_PLUS));
+	hPs2Slug6Plus = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PS2_SLUG6_SLUG));
+	hPs2Slug6Slug = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NDS_SLUG7));
+	hNdsSlug7 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NDS_SLUG7_MIX));
+	hNdsSlug7Mix = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NDS_SLUG7_PLUS));
+	hNdsSlug7Plus = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NDS_SLUG7_SLUG));
+	hNdsSlug7Slug = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PSP_SLUGXX));
+	hPspSlugXX = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PSP_SLUGXX_MIX));
+	hPspSlugXXMix = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PSP_SLUGXX_PLUS));
+	hPspSlugXXPlus = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_GBA_SLUG_ADVANCE));
+	hGbaSlugAdvance = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_GBA_SLUG_ADVANCE_TRAINER));
+	hGbaSlugAdvanceTrainer = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_GBA_SLUG_ADVANCE_BETA));
+	hGbaSlugAdvanceBeta = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_GBA_SLUG_ADVANCE_MIX));
+	hGbaSlugAdvanceMix = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_GBA_SLUG_ADVANCE_PLUS));
+	hGbaSlugAdvancePlus = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NGPC_SLUG_1ST));
+	hNgpcSlug1st = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NGPC_SLUG_2ND));
+	hNgpcSlug2nd = CreateBitmapTransparent(hTemp);
+//=====================================================================>>>
 }
 
 static void CopyToolTipText(LPTOOLTIPTEXT lpttt)
@@ -4115,6 +4223,326 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 
 	switch (id)
 	{
+
+// 修改的 代码来源 (加斯顿90)
+//================================================================================================================>>>
+		case ID_NEOCD_SLUG1:
+		case ID_NEOCD_SLUG2:
+		{
+			const char* szExeName = "SlugNeo_x64.exe";
+			
+			if (GetFileAttributesA(szExeName) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd,
+					"NEOCD SYSTEM CRITICAL ERROR:\n\nThe file cannot be found 'SlugNeo_x64.exe' in your computer's directory.\nPlease verify that the file .CHD is in its place.", 
+					"Boxes NeoCD Error", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			if (id == ID_NEOCD_SLUG1)
+				snprintf(szCmdArgs, sizeof(szCmdArgs), "%s neocdz mslug -rompath \"roms;.\\roms\\NeoCD\"", szExeName);
+			else
+				snprintf(szCmdArgs, sizeof(szCmdArgs), "%s neocdz mslug2 -rompath \"roms;.\\roms\\NeoCD\"", szExeName);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the NeoCD executable.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
+		case ID_ATOMISWAVE_SLUG6:
+		{
+			const char* szFlycastExe = "config\\emu\\Flycast\\flycast.exe";
+			const char* szSlug6Zip   = "roms\\Atomiswave\\mslug6.zip";
+			
+			if (GetFileAttributesA(szFlycastExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"ATOMISWAVE SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\Flycast\\flycast.exe'\n\nPlease verify that the file is in its place", 
+					"Boxes Flycast Error", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSlug6Zip) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"ATOMISWAVE ROM ERROR:\n\nThe location of the compressed game file was not found:\n'roms\\Atomiswave\\mslug6.zip'\n\nPlace the correct ZIP file.", 
+					"Boxes mslug6.zip Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szFlycastExe, szSlug6Zip);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the Atomiswave executable.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
+		case ID_PS2_SLUG6_ORIGINAL:
+		case ID_PS2_SLUG6_PLUS:
+		case ID_PS2_SLUG6_SLUG:
+		{
+			const char* szPcsx2Exe = "config\\emu\\PCSX2\\pcsx2.exe";
+			const char* szSelectedIso = "";
+			
+			if (id == ID_PS2_SLUG6_ORIGINAL)
+				szSelectedIso = "roms\\PS2\\mslug6.iso";
+			else if (id == ID_PS2_SLUG6_PLUS)
+				szSelectedIso = "roms\\PS2\\mslug6p.iso";
+			else
+				szSelectedIso = "roms\\PS2\\mslug6s.iso";
+			
+			if (GetFileAttributesA(szPcsx2Exe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"PCSX2 CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PCSX2\\pcsx2.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes PCSX2 Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedIso) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szIsoError[MAX_PATH + 200];
+				snprintf(szIsoError, sizeof(szIsoError), 
+					"PS2 FILE ERROR DETECTED:\n\nThe location of the virtual disk file was not found:\n'%s'\n\nInsert the correct ISO file.", szSelectedIso);
+				winui_message_box_utf8(hWnd, szIsoError, "Boxes ISO Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szPcsx2Exe, szSelectedIso);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected PCSX2 PlayStation 2 target.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
+		case ID_NDS_SLUG7:
+		case ID_NDS_SLUG7_MIX:
+		case ID_NDS_SLUG7_PLUS:
+		case ID_NDS_SLUG7_SLUG:
+		{
+			const char* szDesmumeExe = "config\\emu\\DeSmuME\\DeSmuME.exe";
+			const char* szSelectedZip = "";
+			
+			if (id == ID_NDS_SLUG7)
+				szSelectedZip = "roms\\NDS\\mslug7.zip";
+			else if (id == ID_NDS_SLUG7_MIX)
+				szSelectedZip = "roms\\NDS\\mslug7m.zip";
+			else if (id == ID_NDS_SLUG7_PLUS)
+				szSelectedZip = "roms\\NDS\\mslug7p.zip";
+			else
+				szSelectedZip = "roms\\NDS\\mslug7s.zip";
+			
+			if (GetFileAttributesA(szDesmumeExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"DESMUME CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\DeSmuME\\DeSmuME.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes DeSmuME Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedZip) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szZipError[MAX_PATH + 200];
+				snprintf(szZipError, sizeof(szZipError), 
+					"NDS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct ZIP file.", szSelectedZip);
+				winui_message_box_utf8(hWnd, szZipError, "Boxes NDS Zip Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szDesmumeExe, szSelectedZip);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected DeSmuME Nintendo DS target.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
+		case ID_PSP_SLUGXX:
+		case ID_PSP_SLUGXX_MIX:
+		case ID_PSP_SLUGXX_PLUS:
+		{
+			const char* szPpssppExe = "config\\emu\\PPSSPP\\PPSSPPWindows64.exe";
+			const char* szSelectedIso = "";
+			
+			if (id == ID_PSP_SLUGXX)
+				szSelectedIso = "roms\\PSP\\mslugxx.iso";
+			else if (id == ID_PSP_SLUGXX_MIX)
+				szSelectedIso = "roms\\PSP\\mslugxxm.iso";
+			else
+				szSelectedIso = "roms\\PSP\\mslugxxp.iso";
+			
+			if (GetFileAttributesA(szPpssppExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"PPSSPP CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PPSSPP\\PPSSPPWindows64.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes PPSSPP Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedIso) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szIsoError[MAX_PATH + 200];
+				snprintf(szIsoError, sizeof(szIsoError), 
+					"PSP FILE ERROR DETECTED:\n\nThe location of the virtual disk file was not found:\n'%s'\n\nInsert the correct ISO file.", szSelectedIso);
+				winui_message_box_utf8(hWnd, szIsoError, "Boxes PSP ISO Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szPpssppExe, szSelectedIso);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected PPSSPP Sony PSP target.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+		case ID_GBA_SLUG_ADVANCE:
+		case ID_GBA_SLUG_ADVANCE_TRAINER:
+		case ID_GBA_SLUG_ADVANCE_BETA:
+		case ID_GBA_SLUG_ADVANCE_MIX:
+		case ID_GBA_SLUG_ADVANCE_PLUS:
+		{
+			const char* szBizHawkExe = "config\\emu\\BizHawk\\EmuHawk.exe";
+			const char* szSelectedZip = "";
+			
+			if (id == ID_GBA_SLUG_ADVANCE)
+				szSelectedZip = "roms\\GBA\\msluga.zip";
+			else if (id == ID_GBA_SLUG_ADVANCE_TRAINER)
+				szSelectedZip = "roms\\GBA\\msluga7t.zip";
+			else if (id == ID_GBA_SLUG_ADVANCE_BETA)
+				szSelectedZip = "roms\\GBA\\mslugab.zip";
+			else if (id == ID_GBA_SLUG_ADVANCE_MIX)
+				szSelectedZip = "roms\\GBA\\mslugam.zip";
+			else
+				szSelectedZip = "roms\\GBA\\mslugap.zip";
+			
+			if (GetFileAttributesA(szBizHawkExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"GBA BIZHAWK CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\BizHawk\\EmuHawk.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes BizHawk Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedZip) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szZipError[MAX_PATH + 200];
+				snprintf(szZipError, sizeof(szZipError), 
+					"GBA FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct ZIP file.", szSelectedZip);
+				winui_message_box_utf8(hWnd, szZipError, "Boxes GBA Zip Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szBizHawkExe, szSelectedZip);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected BizHawk GBA target.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
+		case ID_NGPC_SLUG_1ST:
+		case ID_NGPC_SLUG_2ND:
+		{
+			const char* szBizHawkExe = "config\\emu\\BizHawk\\EmuHawk.exe";
+			const char* szSelectedZip = "";
+			
+			if (id == ID_NGPC_SLUG_1ST)
+				szSelectedZip = "roms\\NGPC\\mslug1st.zip";
+			else
+				szSelectedZip = "roms\\NGPC\\mslug2nd.zip";
+
+			if (GetFileAttributesA(szBizHawkExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd, 
+					"NGPC BIZHAWK CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\BizHawk\\EmuHawk.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes BizHawk Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedZip) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szZipError[MAX_PATH + 200];
+				snprintf(szZipError, sizeof(szZipError), 
+					"NGPC FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct ZIP file.", szSelectedZip);
+				winui_message_box_utf8(hWnd, szZipError, "Boxes NGPC Zip Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szBizHawkExe, szSelectedZip);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected BizHawk NGPC target.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+//================================================================================================================>>>
+
 		case ID_FILE_PLAY:
 			MamePlayGame();
 			SetFocus(hWndList);
@@ -6194,9 +6622,140 @@ void InitMainMenu(HMENU hMainMenu)
 	SetMenuItemBitmaps(hMainMenu, ID_CONTEXT_FILTERS, MF_BYCOMMAND, hFilters, hFilters);
 	SetMenuItemBitmaps(hMainMenu, ID_OPTIONS_RESET_DEFAULTS, MF_BYCOMMAND, hReset, hReset);
 	SetMenuItemBitmaps(hMainMenu, ID_KOREAN_GAMELIST, MF_BYCOMMAND, hklist, hklist); // USE_KLIST
+
+
+// 修改的 代码来源 (加斯顿90)
+//================================================================================================================>>>
+	HMENU hNeoCDMenu = CreatePopupMenu();
+	if (hNeoCDMenu != nullptr)
+	{
+		AppendMenu(hNeoCDMenu, MF_STRING, ID_NEOCD_SLUG1, TEXT("Metal Slug"));
+		AppendMenu(hNeoCDMenu, MF_STRING, ID_NEOCD_SLUG2, TEXT("Metal Slug 2"));
+		
+		// 🟩 EL JAQUE MATE ESTÉTICO: Asociamos los handles cargados a cada comando correspondiente de tu foto
+		SetMenuItemBitmaps(hNeoCDMenu, ID_NEOCD_SLUG1, MF_BYCOMMAND, hNeoCdSlug1, hNeoCdSlug1);
+		SetMenuItemBitmaps(hNeoCDMenu, ID_NEOCD_SLUG2, MF_BYCOMMAND, hNeoCdSlug2, hNeoCdSlug2);
+		
+		// Lo estampamos con look de revista al lado de las pestañas tradicionales del frontend
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNeoCDMenu, TEXT("NeoCD"));
+	}
+
+	// 修改 de Código Fuente (Gastón90 y Socio de las ROMs)
+	// ==================== INYECTOR AXIAL DEL MENÚ SUPERIOR ATOMISWAVE ====================>>>
+	// Autor del fix definitivo: Gastón90 y Socio de Boxes. Proyecto Expansión de Barras de Herramientas Premium.
+	// Enganchamos la pestaña "Atomiswave" de forma nativa en el Framework Win32 utilizando la ventana global hMain.
+	HMENU hAtomiswaveMenu = CreatePopupMenu();
+	if (hAtomiswaveMenu != nullptr)
+	{
+		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_SLUG6, TEXT("Metal Slug 6"));
+		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_SLUG6, MF_BYCOMMAND, hAtomisSlug6, hAtomisSlug6);
+
+		// 🟩 UNIFICACIÓN DE COLOR DE RE_VIS_TA: Como re-calbramos CreateBitmapTransparent a blanco puro,
+		// si el día de mañana le asignas un BMP a este botón, lucirá impecable sin parches grises parásitos.
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hAtomiswaveMenu, TEXT("Atomiswave"));
+	}
+	// ======================================================================================>>>
+
+	// 修改 de Código Fuente (Gastón90 y Socio de las ROMs)
+	// ==================== INYECTOR AXIAL DEL MENÚ SUPERIOR PCSX2 ====================>>>
+	// Autor del fix definitivo: Gastón90 y Socio de Boxes. Proyecto Expansión de Barras de Herramientas Premium de PS2.
+	// Enganchamos la pestaña "PCSX2" de forma nativa en el Framework Win32 utilizando la ventana global hMain.
+	HMENU hPcsx2Menu = CreatePopupMenu();
+	if (hPcsx2Menu != nullptr)
+	{
+		AppendMenu(hPcsx2Menu, MF_STRING, ID_PS2_SLUG6_ORIGINAL, TEXT("Metal Slug 6"));
+		AppendMenu(hPcsx2Menu, MF_STRING, ID_PS2_SLUG6_PLUS, TEXT("Metal Slug 6 Plus"));
+		AppendMenu(hPcsx2Menu, MF_STRING, ID_PS2_SLUG6_SLUG, TEXT("Metal Slug 6 Slug"));
+		
+		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los tres handles de PS2 cargados en blanco puro al unísono de paridad
+		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_ORIGINAL, MF_BYCOMMAND, hPs2Slug6, hPs2Slug6);
+		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_PLUS, MF_BYCOMMAND, hPs2Slug6Plus, hPs2Slug6Plus);
+		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_SLUG, MF_BYCOMMAND, hPs2Slug6Slug, hPs2Slug6Slug);
+		
+		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPcsx2Menu, TEXT("PCSX2"));
+	}
+	// ===================================================================================================>>>
+
+	// 修改 de Código Fuente (Gastón90 y Socio de las ROMs)
+	// ==================== INYECTOR AXIAL DEL MENÚ SUPERIOR DESMUME ====================>>>
+	// Autor del fix definitivo: Gastón90 y Socio de Boxes. Proyecto Expansión de Barras de Herramientas Premium de NDS.
+	// Enganchamos la pestaña "DeSmuME" de forma nativa en el Framework Win32 utilizando la ventana global hMain.
+	HMENU hDesmumeMenu = CreatePopupMenu();
+	if (hDesmumeMenu != nullptr)
+	{
+		AppendMenu(hDesmumeMenu, MF_STRING, ID_NDS_SLUG7, TEXT("Metal Slug 7"));
+		AppendMenu(hDesmumeMenu, MF_STRING, ID_NDS_SLUG7_MIX, TEXT("Metal Slug 7 Mix"));
+		AppendMenu(hDesmumeMenu, MF_STRING, ID_NDS_SLUG7_PLUS, TEXT("Metal Slug 7 Plus"));
+		AppendMenu(hDesmumeMenu, MF_STRING, ID_NDS_SLUG7_SLUG, TEXT("Metal Slug 7 Slug"));
+		
+		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los cuatro handles de NDS cargados en blanco puro al unísono de paridad
+		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7, MF_BYCOMMAND, hNdsSlug7, hNdsSlug7);
+		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_MIX, MF_BYCOMMAND, hNdsSlug7Mix, hNdsSlug7Mix);
+		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_PLUS, MF_BYCOMMAND, hNdsSlug7Plus, hNdsSlug7Plus);
+		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_SLUG, MF_BYCOMMAND, hNdsSlug7Slug, hNdsSlug7Slug);
+		
+		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hDesmumeMenu, TEXT("DeSmuME"));
+	}
+	// ======================================================================================>>>
 	
+	HMENU hPpssppMenu = CreatePopupMenu();
+	if (hPpssppMenu != nullptr)
+	{
+		AppendMenu(hPpssppMenu, MF_STRING, ID_PSP_SLUGXX, TEXT("Metal Slug XX"));
+		AppendMenu(hPpssppMenu, MF_STRING, ID_PSP_SLUGXX_MIX, TEXT("Metal Slug XX Mix"));
+		AppendMenu(hPpssppMenu, MF_STRING, ID_PSP_SLUGXX_PLUS, TEXT("Metal Slug XX Plus"));
+		
+		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los tres handles de PSP cargados en blanco puro al unísono de paridad
+		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX, MF_BYCOMMAND, hPspSlugXX, hPspSlugXX);
+		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX_MIX, MF_BYCOMMAND, hPspSlugXXMix, hPspSlugXXMix);
+		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX_PLUS, MF_BYCOMMAND, hPspSlugXXPlus, hPspSlugXXPlus);
+		
+		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPpssppMenu, TEXT("PPSSPP"));
+	}
+	// ======================================================================================>>>
 	
+	HMENU hGbaMenu = CreatePopupMenu();
+	if (hGbaMenu != nullptr)
+	{
+		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE, TEXT("Metal Slug Advance"));
+		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE_TRAINER, TEXT("Metal Slug Advance Trainer"));
+		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE_BETA, TEXT("Metal Slug Advance Beta"));
+		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE_MIX, TEXT("Metal Slug Advance Mix"));
+		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE_PLUS, TEXT("Metal Slug Advance Plus"));
+		
+		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los cinco handles de GBA cargados en blanco puro al unísono de paridad
+		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE, MF_BYCOMMAND, hGbaSlugAdvance, hGbaSlugAdvance);
+		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_TRAINER, MF_BYCOMMAND, hGbaSlugAdvanceTrainer, hGbaSlugAdvanceTrainer);
+		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_BETA, MF_BYCOMMAND, hGbaSlugAdvanceBeta, hGbaSlugAdvanceBeta);
+		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_MIX, MF_BYCOMMAND, hGbaSlugAdvanceMix, hGbaSlugAdvanceMix);
+		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_PLUS, MF_BYCOMMAND, hGbaSlugAdvancePlus, hGbaSlugAdvancePlus);
+		
+		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hGbaMenu, TEXT("GBA"));
+	}
+	// ======================================================================================>>>
+	
+	HMENU hNgpcMenu = CreatePopupMenu();
+	if (hNgpcMenu != nullptr)
+	{
+		AppendMenu(hNgpcMenu, MF_STRING, ID_NGPC_SLUG_1ST, TEXT("Metal Slug 1ST Mission"));
+		AppendMenu(hNgpcMenu, MF_STRING, ID_NGPC_SLUG_2ND, TEXT("Metal Slug 2ND Mission"));
+		
+		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los dos handles de NGPC cargados en blanco puro al unísono de paridad
+		SetMenuItemBitmaps(hNgpcMenu, ID_NGPC_SLUG_1ST, MF_BYCOMMAND, hNgpcSlug1st, hNgpcSlug1st);
+		SetMenuItemBitmaps(hNgpcMenu, ID_NGPC_SLUG_2ND, MF_BYCOMMAND, hNgpcSlug2nd, hNgpcSlug2nd);
+		
+		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
+		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNgpcMenu, TEXT("NGPC"));
+	}
+	// ======================================================================================>>>
+	
+	DrawMenuBar(hMain); // Refrescamos usando la ventana global auténtica de tu archivo
 }
+//================================================================================================================>>>
 
 void InitTreeContextMenu(HMENU hTreeMenu)
 {

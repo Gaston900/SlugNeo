@@ -163,33 +163,13 @@
 #define IDI_SNAPSHEET                   283
 #define IDI_SHADER                      284
 #define IDB_KLIST						285	//USE_KLIST
-#define IDI_FOLDER_AT				    286
-#define IDI_FOLDER_CUZTOM				287
-#define IDI_FOLDER_DARKSOFT				288
-#define IDI_FOLDER_DARKSOFTHACK 		289
-#define IDI_FOLDER_DECRYPTEDEANDB 		290
-#define IDI_FOLDER_ENCRYPTEDCANDP 		291
-#define IDI_FOLDER_HACK 		        292
-#define IDI_FOLDER_HOMEBREW				293
-#define IDI_FOLDER_MSLUG				294
-#define IDI_FOLDER_MSLUG2				295
-#define IDI_FOLDER_MSLUG3				296
-#define IDI_FOLDER_MSLUG4				297
-#define IDI_FOLDER_MSLUG5				298
-#define IDI_FOLDER_MSLUGX				299
-#define IDI_FOLDER_NEOSD				300
-#define IDI_FOLDER_NEOSDHACK		    301
-#define IDI_FOLDER_ORIGINAL				302
-#define IDI_FOLDER_REMIX				303
-#define IDI_FOLDER_REMIXEXTREME		    304
-#define IDI_FOLDER_COLLECTION		    305
-#define IDI_FOLDER_UPDATE				306
-#define IDI_FOLDER_CONSOLE              307
-#define IDI_HEADER_UP                   308
-#define IDI_HEADER_DOWN                 309
+#define IDI_HEADER_UP                   286
+#define IDI_HEADER_DOWN                 287
 
 // 修改的 代码来源 (加斯顿90)
 //=====================================================>>>
+#define IDI_FOLDER_MSLUG				308
+#define IDI_FOLDER_CONSOLE              309
 #define IDB_NEOCD_SLUG1                 310
 #define IDB_NEOCD_SLUG2                 311 
 #define IDB_ATOMIS_SLUG6                312

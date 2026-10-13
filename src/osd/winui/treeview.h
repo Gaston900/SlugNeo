@@ -59,56 +59,38 @@ enum
 	FOLDER_NONE = 0,
 	FOLDER_ALLGAMES,
 	FOLDER_AVAILABLE,
-//	FOLDER_UNAVAILABLE,
-//	FOLDER_MANUFACTURER,
-//	FOLDER_YEAR,
-//	FOLDER_CPU,
-//	FOLDER_SOUND,
+	FOLDER_UNAVAILABLE,
+	FOLDER_MANUFACTURER,
+	FOLDER_YEAR,
+	FOLDER_CPU,
+	FOLDER_SOUND,
 	FOLDER_BIOS, //Do not disable
-//	FOLDER_HARDDISK,
-//	FOLDER_SAMPLES,
-//	FOLDER_MECHANICAL,
-//	FOLDER_LIGHTGUN,
-//	FOLDER_TRACKBALL,
+	FOLDER_HARDDISK,
+	FOLDER_SAMPLES,
+	FOLDER_MECHANICAL,
+	FOLDER_LIGHTGUN,
+	FOLDER_TRACKBALL,
 	FOLDER_WORKING,
-//	FOLDER_DEFICIENCY,
+	FOLDER_DEFICIENCY,
 	FOLDER_NONWORKING,
-//	FOLDER_ORIGINAL,
-//	FOLDER_CLONES,
+	FOLDER_ORIGINAL,
+	FOLDER_CLONES,
 	FOLDER_HORIZONTAL, //Do not disable
 	FOLDER_VERTICAL, //Do not disable
 	FOLDER_RASTER, //Do not disable
 	FOLDER_VECTOR, //Do not disable
-//	FOLDER_SCREENS,
-//	FOLDER_RESOLUTION,
-//	FOLDER_FPS,
+	FOLDER_SCREENS,
+	FOLDER_RESOLUTION,
+	FOLDER_FPS,
 	FOLDER_SOURCE, //Do not disable
 	FOLDER_SAVESTATE, //Do not disable
-//	FOLDER_DUMPING,
-//#ifdef USE_GAMEFOLDERS
-	FOLDER_AT,
-	FOLDER_CUZTOM,
-	FOLDER_DARKSOFT,
-	FOLDER_DARKSOFTHACK,
-	FOLDER_DECRYPTEDEANDB,
-	FOLDER_ENCRYPTEDCANDP,
-	FOLDER_HACK,
-	FOLDER_HOMEBREW,
-	FOLDER_MSLUG,
-	FOLDER_MSLUG2,
-	FOLDER_MSLUG3,
-	FOLDER_MSLUG4,
-	FOLDER_MSLUG5,
-	FOLDER_MSLUGX,
-    FOLDER_NEOSD,
-    FOLDER_NEOSDHACK,
-    FOLDER_ORIGINAL,
-    FOLDER_REMIX,
-    FOLDER_REMIXEXTREME,
-    FOLDER_COLLECTION,
-	FOLDER_UPDATE,
+	FOLDER_DUMPING,
+
+// 修改的 代码来源 (加斯顿90)
+//===========================>>>
 	FOLDER_CONSOLE,
-//#endif	
+	FOLDER_MSLUG,
+//===========================>>>
 	MAX_FOLDERS
 };
 
@@ -185,28 +167,10 @@ HIMAGELIST GetTreeViewIconList(void);
 int GetTreeViewIconIndex(int icon_id);
 void ResetTreeViewFolders(void);
 void SelectTreeViewFolder(int folder_id);
-//#ifdef USE_GAMEFOLDERS
-void CreateATFolders(int parent_index);
-void CreateCUZTOMFolders(int parent_index);
-void CreateDARKSOFTFolders(int parent_index);
-void CreateDARKSOFTHACKFolders(int parent_index);
-void CreateDECRYPTEDEANDBFolders(int parent_index);
-void CreateENCRYPTEDCANDPFolders(int parent_index);
-void CreateHACKFolders(int parent_index);
-void CreateHOMEBREWFolders(int parent_index);
+
+// 修改的 代码来源 (加斯顿90)
+//==========================================>>>
 void CreateMSLUGFolders(int parent_index);
-void CreateMSLUG2Folders(int parent_index);
-void CreateMSLUG3Folders(int parent_index);
-void CreateMSLUG4Folders(int parent_index);
-void CreateMSLUG5Folders(int parent_index);
-void CreateMSLUGXFolders(int parent_index);
-void CreateNEOSDFolders(int parent_index);
-void CreateNEOSDHACKFolders(int parent_index);
-void CreateORIGINALFolders(int parent_index);
-void CreateREMIXFolders(int parent_index);
-void CreateREMIXEXTREMEFolders(int parent_index);
-void CreateCOLLECTIONFolders(int parent_index);
-void CreateUPDATEFolders(int parent_index);
-//#endif
+//==========================================>>>
 
 #endif

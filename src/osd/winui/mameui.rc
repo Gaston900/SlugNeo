@@ -25,7 +25,7 @@ BEGIN
     POPUP "&File"
     BEGIN
         MENUITEM "Play\tAlt+O",                         ID_FILE_PLAY
-        MENUITEM SEPARATOR
+//        MENUITEM SEPARATOR
 #ifdef MAME_AVI
         MENUITEM "Game Recording (Compression Method)", ID_FILE_PLAY_WITH_AVI
 #endif /* MAME_AVI */        
@@ -332,9 +332,9 @@ IDI_ADVANCED            ICON                     "res\\advanced.ico"
 IDI_AUDIT_FAIL            ICON                      "res\\audit_fail.ico"
 IDI_FOLDER_IMPERFECT    ICON                     "res\\foldimp.ico"
 IDI_FOLDER_CPU          ICON                     "res\\foldcsb.ico"
-IDI_FOLDER_SOUND        ICON                     "res\\foldcsb.ico"
+IDI_FOLDER_SOUND        ICON                     "res\\foldsnd.ico"
 IDI_FOLDER_BIOS         ICON                     "res\\foldbios.ico"
-IDI_FOLDER_DUMP         ICON                     "res\\foldcsb.ico"
+IDI_FOLDER_DUMP         ICON                     "res\\folduni.ico"
 IDI_SYSTRAY             ICON                    "res\\mameui.ico"
 IDI_DEBUG                ICON                    "res\\debug.ico"
 IDI_MONITOR                ICON                     "res\\monitor.ico"
@@ -366,30 +366,12 @@ IDI_CONTROLSHEET        ICON                    "res\\joystick.ico"
 IDI_MISCSHEET            ICON                    "res\\misc.ico"
 IDI_MISC2SHEET            ICON                    "res\\debug.ico"
 IDI_SNAPSHEET            ICON                    "res\\snapshot.ico"
-//#ifdef USE_GAMEFOLDERS
-IDI_FOLDER_AT		            ICON				 	"res\\fold_at.ico"
-IDI_FOLDER_CUZTOM		        ICON	 				"res\\fold_cuztom.ico"
-IDI_FOLDER_DARKSOFT		        ICON	 				"res\\fold_darksoft.ico"
-IDI_FOLDER_DARKSOFTHACK         ICON	 				"res\\fold_darksofth.ico"
-IDI_FOLDER_DECRYPTEDEANDB 	    ICON	 				"res\\fold_decryptedeb.ico"
-IDI_FOLDER_ENCRYPTEDCANDP	    ICON					"res\\fold_encryptedcp.ico"
-IDI_FOLDER_HACK                 ICON					"res\\fold_hack.ico"
-IDI_FOLDER_HOMEBREW		        ICON				    "res\\fold_mslughb.ico"
-IDI_FOLDER_MSLUG		        ICON					"res\\fold_mslug.ico"
-IDI_FOLDER_MSLUG2		        ICON					"res\\fold_mslug2.ico"
-IDI_FOLDER_MSLUG3		        ICON					"res\\fold_mslug3.ico"
-IDI_FOLDER_MSLUG4		        ICON				    "res\\fold_mslug4.ico"
-IDI_FOLDER_MSLUG5		        ICON				    "res\\fold_mslug5.ico"
-IDI_FOLDER_MSLUGX		        ICON				    "res\\fold_mslugx.ico"
-IDI_FOLDER_NEOSD		        ICON				    "res\\fold_neosd.ico"
-IDI_FOLDER_NEOSDHACK		    ICON				    "res\\fold_neosdh.ico"
-IDI_FOLDER_ORIGINAL		        ICON				    "res\\fold_original.ico"
-IDI_FOLDER_REMIX		        ICON				    "res\\fold_remix.ico"
-IDI_FOLDER_REMIXEXTREME		    ICON				    "res\\fold_remixe.ico"
-IDI_FOLDER_COLLECTION	        ICON				    "res\\fold_serie.ico"
-IDI_FOLDER_UPDATE		        ICON				    "res\\fold_update.ico"
-IDI_FOLDER_CONSOLE              ICON                    "res\\foldavail.ico"
-//#endif
+
+// 修改的 代码来源 (加斯顿90)
+//==============================================================================>>>
+IDI_FOLDER_CONSOLE              ICON                    "res\\fold_console.ico"
+IDI_FOLDER_MSLUG		        ICON				 	"res\\fold_mslug.ico"
+//==============================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog

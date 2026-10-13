@@ -210,6 +210,9 @@
 #define IDB_GBA_SLUG_ADVANCE_PLUS       327
 #define IDB_NGPC_SLUG_1ST               328
 #define IDB_NGPC_SLUG_2ND               329
+#define IDB_CLEANSINGLE                 330
+#define IDB_CLEANALL                    331
+#define IDB_CONTEXT                     332
 //=====================================================>>>
 
 #define IDC_LIST                        1000
@@ -747,4 +750,10 @@
 #define ID_VIEW_GROUPED					40163
 #define ID_FILE_PLAY_WITH_AVI           40164 //MAME_AVI
 #define ID_FILE_PLAY_BACK_AVI           40165 //MAME_AVI
+
+// 修改的 代码来源 (加斯顿90)
+//=============================================>>>
+#define ID_CONTEXT_CLEAN_SINGLE_NVRAM_CFG 40166
+#define ID_CONTEXT_CLEAN_ALL_NVRAM_CFG    40167
+//=============================================>>>
 #define IDC_STATIC                      1

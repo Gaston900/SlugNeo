@@ -219,6 +219,7 @@ void SetStatusBarTextF(int part_index, const char *fmt, ...);
 const char * GetSearchText(void);
 char *GetGameNameByIndex(int nIndex, bool bUse);// USE_KLIST
 char *GetDescriptionByIndex(int nIndex, bool bUse);// USE_KLIST
+const char* GetGameChineseDescription(const char* driver_name);	
 char *GetGameManufactureByIndex(int nIndex, bool bUse);
 
 int GetNumGames(void);

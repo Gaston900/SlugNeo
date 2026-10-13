@@ -178,7 +178,7 @@ BEGIN
         MENUITEM "Play\tAlt+O",                         ID_FILE_PLAY
         MENUITEM SEPARATOR
 #ifdef MAME_AVI
-        MENUITEM "°ÔÀÓ ÇÃ·¹ÀÌ ³ìÈ­(¾ÐÃà¹æ½Ä)",   	ID_FILE_PLAY_WITH_AVI
+        MENUITEM "Game Recording (Compression Method)",   	ID_FILE_PLAY_WITH_AVI
 #endif /* MAME_AVI */      
         MENUITEM SEPARATOR
         MENUITEM "Record INP playback\tCtrl+F1",           ID_FILE_PLAY_RECORD
@@ -198,6 +198,13 @@ BEGIN
         MENUITEM "Open Info in Notepad",                ID_NOTEPAD
         MENUITEM "Listen to music with M1FX\tAlt+M",    ID_PLAY_M1
         MENUITEM SEPARATOR
+
+// ä¿®æ”¹çš„ ä»£ç æ¥æº (åŠ æ–¯é¡¿90)
+//==================================================================================================>>>
+        MENUITEM "Cleaning of NVRAM and Cfg files",       ID_CONTEXT_CLEAN_SINGLE_NVRAM_CFG
+        MENUITEM "Complete cleanup of all NVRAM and Cfg files", ID_CONTEXT_CLEAN_ALL_NVRAM_CFG
+        MENUITEM SEPARATOR
+//==================================================================================================>>>
         MENUITEM "Properties\tAlt+G",                   ID_GAME_PROPERTIES
         MENUITEM "Properties for driver\tAlt+D",        ID_FOLDER_SOURCEPROPERTIES
         MENUITEM SEPARATOR
@@ -1282,6 +1289,8 @@ IDB_GBA_SLUG_ADVANCE_MIX   BITMAP                   "res\\gba_slug_advance_mix.b
 IDB_GBA_SLUG_ADVANCE_PLUS  BITMAP                   "res\\gba_slug_advance_plus.bmp"
 IDB_NGPC_SLUG_1ST        BITMAP                     "res\\ngpc_slug_1st.bmp"
 IDB_NGPC_SLUG_2ND        BITMAP                     "res\\ngpc_slug_2nd.bmp"
+IDB_CLEANSINGLE          BITMAP                     "res\\cleansingle.bmp"
+IDB_CLEANALL             BITMAP                     "res\\cleanall.bmp"
 //==============================================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //

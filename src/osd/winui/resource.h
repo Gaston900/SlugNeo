@@ -168,8 +168,7 @@
 
 // 修改的 代码来源 (加斯顿90)
 //=====================================================>>>
-#define IDI_FOLDER_MSLUG				308
-#define IDI_FOLDER_CONSOLE              309
+#define IDI_FOLDER_MSLUG				309
 #define IDB_NEOCD_SLUG1                 310
 #define IDB_NEOCD_SLUG2                 311 
 #define IDB_ATOMIS_SLUG6                312

@@ -1,6 +1,3 @@
 neogeocd.cpp
 neogeo.cpp
-gb.cpp
-gba.cpp
-megadriv.cpp
-ngp.cpp
+

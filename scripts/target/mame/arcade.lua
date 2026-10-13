@@ -10,32 +10,23 @@
 
 CPUS["Z80"] = true -- NEOGEO
 CPUS["M680X0"] = true -- NEOGEO
-CPUS["TLCS900"] = true -- NPG
-CPUS["SH"] = true -- MEGADRIVE
-CPUS["SSP1601"] = true -- MEGADRIVE
-CPUS["I386"] = true  -- MEGADRIVE
-CPUS["LR35902"] = true -- GB
-CPUS["ARM7"] = true -- GB
-CPUS["V30MZ"] = true -- MEGADRIVE
-
 --------------------------------------------------
 -- specify available sound cores
 --------------------------------------------------
 
 SOUNDS["SPEAKER"] = true -- NEOGEO
 SOUNDS["YM2610"] = true -- NEOGEO
-SOUNDS["DAC"] = true -- NPG
-SOUNDS["T6W28"] = true -- NPG
-SOUNDS["VOLT_REG"] = true -- NPG
-SOUNDS["YM2203"] = true -- MEGADRIVE
-SOUNDS["YM2608"] = true -- MEGADRIVE
-SOUNDS["YM2612"] = true -- MEGADRIVE
-SOUNDS["AY8910"] = true -- MEGADRIVE
-SOUNDS["SN76496"] = true -- MEGADRIVE
-SOUNDS["CDDA"] = true -- MEGADRIVE
-SOUNDS["RF5C68"] = true -- MEGADRIVE
-SOUNDS["SN76496"] = true -- MEGADRIVE
-SOUNDS["GB_SOUND"] = true -- GBA
+SOUNDS["YM2203"] = true -- NEOGEO CD
+SOUNDS["YM2608"] = true -- NEOGEO CD
+SOUNDS["YM2610B"] = true -- NEOGEO CD
+SOUNDS["YM2612"] = true -- NEOGEO CD
+SOUNDS["CDDA"] = true -- NEOGEO CD
+
+--------------------------------------------------
+-- specify available video cores
+--------------------------------------------------
+
+VIDEOS["MOS6566"] = true -- NEOGEO CD
 
 --------------------------------------------------
 -- specify available machine cores
@@ -45,29 +36,9 @@ MACHINES["GEN_LATCH"] = true -- NEOGEO
 MACHINES["UPD1990A"] = true -- NEOGEO
 MACHINES["WATCHDOG"] = true -- NEOGEO
 MACHINES["Z80DAISY"] = true -- NEOGEO
-MACHINES["INTELFLASH"] = true -- GBA
-MACHINES["I2CMEM"] = true -- MEGADRIVE
-MACHINES["LC89510"] = true -- MEGADRIVE
 MACHINES["TTL74259"] = true -- NEOGEO CD
 MACHINES["INPUT_MERGER"] = true -- NEOGEO CD
-
---------------------------------------------------
--- specify available bus cores
---------------------------------------------------
-
-BUSES["GENERIC"] = true -- NPG
-BUSES["MEGADRIVE"] = true -- MEGADRIVE
-BUSES["GBA"] = true -- GBA
-BUSES["GAMEBOY"] = true -- GB
-
---------------------------------------------------
--- specify available video cores
---------------------------------------------------
-
-VIDEOS["SEGA315_5124"] = true -- MEGADRIVE
-VIDEOS["SEGA315_5313"] = true -- MEGADRIVE
-VIDEOS["GBA_LCD"] = true -- GBA
-VIDEOS["GB_LCD"] = true -- GB
+MACHINES["LC89510"] = true -- NEOGEO CD
 
 --------------------------------------------------
 -- this is the list of driver libraries that
@@ -78,8 +49,6 @@ VIDEOS["GB_LCD"] = true -- GB
 function linkProjects_mame_arcade(_target, _subtarget)
 	links {
 		"neogeo",
-		"nintendo",
-		"sega",
 		"snk",
 	}
 end
@@ -142,39 +111,16 @@ files {
 	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/kizuna4p.cpp",
 }
 
-createMAMEProjects(_target, _subtarget, "nintendo")
-files {
-	MAME_DIR .. "src/mame/drivers/gb.cpp",
-	MAME_DIR .. "src/mame/includes/gb.h",
-	MAME_DIR .. "src/mame/machine/gb.cpp",
-	MAME_DIR .. "src/mame/drivers/gba.cpp",
-	MAME_DIR .. "src/mame/includes/gba.h",
-}
-
-createMAMEProjects(_target, _subtarget, "sega")
-files {
-	MAME_DIR .. "src/mame/drivers/megadriv.cpp",
-	MAME_DIR .. "src/mame/includes/megadriv.h",
-	MAME_DIR .. "src/mame/machine/megadriv.cpp",
-	MAME_DIR .. "src/mame/machine/mega32x.cpp",
-	MAME_DIR .. "src/mame/machine/mega32x.h",
-	MAME_DIR .. "src/mame/machine/megacd.cpp",
-	MAME_DIR .. "src/mame/machine/megacd.h",
-	MAME_DIR .. "src/mame/machine/megacdcd.cpp",
-	MAME_DIR .. "src/mame/machine/megacdcd.h",
-}
-
 createMAMEProjects(_target, _subtarget, "snk")
 files {
-	MAME_DIR .. "src/mame/drivers/ngp.cpp",
-	MAME_DIR .. "src/mame/video/k1ge.cpp",
-	MAME_DIR .. "src/mame/video/k1ge.h",
 	MAME_DIR .. "src/mame/snk/neogeocd.cpp",
 	MAME_DIR .. "src/mame/snk/neogeo_spr.cpp",
 	MAME_DIR .. "src/mame/snk/neogeo.cpp",
 	MAME_DIR .. "src/mame/snk/neogeo_v.cpp",
 	MAME_DIR .. "src/devices/bus/neogeo/slot.cpp",
 	MAME_DIR .. "src/mame/snk/ng_memcard.cpp",
+	MAME_DIR .. "src/mame/machine/megacdcd.cpp",
+	MAME_DIR .. "src/mame/machine/megacdcd.h",
 }
 
 end

@@ -1124,9 +1124,9 @@ void ngcd_state::init_neocdzj()
 	NeoSystem = NEOCD_REGION_JAPAN;
 }
 
-
 //    YEAR  NAME     PARENT  COMPAT  MACHINE  INPUT   CLASS        INIT          COMPANY FULLNAME               FLAGS */
-CONS( 1996, neocdz,  0,      0,      neocd,   neocd,  ngcd_state,  init_neocdz,  "SNK",  "Neo-Geo CDZ (US)",    0 ) // the CDZ is the newer model
+GAME( 1996, neocdz,  0,      neocd,  neocd,  ngcd_state,  init_neocdz,  ROT0,    "SNK",  "Neo-Geo CDZ (US)",    MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE ) // the CDZ is the newer model
+//CONS( 1996, neocdz,  0,      0,      neocd,   neocd,  ngcd_state,  init_neocdz,  "SNK",  "Neo-Geo CDZ (US)",    0 ) // the CDZ is the newer model
 CONS( 1996, neocdzj, neocdz, 0,      neocd,   neocd,  ngcd_state,  init_neocdzj, "SNK",  "Neo-Geo CDZ (Japan)", 0 )
 
 CONS( 1994, neocd,   neocdz, 0,      neocd,   neocd,  ngcd_state,  empty_init,   "SNK",  "Neo-Geo CD",          MACHINE_NOT_WORKING ) // older  model, ignores disc protections?

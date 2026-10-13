@@ -23,7 +23,6 @@ struct DriversInfo
 	bool isImperfect;
 	bool isMechanical;
 	bool isBIOS;
-	bool isConsole;
 };
 
 static std::vector<DriversInfo>	drivers_info;
@@ -285,7 +284,6 @@ static void InitDriversInfo(void)
 		gameinfo->isImperfect = (cache & 0x3fa000) ? true : false;  // MACHINE_INCOMPLETE | NO_SOUND_HW | (IMPERFECT|UNEMULATED) | (PALETTE|GRAPHICS|SOUND)
 		gameinfo->supportsSaveState = BIT(cache, 7) ? false : true;  //MACHINE_SUPPORTS_SAVE
 		gameinfo->isVertical = BIT(cache, 2);  //ORIENTATION_SWAP_XY
-		gameinfo->isConsole = BIT(cache, 0);
 		gameinfo->isMechanical = BIT(cache, 14);  //MACHINE_MECHANICAL
 		gameinfo->isBIOS = BIT(cache, 9);  //MACHINE_IS_BIOS_ROOT
 		gameinfo->screenCount = NumberOfScreens(config);
@@ -388,7 +386,6 @@ static void InitDriversCache(void)
 		gameinfo->isImperfect       =  (cache_lower & 0x3fa000) ? true : false;
 		gameinfo->isMechanical      =  BIT(cache_lower, 14);
 		gameinfo->isBIOS            =  BIT(cache_lower, 9);
-		gameinfo->isConsole         =  BIT(cache_lower, 0);
 	}
 }
 
@@ -480,11 +477,6 @@ bool DriverIsVertical(int driver_index)
 bool DriverIsImperfect(int driver_index)
 {
 	return GetDriversInfo(driver_index)->isImperfect;
-}
-
-bool DriverIsConsole(int driver_index)
-{
-	return GetDriversInfo(driver_index)->isConsole;
 }
 
 //============================================================

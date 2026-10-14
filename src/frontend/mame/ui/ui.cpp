@@ -514,10 +514,22 @@ void mame_ui_manager::update_and_render(render_container &container)
 	// call the current UI handler
 	m_handler_param = m_handler_callback(container);
 
+// 修改的 代码来源 (加斯顿90)
+//=====================================================================================================>>>
 	// display any popup messages
 	if (osd_ticks() < m_popup_text_end)
-		draw_text_box(container, messagebox_poptext.c_str(), ui::text_layout::CENTER, 0.5f, 0.9f, messagebox_backcolor);
-	else
+	{
+		// Capamos el ancho máximo de la caja al formato de tu portátil de 768p
+		float maximum_width = 1.0f - box_lr_border() * 2;
+		ui::text_layout pop_layout = create_layout(container, maximum_width, ui::text_layout::CENTER);
+		
+		// Inyectamos de forma mandatoria las letras en BLANCO PURO sobre el buffer
+		pop_layout.add_text(messagebox_poptext.c_str(), rgb_t::white(), rgb_t::transparent(), 1.0f);
+		
+		// Dibujamos el cuadro flotante al sur de la pantalla (0.9f) usando fondo negro nítido
+		draw_text_box(container, pop_layout, 0.5f, 0.9f, rgb_t::black());
+//=====================================================================================================>>>
+	}	else
 		m_popup_text_end = 0;
 
 	// display the internal mouse cursor

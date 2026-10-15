@@ -25,7 +25,6 @@ int				_nAviNo = 0;
 // 修改的 代码来源 (缘来是你)
 //=================================== 缘来是你 ========================================>>>
 #include <shellapi.h>
-
 //导出XML
 #include <vector>
 #include <string>
@@ -837,6 +836,15 @@ static void RunMAME(int nGameIndex, const play_options *playopts)
 	mame_opts.set_value(OPTION_SYSTEMNAME, GetDriverGameName(nGameIndex), OPTION_PRIORITY_CMDLINE);
 	// set all needed paths
 	SetDirectories(mame_opts);
+
+//缘来是你
+//====================== 若用中文列表，显示中文标题 =========================>>>
+	if (GetUsekoreanList()) {
+		const char* chineseName = GetDescriptionByIndex(nGameIndex, true);
+		if (chineseName && *chineseName)
+			mame_opts.set_value("chinesename", chineseName, OPTION_PRIORITY_CMDLINE);
+	}
+//===============================================================================>>>
 	// parse all INI files
 	mame_options::parse_standard_inis(mame_opts, option_errors);
 	// load interface language
@@ -1636,9 +1644,12 @@ static void Win32UI_init(void)
 	CheckMenuItem(GetMenu(hMain), ID_ENABLE_INDENT, (bEnableIndent) ? MF_CHECKED : MF_UNCHECKED);
 	ToolBar_CheckButton(hToolBar, ID_ENABLE_INDENT, (bEnableIndent) ? MF_CHECKED : MF_UNCHECKED);
 
-	CheckMenuItem(GetMenu(hMain), ID_KOREAN_GAMELIST, (bklist) ? MF_CHECKED : MF_UNCHECKED); //USE_KLIST
-	ToolBar_CheckButton(hToolBar, ID_KOREAN_GAMELIST, (bklist) ? MF_CHECKED : MF_UNCHECKED); //USE_KLIST	
-	
+// 缘来是你
+//=============================== USE_CLITS=============================>>>
+	CheckMenuItem(GetMenu(hMain), ID_KOREAN_GAMELIST, (bklist) ? MF_CHECKED : MF_UNCHECKED);
+	ToolBar_CheckButton(hToolBar, ID_KOREAN_GAMELIST, (bklist) ? MF_CHECKED : MF_UNCHECKED);
+//=======================================================================>>>
+
 	InitTree(g_folderData, g_filterList);
 	SendMessage(hProgress, PBM_SETPOS, 112, 0);
 	winui_set_window_text_utf8(GetDlgItem(hSplash, IDC_PROGBAR), "Building list structure...");
@@ -1964,7 +1975,6 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 */ 
 			}
 
-			
 			Win32UI_exit();
 			break;
 
@@ -3636,18 +3646,13 @@ static void EnableSelection(int nGame)
 
 	SetMenuItemInfo(hMenu, ID_FILE_PLAY, false, &mmi);
 
-//#ifdef USE_KLIST
-	pText = GetDescriptionByIndex(nGame, GetUsekoreanList());
-//#else	
-//	pText = GetDriverGameTitle(nGame);
-//#endif
+// 缘来是你
+//====================== USE_CLIST ============================>>>
+    pText = GetDescriptionByIndex(nGame, GetUsekoreanList());
+	
 	SetStatusBarText(0, pText);
-
-//#ifdef USE_KLIST
 	pName = GetGameNameByIndex(nGame,GetUsekoreanList());
-//#else
-//	pName = GetDriverGameName(nGame);
-//#endif
+//==============================================================>>>
 
 	SetStatusBarText(1, pName);
 	SendMessage(hStatusBar, SB_SETICON, 1, (LPARAM)GetSelectedPickItemIconSmall());
@@ -3660,11 +3665,12 @@ static void EnableSelection(int nGame)
 	EnableMenuItem(hMenu, ID_GAME_PROPERTIES, 	MF_ENABLED);
 
 	if (bProgressShown && bListReady == true)
-//#ifdef USE_KLIST
+
+//缘来是你				  
+//============================= USE_CLIST ==========================>>>
 		SetDefaultGame(GetGameNameByIndex(nGame, GetUsekoreanList()));
-//#else
-//		SetDefaultGame(GetDriverGameName(nGame));
-//#endif
+//===================================================================>>>
+
 	have_selection = true;
 	UpdateScreenShot();
 
@@ -3711,11 +3717,11 @@ static const char* GetCloneParentName(int nItem)
 		int nParentIndex = GetParentIndex(&driver_list::driver(nItem));
 
 		if( nParentIndex >= 0)
-//#ifdef USE_KLIST			
+
+// 缘来是你					 
+//============================ USE_CLIST ============================>>>
 			return (char*)GetDescriptionByIndex(nParentIndex,GetUsekoreanList());
-//#else
-//			return GetDriverGameTitle(nParentIndex);
-//#endif
+//====================================================================>>>
 	}
 
 	return "";
@@ -6016,11 +6022,10 @@ const wchar_t *GamePicker_GetItemString(HWND hwndPicker, int nItem, int nColumn,
 	{
 		case COLUMN_GAMES:
 			/* Driver description */
-//#ifdef USE_KLIST
+// 缘来是你
+//============================== USE_CLIST===========================>>>
 			utf8_s = GetDescriptionByIndex(nItem, GetUsekoreanList());
-//#else		
-//			utf8_s = GetDriverGameTitle(nItem);
-//#endif
+//===================================================================>>>
   	        break;
 
 		case COLUMN_ROMNAME:
@@ -8294,7 +8299,7 @@ static void LoadGameListFromFile(int games)
 			int gameIndex = GetGameNameIndex(p[0]);
 			if (gameIndex < 0 || gameIndex >= games) continue;
 //=================================================>>>	
-
+		
 			tsv_data[i].gamename      = strdup(p[0]);
 			tsv_data[i].description   = strdup(p[1]);
 			tsv_data[i].manufacturer  = strdup(p[2]);

@@ -134,6 +134,11 @@ running_machine::running_machine(const machine_config &_config, machine_manager 
 		m_scheduler(*this),
 		m_dummy_space(_config, "dummy_space", &root_device(), 0)
 {
+// 修改的 代码来源 (缘来是你)
+/**************************************************************/
+	m_chinese_name = m_config.options().value("chinesename");
+/**************************************************************/
+
 	memset(&m_base_time, 0, sizeof(m_base_time));
 
 	m_dummy_space.set_machine(*this);

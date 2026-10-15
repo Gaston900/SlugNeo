@@ -15675,7 +15675,7 @@ GAME( 2013, mslug3hc13,       mslug3,   neoclock_noslot, mslug3,     neogeo_stat
 GAME( 2020, mslug3hc14,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "FBN4DROID",       "Metal Slug 3 (The Future 2020-09-12)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, mslug3hc15,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "FBN4DROID",       "Metal Slug 3 (Enemy Remake 2017-09-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2012, mslug3hc16,       mslug3,   neoclock_noslot, mslug3wp,   neogeo_state,    init_mslug3,     ROT0, "LB70 (Eezezy)",   "Metal Slug 3 (Crazy Fire 2012-01-16)", MACHINE_SUPPORTS_SAVE )
-GAME( 2019, mslug3hc17,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "FBN4DROID",       "Metal Slug 3 (Enemy Soldiers Reset 2019-01-02) (Earlier)", MACHINE_SUPPORTS_SAVE )
+//GAME( 2019, mslug3hc17,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "FBN4DROID",       "Metal Slug 3 (Enemy Soldiers Reset 2019-01-02) (Earlier)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, mslug3hc18,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Enemies Resetting 2019-07-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, mslug3hc19,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "FBN4DROID",       "Metal Slug 3 (Random Enemies Resetting 2017-12-08) (Earlier)", MACHINE_SUPPORTS_SAVE ) //Fix Gaston90
 GAME( 2023, mslug3hc20,       mslug3,   neoclock_noslot, mslug3,     neogeo_state,    init_mslug3,     ROT0, "GOTVG",           "Metal Slug 3 (Pigeon Slug 2023-05-07)", MACHINE_SUPPORTS_SAVE ) //Fix Gaston90

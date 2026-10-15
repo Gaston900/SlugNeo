@@ -2879,7 +2879,7 @@ GAME( 2016, mslug2hc12,       mslug2,   neoclock_noslot, mslug2,     neogeo_stat
 GAME( 2018, mslug2hc13,       mslug2,   neoclock_noslot, mslug2zh,   neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug 2 (War Chariot 2018-01-25)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, mslug2hc14,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "GOTVG",           "Metal Slug 2 (Starlight 2022-05-11)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, mslug2hc15,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug 2 (Stage Select 2016-10-19)", MACHINE_SUPPORTS_SAVE )
-GAME( 2015, mslug2hc16,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug 2 (Jump In Mid Air 2015-08-24)", MACHINE_SUPPORTS_SAVE )
+//GAME( 2015, mslug2hc16,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "DDJ",             "Metal Slug 2 (Jump In Mid Air 2015-08-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, mslug2hc17,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "Shyma.X",         "Metal Slug 2 (French Translation 2006-09-26)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, mslug2hc18,       mslug2,   neoclock_noslot, mslug2,     neogeo_state,    init_neogeo,     ROT0, "hack",            "Metal Slug 2 (Easy Mode 2018-11-26)", MACHINE_SUPPORTS_SAVE )
 

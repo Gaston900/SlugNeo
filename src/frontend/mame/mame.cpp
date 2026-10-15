@@ -26,9 +26,48 @@
 #include "ui/inifile.h"
 #include "xmlfile.h"
 
+//===== 缘来是你 =====>>>
+#include <fstream>
+#include <unordered_map>
+#include <vector>
+//====================>>>
+
 //**************************************************************************
 //  MACHINE MANAGER
 //**************************************************************************
+
+//========================== 缘来是你：加载中文映射 =============================>>>
+static std::unordered_map<std::string, std::string> load_chinese_name_map()
+{
+    std::unordered_map<std::string, std::string> name_map;
+    // 当前语言列表文件路径
+    std::string filename = "SlugNeo.lst";
+    std::ifstream infile(filename);
+    if (!infile.is_open())
+        return name_map;
+
+    std::string line;
+    while (std::getline(infile, line))
+    {
+        std::string::size_type tab1 = line.find('\t');
+        if (tab1 == std::string::npos)
+            continue;
+        std::string shortname = line.substr(0, tab1);
+
+        std::string::size_type tab2 = line.find('\t', tab1 + 1);
+        if (tab2 == std::string::npos)
+            continue;
+        std::string chinese_name = line.substr(tab1 + 1, tab2 - tab1 - 1);
+
+        if (!shortname.empty() && !chinese_name.empty())
+            name_map[shortname] = chinese_name;
+    }
+    infile.close();
+    return name_map;
+}
+
+static const std::unordered_map<std::string, std::string> g_chinese_name_map = load_chinese_name_map();
+//====================================================================================>>>
 
 mame_machine_manager* mame_machine_manager::m_manager = nullptr;
 
@@ -252,6 +291,14 @@ int mame_machine_manager::execute()
 
 		// create the machine configuration
 		machine_config config(*system, m_options);
+
+//====================== 缘来是你：中文标题 =========================>>>
+		auto it = g_chinese_name_map.find(system->name);
+		if (it != g_chinese_name_map.end())
+		{
+			m_options.set_value("chinesename", it->second.c_str(), OPTION_PRIORITY_CMDLINE);
+		}
+//====================================================================>>>
 
 		// create the machine structure and driver
 		running_machine machine(config, *this);

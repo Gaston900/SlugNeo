@@ -9341,7 +9341,7 @@ GAME( 2019, mslug5hc15,       mslug5,   neoclock_noslot, mslug5,     neogeo_stat
 GAME( 2018, mslug5hc16,       mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5,     ROT0, "GOTVG",           "Metal Slug 5 (Vehicle Slug 2018-09-18)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, mslug5hc17,       mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5,     ROT0, "GOTVG",           "Metal Slug 5 (Multifunction 2017-05-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, mslug5hc18,       mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_mslug5,     ROT0, "hack",            "Metal Slug 5 (Unity Time! 2021-04-23)", MACHINE_SUPPORTS_SAVE )
-GAME( 2020, mslug5hc19,       mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5,     ROT0, "FBN4DROID",       "Metal Slug 5 (Crazy Fire 2020-09-02)", MACHINE_SUPPORTS_SAVE )
+//GAME( 2020, mslug5hc19,       mslug5,   neoclock_noslot, mslug5vh,   neogeo_state,    init_mslug5,     ROT0, "FBN4DROID",       "Metal Slug 5 (Crazy Fire 2020-09-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslug5hc20,       mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_mslug5,     ROT0, "GOTVG",           "Metal Slug 5 (Double Enemy 2023-12-29)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, mslug5hc21,       mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_mslug5,     ROT0, "GOTVG",           "Metal Slug 5 (Starlight 2022-08-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, mslug5hc22,       mslug5,   neoclock_noslot, mslug5,     neogeo_state,    init_mslug5,     ROT0, "GOTVG",           "Metal Slug 5 (Komorebi 2022-08-10)", MACHINE_SUPPORTS_SAVE )

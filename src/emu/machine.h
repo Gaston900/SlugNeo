@@ -204,6 +204,11 @@ public:
 	int sample_rate() const { return m_sample_rate; }
 	bool save_or_load_pending() const { return !m_saveload_pending_file.empty(); }
 
+// 修改的 代码来源 (缘来是你)
+/**********************************************************************/
+	const std::string& chinese_name() const { return m_chinese_name; }
+/**********************************************************************/
+
 	// RAII-based side effect disable
 	// NOP-ed when passed false, to make it more easily conditional
 	side_effects_disabler disable_side_effects(bool disable_se = true) { return side_effects_disabler(this, disable_se); }
@@ -354,6 +359,12 @@ private:
 	u32                     m_rand_seed;            // current random number seed
 	bool                    m_ui_active;            // ui active or not (useful for games / systems with keyboard inputs)
 	time_t                  m_base_time;            // real time at initial emulation time
+
+// 修改的 代码来源 (缘来是你)
+/********************************************/
+	std::string             m_chinese_name;         // 游戏的中文名称（通过“-chinesename”选项设定）	//缘来是你
+/********************************************/
+
 	std::string             m_basename;             // basename used for game-related paths
 	int                     m_sample_rate;          // the digital audio sample rate
 	std::unique_ptr<emu_file>  m_logfile;           // pointer to the active error.log file

@@ -737,11 +737,13 @@ static char *GameInfoTitle(OPTIONS_TYPE opt_type, int nIndex)
 	else if (OPTIONS_SOURCE == opt_type)
 		strcpy(buffer, "Driver options\r\nDefault options used by all games in the driver");
 	else
-//#ifdef USE_KLIST
-//		snprintf(buffer, WINUI_ARRAY_LENGTH(buffer), "%s - \"%s\"", GetDescriptionByIndex(nIndex,GetUsekoreanList()), GetGameNameByIndex(nIndex,GetUsekoreanList()));
-//#else
-		snprintf(buffer, WINUI_ARRAY_LENGTH(buffer), "%s - \"%s\"", GetDriverGameTitle(nIndex), GetDriverGameName(nIndex));
-//#endif
+// 修改的 代码来源 (缘来是你)
+/************************** 中文列表 ****************************/
+		snprintf(buffer, WINUI_ARRAY_LENGTH(buffer), "%s - \"%s\"", 
+             GetDescriptionByIndex(nIndex, GetUsekoreanList()), 
+             GetGameNameByIndex(nIndex, GetUsekoreanList()));
+/**************************************************************/
+
 	return buffer;
 }
 
@@ -754,12 +756,14 @@ static char *GameInfoCloneOf(int nIndex)
 
 	if (DriverIsClone(nIndex))
 	{
-		int nParentIndex = GetParentIndex(&driver_list::driver(nIndex));
-//#ifdef USE_KLIST
-//		snprintf(buffer, WINUI_ARRAY_LENGTH(buffer), "%s - \"%s\"", GetDescriptionByIndex(nParentIndex,GetUsekoreanList()), GetGameNameByIndex(nParentIndex,GetUsekoreanList()));
-//#else
-		snprintf(buffer, WINUI_ARRAY_LENGTH(buffer), "%s - \"%s\"", GetDriverGameTitle(nParentIndex), GetDriverGameName(nParentIndex));
-//#endif
+
+// 修改的 代码来源 (缘来是你)
+/****************************** 中文列表 ******************************/
+    int nParentIndex = GetParentIndex(&driver_list::driver(nIndex));
+    snprintf(buffer, WINUI_ARRAY_LENGTH(buffer), "%s - \"%s\"", 
+             GetDescriptionByIndex(nParentIndex, GetUsekoreanList()), 
+             GetGameNameByIndex(nParentIndex, GetUsekoreanList()));
+/*********************************************************************/
 	}
 
 	return buffer;
@@ -1303,17 +1307,13 @@ intptr_t CALLBACK GamePropertiesDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, 
 			hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_MAMEUI_ICON));
 			SendMessage(hDlg, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 			hBrushDlg = CreateSolidBrush(RGB(240, 240, 240));
-//#ifdef USE_KLIST
-			snprintf(tmp, WINUI_ARRAY_LENGTH(tmp), "Information for \"%s\"", (char *)GetGameNameByIndex(index,GetUsekoreanList()));
-//#else
-//			snprintf(tmp, WINUI_ARRAY_LENGTH(tmp), "Information for \"%s\"", GetDriverGameName(index));
-//#endif
+//=========================== 缘来是你 ================ 中文列表 ================================>>>
+            snprintf(tmp, WINUI_ARRAY_LENGTH(tmp), "\"%s\" Information for", GetDescriptionByIndex(index, GetUsekoreanList()));
+//===============================================================================================>>>
 			winui_set_window_text_utf8(hDlg, tmp);
-//#ifdef USE_KLIST
-			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_PROP_TITLE), GetDescriptionByIndex(index,GetUsekoreanList()));
-//#else
-//			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_PROP_TITLE), GetDriverGameTitle(index));
-//#endif
+//=========================== 缘来是你 ================ 中文列表 ================================>>>
+		    winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_PROP_TITLE), GetDescriptionByIndex(index, GetUsekoreanList()));	
+//===============================================================================================>>>
 			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_PROP_MANUFACTURED), GameInfoManufactured(index));
 			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_PROP_STATUS), GameInfoStatus(index));
 			winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_PROP_CPU), GameInfoCPU(index));

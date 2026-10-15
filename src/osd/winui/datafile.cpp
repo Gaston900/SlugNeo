@@ -396,7 +396,11 @@ std::string load_driver_geninfo(const game_driver *drv, int drvindex)
 	/* GAME INFORMATIONS */
 	snprintf(name, WINUI_ARRAY_LENGTH(name), "\nGAME: %s\n", drv->name);
 	buffer.append(name);
-	snprintf(name, WINUI_ARRAY_LENGTH(name), "%s", drv->type.fullname());
+
+// 修改的 代码来源 (缘来是你)
+/************************************************************************************************/
+	snprintf(name, WINUI_ARRAY_LENGTH(name), "%s", GetDescriptionByIndex(drvindex, GetUsekoreanList()));
+/************************************************************************************************/
 	buffer.append(name);
 	snprintf(name, WINUI_ARRAY_LENGTH(name), " (%s %s)\n\nCPU:\n", drv->manufacturer, drv->year);
 	buffer.append(name);
@@ -590,14 +594,22 @@ std::string load_driver_geninfo(const game_driver *drv, int drvindex)
 			drv = &driver_list::driver(g);
 
 		buffer.append("\nORIGINAL:\n");
-		buffer.append(drv->type.fullname());
+
+// 修改的 代码来源 (缘来是你)
+/*********************************************************************/
+		buffer.append(GetDescriptionByIndex(g, GetUsekoreanList()));
+/*********************************************************************/
 		buffer.append("\n\nCLONES:\n");
 
 		for (int i = 0; i < driver_list::total(); i++)
 		{
 			if (!strcmp (drv->name, driver_list::driver(i).parent))
 			{
-				buffer.append(driver_list::driver(i).type.fullname());
+
+// 修改的 代码来源 (缘来是你)
+/******************************************************************************/
+				buffer.append(GetDescriptionByIndex(i, GetUsekoreanList()));
+/******************************************************************************/
 				buffer.append("\n");
 			}
 		}
@@ -616,7 +628,11 @@ std::string load_driver_geninfo(const game_driver *drv, int drvindex)
 		size_t j = t1.find_last_of("/");
 		t1.erase(0, j+1);
 		if ((strcmp(source_file, t1.c_str())==0) && !(DriverIsBios(i)))
-			buffer.append(driver_list::driver(i).type.fullname()).append("\n");
+
+// 修改的 代码来源 (缘来是你)
+/**************************************************************************************/
+			buffer.append(GetDescriptionByIndex(i, GetUsekoreanList())).append("\n");
+/**************************************************************************************/
 	}
 
 	return buffer;

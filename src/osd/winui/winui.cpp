@@ -8421,7 +8421,7 @@ int GetGameIndex(const char *name)
 		if (!strcmp(name, tsv_index[i].gamename)) 
 			return i;
 
-	return 0;
+	return 1;
 }
 
 char *GetDescriptionByIndex(int nIndex, bool bUse)

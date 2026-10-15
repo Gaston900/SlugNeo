@@ -351,31 +351,33 @@ bool GameFiltered(int nGame, DWORD dwMask)
 		}
 	}
 
-	if (strlen(GetSearchText()) && _stricmp(GetSearchText(), SEARCH_PROMPT))
-	{
-		
-		if (MyStrStrI(GetDescriptionByIndex(nGame, GetUsekoreanList()), GetSearchText()) == NULL &&
-			MyStrStrI(GetGameNameByIndex(nGame,GetUsekoreanList()), GetSearchText()) == NULL )
-			return true;
-		
-//		if (MyStrStrI(GetDriverGameTitle(nGame), GetSearchText()) == NULL &&
-//			MyStrStrI(GetDriverGameName(nGame), GetSearchText()) == NULL)
-//			return true;
-	}
-	
-	/*Filter Text is already global*/
-//	if (MyStrStrI(GetDriverGameTitle(nGame), GetFilterText()) == NULL &&
-//		MyStrStrI(GetDriverGameName(nGame), GetFilterText()) == NULL &&
-//		MyStrStrI(GetDriverFileName(nGame), GetFilterText()) == NULL &&
-//		MyStrStrI(GetDriverGameManufacturer(nGame), GetFilterText()) == NULL)
-//		return true;
-
-
-	if (MyStrStrI(GetDescriptionByIndex(nGame, GetUsekoreanList()), GetFilterText()) == NULL &&
-		MyStrStrI(GetGameNameByIndex(nGame,GetUsekoreanList()), GetFilterText()) == NULL &&
-		MyStrStrI(GetDriverFileName(nGame), GetFilterText()) == NULL &&
-		MyStrStrI(GetGameManufactureByIndex(nGame,GetUsekoreanList()), GetFilterText()) == NULL)
-		return true;
+// 修改的 代码来源 (缘来是你)
+// =========================  搜索 =====================================================================>>>
+    if (strlen(GetSearchText()) && _stricmp(GetSearchText(), SEARCH_PROMPT))
+    {
+        const char *search_text = GetSearchText();
+        
+        if (MyStrStrI(GetDescriptionByIndex(nGame, GetUsekoreanList()), search_text) != NULL)
+        {
+        }
+        else if (MyStrStrI(GetGameNameByIndex(nGame, GetUsekoreanList()), search_text) != NULL)
+        {
+        }
+        else if (MyStrStrI(GetGameManufactureByIndex(nGame, GetUsekoreanList()), search_text) != NULL)
+        {
+        }
+        else if (MyStrStrI(GetDriverGameYear(nGame), search_text) != NULL)
+        {
+        }
+        else if (MyStrStrI(GetDriverFileName(nGame), search_text) != NULL)
+        {
+        }
+        else
+        {
+            return true;
+        }
+    }
+// ====================================================================================================>>>
 
 	// Are there filters set on this folder?
 	if ((dwMask & F_MASK) == 0)

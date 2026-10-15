@@ -69,6 +69,14 @@ namespace {
 		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON2,             "@P3 Button 2 @Button2",    input_seq(JOYCODE_BUTTON2_INDEXED(2)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON3,             "@P3 Button 3 @Button3",    input_seq(JOYCODE_BUTTON3_INDEXED(2)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON4,             "@P3 Button 4 @Button4",    input_seq(JOYCODE_BUTTON4_INDEXED(2)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON5,             "@P3 Button 5 @Button5",    input_seq(JOYCODE_BUTTON5_INDEXED(2)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON6,             "@P3 Button 6 @Button6",    input_seq(JOYCODE_BUTTON6_INDEXED(2)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON7,             "@P3 Button 7 @Button7",    input_seq() ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON8,             "@P3 Button 8 @Button8",    input_seq() ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON9,             "@P3 Button 9 @Button9",    input_seq() ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON10,            "@P3 Button 10 @Button10",  input_seq() ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON11,            "@P3 Button 11 @Button11",  input_seq() ) \
+		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, BUTTON12,            "@P3 Button 12 @Button12",  input_seq() ) \
 		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, START,               "@P3 Start @Start",         input_seq(JOYCODE_START_INDEXED(2)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 3, PLAYER3, SELECT,              "@P3 Select @Select",       input_seq(JOYCODE_SELECT_INDEXED(2)) ) \
 		CORE_INPUT_TYPES_END()
@@ -83,6 +91,14 @@ namespace {
 		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON2,             "@P4 Button 2 @Button2",    input_seq(JOYCODE_BUTTON2_INDEXED(3)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON3,             "@P4 Button 3 @Button3",    input_seq(JOYCODE_BUTTON3_INDEXED(3)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON4,             "@P4 Button 4 @Button4",    input_seq(JOYCODE_BUTTON4_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON5,             "@P4 Button 5 @Button5",    input_seq(JOYCODE_BUTTON5_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON6,             "@P4 Button 6 @Button6",    input_seq(JOYCODE_BUTTON6_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON7,             "@P4 Button 7 @Button7",    input_seq(JOYCODE_BUTTON7_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON8,             "@P4 Button 8 @Button8",    input_seq(JOYCODE_BUTTON8_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON9,             "@P4 Button 9 @Button9",    input_seq(JOYCODE_BUTTON9_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON10,            "@P4 Button 10 @Button10",  input_seq(JOYCODE_BUTTON10_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON11,            "@P4 Button 11 @Button11",  input_seq(JOYCODE_BUTTON11_INDEXED(3)) ) \
+		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, BUTTON12,            "@P4 Button 12 @Button12",  input_seq(JOYCODE_BUTTON12_INDEXED(3)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, START,               "@P4 Start @Start",         input_seq(JOYCODE_START_INDEXED(3)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 4, PLAYER4, SELECT,              "@P4 Select @Select",       input_seq(JOYCODE_SELECT_INDEXED(3)) ) \
 		CORE_INPUT_TYPES_END()
@@ -126,15 +142,15 @@ namespace {
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SHOW_GFX,         "Show Gfx",               input_seq(KEYCODE_F4) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_FRAMESKIP_DEC,    "Frameskip Dec",          input_seq(KEYCODE_F8) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_FRAMESKIP_INC,    "Frameskip Inc",          input_seq(KEYCODE_F9) ) \
-		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_THROTTLE,         "Throttle",               input_seq(KEYCODE_LALT) ) \
+		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_THROTTLE,         "Throttle",               input_seq(KEYCODE_F10) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_FAST_FORWARD,     "Fast Forward",           input_seq(KEYCODE_BACKSPACE) ) \
-		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SHOW_FPS,         "Show FPS",               input_seq(KEYCODE_LALT) ) \
+		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SHOW_FPS,         "Show FPS",               input_seq(KEYCODE_F11, input_seq::not_code, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SNAPSHOT,         "Save Snapshot",          input_seq(KEYCODE_F12, input_seq::not_code, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TIMECODE,         "Write current timecode", input_seq(KEYCODE_F12, input_seq::not_code, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_RECORD_MNG,       "Record MNG",             input_seq(KEYCODE_F12, KEYCODE_LSHIFT, input_seq::not_code, KEYCODE_LCONTROL) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_RECORD_AVI,       "Record AVI",             input_seq(KEYCODE_F12, KEYCODE_LSHIFT, KEYCODE_LCONTROL) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TOGGLE_CHEAT,     "Toggle Cheat",           input_seq(KEYCODE_F6, KEYCODE_LSHIFT) )\
-		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TOGGLE_CHEAT_CONFIG,"Toggle Cheat Config",  input_seq(KEYCODE_RALT) )\
+		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TOGGLE_CHEAT_CONFIG,"Toggle Cheat Config",  input_seq(KEYCODE_F6, input_seq::not_code, KEYCODE_LSHIFT) )\
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TOGGLE_AUTOFIRE,  "Toggle Autofire",        input_seq() )\
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_UP,               "UI Up",                  input_seq(KEYCODE_UP, input_seq::or_code, JOYCODE_Y_UP_SWITCH_INDEXED(1), input_seq::or_code, JOYCODE_Y_UP_SWITCH_INDEXED(2)) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_DOWN,             "UI Down",                input_seq(KEYCODE_DOWN, input_seq::or_code, JOYCODE_Y_DOWN_SWITCH_INDEXED(1), input_seq::or_code, JOYCODE_Y_UP_SWITCH_INDEXED(2)) ) \
@@ -159,8 +175,8 @@ namespace {
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TOGGLE_UI,        "UI Toggle",              input_seq(KEYCODE_SCRLOCK, input_seq::not_code, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_PASTE,            "UI Paste Text",          input_seq(KEYCODE_SCRLOCK, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TOGGLE_DEBUG,     "Toggle Debugger",        input_seq(KEYCODE_F5, KEYCODE_LSHIFT) ) \
-		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SAVE_STATE,       "Save State",             input_seq(KEYCODE_7) ) \
-		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_LOAD_STATE,       "Load State",             input_seq(KEYCODE_8) ) \
+		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SAVE_STATE,       "Save State",             input_seq(KEYCODE_F7, input_seq::not_code,  KEYCODE_LSHIFT) ) \
+		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_LOAD_STATE,       "Load State",             input_seq(KEYCODE_F7, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TAPE_START,       "UI (First) Tape Start",  input_seq(KEYCODE_F2, input_seq::not_code, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_TAPE_STOP,        "UI (First) Tape Stop",   input_seq(KEYCODE_F2, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_DATS,             "UI External DAT View",   input_seq(KEYCODE_LALT, KEYCODE_D) ) \
@@ -168,7 +184,7 @@ namespace {
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_EXPORT,           "UI Export list",         input_seq(KEYCODE_LALT, KEYCODE_E) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_AUDIT_FAST,       "UI Audit Unavailable",   input_seq(KEYCODE_F1, input_seq::not_code, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_AUDIT_ALL,        "UI Audit All",           input_seq(KEYCODE_F1, KEYCODE_LSHIFT) ) \
-		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SHOW_TIME,        "Show Current Time",      input_seq(KEYCODE_LALT) ) \
+		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SHOW_TIME,        "Show Current Time",      input_seq(KEYCODE_G, KEYCODE_LSHIFT) ) \
 		INPUT_PORT_DIGITAL_TYPE( 0, UI,      UI_SHOW_COMMAND,  	  "Show Current Command",   input_seq(KEYCODE_F5, input_seq::not_code, KEYCODE_LSHIFT) )\
 		CORE_INPUT_TYPES_END()
 		// Show Current Time - MAMEFX

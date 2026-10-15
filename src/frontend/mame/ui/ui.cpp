@@ -36,6 +36,16 @@
 #include "../osd/modules/lib/osdobj_common.h"
 #include "config.h"
 
+// 修改的 代码来源 (加斯顿90)
+//======================================================>>>
+#include "debugger.h"
+#include "debug/debugcpu.h"
+#include <windows.h>
+#undef interface
+
+extern int g_InsertGlobalConfiguration;
+//======================================================>>>
+
 #ifdef MAME_AVI
 extern int	bAviRun;
 #endif /* MAME_AVI */
@@ -2087,46 +2097,208 @@ void mame_ui_manager::request_quit()
 		set_handler(ui_callback_type::GENERAL, std::bind(&mame_ui_manager::handler_confirm_quit, this, _1));
 }
 
-
+// 修改的 代码来源 (加斯顿90)
+//========================================================================================================>>>
 //-------------------------------------------------
 //  handler_confirm_quit - leads the user through
 //  confirming quit emulation
-//-------------------------------------------------
 
 uint32_t mame_ui_manager::handler_confirm_quit(render_container &container)
 {
-	uint32_t state = 0;
+	enum
+	{
+		ITEM_INSERT_COIN = 0,
+		ITEM_LOAD_STATE,
+		ITEM_SAVE_STATE,
+		ITEM_SAVE_SNAPSHOT,
+		ITEM_RECORD_AVI,
+		ITEM_SHOW_FPS,
+		ITEM_TOGGLE_THROTTLE,
+		ITEM_TOGGLE_DEBUG,
+		ITEM_SERVICE_MODE,
+		ITEM_RESET_SYSTEM,
+		ITEM_QUIT_GAME,
+		ITEM_RETURN_EMU
+	};
 
-	// get the text for 'UI Select'
-	std::string ui_select_text = machine().input().seq_name(machine().ioport().type_seq(IPT_UI_SELECT, 0, SEQ_TYPE_STANDARD));
+	static int s_selected_item = 0;
+	float const line_height = get_line_height();
+	float const aspect = machine().render().ui_aspect(&container);
+	float const lr_border = box_lr_border() * aspect;
 
-	// get the text for 'UI Cancel'
-	std::string ui_cancel_text = machine().input().seq_name(machine().ioport().type_seq(IPT_UI_CANCEL, 0, SEQ_TYPE_STANDARD));
-
-	// assemble the quit message
-	std::string quit_message = string_format(_("Are you sure you want to quit?\n\n"
-			"Press ''%1$s'' to quit,\n"
-			"Press ''%2$s'' to return to emulation."),
-			ui_select_text,
-			ui_cancel_text);
-
-	draw_text_box(container, quit_message.c_str(), ui::text_layout::CENTER, 0.5f, 0.5f, colors().background_color());
 	machine().pause();
 
-	// if the user press ENTER, quit the game
-	if (machine().ui_input().pressed(IPT_UI_SELECT))
-		machine().schedule_exit();
+	std::vector<std::pair<std::string, uintptr_t>> menu_items;
+	menu_items.push_back({ _("Insert Coin"), ITEM_INSERT_COIN });
+	menu_items.push_back({ _("Load State"), ITEM_LOAD_STATE });
+	menu_items.push_back({ _("Save State"), ITEM_SAVE_STATE });
+	menu_items.push_back({ _("Save Snapshot"), ITEM_SAVE_SNAPSHOT });
+	menu_items.push_back({ _("Record AVI"), ITEM_RECORD_AVI });
+	menu_items.push_back({ _("Show FPS"), ITEM_SHOW_FPS });
+	menu_items.push_back({ _("Show Speed"), ITEM_TOGGLE_THROTTLE });
+	menu_items.push_back({ _("Modo Debug"), ITEM_TOGGLE_DEBUG });
+	menu_items.push_back({ _("Service Mode"), ITEM_SERVICE_MODE });
+	menu_items.push_back({ _("Reset System"), ITEM_RESET_SYSTEM });
+	menu_items.push_back({ _("Quit Game"), ITEM_QUIT_GAME });
 
-	// if the user press ESC, just continue
-	else if (machine().ui_input().pressed(IPT_UI_CANCEL))
+	if (machine().ui_input().pressed(IPT_UI_UP))
+	{
+		s_selected_item = (s_selected_item - 1 + (menu_items.size() + 1)) % (menu_items.size() + 1);
+	}
+	if (machine().ui_input().pressed(IPT_UI_DOWN))
+	{
+		s_selected_item = (s_selected_item + 1) % (menu_items.size() + 1);
+	}
+	if (machine().ui_input().pressed(IPT_UI_CANCEL))
 	{
 		machine().resume();
-		state = UI_HANDLER_CANCEL;
+		return UI_HANDLER_CANCEL;
 	}
 
-	return state;
-}
+	if (machine().ui_input().pressed(IPT_UI_SELECT))
+	{
+		uintptr_t action = (s_selected_item < int(menu_items.size())) ? menu_items[s_selected_item].second : ITEM_RETURN_EMU;
+		switch (action)
+		{
+			case ITEM_INSERT_COIN:
+				machine().resume();
+				g_InsertGlobalConfiguration = 1;
+				return UI_HANDLER_CANCEL;
 
+			case ITEM_LOAD_STATE:
+				start_load_state();
+				return LOADSAVE_LOAD;
+
+			case ITEM_SAVE_STATE:
+				start_save_state();
+				return LOADSAVE_SAVE;
+
+			case ITEM_SAVE_SNAPSHOT:
+				machine().video().save_active_screen_snapshots();
+				machine().resume();
+				return UI_HANDLER_CANCEL;
+
+			case ITEM_RECORD_AVI:
+				machine().video().toggle_record_movie(movie_recording::format::AVI);
+				machine().resume();
+				return UI_HANDLER_CANCEL;
+
+			case ITEM_SHOW_FPS:
+				set_show_fps(!show_fps());
+				machine().resume();
+				return UI_HANDLER_CANCEL;
+
+			case ITEM_TOGGLE_THROTTLE:
+				{
+					bool bNuevoEstadoThrottle = !machine().video().throttled();
+					machine().video().toggle_throttle();
+					set_show_fps(!bNuevoEstadoThrottle);
+					machine().resume();
+					return UI_HANDLER_CANCEL;
+				}
+
+			case ITEM_TOGGLE_DEBUG:
+				if (machine().debug_flags & DEBUG_FLAG_ENABLED)
+				{
+					machine().debugger().cpu().set_execution_stopped();
+					machine().resume();
+					return UI_HANDLER_CANCEL;
+				}
+				else
+				{
+					DWORD current_pid = GetCurrentProcessId();
+					std::string cmd_overclock = "start \"\" \".\\SlugNeo_x64.exe\" " + std::string(machine().system().name) + " -debug && taskkill /f /pid " + std::to_string(current_pid);
+					std::system(cmd_overclock.c_str());
+					machine().schedule_exit();
+				}
+				break;
+
+			case ITEM_SERVICE_MODE:
+				machine().resume();
+				g_InsertGlobalConfiguration = 99;
+				return UI_HANDLER_CANCEL;
+
+			case ITEM_RESET_SYSTEM:
+				machine().schedule_hard_reset();
+				machine().resume();
+				return UI_HANDLER_CANCEL;
+
+			case ITEM_QUIT_GAME:
+				machine().schedule_exit();
+				break;
+
+			case ITEM_RETURN_EMU:
+			default:
+				machine().resume();
+				return UI_HANDLER_CANCEL;
+		}
+	}
+
+	float const box_width = 0.25f;
+	float const title_box_height = line_height + (box_tb_border() * 2.0f);
+	float const body_box_height = (menu_items.size() + 3) * line_height + (box_tb_border() * 2.0f);
+	float const total_menu_height = title_box_height + body_box_height + 0.01f;
+
+	float const x1 = 0.5f - (box_width * 0.5f);
+	float const x2 = 0.5f + (box_width * 0.5f);
+	
+	float const start_y = 0.5f - (total_menu_height * 0.5f);
+
+	float const title_y1 = start_y;
+	float const title_y2 = title_y1 + title_box_height;
+
+	draw_outlined_box_ex(&container, x1 - lr_border, title_y1, x2 + lr_border, title_y2, rgb_t(255, 0, 140, 60)); 
+	draw_text_full(container, "Are you sure you want to quit?", x1, title_y1 + box_tb_border(), box_width,
+		ui::text_layout::CENTER, ui::text_layout::TRUNCATE, mame_ui_manager::NORMAL, rgb_t::white(), rgb_t::transparent(), nullptr, nullptr, 1.0f);
+
+	float const body_y1 = title_y2 + 0.005f;
+	float const body_y2 = body_y1 + body_box_height;
+	draw_outlined_box_ex(&container, x1 - lr_border, body_y1, x2 + lr_border, body_y2, colors().background_color());
+
+	float cur_y = body_y1 + box_tb_border();
+	draw_text_full(container, "Developer Tools", x1, cur_y, box_width,
+		ui::text_layout::CENTER, ui::text_layout::TRUNCATE, mame_ui_manager::NORMAL, rgb_t(255, 255, 255, 255), rgb_t::transparent(), nullptr, nullptr, 1.0f);
+	
+	container.add_line(x1, cur_y + (line_height * 0.5f), x1 + 0.06f, cur_y + (line_height * 0.5f), UI_LINE_WIDTH, colors().border_color(), PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA));
+	container.add_line(x2 - 0.06f, cur_y + (line_height * 0.5f), x2, cur_y + (line_height * 0.5f), UI_LINE_WIDTH, colors().border_color(), PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA));
+	
+	cur_y += line_height;
+
+	for (size_t idx = 0; idx < menu_items.size(); ++idx)
+	{
+		rgb_t fg_color = colors().text_color();
+		rgb_t bg_color = colors().text_bg_color();
+
+		if (s_selected_item == int(idx))
+		{
+			fg_color = colors().selected_color();
+			bg_color = colors().selected_bg_color();
+			container.add_rect(x1, cur_y, x2, cur_y + line_height, bg_color, PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA));
+		}
+
+		draw_text_full(container, menu_items[idx].first.c_str(), x1, cur_y, box_width,
+			ui::text_layout::CENTER, ui::text_layout::TRUNCATE, mame_ui_manager::NORMAL, fg_color, bg_color, nullptr, nullptr, 1.0f);
+		
+		cur_y += line_height;
+	}
+
+	container.add_line(x1, cur_y + (line_height * 0.5f), x2, cur_y + (line_height * 0.5f), UI_LINE_WIDTH, colors().border_color(), PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA));
+	cur_y += line_height;
+
+	rgb_t ret_fg = colors().text_color();
+	rgb_t ret_bg = colors().text_bg_color();
+	if (s_selected_item == int(menu_items.size()))
+	{
+		ret_fg = colors().selected_color();
+		ret_bg = colors().selected_bg_color();
+		container.add_rect(x1, cur_y, x2, cur_y + line_height, ret_bg, PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA));
+	}
+	draw_text_full(container, "Return to emulation", x1, cur_y, box_width,
+		ui::text_layout::CENTER, ui::text_layout::TRUNCATE, mame_ui_manager::NORMAL, ret_fg, ret_bg, nullptr, nullptr, 1.0f);
+
+	return 0;
+}
+//========================================================================================================>>>
 
 /***************************************************************************
     SLIDER CONTROLS
@@ -2140,7 +2312,6 @@ std::vector<ui::menu_item>& mame_ui_manager::get_slider_list(void)
 {
 	return slider_list;
 }
-
 
 //-------------------------------------------------
 //  slider_alloc - allocate a new slider entry

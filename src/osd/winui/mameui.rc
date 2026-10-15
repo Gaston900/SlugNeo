@@ -179,8 +179,8 @@ BEGIN
         MENUITEM SEPARATOR
 #ifdef MAME_AVI
         MENUITEM "Game Recording (Compression Method)",   	ID_FILE_PLAY_WITH_AVI
-#endif /* MAME_AVI */      
         MENUITEM SEPARATOR
+#endif /* MAME_AVI */      
         MENUITEM "Record INP playback\tCtrl+F1",           ID_FILE_PLAY_RECORD
         MENUITEM "Load savestate\tAlt+F7",              ID_FILE_LOADSTATE
         MENUITEM SEPARATOR
@@ -822,9 +822,9 @@ BEGIN
     PUSHBUTTON      "Select cheat file",IDC_SELECT_CHEATFILE,10,212,60,14,0,0
     PUSHBUTTON      "Reset cheat file",IDC_RESET_CHEATFILE,80,212,60,14,0,0
     
-    CONTROL         "Skip game informations screen at startup",IDC_SKIP_GAME_INFO,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,236,200,10,0
-    CONTROL         "Quit game confirmation screen on exit",IDC_CONFIRM_QUIT,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,248,200,10,0
-    CONTROL         "Display mouse cursor in internal interface",IDC_ENABLE_MOUSE_UI,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,260,200,10,0
+	CONTROL         "Enable developer tools",IDC_CONFIRM_QUIT,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,236,150,10,0
+    CONTROL         "Skip game informations screen at startup",IDC_SKIP_GAME_INFO,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,248,150,10,0
+    CONTROL         "Display mouse cursor in internal interface",IDC_ENABLE_MOUSE_UI,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,260,150,10,0
     CONTROL         "Save NVRAM on exit",IDC_NVRAM_SAVE,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,272,104,10,0
     CONTROL         "Enable rewind savestates",IDC_REWIND,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,284,104,10,0
 

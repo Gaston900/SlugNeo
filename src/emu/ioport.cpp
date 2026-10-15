@@ -1812,15 +1812,117 @@ void ioport_port::write(ioport_value data, ioport_value mem_mask)
 //  frame_update - once/frame update
 //-------------------------------------------------
 
+// 修改的 代码来源 (加斯顿90)
+//==========================================================================================================>>>
+int g_InsertGlobalConfiguration = 0;
+
 void ioport_port::frame_update()
 {
 	// start with 0 values for the digital bits
 	m_live->digital = 0;
 
 	// now loop back and modify based on the inputs
-	for (ioport_field &field : fields())
+	for (ioport_field &field : m_fieldlist)
 		field.frame_update(m_live->digital);
+
+	static int nCoinCounter = 0;
+	static int nFramesCycle = 0;
+	static bool bChargerOn = false;
+	static bool bButtonPressed = false;
+	static int nRotarySlot = 1;
+
+	static int nServiceFrameTimer = 0;
+	static bool bServiceActive = false;
+
+	if (this == machine().ioport().ports().begin()->second.get())
+	{
+		if (g_InsertGlobalConfiguration == 1 && !bChargerOn)
+		{
+			bChargerOn = true;
+			bButtonPressed = true;
+			nCoinCounter = 0;
+			nFramesCycle = 0;
+			nRotarySlot = 1;
+			g_InsertGlobalConfiguration = 0;
+		}
+
+		else if (g_InsertGlobalConfiguration == 99)
+		{
+			bServiceActive = true;
+			nServiceFrameTimer = 25;
+			g_InsertGlobalConfiguration = 0;
+		}
+
+		if (bChargerOn)
+		{
+			nFramesCycle++;
+			
+			if (bButtonPressed)
+			{
+				if (nFramesCycle >= 2)
+				{
+					bButtonPressed = false;
+					nFramesCycle = 0;
+				}
+			}
+			else
+			{
+				if (nFramesCycle >= 1)
+				{
+					nCoinCounter++;
+					if (nCoinCounter >= 198)
+					{
+						bChargerOn = false;
+						bButtonPressed = false;
+					}
+					else
+					{
+						bButtonPressed = true;
+						
+						nRotarySlot++;
+						if (nRotarySlot > 4) nRotarySlot = 1;
+					}
+					nFramesCycle = 0;
+				}
+			}
+		}
+
+		if (bServiceActive && nServiceFrameTimer > 0)
+		{
+			nServiceFrameTimer--;
+			if (nServiceFrameTimer == 0) bServiceActive = false;
+		}
+	}
+
+	if (bChargerOn && bButtonPressed && (nCoinCounter < 198))
+	{
+		ioport_type targetCoinType = IPT_COIN1;
+		if (nRotarySlot == 2) targetCoinType = IPT_COIN2;
+		else if (nRotarySlot == 3) targetCoinType = IPT_COIN3;
+		else if (nRotarySlot == 4) targetCoinType = IPT_COIN4;
+
+		for (ioport_field &field : m_fieldlist)
+		{
+			if (field.type() == targetCoinType)
+			{
+				m_live->digital |= field.mask();
+			}
+		}
+	}
+
+	if (bServiceActive)
+	{
+		for (ioport_field &field : m_fieldlist)
+		{
+			if (field.type() == IPT_SERVICE)
+
+			{
+				m_live->digital |= field.mask();
+			}
+		}
+	}
 }
+// ==============================================================================================================>>>
 
 
 //-------------------------------------------------

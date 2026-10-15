@@ -206,7 +206,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_UI_FONT,                                    "default",   OPTION_STRING,     "specify a font to use" },
 	{ OPTION_UI,                                         "cabinet",   OPTION_STRING,     "type of UI (simple|cabinet)" },
 	{ OPTION_RAMSIZE ";ram",                             nullptr,     OPTION_STRING,     "size of RAM (if supported by driver)" },
-	{ OPTION_CONFIRM_QUIT,                               "0",         OPTION_BOOLEAN,    "ask for confirmation before exiting" },
+	{ OPTION_CONFIRM_QUIT,                               "1",         OPTION_BOOLEAN,    "ask for confirmation before exiting" }, // 修改的 (加斯顿90)
 	{ OPTION_UI_MOUSE,                                   "1",         OPTION_BOOLEAN,    "display UI mouse cursor" },
 	{ OPTION_LANGUAGE ";lang",                           "English",   OPTION_STRING,     "set UI display language" },
 	{ OPTION_NVRAM_SAVE ";nvwrite",                      "0",         OPTION_BOOLEAN,    "save NVRAM data on exit" },

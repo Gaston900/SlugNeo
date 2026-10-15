@@ -7288,34 +7288,21 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hNeoCDMenu, MF_STRING, ID_NEOCD_SLUG1, TEXT("Metal Slug"));
 		AppendMenu(hNeoCDMenu, MF_STRING, ID_NEOCD_SLUG2, TEXT("Metal Slug 2"));
 		
-		// 🟩 EL JAQUE MATE ESTÉTICO: Asociamos los handles cargados a cada comando correspondiente de tu foto
 		SetMenuItemBitmaps(hNeoCDMenu, ID_NEOCD_SLUG1, MF_BYCOMMAND, hNeoCdSlug1, hNeoCdSlug1);
 		SetMenuItemBitmaps(hNeoCDMenu, ID_NEOCD_SLUG2, MF_BYCOMMAND, hNeoCdSlug2, hNeoCdSlug2);
 		
-		// Lo estampamos con look de revista al lado de las pestañas tradicionales del frontend
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNeoCDMenu, TEXT("NeoCD"));
 	}
 
-	// 修改 de Código Fuente (Gastón90 y Socio de las ROMs)
-	// ==================== INYECTOR AXIAL DEL MENÚ SUPERIOR ATOMISWAVE ====================>>>
-	// Autor del fix definitivo: Gastón90 y Socio de Boxes. Proyecto Expansión de Barras de Herramientas Premium.
-	// Enganchamos la pestaña "Atomiswave" de forma nativa en el Framework Win32 utilizando la ventana global hMain.
 	HMENU hAtomiswaveMenu = CreatePopupMenu();
 	if (hAtomiswaveMenu != nullptr)
 	{
 		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_SLUG6, TEXT("Metal Slug 6"));
 		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_SLUG6, MF_BYCOMMAND, hAtomisSlug6, hAtomisSlug6);
 
-		// 🟩 UNIFICACIÓN DE COLOR DE RE_VIS_TA: Como re-calbramos CreateBitmapTransparent a blanco puro,
-		// si el día de mañana le asignas un BMP a este botón, lucirá impecable sin parches grises parásitos.
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hAtomiswaveMenu, TEXT("Atomiswave"));
 	}
-	// ======================================================================================>>>
 
-	// 修改 de Código Fuente (Gastón90 y Socio de las ROMs)
-	// ==================== INYECTOR AXIAL DEL MENÚ SUPERIOR PCSX2 ====================>>>
-	// Autor del fix definitivo: Gastón90 y Socio de Boxes. Proyecto Expansión de Barras de Herramientas Premium de PS2.
-	// Enganchamos la pestaña "PCSX2" de forma nativa en el Framework Win32 utilizando la ventana global hMain.
 	HMENU hPcsx2Menu = CreatePopupMenu();
 	if (hPcsx2Menu != nullptr)
 	{
@@ -7323,20 +7310,13 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hPcsx2Menu, MF_STRING, ID_PS2_SLUG6_PLUS, TEXT("Metal Slug 6 Plus"));
 		AppendMenu(hPcsx2Menu, MF_STRING, ID_PS2_SLUG6_SLUG, TEXT("Metal Slug 6 Slug"));
 		
-		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los tres handles de PS2 cargados en blanco puro al unísono de paridad
 		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_ORIGINAL, MF_BYCOMMAND, hPs2Slug6, hPs2Slug6);
 		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_PLUS, MF_BYCOMMAND, hPs2Slug6Plus, hPs2Slug6Plus);
 		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_SLUG, MF_BYCOMMAND, hPs2Slug6Slug, hPs2Slug6Slug);
 		
-		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPcsx2Menu, TEXT("PCSX2"));
 	}
-	// ===================================================================================================>>>
 
-	// 修改 de Código Fuente (Gastón90 y Socio de las ROMs)
-	// ==================== INYECTOR AXIAL DEL MENÚ SUPERIOR DESMUME ====================>>>
-	// Autor del fix definitivo: Gastón90 y Socio de Boxes. Proyecto Expansión de Barras de Herramientas Premium de NDS.
-	// Enganchamos la pestaña "DeSmuME" de forma nativa en el Framework Win32 utilizando la ventana global hMain.
 	HMENU hDesmumeMenu = CreatePopupMenu();
 	if (hDesmumeMenu != nullptr)
 	{
@@ -7345,16 +7325,13 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hDesmumeMenu, MF_STRING, ID_NDS_SLUG7_PLUS, TEXT("Metal Slug 7 Plus"));
 		AppendMenu(hDesmumeMenu, MF_STRING, ID_NDS_SLUG7_SLUG, TEXT("Metal Slug 7 Slug"));
 		
-		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los cuatro handles de NDS cargados en blanco puro al unísono de paridad
 		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7, MF_BYCOMMAND, hNdsSlug7, hNdsSlug7);
 		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_MIX, MF_BYCOMMAND, hNdsSlug7Mix, hNdsSlug7Mix);
 		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_PLUS, MF_BYCOMMAND, hNdsSlug7Plus, hNdsSlug7Plus);
 		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_SLUG, MF_BYCOMMAND, hNdsSlug7Slug, hNdsSlug7Slug);
 		
-		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hDesmumeMenu, TEXT("DeSmuME"));
 	}
-	// ======================================================================================>>>
 	
 	HMENU hPpssppMenu = CreatePopupMenu();
 	if (hPpssppMenu != nullptr)
@@ -7363,15 +7340,12 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hPpssppMenu, MF_STRING, ID_PSP_SLUGXX_MIX, TEXT("Metal Slug XX Mix"));
 		AppendMenu(hPpssppMenu, MF_STRING, ID_PSP_SLUGXX_PLUS, TEXT("Metal Slug XX Plus"));
 		
-		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los tres handles de PSP cargados en blanco puro al unísono de paridad
 		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX, MF_BYCOMMAND, hPspSlugXX, hPspSlugXX);
 		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX_MIX, MF_BYCOMMAND, hPspSlugXXMix, hPspSlugXXMix);
 		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX_PLUS, MF_BYCOMMAND, hPspSlugXXPlus, hPspSlugXXPlus);
 		
-		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPpssppMenu, TEXT("PPSSPP"));
 	}
-	// ======================================================================================>>>
 	
 	HMENU hGbaMenu = CreatePopupMenu();
 	if (hGbaMenu != nullptr)
@@ -7382,17 +7356,14 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE_MIX, TEXT("Metal Slug Advance Mix"));
 		AppendMenu(hGbaMenu, MF_STRING, ID_GBA_SLUG_ADVANCE_PLUS, TEXT("Metal Slug Advance Plus"));
 		
-		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los cinco handles de GBA cargados en blanco puro al unísono de paridad
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE, MF_BYCOMMAND, hGbaSlugAdvance, hGbaSlugAdvance);
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_TRAINER, MF_BYCOMMAND, hGbaSlugAdvanceTrainer, hGbaSlugAdvanceTrainer);
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_BETA, MF_BYCOMMAND, hGbaSlugAdvanceBeta, hGbaSlugAdvanceBeta);
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_MIX, MF_BYCOMMAND, hGbaSlugAdvanceMix, hGbaSlugAdvanceMix);
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_PLUS, MF_BYCOMMAND, hGbaSlugAdvancePlus, hGbaSlugAdvancePlus);
 		
-		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hGbaMenu, TEXT("GBA"));
 	}
-	// ======================================================================================>>>
 	
 	HMENU hNgpcMenu = CreatePopupMenu();
 	if (hNgpcMenu != nullptr)
@@ -7400,16 +7371,13 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hNgpcMenu, MF_STRING, ID_NGPC_SLUG_1ST, TEXT("Metal Slug 1ST Mission"));
 		AppendMenu(hNgpcMenu, MF_STRING, ID_NGPC_SLUG_2ND, TEXT("Metal Slug 2ND Mission"));
 		
-		// 🟩 ASOCIACIÓN DE BOXES: Enlazamos los dos handles de NGPC cargados en blanco puro al unísono de paridad
 		SetMenuItemBitmaps(hNgpcMenu, ID_NGPC_SLUG_1ST, MF_BYCOMMAND, hNgpcSlug1st, hNgpcSlug1st);
 		SetMenuItemBitmaps(hNgpcMenu, ID_NGPC_SLUG_2ND, MF_BYCOMMAND, hNgpcSlug2nd, hNgpcSlug2nd);
 		
-		// Lo estampamos brillante al lado de las pestañas tradicionales del frontend
 		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNgpcMenu, TEXT("NGPC"));
 	}
-	// ======================================================================================>>>
 	
-	DrawMenuBar(hMain); // Refrescamos usando la ventana global auténtica de tu archivo
+	DrawMenuBar(hMain);
 }
 //================================================================================================================>>>
 

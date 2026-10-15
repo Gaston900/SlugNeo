@@ -159,6 +159,16 @@ BEGIN
     END
     POPUP "&Help"
     BEGIN
+
+// 修改的 代码来源 (缘来是你)
+/*********************************************************************************************/
+	    MENUITEM "Export all sets",                ID_TOOLS_EXPORT_ALL
+		MENUITEM "Export complete set",                ID_TOOLS_EXPORT_COMPLETE
+		MENUITEM "Export missing sets",                ID_TOOLS_EXPORT_MISSING
+		MENUITEM SEPARATOR
+		MENUITEM "Export current list",                ID_TOOLS_EXPORT_CURRENT
+		MENUITEM SEPARATOR
+/*********************************************************************************************/
 //        MENUITEM "Online Manual\tF1",                      ID_HELP_CONTENTS
 //        MENUITEM "Support Forum\tF3",                       	 ID_HELP_TROUBLE
 //        MENUITEM SEPARATOR
@@ -186,7 +196,17 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Add to custom folder\tAlt+W",         ID_CONTEXT_ADD_CUSTOM
         MENUITEM "Remove from this folder\tAlt+X",      ID_CONTEXT_REMOVE_CUSTOM
+
+// 修改的 代码来源 (缘来是你)
+/*********************************************************************************************/
+	    MENUITEM SEPARATOR
+        MENUITEM "Delete ROM file\tDel",                  ID_CONTEXT_DELETE_ROM
+	    MENUITEM "Delete the selected ROM file\tDel",     ID_CONTEXT_DELETE_SELECTED_ROMS
+	    MENUITEM "Batch delete mode\tCtrl+Alt+D",         ID_CONTEXT_BATCH_DELETE_MODE    
+        MENUITEM "Select All\tCtrl+A",                    ID_CONTEXT_SELECT_ALL
+        MENUITEM "Cancel all\tCtrl+Z",                    ID_CONTEXT_SELECT_NONE
         MENUITEM SEPARATOR
+/*********************************************************************************************/
         MENUITEM "Information\tAlt+I",                  ID_GAME_INFO
         MENUITEM "Audit\tAlt+A",                        ID_GAME_AUDIT
         MENUITEM SEPARATOR
@@ -1180,6 +1200,11 @@ BEGIN
     VK_NEXT,        ID_UI_HISTORY_DOWN,         VIRTKEY, CONTROL, NOINVERT
     VK_UP,            ID_SORT_ASCENDING,             VIRTKEY, ALT, NOINVERT
     VK_PRIOR,       ID_UI_HISTORY_UP,           VIRTKEY, CONTROL, NOINVERT
+
+// 修改的 代码来源 (缘来是你)
+/***************************************************************************************/
+	"D",            ID_CONTEXT_BATCH_DELETE_MODE,    VIRTKEY, CONTROL, ALT, NOINVERT
+/***************************************************************************************/
     "K",			ID_KOREAN_GAMELIST,			VIRTKEY, ALT, NOINVERT //USE_KLIST
 END
 
@@ -1272,6 +1297,15 @@ IDB_NGPC_SLUG_1ST        BITMAP                     "res\\ngpc_slug_1st.bmp"
 IDB_NGPC_SLUG_2ND        BITMAP                     "res\\ngpc_slug_2nd.bmp"
 IDB_CLEANSINGLE          BITMAP                     "res\\cleansingle.bmp"
 IDB_CLEANALL             BITMAP                     "res\\cleanall.bmp"
+IDB_CONTEXT              BITMAP                     "res\\context.bmp"
+IDB_BATCH_DELETE         BITMAP                     "res\\batchdelete.bmp"
+IDB_SELECT_ALL           BITMAP                     "res\\selectall.bmp"
+IDB_SELECT_NONE          BITMAP                     "res\\selectnone.bmp"
+IDB_DELETE_ROM           BITMAP                     "res\\deleterom.bmp"
+IDB_EXP_ALL              BITMAP                     "res\\exp_all.bmp"
+IDB_EXP_COMPLETE         BITMAP                     "res\\exp_complete.bmp"
+IDB_EXP_MISSING          BITMAP                     "res\\exp_missing.bmp"
+IDB_EXP_CURRENT          BITMAP                     "res\\exp_current.bmp"
 //==============================================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //

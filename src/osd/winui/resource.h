@@ -192,6 +192,14 @@
 #define IDB_CLEANSINGLE                 330
 #define IDB_CLEANALL                    331
 #define IDB_CONTEXT                     332
+#define IDB_BATCH_DELETE                333
+#define IDB_SELECT_ALL                  334
+#define IDB_SELECT_NONE                 335
+#define IDB_DELETE_ROM                  336
+#define IDB_EXP_ALL                     337
+#define IDB_EXP_COMPLETE                338
+#define IDB_EXP_MISSING                 339
+#define IDB_EXP_CURRENT                 340
 //=====================================================>>>
 
 #define IDC_LIST                        1000
@@ -730,9 +738,23 @@
 #define ID_FILE_PLAY_WITH_AVI           40164 //MAME_AVI
 #define ID_FILE_PLAY_BACK_AVI           40165 //MAME_AVI
 
+// 修改的 代码来源 (缘来是你)
+/*******************************************/
+#define ID_CONTEXT_DELETE_ROM           40165   // 删除 ROMs	
+#define ID_CONTEXT_DELETE_SELECTED_ROMS 40166   // 批量删除 ROMs
+#define ID_CONTEXT_BATCH_DELETE_MODE    40167   // 批量删除模式
+#define ID_CONTEXT_SELECT_ALL    		40168	//全选
+#define ID_CONTEXT_SELECT_NONE   		40169	//反选
+// 导出功能菜单
+#define ID_TOOLS_EXPORT_ALL             40170
+#define ID_TOOLS_EXPORT_COMPLETE        40171
+#define ID_TOOLS_EXPORT_MISSING         40172
+#define ID_TOOLS_EXPORT_CURRENT         40173
+/*******************************************/
+
 // 修改的 代码来源 (加斯顿90)
 //=============================================>>>
-#define ID_CONTEXT_CLEAN_SINGLE_NVRAM_CFG 40166
-#define ID_CONTEXT_CLEAN_ALL_NVRAM_CFG    40167
+#define ID_CONTEXT_CLEAN_SINGLE_NVRAM_CFG 40174
+#define ID_CONTEXT_CLEAN_ALL_NVRAM_CFG    40175
 //=============================================>>>
 #define IDC_STATIC                      1

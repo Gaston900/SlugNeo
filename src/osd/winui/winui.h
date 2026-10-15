@@ -69,6 +69,13 @@
 #include "dxdecode.h" 
 #include "screenshot.h"
 
+// 修改的 代码来源 (缘来是你)
+//============================>>>
+//导出 XML
+#include <string>
+#include <vector>
+//============================>>>
+
 #ifndef TVS_EX_DOUBLEBUFFER
 #define TVS_EX_DOUBLEBUFFER		0x0004
 #endif

@@ -24,7 +24,16 @@ int				_nAviNo = 0;
 
 // 修改的 代码来源 (缘来是你)
 //=================================== 缘来是你 ========================================>>>
+#include <shellapi.h>
+
+//导出XML
+#include <vector>
+#include <string>
+
 #define USE_SPLASH_SCREEN 1  // 关闭启动画面
+
+static WNDPROC g_originalListViewProc = NULL;
+static bool g_bBatchDeleteMode = false;
 
 // DPI
 static UINT g_uCurrentDpi = 96;
@@ -252,6 +261,15 @@ void SetStatusBarTextW(int part_index, const wchar_t *fmt, ...);
 static const char* GetCloneParentName(int nItem);
 static const char* GetParentDriverGameName(int nItem);
 
+//缘来是你
+//================ 导出XML ===============>>>
+static std::string EscapeXML(const char* str);
+static void ExportGameROMsToXML(FILE* f, int game_index);
+static void ExportGameToXML(FILE* f, int game_index);
+static void ExportFullXML(int mode, HWND hWndList);
+static void ExportCurrentListView(void);
+//========================================>>>
+
 enum
 {
 	FILETYPE_GAME_LIST = 1,
@@ -409,6 +427,15 @@ static HBITMAP hklist = NULL;	//use_KLIST
 //=============================================================>>>
 static HBITMAP hCleanSingle = NULL;
 static HBITMAP hCleanAll = NULL;
+static HBITMAP hConText = NULL;
+static HBITMAP hBatchDelete = NULL;
+static HBITMAP hSelectAll = NULL;
+static HBITMAP hSelectNone = NULL;
+static HBITMAP hDeleteRomExclusive = NULL;
+static HBITMAP hExpAll = NULL;
+static HBITMAP hExpComplete = NULL;
+static HBITMAP hExpMissing = NULL;
+static HBITMAP hExpCurrent = NULL;
 static HBITMAP hNeoCdSlug1 = NULL;
 static HBITMAP hNeoCdSlug2 = NULL;
 static HBITMAP hAtomisSlug6 = NULL;
@@ -1765,6 +1792,15 @@ static void Win32UI_exit(void)
 //=============================================================>>>
 	DeleteBitmap(hCleanSingle);
 	DeleteBitmap(hCleanAll);
+	DeleteBitmap(hConText);
+	DeleteBitmap(hBatchDelete);
+	DeleteBitmap(hSelectAll);
+	DeleteBitmap(hSelectNone);
+	DeleteBitmap(hDeleteRomExclusive);
+	DeleteBitmap(hExpAll);
+	DeleteBitmap(hExpComplete);
+	DeleteBitmap(hExpMissing);
+	DeleteBitmap(hExpCurrent);
 	DeleteBitmap(hNeoCdSlug1);
 	DeleteBitmap(hNeoCdSlug2);
     DeleteBitmap(hAtomisSlug6);
@@ -2693,6 +2729,24 @@ static void InitMenuIcons(void)
 	hCleanSingle = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_CLEANALL));
 	hCleanAll = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_CONTEXT));
+	hConText = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_BATCH_DELETE));
+	hBatchDelete = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_SELECT_ALL));
+	hSelectAll = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_SELECT_NONE));
+	hSelectNone = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_DELETE_ROM));
+	hDeleteRomExclusive = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_EXP_ALL));
+	hExpAll = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_EXP_COMPLETE));
+	hExpComplete = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_EXP_MISSING));
+	hExpMissing = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_EXP_CURRENT));
+	hExpCurrent = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NEOCD_SLUG1));
 	hNeoCdSlug1 = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NEOCD_SLUG2));
@@ -2772,6 +2826,38 @@ static void CopyToolTipText(LPTOOLTIPTEXT lpttt)
 
 	lpttt->lpszText = t_s;
 }
+
+//============================= 复选框 ===========================>>>
+static void SetBatchDeleteMode(bool bEnable)
+{
+    g_bBatchDeleteMode = bEnable;
+    
+    DWORD dwExStyle = ListView_GetExtendedListViewStyle(hWndList);
+    
+    if (bEnable)
+    {
+        ListView_SetExtendedListViewStyle(hWndList, dwExStyle | LVS_EX_CHECKBOXES);
+        
+        int nCount = ListView_GetItemCount(hWndList);
+        for (int i = 0; i < nCount; i++)
+        {
+            ListView_SetCheckState(hWndList, i, FALSE);
+        }
+        
+        SetStatusBarText(0, "Batch deletion mode is enabled. Please select the games you want to delete. Press ESC to exit");
+    }
+    else
+    {
+        ListView_SetExtendedListViewStyle(hWndList, dwExStyle & ~LVS_EX_CHECKBOXES);
+        SetStatusBarText(0, "Batch delete mode is now disabled");
+    }
+    
+    HMENU hMenu = GetMenu(GetMainWindow());
+    CheckMenuItem(hMenu, ID_CONTEXT_BATCH_DELETE_MODE, bEnable ? MF_CHECKED : MF_UNCHECKED);
+    
+    InvalidateRect(hWndList, NULL, TRUE);
+}
+//=================================================================>>>
 
 static void InitToolbar(void)
 {
@@ -3270,6 +3356,63 @@ static void ResetFonts(void)
 	}
 }
 
+// 修改的 代码来源 (缘来是你)
+//============================== 删除 ROMs ============================>>>
+static LRESULT CALLBACK ListViewSubclassProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    if (uMsg == WM_KEYDOWN)
+    {
+        if (wParam == 'A' && (GetKeyState(VK_CONTROL) & 0x8000) && g_bBatchDeleteMode)
+        {
+            int nCount = ListView_GetItemCount(hWnd);
+            for (int i = 0; i < nCount; i++)
+                ListView_SetCheckState(hWnd, i, TRUE);
+				//SetStatusBarText(5, "已全选");
+            return TRUE;
+        }
+	if (wParam == 'Z' && (GetKeyState(VK_CONTROL) & 0x8000) && g_bBatchDeleteMode)
+	{
+		int nCount = ListView_GetItemCount(hWnd);
+		for (int i = 0; i < nCount; i++)
+			ListView_SetCheckState(hWnd, i, FALSE);
+		return TRUE;
+	}
+        else if (wParam == VK_ESCAPE && g_bBatchDeleteMode)
+        {
+            SetBatchDeleteMode(false);
+            //HMENU hMenu = GetMenu(GetMainWindow());
+            //CheckMenuItem(hMenu, ID_CONTEXT_BATCH_DELETE_MODE, MF_UNCHECKED);
+            return TRUE;
+        }
+        else if (wParam == VK_DELETE)
+        {
+            if (g_bBatchDeleteMode)
+            {
+                int nCheckedCount = 0;
+                int nTotal = ListView_GetItemCount(hWnd);
+                for (int i = 0; i < nTotal; i++)
+                {
+                    if (ListView_GetCheckState(hWnd, i))
+                        nCheckedCount++;
+                }
+                
+                if (nCheckedCount > 0)
+                {
+                    MameCommand(GetMainWindow(), ID_CONTEXT_DELETE_SELECTED_ROMS, 0, 0);
+                    return TRUE;
+                }
+            }
+            
+            int nGame = Picker_GetSelectedItem(hWnd);
+            if (nGame >= 0)
+            {
+                MameCommand(GetMainWindow(), ID_CONTEXT_DELETE_ROM, 0, 0);
+            }
+            return TRUE;
+        }
+    }
+    return CallWindowProc(g_originalListViewProc, hWnd, uMsg, wParam, lParam);
+}
 //=============================================================>>>
 
 static void InitListTree(void)
@@ -3382,14 +3525,24 @@ static void InitListTree(void)
 	}
 //==================================================================================================>>>
 
-	if (IsWindowsSevenOrHigher())
+//缘来是你
+//=================================== 复选框==========================>>>
+    DWORD dwExStyle = LVS_EX_FULLROWSELECT | LVS_EX_HEADERDRAGDROP | LVS_EX_LABELTIP | LVS_EX_ONECLICKACTIVATE | LVS_EX_DOUBLEBUFFER;
+    
+    if (IsWindowsSevenOrHigher())
+    {
+        (void)ListView_SetExtendedListViewStyle(hWndList, dwExStyle);
+        SendMessage(hTreeView, TVM_SETEXTENDEDSTYLE, TVS_EX_DOUBLEBUFFER, TVS_EX_DOUBLEBUFFER);
+    }
+    else
 	{
-		(void)ListView_SetExtendedListViewStyle(hWndList, LVS_EX_FULLROWSELECT | LVS_EX_HEADERDRAGDROP | LVS_EX_LABELTIP | LVS_EX_ONECLICKACTIVATE | LVS_EX_DOUBLEBUFFER);
-		SendMessage(hTreeView, TVM_SETEXTENDEDSTYLE, TVS_EX_DOUBLEBUFFER, TVS_EX_DOUBLEBUFFER);
+        (void)ListView_SetExtendedListViewStyle(hWndList, dwExStyle);
 	}
-	else
-		(void)ListView_SetExtendedListViewStyle(hWndList, LVS_EX_FULLROWSELECT | LVS_EX_HEADERDRAGDROP | LVS_EX_LABELTIP | LVS_EX_UNDERLINEHOT | LVS_EX_ONECLICKACTIVATE | LVS_EX_DOUBLEBUFFER);
+    
+    g_bBatchDeleteMode = false;
+    g_originalListViewProc = (WNDPROC)SetWindowLongPtr(hWndList, GWLP_WNDPROC, (LONG_PTR)ListViewSubclassProc);
 }
+//====================================================================>>>
 
 static void UpdateHistory(void)
 {
@@ -4616,6 +4769,29 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			PostMessage(hMain, WM_CLOSE, 0, 0);
 			return true;
 
+//缘来是你
+//============== 导出功能 ================>>>
+		case ID_TOOLS_EXPORT_ALL:
+			ExportFullXML(0, NULL);
+			SetFocus(hWndList);
+			return true;
+		
+		case ID_TOOLS_EXPORT_COMPLETE:
+			ExportFullXML(1, NULL);
+			SetFocus(hWndList);
+			return true;
+		
+		case ID_TOOLS_EXPORT_MISSING:
+			ExportFullXML(2, NULL);
+			SetFocus(hWndList);
+			return true;
+		
+		case ID_TOOLS_EXPORT_CURRENT:
+			ExportCurrentListView();
+			SetFocus(hWndList);
+			return true;	
+//=========================================>>>
+
 		case ID_VIEW_ICONS_LARGE:
 			SetView(ID_VIEW_ICONS_LARGE);
 			UpdateListView();
@@ -4775,6 +4951,255 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 
 			break;
 		}
+
+//缘来是你
+//============================= 删除 ROM 文件 =======================>>>
+		case ID_CONTEXT_DELETE_ROM:
+		{
+			int nGame = Picker_GetSelectedItem(hWndList);
+			if (nGame < 0) break;
+		
+			const char *romname = GetDriverGameName(nGame);
+			char rompath[MAX_PATH];
+			char msg[512];
+			BOOL found = FALSE;
+		
+			const char *rompaths = GetRomDirs();
+			char path_copy[4096];
+			strcpy(path_copy, rompaths);
+		
+			char *dir = strtok(path_copy, ";");
+			while (dir && !found)
+			{
+				while (*dir == ' ') dir++;
+				if (strlen(dir) > 0)
+				{
+					snprintf(rompath, sizeof(rompath), "%s\\%s.zip", dir, romname);
+					if (GetFileAttributesA(rompath) != INVALID_FILE_ATTRIBUTES)
+					{
+						found = TRUE;
+						break;
+					}
+//============================= 缘来是你 ===========================>>>
+					snprintf(rompath, sizeof(rompath), "%s\\%s.7z", dir, romname);
+					if (GetFileAttributesA(rompath) != INVALID_FILE_ATTRIBUTES)
+					{
+						found = TRUE;
+						break;
+					}
+//=================================================================>>>
+				}
+				dir = strtok(NULL, ";");
+			}
+		
+			if (!found)
+			{
+//============================= 缘来是你 ===========================>>>
+				ErrorMessageBox("ROM file not found:\n%s.zip or %s.7z", romname, romname);
+				break;
+//=================================================================>>>
+			}
+			snprintf(msg, sizeof(msg), "Are you sure you want to delete the ROM file? \n\n%s\n\nThis operation is irreversible!", rompath);
+			if (winui_message_box_utf8(hWnd, msg, MAMEUINAME, MB_ICONWARNING | MB_YESNO) != IDYES)
+				break;
+		
+			char double_null[2 * MAX_PATH + 2] = {0};
+			strcpy(double_null, rompath);
+			double_null[strlen(rompath) + 1] = 0;
+		
+			SHFILEOPSTRUCTA shfo = {0};
+			shfo.hwnd = hWnd;
+			shfo.wFunc = FO_DELETE;
+			shfo.pFrom = double_null;
+			shfo.fFlags = FOF_ALLOWUNDO | FOF_NOCONFIRMATION | FOF_SILENT;
+		
+			if (SHFileOperationA(&shfo) == 0 && !shfo.fAnyOperationsAborted)
+			{
+				icon_index[nGame] = 0;
+				SetRomAuditResults(nGame, 0);
+		
+				int nItem = GetSelectedPick();
+				if (nItem >= 0)
+				{
+					ListView_DeleteItem(hWndList, nItem);
+					UpdateStatusBar();
+				}
+		
+				winui_message_box_utf8(hWnd, "The ROM file has been deleted", MAMEUINAME, MB_ICONINFORMATION | MB_OK);
+			}
+			else
+			{
+				ErrorMessageBox("Deletion failed. Please check file permissions");
+			}
+		
+			SetFocus(hWndList);
+			return true;
+		}
+		
+		case ID_CONTEXT_BATCH_DELETE_MODE:
+		{
+			SetBatchDeleteMode(!g_bBatchDeleteMode);
+			HMENU hMenu = GetMenu(hMain);
+			CheckMenuItem(hMenu, ID_CONTEXT_BATCH_DELETE_MODE, g_bBatchDeleteMode ? MF_CHECKED : MF_UNCHECKED);
+			SetFocus(hWndList);
+			return true;
+		}
+		
+		case ID_CONTEXT_DELETE_SELECTED_ROMS:
+		{
+			int nTotal = ListView_GetItemCount(hWndList);
+			int *checkedIndices = (int *)malloc(nTotal * sizeof(int));
+			int nCheckedCount = 0;
+		
+			for (int i = 0; i < nTotal; i++)
+			{
+				if (ListView_GetCheckState(hWndList, i))
+				{
+					checkedIndices[nCheckedCount++] = i;
+				}
+			}
+		
+			if (nCheckedCount == 0)
+			{
+				ErrorMessageBox("Please select the games you want to delete (click the checkbox in front of the game)");
+				free(checkedIndices);
+				break;
+			}
+		
+			typedef struct {
+				char path[MAX_PATH];
+				int gameIndex;
+			} RomInfo;
+		
+			RomInfo *roms = (RomInfo *)malloc(nCheckedCount * sizeof(RomInfo));
+			int nValidCount = 0;
+		
+			for (int i = 0; i < nCheckedCount; i++)
+			{
+				int nRow = checkedIndices[i];
+				LVITEM lvi;
+				lvi.iItem = nRow;
+				lvi.mask = LVIF_PARAM;
+				if (!ListView_GetItem(hWndList, &lvi))
+					continue;
+		
+				int nGame = lvi.lParam;
+				const char *romname = GetDriverGameName(nGame);
+		
+				const char *rompaths = GetRomDirs();
+				char path_copy[4096];
+				strcpy(path_copy, rompaths);
+		
+				char *dir = strtok(path_copy, ";");
+				BOOL found = FALSE;
+				while (dir && !found)
+				{
+					while (*dir == ' ') dir++;
+					if (strlen(dir) > 0)
+					{
+						snprintf(roms[nValidCount].path, MAX_PATH, "%s\\%s.zip", dir, romname);
+						if (GetFileAttributesA(roms[nValidCount].path) != INVALID_FILE_ATTRIBUTES)
+						{
+							roms[nValidCount].gameIndex = nGame;
+							nValidCount++;
+							found = TRUE;
+							break;
+						}
+//============================= 缘来是你 ===========================>>>
+						snprintf(roms[nValidCount].path, MAX_PATH, "%s\\%s.7z", dir, romname);
+						if (GetFileAttributesA(roms[nValidCount].path) != INVALID_FILE_ATTRIBUTES)
+						{
+							roms[nValidCount].gameIndex = nGame;
+							nValidCount++;
+							found = TRUE;
+							break;
+						}
+//=================================================================>>>
+					}
+					dir = strtok(NULL, ";");
+				}
+			}
+		
+			if (nValidCount == 0)
+			{
+				ErrorMessageBox("No ROM file was found that can be deleted");
+				free(checkedIndices);
+				free(roms);
+				break;
+			}
+		
+			char msg[512];
+			snprintf(msg, sizeof(msg), "Are you sure you want to delete the selected %d ROM files? \n\nThis operation is irreversible!", nValidCount);
+			if (winui_message_box_utf8(hWnd, msg, MAMEUINAME, MB_ICONWARNING | MB_YESNO) != IDYES)
+			{
+				free(checkedIndices);
+				free(roms);
+				break;
+			}
+		
+			int nSuccess = 0;
+			for (int i = 0; i < nValidCount; i++)
+			{
+				char double_null[2 * MAX_PATH + 2] = {0};
+				strcpy(double_null, roms[i].path);
+				double_null[strlen(roms[i].path) + 1] = 0;
+		
+				SHFILEOPSTRUCTA shfo = {0};
+				shfo.hwnd = hWnd;
+				shfo.wFunc = FO_DELETE;
+				shfo.pFrom = double_null;
+				shfo.fFlags = FOF_ALLOWUNDO | FOF_NOCONFIRMATION | FOF_SILENT;
+		
+				if (SHFileOperationA(&shfo) == 0 && !shfo.fAnyOperationsAborted)
+				{
+					nSuccess++;
+					icon_index[roms[i].gameIndex] = 0;
+					SetRomAuditResults(roms[i].gameIndex, 0);
+				}
+			}
+		
+			if (nSuccess > 0)
+			{
+				SaveGameList();
+		
+				for (int i = 0; i < nCheckedCount - 1; i++)
+				{
+					for (int j = i + 1; j < nCheckedCount; j++)
+					{
+						if (checkedIndices[i] < checkedIndices[j])
+						{
+							int temp = checkedIndices[i];
+							checkedIndices[i] = checkedIndices[j];
+							checkedIndices[j] = temp;
+						}
+					}
+				}
+		
+				for (int i = 0; i < nCheckedCount; i++)
+				{
+					ListView_DeleteItem(hWndList, checkedIndices[i]);
+				}
+		
+				char successMsg[256];
+				snprintf(successMsg, sizeof(successMsg), "%d ROM files have been deleted. Please press F5 to refresh the list", nSuccess);
+				winui_message_box_utf8(hWnd, successMsg, MAMEUINAME, MB_ICONINFORMATION | MB_OK);
+		
+				if (g_bBatchDeleteMode)
+				{
+					SetBatchDeleteMode(false);
+				}
+			}
+			else
+			{
+				ErrorMessageBox("Deletion failed. Please check file permissions");
+			}
+		
+			free(checkedIndices);
+			free(roms);
+			SetFocus(hWndList);
+			return true;
+			}
+//==========================================================>>>
 
 // 修改的 代码来源 (加斯顿90)
 //==================================================================================================>>>
@@ -5410,11 +5835,42 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 
 			break;
 
+//======================== 缘来是你 ========== 删除ROMs =================>>>
 		case IDCANCEL: /* esc key */
 			if (g_in_treeview_edit)
+			{
 				(void)TreeView_EndEditLabelNow(hTreeView, true);
-
+			}
+			else if (g_bBatchDeleteMode)
+			{
+				SetBatchDeleteMode(false);
+				HMENU hMenu = GetMenu(GetMainWindow());
+				CheckMenuItem(hMenu, ID_CONTEXT_BATCH_DELETE_MODE, MF_UNCHECKED);
+				return true;
+			}
 			break;
+
+		case ID_CONTEXT_SELECT_ALL:
+			if (g_bBatchDeleteMode)
+			{
+				int nCount = ListView_GetItemCount(hWndList);
+				for (int i = 0; i < nCount; i++)
+					ListView_SetCheckState(hWndList, i, TRUE);
+			}
+			else
+			{
+			}
+			return true;
+		
+		case ID_CONTEXT_SELECT_NONE:
+			if (g_bBatchDeleteMode)
+			{
+				int nCount = ListView_GetItemCount(hWndList);
+				for (int i = 0; i < nCount; i++)
+					ListView_SetCheckState(hWndList, i, FALSE);
+			}
+			return true;
+//======================================================================>>>
 
 		case IDC_PLAY_GAME:
 			if (have_selection)
@@ -6779,6 +7235,15 @@ void InitMainMenu(HMENU hMainMenu)
 	SetMenuItemBitmaps(hMainMenu, ID_UPDATE_GAMELIST, MF_BYCOMMAND, hRefresh, hRefresh);
 	SetMenuItemBitmaps(hMainMenu, ID_FILE_GAMELIST, MF_BYCOMMAND, hSaveList, hSaveList);
 	SetMenuItemBitmaps(hMainMenu, ID_FILE_ROMSLIST, MF_BYCOMMAND, hSaveRoms, hSaveRoms);
+
+//缘来是你
+//================================= 导出 XML 菜单图标 ===========================>>>
+	SetMenuItemBitmaps(hMainMenu, ID_TOOLS_EXPORT_ALL, MF_BYCOMMAND, hExpAll, hExpAll);
+	SetMenuItemBitmaps(hMainMenu, ID_TOOLS_EXPORT_COMPLETE, MF_BYCOMMAND, hExpComplete, hExpComplete);
+	SetMenuItemBitmaps(hMainMenu, ID_TOOLS_EXPORT_MISSING, MF_BYCOMMAND, hExpMissing, hExpMissing);
+	SetMenuItemBitmaps(hMainMenu, ID_TOOLS_EXPORT_CURRENT, MF_BYCOMMAND, hExpCurrent, hExpCurrent);
+//================================================================================>>>
+
 	SetMenuItemBitmaps(hMainMenu, ID_FILE_PLAY_BACK, MF_BYCOMMAND, hPlayback, hPlayback);
 	SetMenuItemBitmaps(hMainMenu, ID_FILE_AUDIT, MF_BYCOMMAND, hAuditMenu, hAuditMenu);
 	SetMenuItemBitmaps(hMainMenu, ID_PLAY_VIDEO, MF_BYCOMMAND, hVideo, hVideo);
@@ -7040,6 +7505,15 @@ void InitBodyContextMenu(HMENU hBodyContextMenu)
 	SetMenuItemInfo(hBodyContextMenu, ID_FOLDER_SOURCEPROPERTIES, false, &mii);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_ADD_CUSTOM, MF_BYCOMMAND, hCustom, hCustom);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_FILE_PLAY, MF_BYCOMMAND, hPlay, hPlay);
+
+//================================================ 缘来是你 ===============================================>>>																		
+//	SetMenuItemBitmaps(hBodyContextMenu, ID_PLAY_IPS, MF_BYCOMMAND, hIpsMenuExclusive, hIpsMenuExclusive);	// IPS
+	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_DELETE_ROM, MF_BYCOMMAND, hDeleteRomExclusive, hDeleteRomExclusive);	//删除 ROMs
+	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_BATCH_DELETE_MODE, MF_BYCOMMAND, hBatchDelete, hBatchDelete);  // 批量删除模式
+	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_DELETE_SELECTED_ROMS, MF_BYCOMMAND, hConText, hConText);	//批量删除 ROMs
+	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_SELECT_ALL, MF_BYCOMMAND, hSelectAll, hSelectAll);	//全选
+	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_SELECT_NONE, MF_BYCOMMAND, hSelectNone, hSelectNone);	
+//==========================================================================================================>>>	
 	SetMenuItemBitmaps(hBodyContextMenu, ID_VIDEO_SNAP, MF_BYCOMMAND, hVideo, hVideo);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_PLAY_M1, MF_BYCOMMAND, hPlayM1, hPlayM1);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_VIEW_ZIP, MF_BYCOMMAND, hZip, hZip);
@@ -7755,6 +8229,11 @@ static void SaveGameListToFile(char *szFile, int filetype)
 
 	fprintf(f, ", %d game(s) found.%s", nListCount, CrLf);
 
+// 修改的 (缘来是你)
+/*******************************************************************************/
+    fprintf(f, "ROM Name\tGame Name\tManufacturer\n");	// 导出当前游戏列表
+/*******************************************************************************/
+
 	// Games
 	for (int nIndex = 0; nIndex < nListCount; nIndex++)
 	{
@@ -7766,12 +8245,14 @@ static void SaveGameListToFile(char *szFile, int filetype)
 		{
 			int nGameIndex  = lvi.lParam;
 
-			if (filetype == FILETYPE_GAME_LIST)
-				fprintf(f, "%s", GetDriverGameTitle(nGameIndex));
-			else
-				fprintf(f, "%s", GetDriverGameName(nGameIndex));
-
-			fprintf(f, "\n");
+//======================= 缘来是你：导出当前游戏列表 ==============>>>			
+			//fprintf(f, "%s%s", GetDriverGameTitle(nGameIndex),"\n");	//原代码
+			const char *shortname = GetDriverGameName(nGameIndex);
+            const char *description = GetDescriptionByIndex(nGameIndex, GetUsekoreanList());
+            const char *manufacturer = GetGameManufactureByIndex(nGameIndex, GetUsekoreanList());
+			//fprintf(f, "%s%s", GetDescriptionByIndex(nGameIndex, GetUsekoreanList()), "\n");	//仅游戏名称
+            fprintf(f, "%s\t%s\t%s\n", shortname, description, manufacturer);
+//=============================================================>>>
 		}
 	}
 
@@ -7840,6 +8321,12 @@ static void LoadGameListFromFile(int games)
 				line = NULL;
 			}
 
+//================= 修复列表 =====================>>>
+			if (j < NUM_COLUMNS) continue;
+			int gameIndex = GetGameNameIndex(p[0]);
+			if (gameIndex < 0 || gameIndex >= games) continue;
+//=================================================>>>	
+
 			tsv_data[i].gamename      = strdup(p[0]);
 			tsv_data[i].description   = strdup(p[1]);
 			tsv_data[i].manufacturer  = strdup(p[2]);
@@ -7850,11 +8337,23 @@ static void LoadGameListFromFile(int games)
 				//games += 12;
 			}
 		}					
+
+//================= 缘来是你==================================================>>>
+		//优化中文列表
+		tsv_data[i].gamename = NULL;
+		tsv_data[i].description = NULL;
+		tsv_data[i].manufacturer = NULL;
 	}
     else
     {
 		need_update = 1;
+		
+		//优化中文列表
+		tsv_data[0].gamename = NULL;
+		tsv_data[0].description = NULL;
+		tsv_data[0].manufacturer = NULL;
     }
+//===========================================================================>>>
 
 	//winui_message_box_utf8(hMain, "mame32k list load complete", MAMEUINAME, MB_ICONINFORMATION | MB_OK);
 
@@ -7892,11 +8391,16 @@ static void LoadGameListFromFile(int games)
 
 static void SaveAllGameListToFile()
 {
+#if 0	//启用禁止覆写游戏列表
+	return;
+#else
 	if (need_update)
 	{
 		char tsvname[_MAX_PATH];
 		int  i;
 		const char *format = "%s\t%s\t%s\n";
+		
+		if (!tsv_index) return;	//缘来是你
 
 		TSV_GetPath(tsvname);
 		
@@ -7915,6 +8419,11 @@ static void SaveAllGameListToFile()
 		}
 
 		free(tsv_index);
+//=================== 缘来是你==================>>>
+		tsv_index = NULL;
+		
+		if (tsv_data)
+		{
 		for (i = 0; tsv_data[i].gamename; i++)
 		{			
 			free(tsv_data[i].gamename);
@@ -7922,15 +8431,23 @@ static void SaveAllGameListToFile()
 			free(tsv_data[i].manufacturer);
 		}
 		free(tsv_data);
-	
+		tsv_data = NULL;
+		}
+//==============================================>>>
 	}
 	
 	//winui_message_box_utf8(hMain, "game list save complete", MAMEUINAME, MB_ICONINFORMATION | MB_OK);
+#endif
 }
 
 int GetGameIndex(const char *name)
 {
 	int i;
+
+// 修改的 代码来源 (缘来是你)
+/**********************************/
+	if (!tsv_index) return -1;
+/*********************************/
 
 	for (i = 0; tsv_index[i].gamename != NULL; i++)
 		if (!strcmp(name, tsv_index[i].gamename)) 
@@ -7941,15 +8458,20 @@ int GetGameIndex(const char *name)
 
 char *GetDescriptionByIndex(int nIndex, bool bUse)
 {
-
+//=================== 缘来是你==================>>>
+	int total = driver_list::total();
+	
+	if (nIndex < 0 || nIndex >= total)
+		return (char *)"Unknown";
+	
 	if (tsv_index && bUse)
 	{
-		return (tsv_index[nIndex].description);
+		if (tsv_index[nIndex].description && tsv_index[nIndex].description[0])
+			return tsv_index[nIndex].description;
 	}
-	else
-	{
-		return (char *)GetDriverGameTitle(nIndex);
-	}
+	
+	return (char *)GetDriverGameTitle(nIndex);
+//==============================================>>>
 }
 
 char *GetDescriptionByName(const char *name, bool bUse)
@@ -7959,16 +8481,21 @@ char *GetDescriptionByName(const char *name, bool bUse)
 
 char *GetGameNameByIndex(int nIndex, bool bUse)
 {
-
+//=================== 缘来是你==================>>>
+	int total = driver_list::total();
+	
+	if (nIndex < 0 || nIndex >= total)
+		return (char *)"unknown";
+	
 	if (tsv_index && bUse)
 	{
-		return (tsv_index[nIndex].gamename);
-	}
-	else
-	{
-		return (char *)GetDriverGameName(nIndex);
-	}
+		if (tsv_index[nIndex].gamename && tsv_index[nIndex].gamename[0])
 
+			return tsv_index[nIndex].gamename;
+	}
+	
+	return (char *)GetDriverGameName(nIndex);
+//==============================================>>>
 }
 
 char *GetGameName(const char *name, bool bUse)
@@ -7978,16 +8505,20 @@ char *GetGameName(const char *name, bool bUse)
 
 char *GetGameManufactureByIndex(int nIndex, bool bUse)
 {
-
+//=================== 缘来是你==================>>>
+	int total = driver_list::total();
+	
+	if (nIndex < 0 || nIndex >= total)
+		return (char *)"";
+	
 	if (tsv_index && bUse)
 	{
-		return (tsv_index[nIndex].manufacturer);
+		if (tsv_index[nIndex].manufacturer && tsv_index[nIndex].manufacturer[0])
+			return tsv_index[nIndex].manufacturer;
 	}
-	else
-	{
-		return (char *)GetDriverGameManufacturer(nIndex);
-	}
-
+	
+	return (char *)GetDriverGameManufacturer(nIndex);
+//==============================================>>>
 }
 
 
@@ -8035,6 +8566,223 @@ static HBITMAP CreateBitmapTransparent(HBITMAP hSource)
 int GetNumGames(void)
 {
 	return game_count;
+}
+
+//缘来是你
+// ==================== 导出 XML 功能 ====================>>>
+static std::string EscapeXML(const char* str)
+{
+    if (!str) return "";
+    std::string result;
+    for (const char* p = str; *p; p++)
+    {
+        switch (*p)
+        {
+            case '&': result += "&amp;"; break;
+            case '<': result += "&lt;"; break;
+            case '>': result += "&gt;"; break;
+            case '"': result += "&quot;"; break;
+            case '\'': result += "&apos;"; break;
+            default: result += *p; break;
+        }
+    }
+    return result;
+}
+
+static void ExportGameROMsToXML(FILE* f, int game_index)
+{
+    const game_driver* drv = &driver_list::driver(game_index);
+    machine_config config(*drv, MameUIGlobal());
+    
+    for (device_t& device : device_iterator(config.root_device()))
+    {
+        for (const rom_entry* region = rom_first_region(device); 
+             region; region = rom_next_region(region))
+        {
+            for (const rom_entry* rom = rom_first_file(region); 
+                 rom; rom = rom_next_file(rom))
+            {
+                const char* rom_name = ROM_GETNAME(rom);
+                uint32_t rom_size = rom_file_size(rom);
+                
+                if (!rom_name || rom_size == 0) continue;
+
+//=============================== 缘来是你 ==================================>>>
+                util::hash_collection hashes(rom->hashdata().c_str());
+                std::string attr_str = hashes.attribute_string();
+                
+                if (attr_str.empty())
+                {
+                    fprintf(f, "\t\t<rom name=\"%s\" size=\"%u\"/>\n", 
+                            EscapeXML(rom_name).c_str(), rom_size);
+                }
+                else
+                {
+                    fprintf(f, "\t\t<rom name=\"%s\" size=\"%u\" %s/>\n", 
+                            EscapeXML(rom_name).c_str(), rom_size, attr_str.c_str());
+                }
+//==========================================================================>>>
+            }
+        }
+    }
+}
+
+static void ExportGameToXML(FILE* f, int game_index)
+{
+    const game_driver* drv = &driver_list::driver(game_index);
+    int parent = GetParentIndex(drv);
+    
+    if (parent >= 0)
+    {
+        fprintf(f, "\t<machine name=\"%s\" cloneof=\"%s\">\n", 
+//=============================== 缘来是你 ==================================>>>
+                drv->name, 
+                driver_list::driver(parent).name);
+//==========================================================================>>>
+    }
+    else
+    {
+        fprintf(f, "\t<machine name=\"%s\">\n", drv->name);
+    }
+    
+    fprintf(f, "\t\t<description>%s</description>\n", 
+            EscapeXML(drv->type.fullname()).c_str());
+
+//=============================== 缘来是你 ==================================>>>
+#if 0    // 导出年份和生产厂商
+    fprintf(f, "\t\t<year>%s</year>\n", 
+            EscapeXML(drv->type.year()).c_str());
+    fprintf(f, "\t\t<manufacturer>%s</manufacturer>\n", 
+            EscapeXML(drv->type.manufacturer()).c_str());
+#endif
+//==========================================================================>>>
+
+    if (DriverUsesRoms(game_index))
+    {
+        ExportGameROMsToXML(f, game_index);
+    }
+    
+    fprintf(f, "\t</machine>\n");
+}
+
+static void ExportFullXML(int mode, HWND hWndList)
+{
+    wchar_t wfilename[MAX_PATH] = L"NeoEX.xml";
+    wchar_t szCurDir[MAX_PATH];
+    
+    GetCurrentDirectory(MAX_PATH, szCurDir);
+    
+    OPENFILENAME ofn = {0};
+    ofn.lStructSize = sizeof(ofn);
+    ofn.hwndOwner = hMain;
+    ofn.lpstrFile = wfilename;
+    ofn.nMaxFile = MAX_PATH;
+    ofn.lpstrFilter = L"XML Files (*.xml)\0*.xml\0";
+    ofn.nFilterIndex = 1;
+    ofn.Flags = OFN_OVERWRITEPROMPT;
+    
+    if (!GetSaveFileName(&ofn))
+    {
+        SetCurrentDirectory(szCurDir);
+        return;
+    }
+    
+    char* utf8_filename = win_utf8_from_wstring(wfilename);
+    if (!utf8_filename)
+    {
+        SetCurrentDirectory(szCurDir);
+        return;
+    }
+    
+    FILE* f = fopen(utf8_filename, "w");
+    if (!f)
+    {
+        ErrorMessageBox("Unable to create file: %s", utf8_filename);
+        free(utf8_filename);
+        SetCurrentDirectory(szCurDir);
+        return;
+    }
+    
+    fprintf(f, "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
+    fprintf(f, "<!DOCTYPE datafile PUBLIC \"-//Logiqx//DTD ROM Management Datafile//EN\" \"http://www.logiqx.com/Dats/datafile.dtd\">\n");
+    fprintf(f, "<datafile>\n");
+    fprintf(f, "\t<header>\n");
+    fprintf(f, "\t\t<name>MAME ROMs</name>\n");
+    fprintf(f, "\t\t<description>MAME ROMs (split)</description>\n");
+    fprintf(f, "\t\t<version>%s</version>\n", build_version);
+    fprintf(f, "\t</header>\n");
+    
+    int total = 0, exported = 0;
+    std::vector<int> game_list;
+    
+    if (mode == 3)
+    {
+        total = ListView_GetItemCount(hWndList);
+        for (int i = 0; i < total; i++)
+        {
+            LVITEM lvi;
+            lvi.iItem = i;
+            lvi.mask = LVIF_PARAM;
+            if (ListView_GetItem(hWndList, &lvi))
+                game_list.push_back(lvi.lParam);
+        }
+    }
+    else
+    {
+        total = driver_list::total();
+        for (int i = 0; i < total; i++)
+        {
+            bool include = false;
+            switch (mode)
+            {
+                case 0:
+                    include = true;
+                    break;
+//=============================== 缘来是你 ==================================>>>
+                case 1:
+                    include = DriverUsesRoms(i) && IsAuditResultYes(GetRomAuditResults(i));
+                    break;
+                case 2:
+                    include = DriverUsesRoms(i) && !IsAuditResultYes(GetRomAuditResults(i));
+                    break;
+//==========================================================================>>>
+            }
+            if (include)
+                game_list.push_back(i);
+        }
+    }
+    
+    for (size_t i = 0; i < game_list.size(); i++)
+    {
+        ExportGameToXML(f, game_list[i]);
+        exported++;
+        
+        if (i % 100 == 99)
+        {
+            MSG msg;
+            while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+    }
+    
+    fprintf(f, "</datafile>\n");
+    fclose(f);
+    
+    SetCurrentDirectory(szCurDir);
+    
+    char msg[256];
+    snprintf(msg, sizeof(msg), "%d games have been exported to:\n%s", exported, utf8_filename);
+    winui_message_box_utf8(hMain, msg, MAMEUINAME, MB_ICONINFORMATION | MB_OK);
+    
+    free(utf8_filename);
+}
+
+static void ExportCurrentListView(void)
+{
+    ExportFullXML(3, hWndList);
 }
 
 static int logmsg_init = 0;

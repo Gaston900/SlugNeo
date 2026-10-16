@@ -4399,7 +4399,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szExeName) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd,
-					"NEOCD SYSTEM CRITICAL ERROR:\n\nThe file cannot be found 'SlugNeo_x64.exe' in your computer's directory.\nPlease verify that the file .CHD is in its place.", 
+					"NEOCD SYSTEM CRITICAL ERROR:\n\nThe file cannot be found 'SlugNeo_x64.exe' in your computer's directory.\nPlease verify that the BIOS ZIP or 7Z file is present and that the .CHD file is in place.", 
 					"Boxes NeoCD Error", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4440,7 +4440,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szSlug6Zip) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd, 
-					"ATOMISWAVE ROM ERROR:\n\nThe location of the compressed game file was not found:\n'roms\\Atomiswave\\mslug6.zip'\n\nPlace the correct ZIP file.", 
+					"ATOMISWAVE ROMS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'roms\\Atomiswave\\mslug6.zip'\n\nPlace the correct 7Z, Zip, or .CHT file.", 
 					"Boxes mslug6.zip Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4479,7 +4479,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szPcsx2Exe) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd, 
-					"PCSX2 CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PCSX2\\pcsx2.exe'\n\nPlease verify that the file is in its place.", 
+					"PCSX2 SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PCSX2\\pcsx2.exe'\n\nPlease verify that the file is in its place.", 
 					"Boxes PCSX2 Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4488,7 +4488,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			{
 				char szIsoError[MAX_PATH + 200];
 				snprintf(szIsoError, sizeof(szIsoError), 
-					"PS2 FILE ERROR DETECTED:\n\nThe location of the virtual disk file was not found:\n'%s'\n\nInsert the correct ISO file.", szSelectedIso);
+					"PS2 ISO FILE ERROR DETECTED:\n\nThe location of the virtual disk file was not found:\n'%s'\n\nInsert the correct ISO file.", szSelectedIso);
 				winui_message_box_utf8(hWnd, szIsoError, "Boxes ISO Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4530,7 +4530,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szDesmumeExe) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd, 
-					"DESMUME CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\DeSmuME\\DeSmuME.exe'\n\nPlease verify that the file is in its place.", 
+					"DESMUME SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\DeSmuME\\DeSmuME.exe'\n\nPlease verify that the file is in its place.", 
 					"Boxes DeSmuME Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4539,7 +4539,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			{
 				char szZipError[MAX_PATH + 200];
 				snprintf(szZipError, sizeof(szZipError), 
-					"NDS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct ZIP file.", szSelectedZip);
+					"NDS ROMS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct 7Z or Zip file.", szSelectedZip);
 				winui_message_box_utf8(hWnd, szZipError, "Boxes NDS Zip Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4578,7 +4578,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szPpssppExe) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd, 
-					"PPSSPP CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PPSSPP\\PPSSPPWindows64.exe'\n\nPlease verify that the file is in its place.", 
+					"PPSSPP SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PPSSPP\\PPSSPPWindows64.exe'\n\nPlease verify that the file is in its place.", 
 					"Boxes PPSSPP Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4587,7 +4587,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			{
 				char szIsoError[MAX_PATH + 200];
 				snprintf(szIsoError, sizeof(szIsoError), 
-					"PSP FILE ERROR DETECTED:\n\nThe location of the virtual disk file was not found:\n'%s'\n\nInsert the correct ISO file.", szSelectedIso);
+					"PSP ROMS FILE ERROR DETECTED:\n\nThe location of the virtual disk file was not found:\n'%s'\n\nInsert the correct ISO file.", szSelectedIso);
 				winui_message_box_utf8(hWnd, szIsoError, "Boxes PSP ISO Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4631,7 +4631,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szBizHawkExe) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd, 
-					"GBA BIZHAWK CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\BizHawk\\EmuHawk.exe'\n\nPlease verify that the file is in its place.", 
+					"GBA BIZHAWK SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\BizHawk\\EmuHawk.exe'\n\nPlease verify that the file is in its place.", 
 					"Boxes BizHawk Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4640,7 +4640,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			{
 				char szZipError[MAX_PATH + 200];
 				snprintf(szZipError, sizeof(szZipError), 
-					"GBA FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct ZIP file.", szSelectedZip);
+					"GBA ROMS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct 7Z or Zip file.", szSelectedZip);
 				winui_message_box_utf8(hWnd, szZipError, "Boxes GBA Zip Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4676,7 +4676,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			if (GetFileAttributesA(szBizHawkExe) == INVALID_FILE_ATTRIBUTES)
 			{
 				winui_message_box_utf8(hWnd, 
-					"NGPC BIZHAWK CRITICAL SYSTEM ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\BizHawk\\EmuHawk.exe'\n\nPlease verify that the file is in its place.", 
+					"NGPC BIZHAWK SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\BizHawk\\EmuHawk.exe'\n\nPlease verify that the file is in its place.", 
 					"Boxes BizHawk Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -4685,7 +4685,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			{
 				char szZipError[MAX_PATH + 200];
 				snprintf(szZipError, sizeof(szZipError), 
-					"NGPC FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct ZIP file.", szSelectedZip);
+					"NGPC ROMS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct 7Z or Zip file.", szSelectedZip);
 				winui_message_box_utf8(hWnd, szZipError, "Boxes NGPC Zip Missing", MB_ICONERROR | MB_OK);
 				break;
 			}
@@ -7296,7 +7296,8 @@ void InitMainMenu(HMENU hMainMenu)
 		SetMenuItemBitmaps(hNeoCDMenu, ID_NEOCD_SLUG1, MF_BYCOMMAND, hNeoCdSlug1, hNeoCdSlug1);
 		SetMenuItemBitmaps(hNeoCDMenu, ID_NEOCD_SLUG2, MF_BYCOMMAND, hNeoCdSlug2, hNeoCdSlug2);
 		
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNeoCDMenu, TEXT("NeoCD"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNeoCDMenu, TEXT("NeoCD"));
+		InsertMenu(hMainMenu, 4, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hNeoCDMenu, TEXT("NeoCD"));
 	}
 
 	HMENU hAtomiswaveMenu = CreatePopupMenu();
@@ -7305,7 +7306,8 @@ void InitMainMenu(HMENU hMainMenu)
 		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_SLUG6, TEXT("Metal Slug 6"));
 		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_SLUG6, MF_BYCOMMAND, hAtomisSlug6, hAtomisSlug6);
 
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hAtomiswaveMenu, TEXT("Atomiswave"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hAtomiswaveMenu, TEXT("Atomiswave"));
+		InsertMenu(hMainMenu, 5, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hAtomiswaveMenu, TEXT("Atomiswave"));
 	}
 
 	HMENU hPcsx2Menu = CreatePopupMenu();
@@ -7319,7 +7321,8 @@ void InitMainMenu(HMENU hMainMenu)
 		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_PLUS, MF_BYCOMMAND, hPs2Slug6Plus, hPs2Slug6Plus);
 		SetMenuItemBitmaps(hPcsx2Menu, ID_PS2_SLUG6_SLUG, MF_BYCOMMAND, hPs2Slug6Slug, hPs2Slug6Slug);
 		
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPcsx2Menu, TEXT("PCSX2"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPcsx2Menu, TEXT("PCSX2"));
+		InsertMenu(hMainMenu, 6, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hPcsx2Menu, TEXT("PCSX2"));
 	}
 
 	HMENU hDesmumeMenu = CreatePopupMenu();
@@ -7335,7 +7338,8 @@ void InitMainMenu(HMENU hMainMenu)
 		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_PLUS, MF_BYCOMMAND, hNdsSlug7Plus, hNdsSlug7Plus);
 		SetMenuItemBitmaps(hDesmumeMenu, ID_NDS_SLUG7_SLUG, MF_BYCOMMAND, hNdsSlug7Slug, hNdsSlug7Slug);
 		
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hDesmumeMenu, TEXT("DeSmuME"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hDesmumeMenu, TEXT("DeSmuME"));
+		InsertMenu(hMainMenu, 7, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hDesmumeMenu, TEXT("DeSmuME"));
 	}
 	
 	HMENU hPpssppMenu = CreatePopupMenu();
@@ -7349,7 +7353,8 @@ void InitMainMenu(HMENU hMainMenu)
 		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX_MIX, MF_BYCOMMAND, hPspSlugXXMix, hPspSlugXXMix);
 		SetMenuItemBitmaps(hPpssppMenu, ID_PSP_SLUGXX_PLUS, MF_BYCOMMAND, hPspSlugXXPlus, hPspSlugXXPlus);
 		
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPpssppMenu, TEXT("PPSSPP"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hPpssppMenu, TEXT("PPSSPP"));
+		InsertMenu(hMainMenu, 8, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hPpssppMenu, TEXT("PPSSPP"));
 	}
 	
 	HMENU hGbaMenu = CreatePopupMenu();
@@ -7367,7 +7372,8 @@ void InitMainMenu(HMENU hMainMenu)
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_MIX, MF_BYCOMMAND, hGbaSlugAdvanceMix, hGbaSlugAdvanceMix);
 		SetMenuItemBitmaps(hGbaMenu, ID_GBA_SLUG_ADVANCE_PLUS, MF_BYCOMMAND, hGbaSlugAdvancePlus, hGbaSlugAdvancePlus);
 		
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hGbaMenu, TEXT("GBA"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hGbaMenu, TEXT("GBA"));
+		InsertMenu(hMainMenu, 9, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hGbaMenu, TEXT("GBA"));
 	}
 	
 	HMENU hNgpcMenu = CreatePopupMenu();
@@ -7379,7 +7385,8 @@ void InitMainMenu(HMENU hMainMenu)
 		SetMenuItemBitmaps(hNgpcMenu, ID_NGPC_SLUG_1ST, MF_BYCOMMAND, hNgpcSlug1st, hNgpcSlug1st);
 		SetMenuItemBitmaps(hNgpcMenu, ID_NGPC_SLUG_2ND, MF_BYCOMMAND, hNgpcSlug2nd, hNgpcSlug2nd);
 		
-		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNgpcMenu, TEXT("NGPC"));
+//		AppendMenu(hMainMenu, MF_POPUP, (UINT_PTR)hNgpcMenu, TEXT("NGPC"));
+		InsertMenu(hMainMenu, 10, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hNgpcMenu, TEXT("NGPC"));
 	}
 	
 	DrawMenuBar(hMain);

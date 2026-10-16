@@ -91,7 +91,7 @@
 #endif
 #define MAMENAME			"SlugNeo"
 
-#define MAME_VERSION		"5.7"
+#define MAME_VERSION		"5.8"
 #define MAMEUIFX_VERSION	MAME_VERSION " (" __DATE__")"
 
 #define SEARCH_PROMPT		"<search here>"
